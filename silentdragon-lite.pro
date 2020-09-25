@@ -168,6 +168,7 @@ TRANSLATIONS = res/silentdragonlite_es.ts \
                res/silentdragonlite_id.ts \
                res/silentdragonlite_ar.ts \
                res/silentdragonlite_ro.ts \
+               res/silentdragonlite_ud.ts \
                res/silentdragonlite_tr.ts 
              
 include(singleapplication/singleapplication.pri)
