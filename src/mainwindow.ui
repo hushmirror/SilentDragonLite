@@ -1894,6 +1894,7 @@
     <addaction name="actionRemove_Wallet_Encryption"/>
     <addaction name="separator"/>
     <addaction name="actionRescan"/>
+    <addaction name="actionImport_Privatkey"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menu_Edit"/>
@@ -2003,6 +2004,11 @@
   <action name="actionRescan">
    <property name="text">
     <string>Rescan</string>
+   </property>
+  </action>
+  <action name="actionImport_Privatkey">
+   <property name="text">
+    <string>Import Privatkey</string>
    </property>
   </action>
  </widget>

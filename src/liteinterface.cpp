@@ -27,6 +27,33 @@ void LiteInterface::fetchAddresses(const std::function<void(json)>& cb) {
     conn->doRPCWithDefaultErrorHandling("addresses", "", cb);
 }
 
+void LiteInterface::importZPrivKey(QString addr, const std::function<void(json)>& cb) {
+    if (conn == nullptr)
+        return;
+
+    // QString params = addr % QString(" ");
+   //  params.append(birthday);
+       qDebug()<<addr;
+       
+      
+     
+     conn->doRPCWithDefaultErrorHandling("import", addr, cb);
+    // conn->doRPC("import", params, cb, err); 
+
+
+}
+
+/*void LiteInterface::importTPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb) {
+    if (conn == nullptr)
+        return;
+
+
+
+        //  conn->doRPCWithDefaultErrorHandling("import", addr, cb);
+
+       //   conn->doRPC("import", addr, 0, cb); 
+}*/
+
 
 void LiteInterface::fetchUnspent(const std::function<void(json)>& cb) {
     if (conn == nullptr)

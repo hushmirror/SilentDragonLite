@@ -280,6 +280,8 @@ MainWindow::MainWindow(QWidget *parent) :
         dialog.exec();
 });
 
+// Import Privkey
+    QObject::connect(ui->actionImport_Privatkey, &QAction::triggered, this, &MainWindow::importPrivKey);
     // Address Book
     QObject::connect(ui->action_Address_Book, &QAction::triggered, this, &MainWindow::addressBook);
 
@@ -930,30 +932,39 @@ void MainWindow::donate() {
     ui->tabWidget->setCurrentIndex(1);
 }
 
-// void MainWindow::doImport(QList<QString>* keys) {
-//     if (rpc->getConnection() == nullptr) {
-//         // No connection, just return
-//         return;
-//     }
+ void MainWindow::doImport(QList<QString>* keys) {
+     if (rpc->getConnection() == nullptr) {
+         // No connection, just return
+         return;
+     }
 
-//     if (keys->isEmpty()) {
-//         delete keys;
-//         ui->statusBar->showMessage(tr("Private key import rescan finished"));
-//         return;
-//     }
+     if (keys->isEmpty()) {
+         delete keys;
+         ui->statusBar->showMessage(tr("Private key import rescan finished"));
+        return;
+     }
 
-//     // Pop the first key
-//     QString key = keys->first();
-//     keys->pop_front();
-//     bool rescan = keys->isEmpty();
+     // Pop the first key
+     
+     QString key = keys->first();
+     QString key1 = key + QString(" ") + QString("0");
+     keys->pop_front();
+     bool rescan = keys->isEmpty();
+     
 
-//     if (key.startsWith("SK") ||
-//         key.startsWith("secret")) { // Z key
-//         rpc->importZPrivKey(key, rescan, [=] (auto) { this->doImport(keys); });                   
-//     } else {
-//         rpc->importTPrivKey(key, rescan, [=] (auto) { this->doImport(keys); });
-//     }
-// }
+     if (key.startsWith("SK") ||
+         key.startsWith("secret")) { // Z key
+        
+         rpc->importZPrivKey(key, [=] (auto) { this->doImport(keys); });  
+          
+                // Then reload the connection. The ConnectionLoader deletes itself.
+              
+                      
+                          
+     } else {
+         rpc->importTPrivKey(key, rescan, [=] (auto) { this->doImport(keys); });
+     }
+ }
 
 
 // Callback invoked when the RPC has finished loading all the balances, and the UI 
@@ -1041,51 +1052,56 @@ void MainWindow::payhushURI(QString uri, QString myAddr) {
     }
 }
 
+ void MainWindow::importPrivKey() {
+     QDialog d(this);
+     Ui_PrivKey pui;
+     pui.setupUi(&d);
+     Settings::saveRestore(&d);
 
-// void MainWindow::importPrivKey() {
-//     QDialog d(this);
-//     Ui_PrivKey pui;
-//     pui.setupUi(&d);
-//     Settings::saveRestore(&d);
+     pui.buttonBox->button(QDialogButtonBox::Save)->setVisible(true);
+     pui.helpLbl->setText(QString() %
+                         tr("Please paste your private key(z-Addr) here, one per import") % ".\n" %
+                         tr("Caution: These key will be NOT inlcude in your Seed. Please send them direct to a Seed zaddr") % ".\n" %
+                         tr("The import of your Privatkey will take some time.")
+                         );  
 
-//     pui.buttonBox->button(QDialogButtonBox::Save)->setVisible(false);
-//     pui.helpLbl->setText(QString() %
-//                         tr("Please paste your private keys (z-Addr or t-Addr) here, one per line") % ".\n" %
-//                         tr("The keys will be imported into your connected hushd node"));  
+     if (d.exec() == QDialog::Accepted && !pui.privKeyTxt->toPlainText().trimmed().isEmpty()) {
+         auto rawkeys = pui.privKeyTxt->toPlainText().trimmed().split("\n");
 
-//     if (d.exec() == QDialog::Accepted && !pui.privKeyTxt->toPlainText().trimmed().isEmpty()) {
-//         auto rawkeys = pui.privKeyTxt->toPlainText().trimmed().split("\n");
+         QList<QString> keysTmp;
+         // Filter out all the empty keys.
+         std::copy_if(rawkeys.begin(), rawkeys.end(), std::back_inserter(keysTmp), [=] (auto key) {
+             return !key.startsWith("#") && !key.trimmed().isEmpty();
+         });
 
-//         QList<QString> keysTmp;
-//         // Filter out all the empty keys.
-//         std::copy_if(rawkeys.begin(), rawkeys.end(), std::back_inserter(keysTmp), [=] (auto key) {
-//             return !key.startsWith("#") && !key.trimmed().isEmpty();
-//         });
+         auto keys = new QList<QString>();
+         std::transform(keysTmp.begin(), keysTmp.end(), std::back_inserter(*keys), [=](auto key) {
+             return key.trimmed().split(" ")[0];
+         });
 
-//         auto keys = new QList<QString>();
-//         std::transform(keysTmp.begin(), keysTmp.end(), std::back_inserter(*keys), [=](auto key) {
-//             return key.trimmed().split(" ")[0];
-//         });
+         // Special case. 
+         // Sometimes, when importing from a paperwallet or such, the key is split by newlines, and might have 
+         // been pasted like that. So check to see if the whole thing is one big private key
+        if (Settings::getInstance()->isValidSaplingPrivateKey(keys->join(""))) {
+             auto multiline = keys;
+             keys = new QList<QString>();
+             keys->append(multiline->join(""));
+             delete multiline;
+         }
 
-//         // Special case. 
-//         // Sometimes, when importing from a paperwallet or such, the key is split by newlines, and might have 
-//         // been pasted like that. So check to see if the whole thing is one big private key
-//         if (Settings::getInstance()->isValidSaplingPrivateKey(keys->join(""))) {
-//             auto multiline = keys;
-//             keys = new QList<QString>();
-//             keys->append(multiline->join(""));
-//             delete multiline;
-//         }
+         // Start the import. The function takes ownership of keys
+         QTimer::singleShot(1, [=]() {doImport(keys);});
 
-//         // Start the import. The function takes ownership of keys
-//         QTimer::singleShot(1, [=]() {doImport(keys);});
+          auto cl = new ConnectionLoader(this, rpc);
+               QTimer::singleShot(1, [=]() { cl->loadProgress(); });
+          
 
-//         // Show the dialog that keys will be imported. 
-//         QMessageBox::information(this,
-//             "Imported", tr("The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited"),
-//             QMessageBox::Ok);
-//     }
-// }
+         // Show the dialog that keys will be imported. 
+       //  QMessageBox::information(this,
+         //    "Imported", tr("The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited"),
+           //  QMessageBox::Ok);
+    }
+ }
 
 /** 
  * Export transaction history into a CSV file

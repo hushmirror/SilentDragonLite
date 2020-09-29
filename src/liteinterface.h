@@ -70,7 +70,7 @@ public:
     void unlockWallet(QString password, const std::function<void(json)>& cb);
     void removeWalletEncryption(QString password, const std::function<void(json)>& cb);
 
-    //void importZPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb);
+    void importZPrivKey(QString addr, const std::function<void(json)>& cb);
     //void importTPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb);
     
    

@@ -24,6 +24,7 @@ public:
     ~ConnectionLoader();
 
     void loadConnection();
+    void loadProgress();
 
 private:
     std::shared_ptr<ConnectionConfig> autoDetecthushConf();
@@ -32,6 +33,7 @@ private:
     Connection* makeConnection(std::shared_ptr<ConnectionConfig> config);
 
     void doAutoConnect();
+    void ShowProgress();
 
     void createOrRestore(bool dangerous, QString server);
 
@@ -83,6 +85,7 @@ public:
     Executor(QString cmd, QString args) {
         this->cmd = cmd;
         this->args = args;
+        
     };
 
     ~Executor() = default;
@@ -118,7 +121,9 @@ public:
 
     void doRPC(const QString cmd, const QString args, const std::function<void(json)>& cb,
                const std::function<void(QString)>& errCb);
+
     void doRPCWithDefaultErrorHandling(const QString cmd, const QString args, const std::function<void(json)>& cb);
+
     void doRPCIgnoreError(const QString cmd, const QString args, const std::function<void(json)>& cb) ;
 
     void showTxError(const QString& error);

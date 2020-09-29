@@ -65,6 +65,82 @@ void ConnectionLoader::loadConnection()
         d->exec();
 }
 
+void ConnectionLoader::loadProgress()
+{
+    QTimer::singleShot(1, [=]() { this->ShowProgress(); });
+    if (!Settings::getInstance()->isHeadless())
+        d->exec();
+}
+
+void ConnectionLoader::ShowProgress()
+{
+
+    auto config = std::shared_ptr<ConnectionConfig>(new ConnectionConfig());
+    config->dangerous = false;
+    config->server = Settings::getInstance()->getSettings().server;
+    auto connection = makeConnection(config);
+    auto me = this;
+
+    // After the lib is initialized, try to do get info
+    connection->doRPC("info", "", [=](auto reply) {
+        // If success, set the connection
+        main->logger->write("Connection is online.");
+        connection->setInfo(reply);
+        main->logger->write("getting Connection reply");
+        isSyncing = new QAtomicInteger<bool>();
+        isSyncing->store(true);
+        main->logger->write("isSyncing");
+
+        // Do a sync at startup
+        syncTimer = new QTimer(main);
+        main->logger->write("Beginning sync");
+        connection->doRPCWithDefaultErrorHandling("sync", "", [=](auto) {
+            isSyncing->store(false);
+            // Cancel the timer
+            syncTimer->deleteLater();
+            // When sync is done, set the connection
+            this->doRPCSetConnection(connection);
+        });
+
+        // While it is syncing, we'll show the status updates while it is alive.
+        QObject::connect(syncTimer, &QTimer::timeout, [=]() {
+            // Check the sync status
+            if (isSyncing != nullptr && isSyncing->load()) {
+                // Get the sync status
+
+                try {
+                connection->doRPC("syncstatus", "", [=](json reply) {
+                    if (isSyncing != nullptr && reply.find("synced_blocks") != reply.end())
+
+                    {
+                        qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
+                        qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
+                        me->showInformation(
+                            "Synced " + QString::number(synced) + " / " + QString::number(total)
+                        );
+                    }
+                },
+                [=](QString err) {
+                    qDebug() << "Sync error" << err;
+                });
+            }catch (...)
+            {
+                main->logger->write("catch sync progress reply");
+
+            }
+
+            }
+        });
+
+        syncTimer->setInterval(1* 1000);
+        syncTimer->start();
+        main->logger->write("Start sync timer");
+
+    }, [=](QString err) {
+        showError(err);
+    });
+}
+
 void ConnectionLoader::doAutoConnect()
 {
     qDebug() << "Doing autoconnect";
@@ -109,14 +185,14 @@ void ConnectionLoader::doAutoConnect()
         connection->setInfo(reply);
         main->logger->write("getting Connection reply");
         isSyncing = new QAtomicInteger<bool>();
-        isSyncing->storeRelaxed(true);
+        isSyncing->store(true);
         main->logger->write("isSyncing");
 
         // Do a sync at startup
         syncTimer = new QTimer(main);
         main->logger->write("Beginning sync");
         connection->doRPCWithDefaultErrorHandling("sync", "", [=](auto) {
-            isSyncing->storeRelaxed(false);
+            isSyncing->store(false);
             // Cancel the timer
             syncTimer->deleteLater();
             // When sync is done, set the connection
@@ -126,7 +202,7 @@ void ConnectionLoader::doAutoConnect()
         // While it is syncing, we'll show the status updates while it is alive.
         QObject::connect(syncTimer, &QTimer::timeout, [=]() {
             // Check the sync status
-            if (isSyncing != nullptr && isSyncing->loadRelaxed()) {
+            if (isSyncing != nullptr && isSyncing->load()) {
                 // Get the sync status
 
                 try {
@@ -255,7 +331,6 @@ void Executor::run()
     emit responseReady(parsed);
 }
 
-
 void Callback::processRPCCallback(json resp)
 {
     this->cb(resp);
@@ -284,7 +359,10 @@ void Connection::doRPC(const QString cmd, const QString args, const std::functio
         // Ignoring RPC because shutdown in progress
         return;
 
-    //qDebug() << "Doing RPC: " << cmd;
+    qDebug() << "Doing RPC: " << cmd;
+    qDebug() << "Args :"<< args;
+
+    
 
     // Create a runner.
     auto runner = new Executor(cmd, args);

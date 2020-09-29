@@ -154,9 +154,13 @@ public:
         });
     }
 
-
-    // void importZPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb) { zrpc->importZPrivKey(addr, rescan, cb); }
-    // void importTPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb) { zrpc->importTPrivKey(addr, rescan, cb); }
+    void importZPrivKey(QString addr,const std::function<void(json)>& cb) {
+        unlockIfEncrypted([=] () {
+           zrpc->importZPrivKey(addr,cb); 
+        }, [=](){});
+    }
+     void importZPrivKey(QString addr, const std::function<void(json)>& cb,const std::function<void(QString)>& err) { zrpc->importZPrivKey(addr, cb, ""); }
+    // void importTPrivKey(QString addr,bool rescan, const std::function<void(json)>& cb) { zrpc->importTPrivKey(addr,rescan, cb); }
 
     QString getDefaultSaplingAddress();
     QString getDefaultTAddress();   
