@@ -962,7 +962,7 @@ void MainWindow::donate() {
                       
                           
      } else {
-         rpc->importTPrivKey(key, rescan, [=] (auto) { this->doImport(keys); });
+     //    rpc->importTPrivKey(key, rescan, [=] (auto) { this->doImport(keys); });
      }
  }
 
