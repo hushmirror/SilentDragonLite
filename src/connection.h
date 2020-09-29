@@ -84,8 +84,7 @@ class Executor : public QObject, public QRunnable {
 public:
     Executor(QString cmd, QString args) {
         this->cmd = cmd;
-        this->args = args;
-        
+        this->args = args;   
     };
 
     ~Executor() = default;
@@ -123,9 +122,7 @@ public:
                const std::function<void(QString)>& errCb);
 
     void doRPCWithDefaultErrorHandling(const QString cmd, const QString args, const std::function<void(json)>& cb);
-
     void doRPCIgnoreError(const QString cmd, const QString args, const std::function<void(json)>& cb) ;
-
     void showTxError(const QString& error);
 
     json    getInfo() { return serverInfo; }

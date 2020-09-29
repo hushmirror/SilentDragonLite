@@ -359,8 +359,8 @@ void Connection::doRPC(const QString cmd, const QString args, const std::functio
         // Ignoring RPC because shutdown in progress
         return;
 
-    qDebug() << "Doing RPC: " << cmd;
-    qDebug() << "Args :"<< args;
+  //  qDebug() << "Doing RPC: " << cmd;
+
 
     
 
