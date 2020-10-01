@@ -30,29 +30,16 @@ void LiteInterface::fetchAddresses(const std::function<void(json)>& cb) {
 void LiteInterface::importZPrivKey(QString addr, const std::function<void(json)>& cb) {
     if (conn == nullptr)
         return;
-
-    // QString params = addr % QString(" ");
-   //  params.append(birthday);
-       qDebug()<<addr;
-       
-      
-     
+           
      conn->doRPCWithDefaultErrorHandling("import", addr, cb);
-    // conn->doRPC("import", params, cb, err); 
-
-
 }
 
-/*void LiteInterface::importTPrivKey(QString addr, bool rescan, const std::function<void(json)>& cb) {
+void LiteInterface::importTPrivKey(QString addr,const std::function<void(json)>& cb) {
     if (conn == nullptr)
         return;
 
-
-
-        //  conn->doRPCWithDefaultErrorHandling("import", addr, cb);
-
-       //   conn->doRPC("import", addr, 0, cb); 
-}*/
+          conn->doRPCWithDefaultErrorHandling("timport", addr, cb);
+}
 
 
 void LiteInterface::fetchUnspent(const std::function<void(json)>& cb) {
@@ -124,6 +111,13 @@ void LiteInterface::clearWallet(const std::function<void(json)>& cb) {
         return;
 
     conn->doRPCWithDefaultErrorHandling("clear", "", cb);
+}
+
+void LiteInterface::shield(const std::function<void(json)>& cb) {
+    if (conn == nullptr)
+        return;
+
+    conn->doRPCWithDefaultErrorHandling("shield", "", cb);
 }
 
 void LiteInterface::unlockWallet(QString password, const std::function<void(json)>& cb) {

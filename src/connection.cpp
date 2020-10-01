@@ -81,25 +81,19 @@ void ConnectionLoader::ShowProgress()
     auto connection = makeConnection(config);
     auto me = this;
 
-    // After the lib is initialized, try to do get info
-    connection->doRPC("info", "", [=](auto reply) {
-        // If success, set the connection
-        main->logger->write("Connection is online.");
-        connection->setInfo(reply);
-        main->logger->write("getting Connection reply");
         isSyncing = new QAtomicInteger<bool>();
         isSyncing->store(true);
         main->logger->write("isSyncing");
 
-        // Do a sync at startup
+        // Do a sync after import
         syncTimer = new QTimer(main);
-        main->logger->write("Beginning sync");
+        main->logger->write("Beginning sync after import wif");
         connection->doRPCWithDefaultErrorHandling("sync", "", [=](auto) {
             isSyncing->store(false);
             // Cancel the timer
             syncTimer->deleteLater();
             // When sync is done, set the connection
-            this->doRPCSetConnection(connection);
+            this->doRPCSetConnectionShield(connection);
         });
 
         // While it is syncing, we'll show the status updates while it is alive.
@@ -126,7 +120,6 @@ void ConnectionLoader::ShowProgress()
             }catch (...)
             {
                 main->logger->write("catch sync progress reply");
-
             }
 
             }
@@ -136,9 +129,6 @@ void ConnectionLoader::ShowProgress()
         syncTimer->start();
         main->logger->write("Start sync timer");
 
-    }, [=](QString err) {
-        showError(err);
-    });
 }
 
 void ConnectionLoader::doAutoConnect()
@@ -254,6 +244,30 @@ void ConnectionLoader::doRPCSetConnection(Connection* conn)
     main->logger->write("Connectionloader finished, setting connection");
     rpc->setConnection(conn);
     d->accept();
+    QTimer::singleShot(1, [=]() { delete this; });
+
+try
+{
+
+    QFile plaintextWallet(dirwalletconnection);
+    main->logger->write("Path to Wallet.dat : " );
+    plaintextWallet.remove();
+
+}catch (...)
+
+{
+
+    main->logger->write("no Plaintext wallet.dat");
+}
+    
+}
+
+void ConnectionLoader::doRPCSetConnectionShield(Connection* conn)
+{
+    qDebug() << "Importing finished, setting connection";
+    rpc->setConnection(conn);
+    d->accept();
+    main->getRPC()->shield([=] (auto) {});
     QTimer::singleShot(1, [=]() { delete this; });
 
 try

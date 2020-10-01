@@ -41,6 +41,7 @@ private:
     void showInformation(QString info, QString detail = "");
 
     void doRPCSetConnection(Connection* conn);
+    void doRPCSetConnectionShield(Connection* conn);
 
     QTimer*                 syncTimer   = nullptr;
     QAtomicInteger<bool>*   isSyncing   = nullptr;

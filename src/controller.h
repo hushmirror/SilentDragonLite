@@ -109,6 +109,8 @@ public:
     void saveWallet(const std::function<void(json)>& cb) { zrpc->saveWallet(cb); }
 
     void clearWallet(const std::function<void(json)>& cb) { zrpc->clearWallet(cb); }
+    
+    void shield(const std::function<void(json)>& cb) { zrpc->shield(cb); }
 
     void createNewZaddr(bool sapling, const std::function<void(json)>& cb) {
         unlockIfEncrypted([=] () {
@@ -159,8 +161,12 @@ public:
            zrpc->importZPrivKey(addr,cb); 
         }, [=](){});
     }
-   //  void importZPrivKey(QString addr, const std::function<void(json)>& cb,const std::function<void(QString)>& err) { zrpc->importZPrivKey(addr, cb, ""); }
-    // void importTPrivKey(QString addr,bool rescan, const std::function<void(json)>& cb) { zrpc->importTPrivKey(addr,rescan, cb); }
+
+    void importTPrivKey(QString addr,const std::function<void(json)>& cb) {
+        unlockIfEncrypted([=] () {
+           zrpc->importTPrivKey(addr,cb); 
+        }, [=](){});
+    }
 
     QString getDefaultSaplingAddress();
     QString getDefaultTAddress();   

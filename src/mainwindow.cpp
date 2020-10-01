@@ -940,7 +940,7 @@ void MainWindow::donate() {
 
      if (keys->isEmpty()) {
          delete keys;
-         ui->statusBar->showMessage(tr("Private key import rescan finished"));
+         ui->statusBar->showMessage(tr("Private key import rescan in progress. Your funds will be automaticly shield to a wallet seed zaddr. This will take some time"));
         return;
      }
 
@@ -953,19 +953,20 @@ void MainWindow::donate() {
      
 
      if (key.startsWith("SK") ||
-         key.startsWith("secret")) { // Z key
+         key.startsWith("secret")) { 
         
          rpc->importZPrivKey(key, [=] (auto) { this->doImport(keys); });  
-          
-                // Then reload the connection. The ConnectionLoader deletes itself.
-              
-                      
-                          
-     } else {
-     //    rpc->importTPrivKey(key, rescan, [=] (auto) { this->doImport(keys); });
-     }
- }
+                                                   
+     } else if (key.startsWith("U")) {
 
+       rpc->importTPrivKey(key,  [=] (auto) { this->doImport(keys); });
+
+     }else{
+          QMessageBox::critical(this, tr("Wrong Privatkey format"), 
+                tr("Privatkey should start with U (for taddr) or secret- (for zaddr)") + "\n");
+        return;
+    }
+ }
 
 // Callback invoked when the RPC has finished loading all the balances, and the UI 
 // is now ready to send transactions.
@@ -1060,9 +1061,9 @@ void MainWindow::payhushURI(QString uri, QString myAddr) {
 
      pui.buttonBox->button(QDialogButtonBox::Save)->setVisible(true);
      pui.helpLbl->setText(QString() %
-                         tr("Please paste your private key(z-Addr) here, one per import") % ".\n" %
-                         tr("Caution: These key will be NOT inlcude in your Seed. Please send them direct to a Seed zaddr") % ".\n" %
-                         tr("The import of your Privatkey will take some time.")
+                         tr("Please paste your private key(zs-Addr or R-addr) here, one per import") % ".\n" %
+                         tr("Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr") % ".\n" %
+                         tr("R-addr keys will be autoshield to a seed zs-addr")
                          );  
 
      if (d.exec() == QDialog::Accepted && !pui.privKeyTxt->toPlainText().trimmed().isEmpty()) {
@@ -1092,14 +1093,45 @@ void MainWindow::payhushURI(QString uri, QString myAddr) {
          // Start the import. The function takes ownership of keys
          QTimer::singleShot(1, [=]() {doImport(keys);});
 
-          auto cl = new ConnectionLoader(this, rpc);
-               QTimer::singleShot(1, [=]() { cl->loadProgress(); });
-          
+        /////Rescan the Wallet (optional) and do automaticly shielding to a seed zaddr
 
-         // Show the dialog that keys will be imported. 
-       //  QMessageBox::information(this,
-         //    "Imported", tr("The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited"),
-           //  QMessageBox::Ok);
+            if((pui.rescan->isChecked() == true) && (pui.privKeyTxt->toPlainText().startsWith("U"))) {
+
+        // Show the dialog that keys will be imported and rescan is in progress.
+
+         QMessageBox::information(this,
+             "Imported", tr("The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited"),
+             QMessageBox::Ok);
+          this->getRPC()->clearWallet([=] (auto) {
+            // Save the wallet
+            this->getRPC()->saveWallet([=] (auto) {
+                // Then reload the connection. The ConnectionLoader deletes itself.
+               auto cl = new ConnectionLoader(this, rpc);
+                cl->loadProgress();
+                         });       
+                     });    
+
+    }else if ((pui.rescan->isChecked() == true) && (pui.privKeyTxt->toPlainText().startsWith("secret"))){
+
+               // Show the dialog that keys will be imported.
+
+         QMessageBox::information(this,
+             "Imported", tr("The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited"),
+             QMessageBox::Ok);
+          this->getRPC()->clearWallet([=] (auto) {
+            // Save the wallet
+            this->getRPC()->saveWallet([=] (auto) {
+                // Then reload the connection. The ConnectionLoader deletes itself.
+               auto cl = new ConnectionLoader(this, rpc);
+                cl->loadConnection();
+                         });       
+                     });  
+
+    }else{
+         QMessageBox::information(this,
+             "Imported", tr("The keys were imported without rescan option. The Address you imported will be visible without balance"),
+             QMessageBox::Ok);
+    }
     }
  }
 
