@@ -108,6 +108,8 @@ public:
 
     void saveWallet(const std::function<void(json)>& cb) { zrpc->saveWallet(cb); }
 
+    void supplyUpdate();
+
     void clearWallet(const std::function<void(json)>& cb) { zrpc->clearWallet(cb); }
     
     void shield(const std::function<void(json)>& cb) { zrpc->shield(cb); }
