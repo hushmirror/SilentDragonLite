@@ -1,7 +1,4 @@
 # SilentDragonLite 
-[![GitHub license](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/MyHush/SilentDragonLite/blob/master/LICENSE)
-[![GitHub version](https://badge.fury.io/gh/MyHush%2FSilentDragonLite.svg)](https://badge.fury.io/gh/MyHush%2FSilentDragonLite)
-[![Github All Releases](https://img.shields.io/github/downloads/MyHush/SilentDragonLite/total.svg)](https://img.shields.io/github/downloads/MyHush/SilentDragonLite/total.svg)
 
 <p align="left">
     <a href="https://twitter.com/MyHushTeam">
@@ -35,7 +32,7 @@ This means your IP address is known to these servers. Enable Tor setting in Sile
 
 ## Installation
 
-Go to the [releases page](https://github.com/MyHush/SilentDragonLite/releases) and grab the latest installers or binary. For any Arch Linux users, we also have packages on [AUR](https://aur.archlinux.org/) which can be installed with **[yay -S silentdragonlite](https://aur.archlinux.org/packages/silentdragonlite/)** or with **[yay -S silentdragonlite-appimage](https://aur.archlinux.org/packages/silentdragonlite-appimage/)** for the AppImage package.
+Go to the [releases page](https://git.hush.is/hush/SilentDragonLite/releases) and grab the latest installers or binary. For any Arch Linux users, we also have packages on [AUR](https://aur.archlinux.org/) which can be installed with **[yay -S silentdragonlite](https://aur.archlinux.org/packages/silentdragonlite/)** or with **[yay -S silentdragonlite-appimage](https://aur.archlinux.org/packages/silentdragonlite-appimage/)** for the AppImage package.
 
 ## Install Torsocks (or any other Socks service for TOR) on Ubuntu 18.04
 ```
@@ -63,7 +60,7 @@ SilentDragonLite does automatic note and utxo management, which means it doesn't
 ### Building on Linux
 
 ```
-git clone https://github.com/MyHush/SilentDragonLite.git
+git clone https://git.hush.is/hush/SilentDragonLite
 cd SilentDragonLite
 ./build.sh
 ./SilentDragonLite
@@ -72,5 +69,5 @@ cd SilentDragonLite
 
 ## Support
 
-For support or other questions, join us on [Discord](https://myhush.org/discord), or tweet at [@MyHushTeam](https://twitter.com/MyHushTeam), or toot at our [Mastodon](https://fosstodon.org/@myhushteam), or join [Telegram](http://myhush.org/telegram) or [file an issue](https://github.com/MyHush/SilentDragonLite/issues).
+For support join us on [Telegram Support](https://hush.is/telegram_support), [Main Telegram](https://hush.is/telegram) or tweet at [@MyHushTeam](https://twitter.com/MyHushTeam), or toot at our [Mastodon](https://fosstodon.org/@myhushteam), or [file an issue](https://git.hush.is/hush/SilentDragonLite/issues).
 
