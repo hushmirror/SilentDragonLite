@@ -21,7 +21,18 @@ Config Settings::getSettings() {
     // Load from the QT Settings. 
     QSettings s;
     
+    // this domain is stolen and malicious!
+    auto malicious     = "https://lite.myhush.org";
     auto server        = s.value("connection/server").toString();
+    if(server == malicious) {
+        server = "https://lite.hush.is";
+        qDebug() << "Replacing malicious SDL server with " << server;
+        s.setValue("connection/server", server);
+        s.sync();
+        // re-init to load correct settings
+        init();
+    }
+
     if (server.trimmed().isEmpty()) {
         server = Settings::getDefaultServer();
     }
@@ -239,10 +250,6 @@ void Settings::set_theme_name(QString theme_name) {
     QSettings().setValue("options/theme_name", theme_name);
 }
 
-
-
-
-
 //=================================
 // Static Stuff
 //=================================
@@ -263,8 +270,21 @@ void Settings::saveRestoreTableHeader(QTableView* table, QDialog* d, QString tab
     });
 }
 
+QString Settings::getRandomServer() {
+    // we don't need cryptographic random-ness, but we want
+    // clients to never get "stuck" with the same server, which
+    // prevents various attacks
+    QList<QString> servers;
+    //TODO: This should be a much larger list which we randomly choose from
+    servers[0] = "https://lite.hush.is";
+    servers[1] = "https://miodrag.zone:9876";
+    servers[2] = "https://hush.leto.net:5420";
+    int x = rand() % 3;
+    return servers[1];
+}
+
 QString Settings::getDefaultServer() {
-    return "https://lite.hush.is";
+    return "https://miodrag.zone:9876";
 }
 
 void Settings::openAddressInExplorer(QString address) {
@@ -276,7 +296,6 @@ void Settings::openTxInExplorer(QString txid) {
     QString url = "https://explorer.hush.is/tx/" + txid;
     QDesktopServices::openUrl(QUrl(url));
 }
-
 
 
 const QString Settings::txidStatusMessage = QString(QObject::tr("Tx submitted (right click to copy) txid:"));

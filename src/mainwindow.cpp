@@ -42,7 +42,6 @@
 
 using json = nlohmann::json;
 
-
 #ifdef Q_OS_WIN
 auto dirwallet = QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("silentdragonlite/silentdragonlite-wallet.dat");
 auto dirwalletenc = QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("silentdragonlite/silentdragonlite-wallet-enc.dat");
@@ -63,6 +62,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    qDebug() << __func__ << endl;
    
 	// Include css    
     QString theme_name;
@@ -86,9 +86,7 @@ MainWindow::MainWindow(QWidget *parent) :
     }else{}
 
     logger = new Logger(this, QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("silentdragonlite-wallet.log"));
-      // Check for encryption
- 
-       
+    // Check for encryption
  
     if(fileExists(dirwalletenc))
     {
@@ -117,7 +115,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // File a bug
     QObject::connect(ui->actionFile_a_bug, &QAction::triggered, [=]() {
-        QDesktopServices::openUrl(QUrl("https://github.com/MyHush/SilentDragonLite/issues/new"));
+        QDesktopServices::openUrl(QUrl("https://git.hush.is/hush/SilentDragonLite/issues/new"));
     });
 
     // Set up check for updates action
@@ -300,11 +298,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // Initialize to the balances tab
     ui->tabWidget->setCurrentIndex(0);
 
-
-    // The hushd tab is hidden by default, and only later added in if the embedded hushd is started
-    //hushdtab = ui->tabWidget->widget(4);
-    //ui->tabWidget->removeTab(4);
-
     setupSendTab();
     setupTransactionsTab();
     setupReceiveTab();
@@ -317,6 +310,7 @@ MainWindow::MainWindow(QWidget *parent) :
     restoreSavedStates();
 
     if (AppDataServer::getInstance()->isAppConnected()) {
+        qDebug() << __func__ << ": app is connected to wormhole";
         auto ads = AppDataServer::getInstance();
 
         QString wormholecode = "";
@@ -399,15 +393,12 @@ void MainWindow::closeEvent(QCloseEvent* event) {
 
     s.sync();
 
-
     // Let the RPC know to shut down any running service.
     rpc->shutdownhushd();
     int passphraselenght = DataStore::getChatDataStore()->getPassword().length();
 
-// Check is encryption is ON for SDl
-    if(passphraselenght > 0) 
-   
-    {
+    // Check is encryption is ON for SDl
+    if(passphraselenght > 0) {
         // delete old file before
 
         //auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
@@ -449,13 +440,9 @@ void MainWindow::closeEvent(QCloseEvent* event) {
 }
 
 void MainWindow::closeEventpw(QCloseEvent* event) {
-
     // Let the RPC know to shut down any running service.
     rpc->shutdownhushd();
-
-
 }
-
 
 void MainWindow::encryptWallet() {
 
@@ -464,7 +451,6 @@ void MainWindow::encryptWallet() {
     ed.setupUi(&d);
 
     // Handle edits on the password box
-    
     
     auto fnPasswordEdited = [=](const QString&) {
         // Enable the OK button if the passwords match.
@@ -755,6 +741,7 @@ void MainWindow::setMoneyMemo(QString moneymemo)
 }
 
 void MainWindow::setupStatusBar() {
+    qDebug() << __func__ << endl;
     // Status Bar
     loadingLabel = new QLabel();
     loadingMovie = new QMovie(":/icons/res/loading.gif");
@@ -853,8 +840,11 @@ void MainWindow::setupSettingsModal() {
         
         // List of default servers
         settings.cmbServer->addItem("https://lite.hush.is");
-        settings.cmbServer->addItem("6onaaujm4ozaokzu.onion:80");
-
+        settings.cmbServer->addItem("https://miodrag.zone:9876");
+        settings.cmbServer->addItem("https://hush.leto.net:5420");
+        //TODO: seperate lists of https/Tor servers, only show user or attempt
+        // connection to .onion if user has it enabled
+        //settings.cmbServer->addItem("6onaaujm4ozaokzu.onion:80");
 
         // Load current values into the dialog        
         auto conf = Settings::getInstance()->getSettings();

@@ -76,69 +76,71 @@ void ConnectionLoader::loadProgress()
 
 void ConnectionLoader::ShowProgress()
 {
-
     auto config = std::shared_ptr<ConnectionConfig>(new ConnectionConfig());
     config->dangerous = false;
     config->server = Settings::getInstance()->getSettings().server;
+
     auto connection = makeConnection(config);
-    auto me = this;
+    auto me   = this;
+    qDebug() << __func__ << ": server=" <<  config->server
+             << " connection=" << connection << " me=" << me;
 
-        isSyncing = new QAtomicInteger<bool>();
-        isSyncing->store(true);
-        main->logger->write("isSyncing");
+    isSyncing = new QAtomicInteger<bool>();
+    isSyncing->store(true);
+    main->logger->write("isSyncing");
+    
+    // Do a sync after import
+    syncTimer = new QTimer(main);
+    main->logger->write("Beginning sync after import wif");
+    connection->doRPCWithDefaultErrorHandling("sync", "", [=](auto) {
+        isSyncing->store(false);
+        // Cancel the timer
+        syncTimer->deleteLater();
+        // When sync is done, set the connection
+        this->doRPCSetConnectionShield(connection);
+    });
+    
+    // While it is syncing, we'll show the status updates while it is alive.
+    QObject::connect(syncTimer, &QTimer::timeout, [=]() {
+        // Check the sync status
+        if (isSyncing != nullptr && isSyncing->load()) {
+            // Get the sync status
+    
+            try {
+            connection->doRPC("syncstatus", "", [=](json reply) {
+                if (isSyncing != nullptr && reply.find("synced_blocks") != reply.end())
+    
+                {
+                    qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
+                    qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
+                    me->showInformation(
+                        "Synced " + QString::number(synced) + " / " + QString::number(total)
+                    );
+                }
+            },
+            [=](QString err) {
+                qDebug() << "Sync error" << err;
+            });
+        }catch (...)
+        {
+            main->logger->write("catch sync progress reply");
+        }
+    
+        }
+});
 
-        // Do a sync after import
-        syncTimer = new QTimer(main);
-        main->logger->write("Beginning sync after import wif");
-        connection->doRPCWithDefaultErrorHandling("sync", "", [=](auto) {
-            isSyncing->store(false);
-            // Cancel the timer
-            syncTimer->deleteLater();
-            // When sync is done, set the connection
-            this->doRPCSetConnectionShield(connection);
-        });
-
-        // While it is syncing, we'll show the status updates while it is alive.
-        QObject::connect(syncTimer, &QTimer::timeout, [=]() {
-            // Check the sync status
-            if (isSyncing != nullptr && isSyncing->load()) {
-                // Get the sync status
-
-                try {
-                connection->doRPC("syncstatus", "", [=](json reply) {
-                    if (isSyncing != nullptr && reply.find("synced_blocks") != reply.end())
-
-                    {
-                        qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
-                        qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
-                        me->showInformation(
-                            "Synced " + QString::number(synced) + " / " + QString::number(total)
-                        );
-                    }
-                },
-                [=](QString err) {
-                    qDebug() << "Sync error" << err;
-                });
-            }catch (...)
-            {
-                main->logger->write("catch sync progress reply");
-            }
-
-            }
-        });
-
-        syncTimer->setInterval(1* 1000);
-        syncTimer->start();
-        main->logger->write("Start sync timer");
+syncTimer->setInterval(1* 1000);
+syncTimer->start();
+main->logger->write("Start sync timer");
 
 }
 
 void ConnectionLoader::doAutoConnect()
 {
-    qDebug() << "Doing autoconnect";
     auto config = std::shared_ptr<ConnectionConfig>(new ConnectionConfig());
     config->dangerous = false;
     config->server = Settings::getInstance()->getSettings().server;
+    qDebug() << __func__ << " server=" << config->server;
 
     // Initialize the library
     main->logger->write(QObject::tr("Attempting to initialize library with ") + config->server);
@@ -159,9 +161,7 @@ void ConnectionLoader::doAutoConnect()
             return;
         }
 
-    }
-    else
-    {
+    } else {
         main->logger->write(QObject::tr("Create/restore wallet."));
         createOrRestore(config->dangerous, config->server);
         d->show();
@@ -169,6 +169,9 @@ void ConnectionLoader::doAutoConnect()
 
     auto connection = makeConnection(config);
     auto me = this;
+    qDebug() << __func__ << ": server=" <<  config->server
+             << " connection=" << connection << " me=" << me << endl;
+
 
     // After the lib is initialized, try to do get info
     connection->doRPC("info", "", [=](auto reply) {
@@ -248,19 +251,14 @@ void ConnectionLoader::doRPCSetConnection(Connection* conn)
     d->accept();
     QTimer::singleShot(1, [=]() { delete this; });
 
-try
-{
-
-    QFile plaintextWallet(dirwalletconnection);
-    main->logger->write("Path to Wallet.dat : " );
-    plaintextWallet.remove();
-
-}catch (...)
-
-{
-
-    main->logger->write("no Plaintext wallet.dat");
-}
+    try {
+        QFile plaintextWallet(dirwalletconnection);
+        main->logger->write("Path to Wallet.dat : " );
+        plaintextWallet.remove();
+    
+    } catch (...) {
+        main->logger->write("no Plaintext wallet.dat");
+    }
     
 }
 
@@ -272,24 +270,18 @@ void ConnectionLoader::doRPCSetConnectionShield(Connection* conn)
     main->getRPC()->shield([=] (auto) {});
     QTimer::singleShot(1, [=]() { delete this; });
 
-try
-{
-
-    QFile plaintextWallet(dirwalletconnection);
-    main->logger->write("Path to Wallet.dat : " );
-    plaintextWallet.remove();
-
-}catch (...)
-
-{
-
-    main->logger->write("no Plaintext wallet.dat");
-}
-    
+    try {
+        QFile plaintextWallet(dirwalletconnection);
+        main->logger->write("Path to Wallet.dat : " );
+        plaintextWallet.remove();
+    } catch (...) {
+        main->logger->write("no Plaintext wallet.dat");
+    }
 }
 
 Connection* ConnectionLoader::makeConnection(std::shared_ptr<ConnectionConfig> config)
 {
+    qDebug() << __func__;
     return new Connection(main, config);
 }
 
@@ -317,6 +309,8 @@ void ConnectionLoader::showError(QString explanation)
 
 QString litelib_process_response(char* resp)
 {
+    qDebug() << __func__ << ": " << resp;
+
     char* resp_copy = new char[strlen(resp) + 1];
     //a safer version of strcpy
     strncpy(resp_copy, resp, strlen(resp)+1);
@@ -365,6 +359,7 @@ Connection::Connection(MainWindow* m, std::shared_ptr<ConnectionConfig> conf)
 {
     this->config      = conf;
     this->main        = m;
+    qDebug() << __func__;
     // Register the JSON type as a type that can be passed between signals and slots.
     qRegisterMetaType<json>("json");
 }
@@ -375,10 +370,7 @@ void Connection::doRPC(const QString cmd, const QString args, const std::functio
         // Ignoring RPC because shutdown in progress
         return;
 
-  //  qDebug() << "Doing RPC: " << cmd;
-
-
-    
+    qDebug() << __func__ << ": " << cmd;
 
     // Create a runner.
     auto runner = new Executor(cmd, args);
@@ -393,6 +385,7 @@ void Connection::doRPC(const QString cmd, const QString args, const std::functio
 
 void Connection::doRPCWithDefaultErrorHandling(const QString cmd, const QString args, const std::function<void(json)>& cb)
 {
+    qDebug() << __func__ << ": " << cmd;
     doRPC(cmd, args, cb, [=] (QString err) {
         this->showTxError(err);
     });
@@ -400,6 +393,7 @@ void Connection::doRPCWithDefaultErrorHandling(const QString cmd, const QString 
 
 void Connection::doRPCIgnoreError(const QString cmd, const QString args, const std::function<void(json)>& cb)
 {
+    qDebug() << __func__ << ": " << cmd;
     doRPC(cmd, args, cb, [=] (auto) {
         // Ignored error handling
     });
@@ -407,6 +401,7 @@ void Connection::doRPCIgnoreError(const QString cmd, const QString args, const s
 
 void Connection::showTxError(const QString& error)
 {
+    qDebug() << __func__ << ": " << error;
     if (error.isNull())
         return;
 

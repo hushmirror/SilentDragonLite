@@ -17,13 +17,15 @@ ContactModel *contactModel = new ContactModel();
 
 using json = nlohmann::json;
 
-
 Controller::Controller(MainWindow* main) 
 {
     auto cl = new ConnectionLoader(main, this);
+    qDebug() << __func__ <<  ": cl=" << cl << endl;
 
     // Execute the load connection async, so we can set up the rest of RPC properly. 
     QTimer::singleShot(1, [=]() { cl->loadConnection(); });
+
+    qDebug() << __func__ << "after loadConnection" << endl;
 
     this->main = main;
     this->ui = main->ui;
@@ -31,9 +33,6 @@ Controller::Controller(MainWindow* main)
     // Setup balances table model
     balancesTableModel = new BalancesTableModel(main->ui->balancesTable);
     main->ui->balancesTable->setModel(balancesTableModel);
-
-    // Call the supply once
-   // supplyUpdate();
 
     // Setup transactions table model
     transactionsTableModel = new TxTableModel(ui->transactionsTable);
@@ -755,7 +754,7 @@ void Controller::updateUIBalances()
     CAmount balAvailable = balT + balVerified;
     if (balZ < 0) 
         balZ = CAmount::fromqint64(0);
-            double price = (Settings::getInstance()->getBTCPrice() / 1000);
+      //      double price = (Settings::getInstance()->getBTCPrice() / 1000);
       //  ui->PriceMemo->setText(" The price of \n one HushChat \n Message is :\n BTC " + (QLocale(QLocale::English).toString(price, 'f',8))
         //+ " Messages left :" + ((balTotal.toDecimalhushString()) /0.0001)  );
     // Balances table
@@ -1361,7 +1360,7 @@ void Controller::refreshTransactions() {
                             const unsigned char *header = reinterpret_cast<const unsigned char *>(ba1.constData());
 
                             int encryptedMemoSize1 = ba.length();
-                            int headersize = ba1.length();
+                            //int headersize = ba1.length();
 
                             //////unsigned char* as message from QString
                             #define MESSAGE2 (const unsigned char *) encryptedMemo
@@ -1604,10 +1603,12 @@ void Controller::executeTransaction(Tx tx,
 
 void Controller::checkForUpdate(bool silent) 
 {
+    // No checking for updates, needs testing with Gitea
+    return;
     if (!zrpc->haveConnection()) 
         return noConnection();
 
-    QUrl cmcURL("https://api.github.com/repos/MyHush/SilentDragonLite/releases");
+    QUrl cmcURL("https://git.hush.is/repos/MyHush/SilentDragonLite/releases");
 
     QNetworkRequest req;
     req.setUrl(cmcURL);
@@ -1661,7 +1662,7 @@ void Controller::checkForUpdate(bool silent)
                         QMessageBox::Yes, QMessageBox::Cancel);
                     if (ans == QMessageBox::Yes) 
                     {
-                        QDesktopServices::openUrl(QUrl("https://github.com/MyHush/SilentDragonLite/releases"));
+                        QDesktopServices::openUrl(QUrl("https://git.hush.is/hush/SilentDragonLite/releases"));
                     } 
                     else 
                     {

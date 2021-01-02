@@ -346,8 +346,8 @@
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1131"/>
-        <source>Check github.com for &amp;updates</source>
-        <translation>Consulte las actualizaciones en github.com</translation>
+        <source>Check git for &amp;updates</source>
+        <translation>Consulte las actualizaciones en git</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1136"/>
@@ -1693,7 +1693,7 @@ El saldo es insuficiente para una migración automática.
     </message>
     <message>
         <location filename="../src/settings.ui" line="184"/>
-        <source>Check github for updates at startup</source>
+        <source>Check git for updates at startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1713,7 +1713,7 @@ El saldo es insuficiente para una migración automática.
     </message>
     <message>
         <location filename="../src/settings.ui" line="266"/>
-        <source>Connect to github on startup to check for updates</source>
+        <source>Connect to git on startup to check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1964,7 +1964,7 @@
   </action>
   <action name="actionCheck_for_Updates">
    <property name="text">
-    <string>Check github.com for &amp;updates</string>
+    <string>Check git for &amp;updates</string>
    </property>
   </action>
   <action name="actionExport_All_Private_Keys">

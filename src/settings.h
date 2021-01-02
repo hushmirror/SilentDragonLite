@@ -158,6 +158,7 @@ public:
     static QString getDonationAddr();
 
     static QString getDefaultServer();
+    static QString getRandomServer();
     static CAmount getMinerFee();
 
     static int     getMaxMobileAppTxns() { return 30; }
@@ -171,8 +172,8 @@ public:
     static const QString labelRegExp;
 
     static const int     updateSpeed         = 30 * 1000;        // 30 sec
-    static const int     quickUpdateSpeed    = 5  * 1000;        // 3 sec
-    static const int     priceRefreshSpeed   = 5 * 60 * 1000;   // 15 min
+    static const int     quickUpdateSpeed    = 5  * 1000;        // 5 sec
+    static const int     priceRefreshSpeed   = 5 * 60 * 1000;    // 5 min
 
 private:
     // This class can only be accessed through Settings::getInstance()

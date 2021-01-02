@@ -478,7 +478,7 @@ Please enter your wallet password</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1425"/>
-        <source>Check github.com for &amp;updates</source>
+        <source>Check git for &amp;updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1694,12 +1694,12 @@ Would you like to visit the releases page?</source>
     </message>
     <message>
         <location filename="../src/settings.ui" line="142"/>
-        <source>Check github for updates at startup</source>
+        <source>Check git for updates at startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="155"/>
-        <source>Connect to github on startup to check for updates</source>
+        <source>Connect to git on startup to check for updates</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

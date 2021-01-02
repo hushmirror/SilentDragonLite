@@ -167,7 +167,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Check github for updates at startup</string>
+        <string>Check git for updates at startup</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_8">
@@ -180,7 +180,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>Connect to github on startup to check for updates</string>
+        <string>Connect to git on startup to check for updates</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_20">

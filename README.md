@@ -50,7 +50,7 @@ SilentDragonLite does automatic note and utxo management, which means it doesn't
 ## Building on Linux
 
 ```
-git clone https://github.com/MyHush/SilenDragonLite.git
+git clone https://git.hush.is/hush/SilenDragonLite
 cd SilentDragonLite
 # the next step will take potentially a long time for slower systems
 # Be Patient and please report compiler problems!

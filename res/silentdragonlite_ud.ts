@@ -32,12 +32,12 @@
 <context>
     <name>BalancesTableModel</name>
     <message>
-        <location filename="../src/balancestablemodel.cpp" line="150"/>
+        <location filename="../src/balancestablemodel.cpp" line="152"/>
         <source>Address</source>
         <translation>ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/balancestablemodel.cpp" line="151"/>
+        <location filename="../src/balancestablemodel.cpp" line="153"/>
         <source>Amount</source>
         <translation>رقم</translation>
     </message>
@@ -51,13 +51,17 @@
     </message>
     <message>
         <location filename="../src/chatbubbleme.ui" line="38"/>
-        <source>Lorem ipsum dolor sit amet</source>
+        <source>Speak And Transact Freely With Hush</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/chatbubbleme.ui" line="51"/>
+        <source>01/01/2021 12:34</source>
+        <translation type="unfinished">01/01/2021 12:34</translation>
+    </message>
+    <message>
         <source>12/03/2020 12:34</source>
-        <translation type="unfinished">12/03/2020 12:34</translation>
+        <translation type="obsolete">12/03/2020 12:34</translation>
     </message>
 </context>
 <context>
@@ -98,29 +102,29 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1479"/>
+        <location filename="../src/controller.cpp" line="1500"/>
         <source>Wallet Password</source>
         <translation>ولیٹ پاسورڈ</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1480"/>
+        <location filename="../src/controller.cpp" line="1501"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation>آپ کا ولیٹ انکرائپٹیڈ ھے۔ برائے مہربانی اپنا پاسورڈ ڈالیں</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1488"/>
-        <location filename="../src/controller.cpp" line="1508"/>
+        <location filename="../src/controller.cpp" line="1509"/>
+        <location filename="../src/controller.cpp" line="1529"/>
         <source>Wallet Decryption Failed</source>
         <translation>ویلٹ ڈیکرئپشن فیل ھو گئی ہے</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1489"/>
+        <location filename="../src/controller.cpp" line="1510"/>
         <source>Please enter a valid password</source>
         <translation>اپنا ویلڈ پاسورڈ ڈالیں</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1578"/>
+        <location filename="../src/controller.cpp" line="1599"/>
         <source>Failed to unlock wallet</source>
         <translation>ویلٹ نہں کھلا فیلڈ</translation>
     </message>
@@ -355,84 +359,84 @@ p, li { white-space: pre-wrap; }
         <translation>ٹرانسپیرنٹ ۔ شفاف</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="692"/>
+        <location filename="../src/mainwindow.ui" line="719"/>
         <source>Total</source>
         <translation>ٹوٹل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="720"/>
+        <location filename="../src/mainwindow.ui" line="747"/>
         <source>Your node is still syncing, balances may not be updated.</source>
         <translation>آپ کا نوڈ ابہی تک سئنڈ ھو رہا ھے۔ بلینس ابہی ظاہر نہیں ہوگا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="739"/>
+        <location filename="../src/mainwindow.ui" line="766"/>
         <source>Some transactions are not yet confirmed. Balances may change.</source>
         <translation>کچھ ٹرانزکشنس ابہی کنفرم نہیں ہوی ہیں۔ بیلنس اپڈیٹ ھوجائے گا۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="778"/>
+        <location filename="../src/mainwindow.ui" line="805"/>
         <source>Address Balances</source>
         <translation>بیلنس ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="827"/>
-        <location filename="../src/mainwindow.ui" line="1191"/>
+        <location filename="../src/mainwindow.ui" line="854"/>
+        <location filename="../src/mainwindow.ui" line="1218"/>
         <source>Send</source>
         <translation>بہیجو</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="864"/>
+        <location filename="../src/mainwindow.ui" line="891"/>
         <source>Total notarized funds available:</source>
         <translation>:کل نوٹرائیزڈ فنڈ موجود ہے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="901"/>
+        <location filename="../src/mainwindow.ui" line="928"/>
         <source>Send To</source>
         <translation>بہیجو</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="940"/>
+        <location filename="../src/mainwindow.ui" line="967"/>
         <source>Recipient</source>
         <translation>ریسیپینٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="948"/>
-        <location filename="../src/mainwindow.ui" line="955"/>
-        <location filename="../src/mainwindow.ui" line="1376"/>
-        <location filename="../src/sendtab.cpp" line="238"/>
-        <location filename="../src/sendtab.cpp" line="243"/>
+        <location filename="../src/mainwindow.ui" line="975"/>
+        <location filename="../src/mainwindow.ui" line="982"/>
+        <location filename="../src/mainwindow.ui" line="1403"/>
+        <location filename="../src/sendtab.cpp" line="240"/>
+        <location filename="../src/sendtab.cpp" line="245"/>
         <source>Address</source>
         <translation>ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="962"/>
-        <location filename="../src/sendtab.cpp" line="253"/>
+        <location filename="../src/mainwindow.ui" line="989"/>
+        <location filename="../src/sendtab.cpp" line="255"/>
         <source>Address Book</source>
         <translation>ایڈریس بک</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="973"/>
-        <location filename="../src/mainwindow.ui" line="989"/>
-        <location filename="../src/sendtab.cpp" line="266"/>
-        <location filename="../src/sendtab.cpp" line="270"/>
+        <location filename="../src/mainwindow.ui" line="1000"/>
+        <location filename="../src/mainwindow.ui" line="1016"/>
+        <location filename="../src/sendtab.cpp" line="268"/>
+        <location filename="../src/sendtab.cpp" line="272"/>
         <source>Amount</source>
         <translation>رقم</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1003"/>
+        <location filename="../src/mainwindow.ui" line="1030"/>
         <source>Max Available</source>
         <translation>زیادہ سے زیادہ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1029"/>
-        <location filename="../src/mainwindow.cpp" line="1334"/>
-        <location filename="../src/mainwindow.cpp" line="1402"/>
-        <location filename="../src/sendtab.cpp" line="292"/>
+        <location filename="../src/mainwindow.ui" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1371"/>
+        <location filename="../src/mainwindow.cpp" line="1439"/>
+        <location filename="../src/sendtab.cpp" line="294"/>
         <source>Memo</source>
         <translation type="unfinished">میمو</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1077"/>
+        <location filename="../src/mainwindow.ui" line="1104"/>
         <source>Add Recipient</source>
         <translation>ریسیپینٹ ڈالیں</translation>
     </message>
@@ -449,196 +453,196 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">ایڈیٹ شیڈیول</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1138"/>
-        <location filename="../src/sendtab.cpp" line="747"/>
+        <location filename="../src/mainwindow.ui" line="1165"/>
+        <location filename="../src/sendtab.cpp" line="749"/>
         <source>Miner Fee</source>
         <translation>مائنر فی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1151"/>
+        <location filename="../src/mainwindow.ui" line="1178"/>
         <source>0</source>
         <translation>0</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1207"/>
+        <location filename="../src/mainwindow.ui" line="1234"/>
         <source>Cancel</source>
         <translation>ختم کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1217"/>
+        <location filename="../src/mainwindow.ui" line="1244"/>
         <source>Receive</source>
         <translation>ریسیو</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1225"/>
+        <location filename="../src/mainwindow.ui" line="1252"/>
         <source>Address Type</source>
         <translation>ایڈریس ٹائپ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1239"/>
+        <location filename="../src/mainwindow.ui" line="1266"/>
         <source>z-Addr</source>
         <translation>زیڈ۔ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1252"/>
+        <location filename="../src/mainwindow.ui" line="1279"/>
         <source>t-Addr</source>
         <translation>ٹی ۔ ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1276"/>
+        <location filename="../src/mainwindow.ui" line="1303"/>
         <source>Next Address</source>
         <translation>اگلی ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1454"/>
+        <location filename="../src/mainwindow.ui" line="1481"/>
         <source>Information about Hush</source>
         <translation>ھش کے بارے میں معلومات</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1512"/>
+        <location filename="../src/mainwindow.ui" line="1539"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Blockchain Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1528"/>
-        <location filename="../src/mainwindow.ui" line="1542"/>
-        <location filename="../src/mainwindow.ui" line="1563"/>
-        <location filename="../src/mainwindow.ui" line="1612"/>
-        <location filename="../src/mainwindow.ui" line="1619"/>
-        <location filename="../src/mainwindow.ui" line="1633"/>
-        <location filename="../src/mainwindow.ui" line="1654"/>
-        <location filename="../src/mainwindow.ui" line="1668"/>
-        <location filename="../src/mainwindow.ui" line="1682"/>
-        <location filename="../src/mainwindow.ui" line="1710"/>
-        <location filename="../src/mainwindow.ui" line="1782"/>
-        <location filename="../src/mainwindow.ui" line="1803"/>
+        <location filename="../src/mainwindow.ui" line="1555"/>
+        <location filename="../src/mainwindow.ui" line="1569"/>
+        <location filename="../src/mainwindow.ui" line="1590"/>
+        <location filename="../src/mainwindow.ui" line="1639"/>
+        <location filename="../src/mainwindow.ui" line="1646"/>
+        <location filename="../src/mainwindow.ui" line="1660"/>
+        <location filename="../src/mainwindow.ui" line="1681"/>
+        <location filename="../src/mainwindow.ui" line="1695"/>
+        <location filename="../src/mainwindow.ui" line="1709"/>
+        <location filename="../src/mainwindow.ui" line="1737"/>
+        <location filename="../src/mainwindow.ui" line="1809"/>
+        <location filename="../src/mainwindow.ui" line="1830"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1549"/>
+        <location filename="../src/mainwindow.ui" line="1576"/>
         <source>Next Halving</source>
         <translation>اگلا ہالونگ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1626"/>
+        <location filename="../src/mainwindow.ui" line="1653"/>
         <source>Difficulty</source>
         <translation>ڈیفیکلٹی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1640"/>
+        <location filename="../src/mainwindow.ui" line="1667"/>
         <source>Last Notarized Block</source>
         <translation>آخری نوٹرائیزڈ بلاک</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1661"/>
+        <location filename="../src/mainwindow.ui" line="1688"/>
         <source>Total Supply</source>
         <translation>کل سپلائے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1675"/>
+        <location filename="../src/mainwindow.ui" line="1702"/>
         <source>Longestchain</source>
         <translation>لانگسٹ چین</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1696"/>
+        <location filename="../src/mainwindow.ui" line="1723"/>
         <source>BlockHeight</source>
         <translation>بلاک ہائیٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1703"/>
+        <location filename="../src/mainwindow.ui" line="1730"/>
         <source>Supply zAddr</source>
         <translation>سپلائے زیڈ ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1731"/>
+        <location filename="../src/mainwindow.ui" line="1758"/>
         <source>Supply tAddr</source>
         <translation>سپلائے ٹی ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1752"/>
+        <location filename="../src/mainwindow.ui" line="1779"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Market Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1775"/>
+        <location filename="../src/mainwindow.ui" line="1802"/>
         <source>Market Cap</source>
         <translation>مارکیٹ کیپ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1796"/>
+        <location filename="../src/mainwindow.ui" line="1823"/>
         <source>Volume on Exchanges</source>
         <translation>کل والیم ایکسچینجزپر</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1819"/>
+        <location filename="../src/mainwindow.ui" line="1846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;This is a Lightwallet, you cant mine with it!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1283"/>
+        <location filename="../src/mainwindow.ui" line="1310"/>
         <source>View All Addresses</source>
         <translation>سب ایڈریسس دیکیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1301"/>
+        <location filename="../src/mainwindow.ui" line="1328"/>
         <source>Label</source>
         <translation>لیبل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1308"/>
+        <location filename="../src/mainwindow.ui" line="1335"/>
         <source>Update Label</source>
         <translation>لیبل اپڈیٹ کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1322"/>
+        <location filename="../src/mainwindow.ui" line="1349"/>
         <source>Address balance</source>
         <translation>ایڈریس بلینس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1332"/>
+        <location filename="../src/mainwindow.ui" line="1359"/>
         <source>Optional</source>
         <translation>آپشنل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1354"/>
-        <location filename="../src/mainwindow.cpp" line="2495"/>
+        <location filename="../src/mainwindow.ui" line="1381"/>
+        <location filename="../src/mainwindow.cpp" line="2532"/>
         <source>Export Private Key</source>
         <translation>پرائیوٹ کی ایکسپورٹ  کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1391"/>
+        <location filename="../src/mainwindow.ui" line="1418"/>
         <source>Your node is still syncing, balances may not be updated</source>
         <translation>آپ کا نوڈ ابہی تک سئنڈ ھو رہا ھے۔ بلینس ابہی ظاہر نہیں ہوگا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1434"/>
+        <location filename="../src/mainwindow.ui" line="1461"/>
         <source>Transactions</source>
         <translation>ٹرانزیکشنس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1535"/>
-        <location filename="../src/mainwindow.ui" line="1556"/>
-        <location filename="../src/mainwindow.ui" line="1570"/>
-        <location filename="../src/mainwindow.ui" line="1584"/>
-        <location filename="../src/mainwindow.ui" line="1591"/>
-        <location filename="../src/mainwindow.ui" line="1598"/>
-        <location filename="../src/mainwindow.ui" line="1605"/>
-        <location filename="../src/mainwindow.ui" line="1647"/>
-        <location filename="../src/mainwindow.ui" line="1717"/>
-        <location filename="../src/mainwindow.ui" line="1724"/>
-        <location filename="../src/mainwindow.ui" line="1768"/>
-        <location filename="../src/mainwindow.ui" line="1789"/>
+        <location filename="../src/mainwindow.ui" line="1562"/>
+        <location filename="../src/mainwindow.ui" line="1583"/>
+        <location filename="../src/mainwindow.ui" line="1597"/>
+        <location filename="../src/mainwindow.ui" line="1611"/>
+        <location filename="../src/mainwindow.ui" line="1618"/>
+        <location filename="../src/mainwindow.ui" line="1625"/>
+        <location filename="../src/mainwindow.ui" line="1632"/>
+        <location filename="../src/mainwindow.ui" line="1674"/>
+        <location filename="../src/mainwindow.ui" line="1744"/>
+        <location filename="../src/mainwindow.ui" line="1751"/>
+        <location filename="../src/mainwindow.ui" line="1795"/>
+        <location filename="../src/mainwindow.ui" line="1816"/>
         <source>Loading...</source>
         <translation>لوڈنگ ۔ ۔ ۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1689"/>
+        <location filename="../src/mainwindow.ui" line="1716"/>
         <source>Version hushlightd</source>
         <translation>وریژن ھش لائیٹڈ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1577"/>
+        <location filename="../src/mainwindow.ui" line="1604"/>
         <source>Vendor</source>
         <translation>وینڈر</translation>
     </message>
@@ -683,140 +687,150 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="749"/>
+        <location filename="../src/mainwindow.ui" line="679"/>
+        <source>Spendable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="776"/>
         <source>Deposit Hush</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1856"/>
+        <location filename="../src/mainwindow.ui" line="1883"/>
         <source>&amp;File</source>
         <translation>&amp;فائیل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1870"/>
+        <location filename="../src/mainwindow.ui" line="1897"/>
         <source>&amp;Help</source>
         <translation>&amp;ھیلپ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1881"/>
+        <location filename="../src/mainwindow.ui" line="1908"/>
         <source>&amp;Apps</source>
         <translation>&amp;ایپس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1887"/>
+        <location filename="../src/mainwindow.ui" line="1914"/>
         <source>&amp;Edit</source>
         <translation>&amp;ترمیم</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1906"/>
+        <location filename="../src/mainwindow.ui" line="1934"/>
         <source>E&amp;xit</source>
         <translation>&amp;باہر نکلیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1911"/>
+        <location filename="../src/mainwindow.ui" line="1939"/>
         <source>&amp;About</source>
         <translation>&amp;اباوٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1916"/>
+        <location filename="../src/mainwindow.ui" line="1944"/>
         <source>&amp;Settings</source>
         <translation>&amp;سیٹنگس</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1919"/>
+        <location filename="../src/mainwindow.ui" line="1947"/>
         <source>Ctrl+P</source>
         <translation>کنٹرول+P</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1924"/>
+        <location filename="../src/mainwindow.ui" line="1952"/>
         <source>&amp;Send DenioD Feedback</source>
         <translation>ڈینوڈ کو فیڈبیک بہجیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1929"/>
+        <location filename="../src/mainwindow.ui" line="1957"/>
         <source>&amp;Hush Discord</source>
         <translation>ھش ڈسکارڈ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1934"/>
+        <location filename="../src/mainwindow.ui" line="1962"/>
         <source>&amp;Hush Website</source>
         <translation>ھش ویب سائیٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1939"/>
-        <source>Check github.com for &amp;updates</source>
-        <translation>github.com دیکیں نئی معلومات کے لیے &amp;</translation>
+        <location filename="../src/mainwindow.ui" line="1967"/>
+        <source>Check git for &amp;updates</source>
+        <translation>git دیکیں نئی معلومات کے لیے &amp;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1944"/>
+        <location filename="../src/mainwindow.ui" line="1972"/>
         <source>&amp;Export all private keys</source>
         <translation>&amp;تمام خوفیا کی حاصل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1949"/>
+        <location filename="../src/mainwindow.ui" line="1977"/>
         <source>Address &amp;book</source>
         <translation>&amp;ایڈریس بک</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1952"/>
+        <location filename="../src/mainwindow.ui" line="1980"/>
         <source>Ctrl+B</source>
         <translation>کنٹرول + B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1957"/>
+        <location filename="../src/mainwindow.ui" line="1985"/>
         <source>&amp;Export seed phrase</source>
         <translation>&amp; تمام خوفیا الفاز حاصل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1962"/>
-        <location filename="../src/mainwindow.cpp" line="1098"/>
+        <location filename="../src/mainwindow.ui" line="1990"/>
+        <location filename="../src/mainwindow.cpp" line="1135"/>
         <source>Export transactions</source>
         <translation>سب ٹرانزیکشنس حاصل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1967"/>
+        <location filename="../src/mainwindow.ui" line="1995"/>
         <source>Pay hush &amp;URI...</source>
         <translation>ھش پے کریں &amp;URI...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1972"/>
+        <location filename="../src/mainwindow.ui" line="2000"/>
         <source>Connect mobile &amp;app</source>
         <translation>کنیکٹ موبائیل &amp;ایپ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1975"/>
+        <location filename="../src/mainwindow.ui" line="2003"/>
         <source>Ctrl+M</source>
         <translation>کنٹرول + M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1980"/>
+        <location filename="../src/mainwindow.ui" line="2008"/>
         <source>&amp;Recurring Payments</source>
         <translation>&amp;ادائیگیاں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1985"/>
+        <location filename="../src/mainwindow.ui" line="2013"/>
         <source>Request hush...</source>
         <translation>رکیویسٹ ھش...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1990"/>
+        <location filename="../src/mainwindow.ui" line="2018"/>
         <source>File a bug...</source>
         <translation>بگ فائل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1995"/>
+        <location filename="../src/mainwindow.ui" line="2023"/>
         <source>Encrypt Wallet</source>
         <translation>اینکرپٹ ولیلٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2000"/>
+        <location filename="../src/mainwindow.ui" line="2028"/>
         <source>Remove Wallet Encryption</source>
         <translation>اینکرپٹ ولیلٹ ختم کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2005"/>
+        <location filename="../src/mainwindow.ui" line="2033"/>
         <source>Rescan</source>
         <translation>دوبارہ اسکیں کریں</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="2038"/>
+        <source>Import Privatkey</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Wallet is already encrypted</source>
@@ -829,7 +843,7 @@ Please use &apos;Remove Wallet Encryption&apos; if you want to remove the wallet
 &apos;اینکرپٹشن ویلیٹ ختم کریں اگر آپ ختم کرنا چاہتے ھیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="561"/>
+        <location filename="../src/mainwindow.cpp" line="548"/>
         <source>Passwords don&apos;t match</source>
         <translation>پاسورڈ میچ نہں ھو رھا</translation>
     </message>
@@ -847,13 +861,13 @@ Please use &apos;Remove Wallet Encryption&apos; if you want to remove the wallet
         <translation type="vanished">آپ کا ویلیٹ کامیابی کے ساتھ اینکرپٹڈ ہوگیا ہے!فنڈز بھیجنے یا خوفیا الفاز برآمد کرنے کے لئے پاس ورڈ درکار ہوگا۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="626"/>
-        <location filename="../src/mainwindow.cpp" line="706"/>
+        <location filename="../src/mainwindow.cpp" line="613"/>
+        <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Wallet Encryption Failed</source>
         <translation>ویلیٹ اینکرپٹشن فیلیڈ ہو گی ہے۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="546"/>
+        <location filename="../src/mainwindow.cpp" line="533"/>
         <source>Wallet is not encrypted</source>
         <translation>ویلیٹ ینکرپٹڈ نھیں ھے۔</translation>
     </message>
@@ -886,24 +900,24 @@ Please use &apos;Remove Wallet Encryption&apos; if you want to remove the wallet
         <translation type="vanished">آپ کا ولیٹ کامیابی کے ساتھ ڈکرپٹ ہوگیا! اب آپ کو فنڈز بھیجنے یانجی کیز برآمد کرنے کیلئے پاس ورڈ کی ضرورت نہیں ہوگی۔ </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="777"/>
-        <location filename="../src/mainwindow.cpp" line="1372"/>
+        <location filename="../src/mainwindow.cpp" line="765"/>
+        <location filename="../src/mainwindow.cpp" line="1409"/>
         <source>Copy txid</source>
         <translation>txid کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="780"/>
-        <location filename="../src/mainwindow.cpp" line="1383"/>
+        <location filename="../src/mainwindow.cpp" line="768"/>
+        <location filename="../src/mainwindow.cpp" line="1420"/>
         <source>Copy block explorer link</source>
         <translation>بلاک ایکسپلورر لنک کو کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="785"/>
+        <location filename="../src/mainwindow.cpp" line="773"/>
         <source>View tx on block explorer</source>
         <translation>txid بلاک ایکسپلور پر دیکھیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="790"/>
+        <location filename="../src/mainwindow.cpp" line="778"/>
         <source>Refresh</source>
         <translation>ریفریش کریں</translation>
     </message>
@@ -916,240 +930,276 @@ Please use &apos;Remove Wallet Encryption&apos; if you want to remove the wallet
         <translation type="vanished">تھیم بدلنے کیلے براہ کرم سائلینٹ ڈریگونلائٹ (Silentdragonlite) کو دوبارہ خولیں </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="844"/>
+        <location filename="../src/mainwindow.cpp" line="832"/>
         <source>Currency Change</source>
         <translation>کرنسی تبدیل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="925"/>
+        <location filename="../src/mainwindow.cpp" line="916"/>
         <source>Some feedback about SilentDragonlite or Hush...</source>
         <translation>کچھ آراء آپ کی ڈراگونلائٹ یا ہش کے بارے میں...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="844"/>
+        <location filename="../src/mainwindow.cpp" line="832"/>
         <source>This change can take a few seconds.</source>
         <translation>اس تبدیلی میں کچھ سیکنڈ لگ سکتے ہیں۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="209"/>
-        <location filename="../src/mainwindow.cpp" line="240"/>
+        <location filename="../src/mainwindow.cpp" line="206"/>
+        <location filename="../src/mainwindow.cpp" line="237"/>
         <source>Failed to restore wallet</source>
         <translation type="unfinished">والیٹ کی بحالی نہیں ہو سکی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="210"/>
+        <location filename="../src/mainwindow.cpp" line="207"/>
         <source>SilentDragonLite needs 24 words to restore wallet</source>
         <translation type="unfinished">سائلنٹ ڈریگن لائٹ والیٹ کو بحال کرنے کے لئے 24 خوفیا الفاظ کی ضرورت ہے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="221"/>
+        <location filename="../src/mainwindow.cpp" line="218"/>
         <source>Failed to parse wallet birthday</source>
         <translation type="unfinished">والیٹ کی سالگرہ کو تجزیہ کرنے میں ناکام</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="222"/>
+        <location filename="../src/mainwindow.cpp" line="219"/>
         <source>Couldn&apos;t understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as &apos;0&apos; if you don&apos;t know what it should be.</source>
         <translation type="unfinished">والیٹ کی سالگرہ کو سمجھ نہیں پایا۔ یہ ایک بلاک اونچائی ہونا چاہئے جہاں سے پرس کو بازیافت کیا جائے۔ آپ اسے &apos;0&apos; کے بطور چھوڑ سکتے ہیں۔ اگر آپ نہیں جانتے ہیں کہ یہ کیا ہونا چاہئے۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="241"/>
+        <location filename="../src/mainwindow.cpp" line="238"/>
         <source>Couldn&apos;t restore the wallet</source>
         <translation type="unfinished">والیٹ کو بحال نہیں کیا جاسکا</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="257"/>
+        <location filename="../src/mainwindow.cpp" line="254"/>
         <source>Failed to save wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="258"/>
+        <location filename="../src/mainwindow.cpp" line="255"/>
         <source>Couldn&apos;t save the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="533"/>
+        <location filename="../src/mainwindow.cpp" line="520"/>
         <source>Wallet Encryption Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="547"/>
+        <location filename="../src/mainwindow.cpp" line="534"/>
         <source>Your wallet is not encrypted with a passphrase.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="617"/>
+        <location filename="../src/mainwindow.cpp" line="604"/>
         <source>Wallet decryption Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="918"/>
         <source> or SilentDragonLite</source>
         <translation>یا سائلنٹ ڈریگن لائٹ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="927"/>
+        <location filename="../src/mainwindow.cpp" line="918"/>
         <source>Send DenioD some private and shielded feedback about</source>
         <translation>ڈینیو ڈی کے بارے میں کچھ نجی اور شیلڈیڈ تاثرات بھیجیں۔</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="941"/>
-        <source>Private key import rescan finished</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1008"/>
+        <location filename="../src/mainwindow.cpp" line="1009"/>
         <source>Paste HUSH URI</source>
         <translation>HUSH URI پیسٹ کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1020"/>
+        <location filename="../src/mainwindow.cpp" line="1021"/>
         <source>Error paying HUSH URI</source>
         <translation>عرر ہے HUSH URI کی ادائیگی میں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
         <translation>URI فارم کو اس طرح ہونا چاہئے &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1104"/>
+        <location filename="../src/mainwindow.cpp" line="1141"/>
         <source>Error</source>
         <translation>عرر</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1105"/>
+        <location filename="../src/mainwindow.cpp" line="1142"/>
         <source>Error exporting transactions, file was not saved</source>
         <translation>عرر ٹرانزیکشنس ایکسپورٹنگ ، فائل محفوظ نہیں کی گئی تھی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1138"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
         <source>This is your wallet seed. Please back it up carefully and safely.</source>
         <translation>یہ آپ کے ویلیٹ کے خوفیا الفاظ ہیں برائے مہربانی احتیاط سے اس کا بیک اپ لیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1142"/>
-        <location filename="../src/mainwindow.cpp" line="1224"/>
+        <location filename="../src/mainwindow.cpp" line="1179"/>
+        <location filename="../src/mainwindow.cpp" line="1261"/>
         <source>Save File</source>
         <translation>فائل کو سیو کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1146"/>
-        <location filename="../src/mainwindow.cpp" line="1228"/>
+        <location filename="../src/mainwindow.cpp" line="1183"/>
+        <location filename="../src/mainwindow.cpp" line="1265"/>
         <source>Unable to open file</source>
         <translation>فایئل نہیں کہل رہی</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1196"/>
+        <location filename="../src/mainwindow.cpp" line="1233"/>
         <source>Error getting private keys</source>
         <translation>خوفیا الفاظ عرر دے رہے ہیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1197"/>
+        <location filename="../src/mainwindow.cpp" line="1234"/>
         <source>Error loading private keys: </source>
         <translation>عرر نجی چابیاں لوڈ کرنے میں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1217"/>
+        <location filename="../src/mainwindow.cpp" line="1254"/>
         <source>These are all the private keys for all the addresses in your wallet</source>
         <translation>یہ آپ کے ویلیٹ میں موجود تمام ایڈریسس کے لئے خوفیا کیز ہیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1219"/>
+        <location filename="../src/mainwindow.cpp" line="1256"/>
         <source>Private key for </source>
         <translation>نجی الفاظ کیلے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1301"/>
-        <location filename="../src/mainwindow.cpp" line="1378"/>
+        <location filename="../src/mainwindow.cpp" line="1338"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>Copy address</source>
         <translation>ایڈریس کاپی کریں </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1275"/>
-        <location filename="../src/mainwindow.cpp" line="1304"/>
-        <location filename="../src/mainwindow.cpp" line="1374"/>
-        <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/mainwindow.cpp" line="1312"/>
+        <location filename="../src/mainwindow.cpp" line="1341"/>
+        <location filename="../src/mainwindow.cpp" line="1411"/>
+        <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Copied to clipboard</source>
         <translation>کلپ بورڈ میں کاپی ہو چکی ھے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1307"/>
+        <location filename="../src/mainwindow.cpp" line="932"/>
+        <source>Private key import rescan in progress. Your funds will be automaticly shield to a wallet seed zaddr. This will take some time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="954"/>
+        <source>Wrong Privatkey format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="955"/>
+        <source>Privatkey should start with U (for taddr) or secret- (for zaddr)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <source>Please paste your private key(zs-Addr or R-addr) here, one per import</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <source>Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1055"/>
+        <source>R-addr keys will be autoshield to a seed zs-addr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1092"/>
+        <location filename="../src/mainwindow.cpp" line="1108"/>
+        <source>The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1121"/>
+        <source>The keys were imported without rescan option. The Address you imported will be visible without balance</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1344"/>
         <source>Get private key</source>
         <translation>نجی یا خوفیا کی حاصل کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1313"/>
-        <location filename="../src/mainwindow.cpp" line="1388"/>
+        <location filename="../src/mainwindow.cpp" line="1350"/>
+        <location filename="../src/mainwindow.cpp" line="1425"/>
         <source>View on block explorer</source>
         <translation>بلاک ایکسپلورر پر دیکھیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1394"/>
+        <location filename="../src/mainwindow.cpp" line="1431"/>
         <source>View Payment Request</source>
         <translation>ادائیگی دیکھیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1401"/>
+        <location filename="../src/mainwindow.cpp" line="1438"/>
         <source>View Memo</source>
         <translation>میمو دیکھیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1453"/>
         <source>Reply to </source>
         <translation>جواب دیں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1545"/>
+        <location filename="../src/mainwindow.cpp" line="1582"/>
         <source>Copied Hyperlink to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1581"/>
+        <location filename="../src/mainwindow.cpp" line="1618"/>
         <source>Copied message to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1614"/>
+        <location filename="../src/mainwindow.cpp" line="1651"/>
         <source>Copied Txid to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2445"/>
+        <location filename="../src/mainwindow.cpp" line="2482"/>
         <source>Created new t-Addr</source>
         <translation>نیا ٹی ایڈریس کریٹ کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2501"/>
+        <location filename="../src/mainwindow.cpp" line="2538"/>
         <source>Copy Address</source>
         <translation>ایڈریس کاپی کریں</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2604"/>
+        <location filename="../src/mainwindow.cpp" line="2641"/>
         <source>Address has been previously used</source>
         <translation>ایڈریس پہلے استعمال ہو چکی ہے</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2606"/>
+        <location filename="../src/mainwindow.cpp" line="2643"/>
         <source>Address is unused</source>
         <translation>ایڈریس پہلے استعمال نہیں ہوی</translation>
     </message>
     <message>
-        <location filename="../src/sendtab.cpp" line="182"/>
+        <location filename="../src/sendtab.cpp" line="184"/>
         <source>Cannot support multiple addresses</source>
         <translation>ایک سے زیادہ ایڈریسس سپورٹ نہں</translation>
     </message>
     <message>
-        <location filename="../src/sendtab.cpp" line="183"/>
+        <location filename="../src/sendtab.cpp" line="185"/>
         <source>Recurring payments doesn&apos;t currently support multiple addresses</source>
         <translation>ادائیگی فی الحال بار بار چلنے والی ایڈریسس کو سپورٹ نہیں کر تی</translation>
     </message>
     <message>
-        <location filename="../src/sendtab.cpp" line="229"/>
+        <location filename="../src/sendtab.cpp" line="231"/>
         <source>Recipient </source>
         <translation>ریسیپینٹ</translation>
     </message>
     <message>
-        <location filename="../src/sendtab.cpp" line="374"/>
+        <location filename="../src/sendtab.cpp" line="376"/>
         <source>Only z-addresses can have memos</source>
         <translation>صرف زیڈ ایڈریسس پر میمو ہوسکتا ہے</translation>
     </message>
@@ -1168,33 +1218,33 @@ doesn&apos;t look like a z-address</source>
         <translation type="vanished">یہ زیڈ ایڈریس نہیں لگتا </translation>
     </message>
     <message>
-        <location filename="../src/sendtab.cpp" line="817"/>
+        <location filename="../src/sendtab.cpp" line="819"/>
         <source>Transaction Error</source>
         <translation>ٹرانزیکشنس عرر</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="908"/>
-        <location filename="../src/sendtab.cpp" line="859"/>
+        <location filename="../src/sendtab.cpp" line="861"/>
         <source>Please wait...</source>
         <translation>برائے مہربانی انتظار کریں...</translation>
     </message>
     <message>
-        <location filename="../src/sendtab.cpp" line="860"/>
+        <location filename="../src/sendtab.cpp" line="862"/>
         <source>Computing your transaction</source>
         <translation>کمپیوٹنگ ٹرانزیکشنس</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="919"/>
-        <location filename="../src/sendtab.cpp" line="869"/>
+        <location filename="../src/sendtab.cpp" line="871"/>
         <source>Done!</source>
         <translation>!ہو گیا</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="701"/>
         <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
-        <location filename="../src/mainwindow.cpp" line="2348"/>
-        <location filename="../src/sendtab.cpp" line="924"/>
+        <location filename="../src/mainwindow.cpp" line="2104"/>
+        <location filename="../src/mainwindow.cpp" line="2385"/>
+        <location filename="../src/sendtab.cpp" line="926"/>
         <source>Recipient Address </source>
         <translation>وصول کنندہ کی ایڈریس</translation>
     </message>
@@ -1240,35 +1290,35 @@ or your Memo is empty</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="585"/>
         <location filename="../src/chatmodel.cpp" line="882"/>
-        <location filename="../src/mainwindow.cpp" line="1953"/>
-        <location filename="../src/mainwindow.cpp" line="2242"/>
+        <location filename="../src/mainwindow.cpp" line="1990"/>
+        <location filename="../src/mainwindow.cpp" line="2279"/>
         <source>Message Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="701"/>
         <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
-        <location filename="../src/mainwindow.cpp" line="2348"/>
-        <location filename="../src/sendtab.cpp" line="924"/>
+        <location filename="../src/mainwindow.cpp" line="2104"/>
+        <location filename="../src/mainwindow.cpp" line="2385"/>
+        <location filename="../src/sendtab.cpp" line="926"/>
         <source> is Invalid</source>
         <translation>صحیی نہیں</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="708"/>
         <location filename="../src/chatmodel.cpp" line="1024"/>
-        <location filename="../src/mainwindow.cpp" line="2074"/>
-        <location filename="../src/mainwindow.cpp" line="2354"/>
-        <location filename="../src/sendtab.cpp" line="930"/>
+        <location filename="../src/mainwindow.cpp" line="2111"/>
+        <location filename="../src/mainwindow.cpp" line="2391"/>
+        <location filename="../src/sendtab.cpp" line="932"/>
         <source>Amount for address &apos;%1&apos; is invalid!</source>
         <translation>ایڈریس کی رقم غلط ہے!</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="718"/>
         <location filename="../src/chatmodel.cpp" line="1034"/>
-        <location filename="../src/mainwindow.cpp" line="2085"/>
-        <location filename="../src/mainwindow.cpp" line="2364"/>
-        <location filename="../src/sendtab.cpp" line="940"/>
+        <location filename="../src/mainwindow.cpp" line="2122"/>
+        <location filename="../src/mainwindow.cpp" line="2401"/>
+        <location filename="../src/sendtab.cpp" line="942"/>
         <source>Not enough available funds to send this transaction
 
 Have: %1
@@ -1319,7 +1369,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
 <context>
     <name>MemoEdit</name>
     <message>
-        <location filename="../src/memoedit.cpp" line="51"/>
+        <location filename="../src/memoedit.cpp" line="53"/>
         <source>Reply to</source>
         <translation>جواب دیں </translation>
     </message>
@@ -1418,7 +1468,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
 <context>
     <name>NewOrRestorePage</name>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="239"/>
+        <location filename="../src/firsttimewizard.cpp" line="234"/>
         <source>Passphrase don&apos;t match or You have entered too few letters (16 minimum)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1454,27 +1504,27 @@ Note: Funds need 5 confirmations before they can be spent</source>
 <context>
     <name>NewSeedPage</name>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="287"/>
+        <location filename="../src/firsttimewizard.cpp" line="282"/>
         <source>Error creating a wallet</source>
         <translation>ویلیٹ بنانے میں عرر</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="603"/>
+        <location filename="../src/firsttimewizard.cpp" line="598"/>
         <source>Failed to save wallet</source>
         <translation>ویلیٹ سیو فیلڈ</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="604"/>
+        <location filename="../src/firsttimewizard.cpp" line="599"/>
         <source>Couldn&apos;t save the wallet</source>
         <translation>ویلیٹ کو محفوظ نہیں کیا جاسکا</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="618"/>
+        <location filename="../src/firsttimewizard.cpp" line="613"/>
         <source>Wrong Seed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="619"/>
+        <location filename="../src/firsttimewizard.cpp" line="614"/>
         <source>Please try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1485,6 +1535,11 @@ Note: Funds need 5 confirmations before they can be spent</source>
         <location filename="../src/privkey.ui" line="14"/>
         <source>Private Keys</source>
         <translation>خوفیا کیز</translation>
+    </message>
+    <message>
+        <location filename="../src/privkey.ui" line="44"/>
+        <source>Rescan Wallet</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1590,23 +1645,23 @@ Note: Funds need 5 confirmations before they can be spent</source>
         <translation>لیبل ختم کریں</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="76"/>
+        <location filename="../src/connection.cpp" line="146"/>
         <source>Attempting to initialize library with </source>
         <translation>کے ساتھ لائبریری کو شروع کرنے کی کوشش کر رہا ہے</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="81"/>
+        <location filename="../src/connection.cpp" line="151"/>
         <source>Using existing wallet.</source>
         <translation>موجودہ ویلیٹ کا استعمال</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="97"/>
+        <location filename="../src/connection.cpp" line="165"/>
         <source>Create/restore wallet.</source>
         <translation>ویلیٹ بنائیں / بحال کریں۔</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="219"/>
-        <location filename="../src/controller.cpp" line="626"/>
+        <location filename="../src/connection.cpp" line="303"/>
+        <location filename="../src/controller.cpp" line="615"/>
         <source>Connection Error</source>
         <translation>کنیکشن عرر</translation>
     </message>
@@ -1615,13 +1670,13 @@ Note: Funds need 5 confirmations before they can be spent</source>
         <translation type="vanished">Eroarea de Tranzactie</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="328"/>
+        <location filename="../src/connection.cpp" line="417"/>
         <source>There was an error sending the transaction. The error was:</source>
         <translation>ٹرانزیکشن بھیجنے میں غلطی تھی۔ غلطی یہ تھی</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="252"/>
-        <location filename="../src/controller.cpp" line="254"/>
+        <location filename="../src/controller.cpp" line="263"/>
+        <location filename="../src/controller.cpp" line="265"/>
         <source>No Connection</source>
         <translation>کنیکشن نہیں ھے</translation>
     </message>
@@ -1632,68 +1687,68 @@ Note: Funds need 5 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2026"/>
-        <location filename="../src/mainwindow.cpp" line="2310"/>
-        <location filename="../src/recurring.cpp" line="607"/>
-        <location filename="../src/sendtab.cpp" line="894"/>
+        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/mainwindow.cpp" line="2063"/>
+        <location filename="../src/mainwindow.cpp" line="2347"/>
+        <location filename="../src/recurring.cpp" line="609"/>
+        <location filename="../src/sendtab.cpp" line="896"/>
         <source> Tx </source>
         <translation>ٹی ایکس</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2026"/>
-        <location filename="../src/mainwindow.cpp" line="2310"/>
-        <location filename="../src/recurring.cpp" line="607"/>
-        <location filename="../src/sendtab.cpp" line="894"/>
+        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/mainwindow.cpp" line="2063"/>
+        <location filename="../src/mainwindow.cpp" line="2347"/>
+        <location filename="../src/recurring.cpp" line="609"/>
+        <location filename="../src/sendtab.cpp" line="896"/>
         <source> failed</source>
         <translation>فیلڈ</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2030"/>
-        <location filename="../src/mainwindow.cpp" line="2313"/>
-        <location filename="../src/sendtab.cpp" line="902"/>
+        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="2067"/>
+        <location filename="../src/mainwindow.cpp" line="2350"/>
+        <location filename="../src/sendtab.cpp" line="904"/>
         <source>The transaction with id </source>
         <translation>ٹرانزیکشن ID کے ساتھ</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2030"/>
-        <location filename="../src/mainwindow.cpp" line="2313"/>
-        <location filename="../src/sendtab.cpp" line="902"/>
+        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/mainwindow.cpp" line="2067"/>
+        <location filename="../src/mainwindow.cpp" line="2350"/>
+        <location filename="../src/sendtab.cpp" line="904"/>
         <source> failed. The error was</source>
         <translation>غلطی اور غلطی تھی</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="666"/>
         <location filename="../src/chatmodel.cpp" line="1004"/>
-        <location filename="../src/connection.cpp" line="327"/>
-        <location filename="../src/controller.cpp" line="1543"/>
-        <location filename="../src/mainwindow.cpp" line="2032"/>
-        <location filename="../src/mainwindow.cpp" line="2315"/>
-        <location filename="../src/sendtab.cpp" line="911"/>
+        <location filename="../src/connection.cpp" line="416"/>
+        <location filename="../src/controller.cpp" line="1564"/>
+        <location filename="../src/mainwindow.cpp" line="2069"/>
+        <location filename="../src/mainwindow.cpp" line="2352"/>
+        <location filename="../src/sendtab.cpp" line="913"/>
         <source>Transaction Error</source>
         <translation type="unfinished">ٹرانزیکشنس عرر</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="627"/>
+        <location filename="../src/controller.cpp" line="616"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1635"/>
+        <location filename="../src/controller.cpp" line="1658"/>
         <source>Update Available</source>
         <translation>اپڈیٹ موجود ہے </translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1636"/>
+        <location filename="../src/controller.cpp" line="1659"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
@@ -1701,12 +1756,12 @@ Would you like to visit the releases page?</source>
 کیا آپ ریلیز والے صفحے پر جانا چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1655"/>
+        <location filename="../src/controller.cpp" line="1678"/>
         <source>No updates available</source>
         <translation>کوئی تازہ اپڈیٹ دستیاب نہیں ہے</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1656"/>
+        <location filename="../src/controller.cpp" line="1679"/>
         <source>You already have the latest release v%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1715,97 +1770,97 @@ Would you like to visit the releases page?</source>
         <translation type="vanished">Deja aveti cea mai recenta versiune v%1</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2040"/>
-        <location filename="../src/controller.cpp" line="2048"/>
+        <location filename="../src/controller.cpp" line="2063"/>
+        <location filename="../src/controller.cpp" line="2071"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation> باہر جانے کا انتظار کریں Silent DragonLite براہ کرم</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2041"/>
-        <location filename="../src/controller.cpp" line="2049"/>
+        <location filename="../src/controller.cpp" line="2064"/>
+        <location filename="../src/controller.cpp" line="2072"/>
         <source>Waiting for hushd to exit</source>
         <translation>ہش ڈی کے باہر نکلنے کا انتظار کریں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="551"/>
+        <location filename="../src/recurring.cpp" line="553"/>
         <source>No hush price was available to convert from USD</source>
         <translation>امریکی ڈالر سے تبدیل کرنے کے لئے کوئی ہش قیمت دستیاب نہیں </translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="657"/>
+        <location filename="../src/recurring.cpp" line="659"/>
         <source>View on block explorer</source>
         <translation>بلاک ایکسپلورر پر دیکھیں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="670"/>
+        <location filename="../src/recurring.cpp" line="672"/>
         <source>View Error</source>
         <translation>عرر دیکھیں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="671"/>
+        <location filename="../src/recurring.cpp" line="673"/>
         <source>Reported Error</source>
         <translation>عرر رپورٹ کریں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="708"/>
-        <location filename="../src/recurring.cpp" line="709"/>
+        <location filename="../src/recurring.cpp" line="710"/>
+        <location filename="../src/recurring.cpp" line="711"/>
         <source>Are you sure you want to delete the recurring payment?</source>
         <translation>کیا آپ واقعی بار بار چلنے والی ادائیگی کو ختم کرنا چاہتے ہیں؟</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="710"/>
+        <location filename="../src/recurring.cpp" line="712"/>
         <source>All future payments will be cancelled.</source>
         <translation>آئندہ کی تمام ادائیگیاں منسوخ کردی جائیں گی۔</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="291"/>
+        <location filename="../src/settings.cpp" line="301"/>
         <source>Tx submitted (right click to copy) txid:</source>
         <translation>Tx جمع کرائی (کاپی کرنے کے لئے دائیں کلک کریں)</translation>
     </message>
     <message>
-        <location filename="../src/txtablemodel.cpp" line="7"/>
+        <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Type</source>
         <translation>قسم</translation>
     </message>
     <message>
-        <location filename="../src/txtablemodel.cpp" line="7"/>
+        <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Address</source>
         <translation>ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/txtablemodel.cpp" line="7"/>
+        <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Date/Time</source>
         <translation>تاریخ/وقت</translation>
     </message>
     <message>
-        <location filename="../src/txtablemodel.cpp" line="7"/>
+        <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Confirmations</source>
         <translation>تصدیقیں</translation>
     </message>
     <message>
-        <location filename="../src/txtablemodel.cpp" line="7"/>
+        <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Amount</source>
         <translation>رقم</translation>
     </message>
     <message>
-        <location filename="../src/websockets.cpp" line="387"/>
+        <location filename="../src/websockets.cpp" line="388"/>
         <source>Connected directly</source>
         <translation>براہ راست جڑا</translation>
     </message>
     <message>
-        <location filename="../src/websockets.cpp" line="390"/>
+        <location filename="../src/websockets.cpp" line="391"/>
         <source>Connected over the internet via silentdragon wormhole service</source>
         <translation>سائیٹ ڈریگن wormhole سروس انٹرنیٹ سے منسلک کریں</translation>
     </message>
     <message>
-        <location filename="../src/websockets.cpp" line="694"/>
-        <location filename="../src/websockets.cpp" line="785"/>
+        <location filename="../src/websockets.cpp" line="695"/>
+        <location filename="../src/websockets.cpp" line="786"/>
         <source>Node is still syncing.</source>
         <translation>نوڈ ابھی syncing ہو رہا ہے</translation>
     </message>
     <message>
-        <location filename="../src/websockets.cpp" line="718"/>
-        <location filename="../src/websockets.cpp" line="809"/>
+        <location filename="../src/websockets.cpp" line="719"/>
+        <location filename="../src/websockets.cpp" line="810"/>
         <source>No sapling or transparent addresses with enough balance to spend.</source>
         <translation>خرچ کرنے کے لئے سیپلنگ شفاف بیلنس نہیں </translation>
     </message>
@@ -1835,37 +1890,37 @@ Would you like to visit the releases page?</source>
 <context>
     <name>RecurringListViewModel</name>
     <message>
-        <location filename="../src/recurring.cpp" line="732"/>
+        <location filename="../src/recurring.cpp" line="734"/>
         <source>Amount</source>
         <translation>رقم</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="732"/>
+        <location filename="../src/recurring.cpp" line="734"/>
         <source>Schedule</source>
         <translation>الوقات</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="732"/>
+        <location filename="../src/recurring.cpp" line="734"/>
         <source>Payments Left</source>
         <translation>رہتی ادائیگیاں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="733"/>
+        <location filename="../src/recurring.cpp" line="735"/>
         <source>Next Payment</source>
         <translation>اگلی ادائیگی</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="733"/>
+        <location filename="../src/recurring.cpp" line="735"/>
         <source>To</source>
         <translation>ٹو</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="750"/>
+        <location filename="../src/recurring.cpp" line="752"/>
         <source>Every </source>
         <translation>ہر کوئی</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="754"/>
+        <location filename="../src/recurring.cpp" line="756"/>
         <source>None</source>
         <translation>کوئی نہیں</translation>
     </message>
@@ -1885,48 +1940,48 @@ Would you like to visit the releases page?</source>
 <context>
     <name>RecurringPaymentsListViewModel</name>
     <message>
-        <location filename="../src/recurring.cpp" line="783"/>
+        <location filename="../src/recurring.cpp" line="785"/>
         <source>Date</source>
         <translation>تاریخ</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="783"/>
+        <location filename="../src/recurring.cpp" line="785"/>
         <source>Status</source>
         <translation>حالت</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="783"/>
+        <location filename="../src/recurring.cpp" line="785"/>
         <source>Txid</source>
         <translation>ٹی ایکس آے ڈی</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="803"/>
+        <location filename="../src/recurring.cpp" line="805"/>
         <source>Not due yet</source>
         <translation>ابھی تک واجب نہیں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="804"/>
+        <location filename="../src/recurring.cpp" line="806"/>
         <source>Pending</source>
         <translation>زیر التواء</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="805"/>
+        <location filename="../src/recurring.cpp" line="807"/>
         <source>Skipped</source>
         <translation>چہوژیں</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="806"/>
+        <location filename="../src/recurring.cpp" line="808"/>
         <source>Paid</source>
         <translation>ادا کیا</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="807"/>
+        <location filename="../src/recurring.cpp" line="809"/>
         <source>Error</source>
         <translation>عرر</translation>
     </message>
     <message>
-        <location filename="../src/recurring.cpp" line="808"/>
-        <location filename="../src/recurring.cpp" line="809"/>
+        <location filename="../src/recurring.cpp" line="810"/>
+        <location filename="../src/recurring.cpp" line="811"/>
         <source>Unknown</source>
         <translation>نامعلوم</translation>
     </message>
@@ -2065,7 +2120,7 @@ Would you like to visit the releases page?</source>
         <translation>سیلنگ ایڈریس سے ادائیگی کی درخواست کریں اس  آپ اس پتے پر ہش ادائیگی یو آر آئی کے ساتھ 0.0001 ٹرانزیکشن بھیجیں۔ جب پتا آپ کو ادائیگی کرتا ہے تو میمو لین دین میں شامل ہوگا۔</translation>
     </message>
     <message>
-        <location filename="../src/requestdialog.cpp" line="50"/>
+        <location filename="../src/requestdialog.cpp" line="52"/>
         <source>Error paying hush URI</source>
         <translation>ہش یو آر آئی کی ادائیگی میں عرر</translation>
     </message>
@@ -2074,27 +2129,27 @@ Would you like to visit the releases page?</source>
         <translation type="vanished">URI فارم کا ہونا چاہئے &apos;ہش:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
     <message>
-        <location filename="../src/requestdialog.cpp" line="51"/>
+        <location filename="../src/requestdialog.cpp" line="53"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
         <translation type="unfinished">URI فارم کو اس طرح ہونا چاہئے &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
     <message>
-        <location filename="../src/requestdialog.cpp" line="65"/>
+        <location filename="../src/requestdialog.cpp" line="67"/>
         <source>Pay To</source>
         <translation>بہیجیں</translation>
     </message>
     <message>
-        <location filename="../src/requestdialog.cpp" line="85"/>
+        <location filename="../src/requestdialog.cpp" line="87"/>
         <source>Pay</source>
         <translation>ادا کریں</translation>
     </message>
     <message>
-        <location filename="../src/requestdialog.cpp" line="87"/>
+        <location filename="../src/requestdialog.cpp" line="89"/>
         <source>You are paying a payment request. Your address will not be visible to the person requesting this payment.</source>
         <translation>آپ ادائیگی کی درخواست ادا کر رہے ہیں۔ اس ادائیگی کی درخواست کرنے والے شخص کو آپ کا ایڈریس نظر نہیں آئے گا۔</translation>
     </message>
     <message>
-        <location filename="../src/requestdialog.cpp" line="106"/>
+        <location filename="../src/requestdialog.cpp" line="108"/>
         <source>Can only request from Sapling addresses</source>
         <translation>صرف سگنلنگ ایڈریسس سے ہی درخواست کر سکتے ہیں</translation>
     </message>
@@ -2191,38 +2246,38 @@ Would you like to visit the releases page?</source>
 <context>
     <name>RestoreSeedPage</name>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="647"/>
-        <location filename="../src/firsttimewizard.cpp" line="675"/>
+        <location filename="../src/firsttimewizard.cpp" line="642"/>
+        <location filename="../src/firsttimewizard.cpp" line="670"/>
         <source>Failed to restore wallet</source>
         <translation>والیٹ کی بحالی نہیں ہو سکی</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="648"/>
+        <location filename="../src/firsttimewizard.cpp" line="643"/>
         <source>SilentDragonLite needs 24 words to restore wallet</source>
         <translation>سائلنٹ ڈریگن لائٹ والیٹ کو بحال کرنے کے لئے 24 خوفیا الفاظ کی ضرورت ہے</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="658"/>
+        <location filename="../src/firsttimewizard.cpp" line="653"/>
         <source>Failed to parse wallet birthday</source>
         <translation>والیٹ کی سالگرہ کو تجزیہ کرنے میں ناکام</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="659"/>
+        <location filename="../src/firsttimewizard.cpp" line="654"/>
         <source>Couldn&apos;t understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as &apos;0&apos; if you don&apos;t know what it should be.</source>
         <translation>والیٹ کی سالگرہ کو سمجھ نہیں پایا۔ یہ ایک بلاک اونچائی ہونا چاہئے جہاں سے پرس کو بازیافت کیا جائے۔ آپ اسے &apos;0&apos; کے بطور چھوڑ سکتے ہیں۔ اگر آپ نہیں جانتے ہیں کہ یہ کیا ہونا چاہئے۔</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="676"/>
+        <location filename="../src/firsttimewizard.cpp" line="671"/>
         <source>Couldn&apos;t restore the wallet</source>
         <translation>والیٹ کو بحال نہیں کیا جاسکا</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="689"/>
+        <location filename="../src/firsttimewizard.cpp" line="684"/>
         <source>Failed to save wallet</source>
         <translation>والیٹ کو سیو کرنے میں ناکام</translation>
     </message>
     <message>
-        <location filename="../src/firsttimewizard.cpp" line="690"/>
+        <location filename="../src/firsttimewizard.cpp" line="685"/>
         <source>Couldn&apos;t save the wallet</source>
         <translation>والیٹ کو سیو نہیں کیا جاسکا</translation>
     </message>
@@ -2302,12 +2357,12 @@ Would you like to visit the releases page?</source>
     </message>
     <message>
         <location filename="../src/settings.ui" line="170"/>
-        <source>Check github for updates at startup</source>
-        <translation>شروعات میں اپ ڈیٹس کے لئے گیتھب githubچیک کریں </translation>
+        <source>Check git for updates at startup</source>
+        <translation>شروعات میں اپ ڈیٹس کے لئے گیتھب gitچیک کریں </translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="183"/>
-        <source>Connect to github on startup to check for updates</source>
+        <source>Connect to git on startup to check for updates</source>
         <translation>اپ ڈیٹس کی جانچ پڑتال کے لئے اسٹارٹ اپ گیتھب سے جڑیں</translation>
     </message>
     <message>
@@ -2392,12 +2447,12 @@ Would you like to visit the releases page?</source>
 <context>
     <name>ViewAllAddressesModel</name>
     <message>
-        <location filename="../src/viewalladdresses.cpp" line="7"/>
+        <location filename="../src/viewalladdresses.cpp" line="9"/>
         <source>Address</source>
         <translation>ایڈریس</translation>
     </message>
     <message>
-        <location filename="../src/viewalladdresses.cpp" line="7"/>
+        <location filename="../src/viewalladdresses.cpp" line="9"/>
         <source>Balance (%1)</source>
         <translation>(1%)بیلنس</translation>
     </message>

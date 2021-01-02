@@ -5,7 +5,6 @@
 #define RPCCLIENT_H
 
 #include "precompiled.h"
-
 #include "camount.h"
 #include "datamodel.h"
 #include "balancestablemodel.h"
