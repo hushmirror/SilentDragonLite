@@ -51,10 +51,9 @@ SilentDragonLite does automatic note and utxo management, which means it doesn't
 
 ```
 git clone https://github.com/MyHush/SilenDragonLite.git
-cd silentdragonlite
+cd SilentDragonLite
+# the next step will take potentially a long time for slower systems
+# Be Patient and please report compiler problems!
 ./build.sh
-./Silentdragonlite
-
+./SilentDragonLite
 ```
-
-
