@@ -1,3 +1,5 @@
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 #ifndef CHATBUBBLEME_H
 #define CHATBUBBLEME_H
 

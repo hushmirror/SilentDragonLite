@@ -3,6 +3,7 @@
 # Project created by QtCreator 2018-10-05T09:54:45
 #
 #-------------------------------------------------
+# Copyright 2019-2021 The Hush Developers
 
 QT       += core gui network
 
@@ -13,10 +14,7 @@ PRECOMPILED_HEADER = src/precompiled.h
 QT += widgets
 QT += websockets
 
-
-
 TARGET = SilentDragonLite
-
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

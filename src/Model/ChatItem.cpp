@@ -1,5 +1,5 @@
-// Copyright 2019-2020 The Hush developers
-// GPLv3
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 
 #include "ChatItem.h"
 

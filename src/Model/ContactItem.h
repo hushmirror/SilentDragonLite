@@ -1,5 +1,5 @@
-// Copyright 2019-2020 The Hush developers
-// GPLv3
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 #ifndef CONTACTITEM_H
 #define CONTACTITEM_H
 
@@ -8,6 +8,8 @@
 #include "mainwindow.h"
 using json = nlohmann::json;
 
+// This represents one HushContact in your ContactList of HushChat, which end users
+// see as an avatar and name. This data structure holds all the other data to make things work
 class ContactItem
 {
 private:

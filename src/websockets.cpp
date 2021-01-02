@@ -1,5 +1,6 @@
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 #include "websockets.h"
-
 #include "controller.h"
 #include "settings.h"
 #include "ui_mobileappconnector.h"

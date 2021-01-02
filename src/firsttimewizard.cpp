@@ -1,5 +1,6 @@
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 #include "firsttimewizard.h"
-
 #include "ui_newseed.h"
 #include "ui_restoreseed.h"
 #include "ui_verifyseed.h"
@@ -25,14 +26,8 @@ auto dirwalletencfirst = QDir(QStandardPaths::writableLocation(QStandardPaths::H
 auto dirwalletbackupfirst = QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation)).filePath(".silentdragonlite/silentdragonlite-wallet.datBackup");
 #endif
 
-
-
-
-void FirstTimeWizard::slot_change_theme(const QString& theme_name)
-
-{
+void FirstTimeWizard::slot_change_theme(const QString& theme_name) {
     Settings::getInstance()->set_theme_name(theme_name);
-    
 
     // Include css
     QString saved_theme_name;

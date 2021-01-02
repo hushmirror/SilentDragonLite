@@ -1,3 +1,5 @@
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 #ifndef LOGTYPE_H
 #define LOGTYPE_H
 

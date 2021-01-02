@@ -1,14 +1,13 @@
+// Copyright 2019-2020 The Hush developers
+// Released under the GPLv3
 #ifndef FIRSTTIMEWIZARD_H
 #define FIRSTTIMEWIZARD_H
 
 #include "precompiled.h"
-
 #include "ui_newseed.h"
 #include "ui_restoreseed.h"
 #include "ui_newwallet.h"
 #include "mainwindow.h"
-
-
 
 class FirstTimeWizard: public QWizard
 {
