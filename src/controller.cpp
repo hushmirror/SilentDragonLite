@@ -89,9 +89,10 @@ void Controller::setConnection(Connection* c)
     ui->statusBar->showMessage("");
 
     // If we're allowed to get the Hush Price, get the prices
-    if (Settings::getInstance()->getAllowFetchPrices())
+    if (Settings::getInstance()->getAllowFetchPrices()) {
         refreshZECPrice();
         supplyUpdate();
+    }
 
     // If we're allowed to check for updates, check for a new release
     if (Settings::getInstance()->getCheckForUpdates())
@@ -688,23 +689,21 @@ void Controller::supplyUpdate() {
        // Get the total supply and render it with thousand decimal
         zrpc->fetchSupply([=] (const json& reply) {   
             int supply  = reply["supply"].get<json::number_integer_t>();
-            int zfunds = reply["zfunds"].get<json::number_integer_t>();
-            int total = reply["total"].get<json::number_integer_t>();;
+            int zfunds  = reply["zfunds"].get<json::number_integer_t>();
+            int total   = reply["total"].get<json::number_integer_t>();;
             if (
                 Settings::getInstance()->get_currency_name() == "EUR" || 
                 Settings::getInstance()->get_currency_name() == "CHF" || 
                 Settings::getInstance()->get_currency_name() == "RUB"
             ) 
             {
-                ui->supply_taddr->setText((QLocale(QLocale::German).toString(supply)+ " Hush"));
-                ui->supply_zaddr->setText((QLocale(QLocale::German).toString(zfunds)+ " Hush"));
-                ui->supply_total->setText((QLocale(QLocale::German).toString(total)+ " Hush"));
-            }
-            else
-            {
-                ui->supply_taddr->setText("Hush " + (QLocale(QLocale::English).toString(supply)));
-                ui->supply_zaddr->setText("Hush " +(QLocale(QLocale::English).toString(zfunds)));
-                ui->supply_total->setText("Hush " +(QLocale(QLocale::English).toString(total)));
+                ui->supply_taddr->setText((QLocale(QLocale::German).toString(supply)+ " HUSH"));
+                ui->supply_zaddr->setText((QLocale(QLocale::German).toString(zfunds)+ " HUSH"));
+                ui->supply_total->setText((QLocale(QLocale::German).toString(total)+ " HUSH"));
+            } else {
+                ui->supply_taddr->setText("HUSH " + (QLocale(QLocale::English).toString(supply)));
+                ui->supply_zaddr->setText("HUSH " +(QLocale(QLocale::English).toString(zfunds)));
+                ui->supply_total->setText("HUSH " +(QLocale(QLocale::English).toString(total)));
             }
 
         });

@@ -180,7 +180,7 @@ private:
     void setMemoEnabled(int number, bool enabled);
     
     void donate();
-    void discord();
+    void telegram();
     void website();
     void addressBook();
     void importPrivKey();

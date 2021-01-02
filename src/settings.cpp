@@ -264,27 +264,16 @@ void Settings::saveRestoreTableHeader(QTableView* table, QDialog* d, QString tab
 }
 
 QString Settings::getDefaultServer() {
-    return "https://lite.myhush.org";
+    return "https://lite.hush.is";
 }
 
 void Settings::openAddressInExplorer(QString address) {
-    QString url;
-    if (Settings::getInstance()->isTestnet()) {
-        url = "https://chain.so/address/hushTEST/" + address;
-    } else {
-        url = "https://explorer.myhush.org/address/" + address;
-    }
+    QString url = "https://explorer.hush.is/address/" + address;
     QDesktopServices::openUrl(QUrl(url));
 }
 
 void Settings::openTxInExplorer(QString txid) {
-    QString url;
-    if (Settings::getInstance()->isTestnet()) {
-        url = "https://chain.so/tx/hushTEST/" + txid;
-    }
-    else {
-        url = "https://explorer.myhush.org/tx/" + txid;
-    }
+    QString url = "https://explorer.hush.is/tx/" + txid;
     QDesktopServices::openUrl(QUrl(url));
 }
 

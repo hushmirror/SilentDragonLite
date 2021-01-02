@@ -3,17 +3,25 @@
 SilentDragonLite is a lightwallet for HUSH ($HUSH) runs on Linux and Windows which does not require you to download the full blockchain. This is experimental software under active development!
 
 
-<img src="https://raw.githubusercontent.com/MyHush/SilentDragonLite/master/hushchat-screenshot.png">
+<img src="hushchat-screenshot.png">
 
 ## PRIVACY NOTICE
 
-SilentDragonLite contacts a few different external websites to get various bits of data. * coingecko.com for price data API * explorer.myhush.org for explorer links * dexstats.info for address utilities, hush-lightwallet.de to get Data.
+SilentDragonLite contacts a few different external websites to get various bits of data. 
+The first two are option features, to get real-time price data feeds and if you want
+to look at explorer details. Price feed can be turned off in Settings and you can set
+a custom block explorer URL as well.
+
+* coingecko.com for price data API  (optional)
+* explorer.hush.is for explorer links (optional) 
+* various community-run lite wallet servers to provide basic functionality (required)
 
 This means your IP address is known to these servers. Enable Tor setting in SilentDragon to prevent this, or better yet, use TAILS: https://tails.boum.org/
+or https://qubes-os.org
 
 ## Installation
 
-Go to the releases page and grab the latest installers or binary. https://github.com/MyHush/SilentDragonLite/releases
+Go to the releases page and grab the latest installers or binary. https://git.hush.is/hush/SilentDragonLite/releases
 
 ## Install Torsocks (or any other Socks service for TOR) on Ubuntu 18.04
 ```
@@ -27,9 +35,10 @@ sudo apt install torsocks
 ```
 ## Note Management
 SilentDragonLite does automatic note and utxo management, which means it doesn't allow you to manually select which address to send outgoing transactions from. It follows these principles:
-* Defaults to sending shielded transactions, even if you're sending to a transparent address
-* Sapling funds need at least 2 confirmations before they can be spent
-* Can select funds from multiple shielded addresses in the same transaction
+
+* Defaults to sending shielded transactions, which are now enforced via consensus rules
+* Sapling funds need at least 2 confirmations before they can be spent (150 seconds on average for HUSH mainnet)
+* Can select funds from multiple shielded addresses in the same transaction (via raw transactions)
 * Will automatically shield your transparent funds at the first opportunity
 * When sending an outgoing transaction to a shielded address, SilentDragonLite can decide to use the transaction to additionally shield your transparent funds (i.e., send your transparent funds to your own shielded address in the same transaction)
 

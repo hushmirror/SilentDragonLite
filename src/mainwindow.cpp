@@ -111,7 +111,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // Set up Feedback action
     QObject::connect(ui->actionDonate, &QAction::triggered, this, &MainWindow::donate);
 
-    QObject::connect(ui->actionDiscord, &QAction::triggered, this, &MainWindow::discord);
+    QObject::connect(ui->actionDiscord, &QAction::triggered, this, &MainWindow::telegram);
 
     QObject::connect(ui->actionWebsite, &QAction::triggered, this, &MainWindow::website);
 
@@ -780,7 +780,7 @@ void MainWindow::setupStatusBar() {
             });
             menu.addAction(tr("Copy block explorer link"), [=]() {
                // auto explorer = Settings::getInstance()->getExplorer();
-             QGuiApplication::clipboard()->setText("https://explorer.myhush.org/tx/" + txid);
+             QGuiApplication::clipboard()->setText("https://explorer.hush.is/tx/" + txid);
             });
 
             menu.addAction(tr("View tx on block explorer"), [=]() {
@@ -852,7 +852,7 @@ void MainWindow::setupSettingsModal() {
         settings.chkFetchPrices->setChecked(Settings::getInstance()->getAllowFetchPrices());
         
         // List of default servers
-        settings.cmbServer->addItem("https://lite.myhush.org");
+        settings.cmbServer->addItem("https://lite.hush.is");
         settings.cmbServer->addItem("6onaaujm4ozaokzu.onion:80");
 
 
@@ -906,13 +906,13 @@ void MainWindow::addressBook() {
     AddressBook::open(this);
 }
 
-void MainWindow::discord() {
-    QString url = "https://myhush.org/discord/";
+void MainWindow::telegram() {
+    QString url = "https://hush.is/telegram/";
     QDesktopServices::openUrl(QUrl(url));
 }
 
 void MainWindow::website() {
-    QString url = "https://myhush.org";
+    QString url = "https://hush.is";
     QDesktopServices::openUrl(QUrl(url));
 }
 
@@ -1429,7 +1429,7 @@ void MainWindow::setupTransactionsTab() {
         }
            menu.addAction(tr("Copy block explorer link"), [=]() {
                // auto explorer = Settings::getInstance()->getExplorer();
-             QGuiApplication::clipboard()->setText("https://explorer.myhush.org/tx/" + txid);
+             QGuiApplication::clipboard()->setText("https://explorer.hush.is/tx/" + txid);
             });
 
         menu.addAction(tr("View on block explorer"), [=] () {
