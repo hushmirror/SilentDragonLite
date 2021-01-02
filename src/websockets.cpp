@@ -126,7 +126,7 @@ void WormholeClient::connect() {
         qDebug() << "Invalid websocket object!";
     }
 
-    m_webSocket->open(QUrl("wss://wormhole.myhush.org:443"));
+    m_webSocket->open(QUrl("wss://wormhole.hush.is:443"));
     //m_webSocket->open(QUrl("ws://127.0.0.1:7070"));
 }
 

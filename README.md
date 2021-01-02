@@ -24,7 +24,7 @@ SilentDragonLite is a lightwallet for HUSH ($HUSH) which runs on Linux and Windo
 SilentDragonLite contacts a few different external websites to get various bits of data.
 
 	* coingecko.com for price data API 
-	* explorer.myhush.org for explorer links 
+	* explorer.hush.is for explorer links 
 	* dexstats.info for address utilities 
 	* hush-lightwallet.de to get Data
 
