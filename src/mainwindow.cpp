@@ -109,7 +109,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // Set up Feedback action
     QObject::connect(ui->actionDonate, &QAction::triggered, this, &MainWindow::donate);
 
-    QObject::connect(ui->actionDiscord, &QAction::triggered, this, &MainWindow::telegram);
+    QObject::connect(ui->actionTelegram, &QAction::triggered, this, &MainWindow::telegram);
 
     QObject::connect(ui->actionWebsite, &QAction::triggered, this, &MainWindow::website);
 
