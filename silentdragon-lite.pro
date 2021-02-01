@@ -154,20 +154,22 @@ FORMS += \
     src/chatbubblepartner.ui
 
 
-TRANSLATIONS = res/silentdragonlite_es.ts \
-               res/silentdragonlite_fr.ts \
+TRANSLATIONS = res/silentdragonlite_ar.ts \
+               res/silentdragonlite_be.ts \
                res/silentdragonlite_de.ts \
-               res/silentdragonlite_pt.ts \
-               res/silentdragonlite_it.ts \
-               res/silentdragonlite_zh.ts \
-               res/silentdragonlite_hr.ts \
-               res/silentdragonlite_sr.ts \
+               res/silentdragonlite_es.ts \
                res/silentdragonlite_fa.ts \
+               res/silentdragonlite_fr.ts \
+               res/silentdragonlite_hr.ts \
                res/silentdragonlite_id.ts \
-               res/silentdragonlite_ar.ts \
+               res/silentdragonlite_it.ts \
+               res/silentdragonlite_pt.ts \
                res/silentdragonlite_ro.ts \
+               res/silentdragonlite_ru.ts \
+               res/silentdragonlite_sr.ts \
+               res/silentdragonlite_tr.ts \
                res/silentdragonlite_ud.ts \
-               res/silentdragonlite_tr.ts 
+               res/silentdragonlite_zh.ts
              
 include(singleapplication/singleapplication.pri)
 DEFINES += QAPPLICATION_CLASS=QApplication _FORTIFY_SOURCE=2

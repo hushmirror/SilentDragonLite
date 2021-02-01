@@ -102,29 +102,29 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1500"/>
+        <location filename="../src/controller.cpp" line="1479"/>
         <source>Wallet Password</source>
         <translation>Wallet Passwort</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1501"/>
+        <location filename="../src/controller.cpp" line="1480"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation>Ihr Wallet ist verschlüsselt. Bitte geben Sie das Passwort ein</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1509"/>
-        <location filename="../src/controller.cpp" line="1529"/>
+        <location filename="../src/controller.cpp" line="1488"/>
+        <location filename="../src/controller.cpp" line="1508"/>
         <source>Wallet Decryption Failed</source>
         <translation>Entschlüsslung gescheitert</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1510"/>
+        <location filename="../src/controller.cpp" line="1489"/>
         <source>Please enter a valid password</source>
         <translation>Bitte geben Sie ein gültiges Passwort ein</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1599"/>
+        <location filename="../src/controller.cpp" line="1578"/>
         <source>Failed to unlock wallet</source>
         <translation>Konnte das Wallet nicht entsperren</translation>
     </message>
@@ -1715,7 +1715,7 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
     </message>
     <message>
         <location filename="../src/connection.cpp" line="303"/>
-        <location filename="../src/controller.cpp" line="615"/>
+        <location filename="../src/controller.cpp" line="594"/>
         <source>Connection Error</source>
         <translation>Verbsindungsfehler</translation>
     </message>
@@ -1723,7 +1723,7 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
         <location filename="../src/chatmodel.cpp" line="666"/>
         <location filename="../src/chatmodel.cpp" line="1004"/>
         <location filename="../src/connection.cpp" line="416"/>
-        <location filename="../src/controller.cpp" line="1564"/>
+        <location filename="../src/controller.cpp" line="1543"/>
         <location filename="../src/mainwindow.cpp" line="2069"/>
         <location filename="../src/mainwindow.cpp" line="2352"/>
         <location filename="../src/sendtab.cpp" line="913"/>
@@ -1736,8 +1736,8 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
         <translation>Es gab einen Fehler beim senden der Transaktion:</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="263"/>
-        <location filename="../src/controller.cpp" line="265"/>
+        <location filename="../src/controller.cpp" line="242"/>
+        <location filename="../src/controller.cpp" line="244"/>
         <source>No Connection</source>
         <translation>keine Verbindung</translation>
     </message>
@@ -1748,7 +1748,7 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <location filename="../src/mainwindow.cpp" line="2063"/>
         <location filename="../src/mainwindow.cpp" line="2347"/>
         <location filename="../src/recurring.cpp" line="609"/>
@@ -1759,7 +1759,7 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <location filename="../src/mainwindow.cpp" line="2063"/>
         <location filename="../src/mainwindow.cpp" line="2347"/>
         <location filename="../src/recurring.cpp" line="609"/>
@@ -1770,7 +1770,7 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/controller.cpp" line="1539"/>
         <location filename="../src/mainwindow.cpp" line="2067"/>
         <location filename="../src/mainwindow.cpp" line="2350"/>
         <location filename="../src/sendtab.cpp" line="904"/>
@@ -1780,7 +1780,7 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/controller.cpp" line="1539"/>
         <location filename="../src/mainwindow.cpp" line="2067"/>
         <location filename="../src/mainwindow.cpp" line="2350"/>
         <location filename="../src/sendtab.cpp" line="904"/>
@@ -1788,17 +1788,17 @@ Anmerkung: Sie bnötigen 2 Bestätigungen {1
         <translation> ist gescheitert</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="616"/>
+        <location filename="../src/controller.cpp" line="595"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1658"/>
+        <location filename="../src/controller.cpp" line="1637"/>
         <source>Update Available</source>
         <translation>Update verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1659"/>
+        <location filename="../src/controller.cpp" line="1638"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
@@ -1807,24 +1807,24 @@ Would you like to visit the releases page?</source>
 Möchten Sie die Release Seite besuchen?</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1678"/>
+        <location filename="../src/controller.cpp" line="1657"/>
         <source>No updates available</source>
         <translation>keine Updates verfügbar</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1679"/>
+        <location filename="../src/controller.cpp" line="1658"/>
         <source>You already have the latest release v%1</source>
         <translation>Sie haben bereits die neueste Version v%1</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2063"/>
-        <location filename="../src/controller.cpp" line="2071"/>
+        <location filename="../src/controller.cpp" line="2042"/>
+        <location filename="../src/controller.cpp" line="2050"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation>Bitte warten Sie bis SilentDragonLite beendet ist</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2064"/>
-        <location filename="../src/controller.cpp" line="2072"/>
+        <location filename="../src/controller.cpp" line="2043"/>
+        <location filename="../src/controller.cpp" line="2051"/>
         <source>Waiting for hushd to exit</source>
         <translation>Warten auf beendigung der Serververbindung</translation>
     </message>

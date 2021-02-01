@@ -102,29 +102,29 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1500"/>
+        <location filename="../src/controller.cpp" line="1479"/>
         <source>Wallet Password</source>
         <translation>ولیٹ پاسورڈ</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1501"/>
+        <location filename="../src/controller.cpp" line="1480"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation>آپ کا ولیٹ انکرائپٹیڈ ھے۔ برائے مہربانی اپنا پاسورڈ ڈالیں</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1509"/>
-        <location filename="../src/controller.cpp" line="1529"/>
+        <location filename="../src/controller.cpp" line="1488"/>
+        <location filename="../src/controller.cpp" line="1508"/>
         <source>Wallet Decryption Failed</source>
         <translation>ویلٹ ڈیکرئپشن فیل ھو گئی ہے</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1510"/>
+        <location filename="../src/controller.cpp" line="1489"/>
         <source>Please enter a valid password</source>
         <translation>اپنا ویلڈ پاسورڈ ڈالیں</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1599"/>
+        <location filename="../src/controller.cpp" line="1578"/>
         <source>Failed to unlock wallet</source>
         <translation>ویلٹ نہں کھلا فیلڈ</translation>
     </message>
@@ -1661,7 +1661,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="303"/>
-        <location filename="../src/controller.cpp" line="615"/>
+        <location filename="../src/controller.cpp" line="594"/>
         <source>Connection Error</source>
         <translation>کنیکشن عرر</translation>
     </message>
@@ -1675,8 +1675,8 @@ Note: Funds need 5 confirmations before they can be spent</source>
         <translation>ٹرانزیکشن بھیجنے میں غلطی تھی۔ غلطی یہ تھی</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="263"/>
-        <location filename="../src/controller.cpp" line="265"/>
+        <location filename="../src/controller.cpp" line="242"/>
+        <location filename="../src/controller.cpp" line="244"/>
         <source>No Connection</source>
         <translation>کنیکشن نہیں ھے</translation>
     </message>
@@ -1687,7 +1687,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <location filename="../src/mainwindow.cpp" line="2063"/>
         <location filename="../src/mainwindow.cpp" line="2347"/>
         <location filename="../src/recurring.cpp" line="609"/>
@@ -1698,7 +1698,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <location filename="../src/mainwindow.cpp" line="2063"/>
         <location filename="../src/mainwindow.cpp" line="2347"/>
         <location filename="../src/recurring.cpp" line="609"/>
@@ -1709,7 +1709,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/controller.cpp" line="1539"/>
         <location filename="../src/mainwindow.cpp" line="2067"/>
         <location filename="../src/mainwindow.cpp" line="2350"/>
         <location filename="../src/sendtab.cpp" line="904"/>
@@ -1719,7 +1719,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/controller.cpp" line="1539"/>
         <location filename="../src/mainwindow.cpp" line="2067"/>
         <location filename="../src/mainwindow.cpp" line="2350"/>
         <location filename="../src/sendtab.cpp" line="904"/>
@@ -1730,7 +1730,7 @@ Note: Funds need 5 confirmations before they can be spent</source>
         <location filename="../src/chatmodel.cpp" line="666"/>
         <location filename="../src/chatmodel.cpp" line="1004"/>
         <location filename="../src/connection.cpp" line="416"/>
-        <location filename="../src/controller.cpp" line="1564"/>
+        <location filename="../src/controller.cpp" line="1543"/>
         <location filename="../src/mainwindow.cpp" line="2069"/>
         <location filename="../src/mainwindow.cpp" line="2352"/>
         <location filename="../src/sendtab.cpp" line="913"/>
@@ -1738,17 +1738,17 @@ Note: Funds need 5 confirmations before they can be spent</source>
         <translation type="unfinished">ٹرانزیکشنس عرر</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="616"/>
+        <location filename="../src/controller.cpp" line="595"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1658"/>
+        <location filename="../src/controller.cpp" line="1637"/>
         <source>Update Available</source>
         <translation>اپڈیٹ موجود ہے </translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1659"/>
+        <location filename="../src/controller.cpp" line="1638"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
@@ -1756,12 +1756,12 @@ Would you like to visit the releases page?</source>
 کیا آپ ریلیز والے صفحے پر جانا چاہیں گے؟</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1678"/>
+        <location filename="../src/controller.cpp" line="1657"/>
         <source>No updates available</source>
         <translation>کوئی تازہ اپڈیٹ دستیاب نہیں ہے</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1679"/>
+        <location filename="../src/controller.cpp" line="1658"/>
         <source>You already have the latest release v%1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1770,14 +1770,14 @@ Would you like to visit the releases page?</source>
         <translation type="vanished">Deja aveti cea mai recenta versiune v%1</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2063"/>
-        <location filename="../src/controller.cpp" line="2071"/>
+        <location filename="../src/controller.cpp" line="2042"/>
+        <location filename="../src/controller.cpp" line="2050"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation> باہر جانے کا انتظار کریں Silent DragonLite براہ کرم</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2064"/>
-        <location filename="../src/controller.cpp" line="2072"/>
+        <location filename="../src/controller.cpp" line="2043"/>
+        <location filename="../src/controller.cpp" line="2051"/>
         <source>Waiting for hushd to exit</source>
         <translation>ہش ڈی کے باہر نکلنے کا انتظار کریں</translation>
     </message>

@@ -83,17 +83,22 @@
     <file>res/emoji/SD.png</file>
     </qresource>
     <qresource prefix="/translations">
+        <file>res/silentdragonlite_ar.qm</file>
+        <file>res/silentdragonlite_be.qm</file>
         <file>res/silentdragonlite_de.qm</file>
         <file>res/silentdragonlite_es.qm</file>
-        <file>res/silentdragonlite_fr.qm</file>
-        <file>res/silentdragonlite_pt.qm</file>
-        <file>res/silentdragonlite_it.qm</file>
-        <file>res/silentdragonlite_hr.qm</file>
         <file>res/silentdragonlite_fa.qm</file>
+        <file>res/silentdragonlite_fr.qm</file>
+        <file>res/silentdragonlite_hr.qm</file>
         <file>res/silentdragonlite_id.qm</file>
-        <file>res/silentdragonlite_ar.qm</file>
+        <file>res/silentdragonlite_it.qm</file>
+        <file>res/silentdragonlite_pt.qm</file>
         <file>res/silentdragonlite_ro.qm</file>
+        <file>res/silentdragonlite_ru.qm</file>
         <file>res/silentdragonlite_ud.qm</file>
+        <file>res/silentdragonlite_sr.qm</file>
+        <file>res/silentdragonlite_tr.qm</file>
+        <file>res/silentdragonlite_zh.qm</file>
     </qresource>
     <qresource prefix="/css">
         <file>res/css/Blue.css</file>
