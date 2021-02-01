@@ -153,22 +153,17 @@ void Controller::fillTxJsonParams(json& allRecepients, Tx tx)
     int sizerandomString = 512;
     const int randomStringLength = sizerandomString;
 
-      for(uint8_t i = 0; i < 8; i++)
-    {
-
+    for(uint8_t i = 0; i < 8; i++) {
         QString randomString;
-
         QRandomGenerator *gen = QRandomGenerator::system();
 
-    for(int i=0; i<randomStringLength; ++i)
-    {
+        for(int i=0; i<randomStringLength; ++i) {
+           int index = gen->bounded(0, possibleCharacters.length() - 1);
+           QChar nextChar = possibleCharacters.at(index);
+           randomString.append(nextChar);
+        }
 
-       int index = gen->bounded(0, possibleCharacters.length() - 1);
-       QChar nextChar = possibleCharacters.at(index);
-       randomString.append(nextChar);
-    }
-
-    dust.at(i)["memo"] = randomString.toStdString();
+        dust.at(i)["memo"] = randomString.toStdString();
 
     }
 
@@ -176,12 +171,11 @@ void Controller::fillTxJsonParams(json& allRecepients, Tx tx)
     {
         it["amount"] = 0;
     }
-
         
     // For each addr/amt/memo, construct the JSON and also build the confirm dialog box   
     for (int i=0; i < tx.toAddrs.size(); i++) 
     {
-        auto toAddr = tx.toAddrs[i];
+        auto toAddr    = tx.toAddrs[i];
         rec["address"] = toAddr.addr.toStdString();
         rec["amount"]  = toAddr.amount.toqint64();
         if (Settings::isZAddress(toAddr.addr) && !toAddr.memo.trimmed().isEmpty())
@@ -192,65 +186,50 @@ void Controller::fillTxJsonParams(json& allRecepients, Tx tx)
 
     int decider = rand() % 100 + 1 ;  ; // random int between 1 and 100
 
-if (tx.toAddrs.size() < 2)
-{
-
-if(decider % 4 == 3) 
-{
-
-    allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),    
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4),
-            dust.at(5)
-
-        }) ;
-      
-}else{
-
- allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4),
-            dust.at(5),
-            dust.at(6)
-
-        }) ;
-
-}
-}else{
-
-if(decider % 4 == 3) 
-{
-
-    allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),    
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4)
-
-
-        }) ;
-      
-}else{
-
- allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4),
-            dust.at(5)
-
-        }) ;
-
-}
-}
+    if (tx.toAddrs.size() < 2) {
+    
+        if(decider % 4 == 3) {
+            allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),    
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4),
+                    dust.at(5)
+                }) ;
+              
+        } else {
+         allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4),
+                    dust.at(5),
+                    dust.at(6)
+                }) ;
+        }
+    } else {
+    
+        if(decider % 4 == 3) {
+            allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),    
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4)
+                }) ;
+        } else {
+         allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4),
+                    dust.at(5)
+                }) ;
+        }
+    }
 
 
 }

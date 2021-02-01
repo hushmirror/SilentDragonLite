@@ -277,14 +277,14 @@ QString Settings::getRandomServer() {
     QList<QString> servers;
     //TODO: This should be a much larger list which we randomly choose from
     servers[0] = "https://lite.hush.is";
-    servers[1] = "https://miodrag.zone:9876";
-    servers[2] = "https://hush.leto.net:5420";
-    int x = rand() % 3;
-    return servers[1];
+    servers[1] = "https://devo.crabdance.com";
+    //servers[2] = "https://hush.leto.net:5420";
+    int x = rand() % 2;
+    return servers[x];
 }
 
 QString Settings::getDefaultServer() {
-    return "https://miodrag.zone:9876";
+    return "https://lite.hush.is";
 }
 
 void Settings::openAddressInExplorer(QString address) {
@@ -302,7 +302,7 @@ const QString Settings::txidStatusMessage = QString(QObject::tr("Tx submitted (r
 
 QString Settings::getTokenName() {
     if (Settings::getInstance()->isTestnet()) {
-        return "HUSHT";
+        return "TUSH";
     } else {
         return "HUSH";
     }
