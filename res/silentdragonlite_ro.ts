@@ -739,8 +739,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1957"/>
-        <source>&amp;Hush Discord</source>
-        <translation>Hush Discord</translation>
+        <source>&amp;Hush Telegram</source>
+        <translation>Hush Telegram</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1962"/>
