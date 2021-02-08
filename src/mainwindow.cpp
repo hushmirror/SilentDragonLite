@@ -841,8 +841,8 @@ void MainWindow::setupSettingsModal() {
         // List of default servers
         settings.cmbServer->addItem("https://lite.hush.is");
         settings.cmbServer->addItem("https://bies.xyz");
-        settings.cmbServer->addItem("https://miodrag.zone:9876");
-        settings.cmbServer->addItem("https://hush.leto.net:5420");
+        settings.cmbServer->addItem("https://devo.crabdance.com");
+        //settings.cmbServer->addItem("https://hush.leto.net:5420");
         //TODO: seperate lists of https/Tor servers, only show user or attempt
         // connection to .onion if user has it enabled
         //settings.cmbServer->addItem("6onaaujm4ozaokzu.onion:80");
