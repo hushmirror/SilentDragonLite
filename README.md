@@ -54,6 +54,8 @@ Go to the [releases page](https://git.hush.is/hush/SilentDragonLite/releases) an
 sudo apt-get -y install qt5-default qt5-qmake libqt5websockets5-dev qtcreator
 git clone https://git.hush.is/hush/SilentDragonLite
 cd SilentDragonLite
+# sometimes have to build the translations before building the binary
+./build.sh linguist
 # the next step will take potentially a long time for slower systems
 # Be Patient and please report compiler problems!
 ./build.sh
@@ -68,6 +70,9 @@ sudo apt update
 sudo apt install torsocks
 ```
 #### Connection to our TOR onion service Server
+
+NOTE: Tor server is currently under maintenance.
+
 ```
 * Open SDL  Edit->Settings->LightwalletServer->6onaaujm4ozaokzu.onion:80
 * Open the folder of SDL in a Terminal -> Enter: TORSOCKS_LOG_LEVEL=1 torsocks -i ./SilentDragonLite
