@@ -24,11 +24,11 @@ SilentDragonLite is a lightwallet for HUSH ($HUSH) which runs on Linux and Windo
 SilentDragonLite contacts a few different external websites to get various bits of data.
 
 	* coingecko.com for price data API 
-	* explorer.myhush.org for explorer links 
+	* explorer.hush.is for explorer links 
 	* dexstats.info for address utilities 
-	* hush-lightwallet.de to get Data
+	* lite.hush.is and other community servers to get Data
 
-This means your IP address is known to these servers. Enable Tor setting in SilentDragonLite to prevent this, or better yet, use TAILS: https://tails.boum.org/
+This means your IP address is known to these servers. Enable Tor setting in SilentDragonLite to prevent this, or better yet, use TAILS: https://tails.boum.org/ or QubesOS  https://www.qubes-os.org/
 
 ## Installation
 
