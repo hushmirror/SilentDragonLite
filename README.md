@@ -12,9 +12,9 @@ The first two are option features, to get real-time price data feeds and if you 
 to look at explorer details. Price feed can be turned off in Settings and you can set
 a custom block explorer URL as well.
 
-* coingecko.com for price data API  (optional)
-* explorer.hush.is for explorer links (optional) 
-* various community-run lite wallet servers to provide basic functionality (required)
+    * coingecko.com for price data API  (optional)
+    * explorer.hush.is for explorer links (optional) 
+    * various community-run lite wallet servers to provide basic functionality (required)
 
 This means your IP address is known to these servers. Enable Tor setting in SilentDragon to prevent this, or better yet, use TAILS: https://tails.boum.org/
 or https://qubes-os.org
@@ -57,3 +57,13 @@ cd SilentDragonLite
 ./build.sh
 ./SilentDragonLite
 ```
+
+## Support
+
+For support join us on [Telegram Support](https://hush.is/telegram_support), or our [Main Telegram](https://hush.is/telegram) or tweet at [@MyHushTeam](https://twitter.com/MyHushTeam), or toot at our [Mastodon](https://fosstodon.org/@myhushteam), or [file an issue](https://git.hush.is/hush/SilentDragonLite/issues).
+
+You can also subscribe to our channel on [YouTube](https://hush.is/yt)
+
+## License
+
+GPLv3 or later
