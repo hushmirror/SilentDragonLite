@@ -298,14 +298,16 @@ void Controller::getInfoThenRefresh(bool force)
     static bool prevCallSucceeded = false;
 
     zrpc->fetchInfo([=] (const json& reply) {
-        prevCallSucceeded = true;       
-        int curBlock  = reply["latest_block_height"].get<json::number_integer_t>();
-        bool doUpdate = force || (model->getLatestBlock() != curBlock);
-        int difficulty = reply["difficulty"].get<json::number_integer_t>();
-        int blocks_until_halving= 340000 - curBlock;
-        int halving_days = (blocks_until_halving * 150) / (60 * 60 * 24) ;
-        int longestchain = reply["longestchain"].get<json::number_integer_t>();
-        int notarized = reply["notarized"].get<json::number_integer_t>();
+        prevCallSucceeded        = true;
+        int curBlock             = reply["latest_block_height"].get<json::number_integer_t>();
+        bool doUpdate            = force || (model->getLatestBlock() != curBlock);
+        int difficulty           = reply["difficulty"].get<json::number_integer_t>();
+        int num_halvings         = 1; // number of halvings that have occured already
+        int blocks_until_halving = (num_halvings*1680000 + 340000) - curBlock;
+        int blocktime            = 75;
+        int halving_days         = (blocks_until_halving * blocktime) / (60 * 60 * 24) ;
+        int longestchain         = reply["longestchain"].get<json::number_integer_t>();
+        int notarized            = reply["notarized"].get<json::number_integer_t>();
         
         model->setLatestBlock(curBlock);
         if (
@@ -330,9 +332,7 @@ void Controller::getInfoThenRefresh(bool force)
                 (QLocale(QLocale::German).toString(blocks_until_halving)) + 
                 " Blocks or , " + (QLocale(QLocale::German).toString(halving_days)  + " days" )
             );
-        }
-        else 
-        {
+        } else {
             ui->blockHeight->setText(
                 "Block: " + QLocale(QLocale::English).toString(curBlock)
             );
