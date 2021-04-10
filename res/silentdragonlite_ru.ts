@@ -559,8 +559,8 @@ p, li { white-space: pre-wrap; }
         <translation>Повторное сканирование</translation>
     </message>
     <message>
-        <source>&amp;Hush Discord</source>
-        <translation type="vanished">&amp;Hush Discord</translation>
+        <source>&amp;Hush Telegram</source>
+        <translation type="vanished">&amp;Hush Telegram</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="51"/>
