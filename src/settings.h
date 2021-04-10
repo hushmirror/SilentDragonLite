@@ -9,7 +9,9 @@
 using json = nlohmann::json;
 
 struct Config {
+    // The randomly chosen server we are talking to OR user-specific server
     QString server;
+    bool torOnly {false};
 };
 
 struct ToFields;

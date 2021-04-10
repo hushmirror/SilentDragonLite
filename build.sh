@@ -4,7 +4,7 @@
 UNAME=$(uname)
 
 if [ "$UNAME" == "Linux" ] ; then
-    JOBS=4
+    JOBS=2
 elif [ "$UNAME" == "FreeBSD" ] ; then
     JOBS=$(nproc)
 elif [ "$UNAME" == "Darwin" ] ; then

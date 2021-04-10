@@ -32,7 +32,7 @@ ConnectionLoader::ConnectionLoader(MainWindow* main, Controller* rpc)
     connD->setupUi(d);
 
     auto theme = Settings::getInstance()->get_theme_name();
-    qDebug() << theme << "theme has loaded";
+    qDebug() << theme << "theme " << theme << " has loaded";
     auto size  = QSize(512,512);
 
     if (theme == "Dark" || theme == "Midnight") {
@@ -146,8 +146,7 @@ void ConnectionLoader::doAutoConnect()
     main->logger->write(QObject::tr("Attempting to initialize library with ") + config->server);
 
     // Check to see if there's an existing wallet
-    if (litelib_wallet_exists(Settings::getDefaultChainName().toStdString().c_str()))
-    {
+    if (litelib_wallet_exists(Settings::getDefaultChainName().toStdString().c_str())) {
         main->logger->write(QObject::tr("Using existing wallet."));
         char* resp = litelib_initialize_existing(
             config->dangerous,
@@ -155,8 +154,7 @@ void ConnectionLoader::doAutoConnect()
         );
         QString response = litelib_process_response(resp);
 
-        if (response.toUpper().trimmed() != "OK")
-        {
+        if (response.toUpper().trimmed() != "OK") {
             showError(response);
             return;
         }
