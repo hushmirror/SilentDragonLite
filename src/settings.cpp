@@ -24,36 +24,44 @@ Config Settings::getSettings() {
     QSettings s;
     
     // this domain is stolen and malicious!
+    // More info: https://git.hush.is/hush/fraud/#gilardh
     auto malicious     = "https://lite.myhush.org";
     auto server        = s.value("connection/server").toString();
-    bool torOnly       = s.value("connectoin/torOnly").toBool();
-
-    // default behavior is no server listed in conf, and randomly choose from those listed in code
-    if (server.trimmed().isEmpty()) {
-        server = Settings::getRandomServer();
-    }
-
-    // make sure existing server in conf is alive, otherwise choose random one
-    char* resp = litelib_initialize_existing(false, server.toStdString().c_str());
-    QString response = litelib_process_response(resp);
-
-    // if we see a valid connection, return this server
-    if (response.toUpper().trimmed() != "OK") {
-        qDebug() << "Lite server in conf " << server << " is down, getting a random one";
-        server = Settings::getRandomServer();
-        s.setValue("connection/server", server);
-    }
+    bool sticky        = s.value("connection/stickyServer").toBool();
+    bool torOnly       = s.value("connection/torOnly").toBool();
 
     // Users that have old configs generated from old SDLs will have this hostname
     if(server == malicious) {
         qDebug() << "Replacing malicious SDL server with " << server;
+        server = "https://lite.hush.is";
         s.setValue("connection/server", server);
     }
+
+    // default behavior : no server listed in conf, randomly choose from server list, unless sticky
+    if (server.trimmed().isEmpty()) {
+        server = Settings::getRandomServer();
+
+        // make sure existing server in conf is alive, otherwise choose random one
+        char* resp = litelib_initialize_existing(false, server.toStdString().c_str());
+        QString response = litelib_process_response(resp);
+
+        if (response.toUpper().trimmed() != "OK") {
+            qDebug() << "Lite server in conf " << server << " is down, getting a random one";
+            server = Settings::getRandomServer();
+            s.setValue("connection/server", server);
+        }
+    } else {
+        if (sticky) {
+            qDebug() << server << " is sticky";
+        }
+        // if it's down, oh well
+    }
+
     s.sync();
     // re-init to load correct settings
     init();
 
-    return Config{server, torOnly};
+    return Config{server, torOnly, sticky};
 }
 
 void Settings::saveSettings(const QString& server) {
@@ -294,8 +302,8 @@ QString Settings::getRandomServer() {
     servers[0] = "https://lite.hush.is";
     servers[1] = "https://devo.crabdance.com";
     servers[2] = "https://bies.xyz";
-    servers[3] = "https://hush.leto.net";
-    servers[4] = "https://milktoast.attackingzcash.com";
+    //servers[3] = "https://hush.leto.net";
+    //servers[4] = "https://milktoast.attackingzcash.com";
 
     // start at a random place in the list
     int x       = rand() % servers.size();
