@@ -107,7 +107,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QObject::connect(ui->actionExit, &QAction::triggered, this, &MainWindow::close);
 
     // Set up Feedback action
-    QObject::connect(ui->actionDonate, &QAction::triggered, this, &MainWindow::donate);
+    //QObject::connect(ui->actionDonate, &QAction::triggered, this, &MainWindow::donate);
 
     QObject::connect(ui->actionTelegram, &QAction::triggered, this, &MainWindow::telegram);
 
@@ -277,7 +277,7 @@ MainWindow::MainWindow(QWidget *parent) :
         dialog.exec();
 });
 
-// Import Privkey
+    // Import Privkey
     QObject::connect(ui->actionImport_Privatkey, &QAction::triggered, this, &MainWindow::importPrivKey);
     // Address Book
     QObject::connect(ui->action_Address_Book, &QAction::triggered, this, &MainWindow::addressBook);
@@ -909,14 +909,11 @@ void MainWindow::website() {
 
 
 void MainWindow::donate() {
-    // Set up a donation to me :)
-
     ui->Address1->setText(Settings::getDonationAddr());
     ui->Address1->setCursorPosition(0);
     ui->Amount1->setText("0.00");
     ui->MemoTxt1->setText(tr("Some feedback about SilentDragonlite or Hush..."));
-
-    ui->statusBar->showMessage(tr("Send DenioD some private and shielded feedback about") % Settings::getTokenName() % tr(" or SilentDragonLite"));
+    ui->statusBar->showMessage(tr("Send some private and shielded feedback about") % Settings::getTokenName() % tr(" or SilentDragonLite"));
 
     // And switch to the send tab.
     ui->tabWidget->setCurrentIndex(1);
@@ -930,30 +927,37 @@ void MainWindow::donate() {
 
      if (keys->isEmpty()) {
          delete keys;
-         ui->statusBar->showMessage(tr("Private key import rescan in progress. Your funds will be automaticly shield to a wallet seed zaddr. This will take some time"));
+         ui->statusBar->showMessage(tr("Private key import rescan in progress. Your funds will be shielded into this wallet and backed up by your seed phrase. This will take some time"));
         return;
      }
 
      // Pop the first key
-     
      QString key = keys->first();
      QString key1 = key + QString(" ") + QString("0");
      keys->pop_front();
      bool rescan = keys->isEmpty();
      
-
-     if (key.startsWith("SK") ||
-         key.startsWith("secret")) { 
-        
+     if (key.startsWith("SK") || key.startsWith("secret")) { 
          rpc->importZPrivKey(key, [=] (auto) { this->doImport(keys); });  
-                                                   
-     } else if (key.startsWith("U")) {
+     } else if (key.startsWith("U") || key.startsWith("5") || key.startsWith("L") || key.startsWith("K")) {
+       // 5 = uncompressed, len=51
+       // LK= compressed,   len=52
+       // TODO: verify exact length of (un)compressed
+       if(key.length() > 52) {
+          QMessageBox::critical(this, tr("Wrong Private key format"), 
+                tr("That private key is too long. It should be 51 or 52 characters.") + "\n");
+           return;
+       }
 
+       if(key.length() < 51) {
+          QMessageBox::critical(this, tr("Wrong Private key format"), 
+                tr("That private key is too short. It should be 51 or 52 characters.") + "\n");
+           return;
+       }
        rpc->importTPrivKey(key,  [=] (auto) { this->doImport(keys); });
-
      }else{
           QMessageBox::critical(this, tr("Wrong Privatkey format"), 
-                tr("Privatkey should start with U (for taddr) or secret- (for zaddr)") + "\n");
+                tr("Privatkey should start with 5, K, L or U (for taddr) or secret- (for zaddr)") + "\n");
         return;
     }
  }
