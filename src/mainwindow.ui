@@ -2035,7 +2035,7 @@
   </action>
   <action name="actionImport_Privatkey">
    <property name="text">
-    <string>Import Privatkey</string>
+    <string>Import Private Key</string>
    </property>
   </action>
  </widget>

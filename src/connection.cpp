@@ -114,7 +114,7 @@ void ConnectionLoader::ShowProgress()
                     qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
                     qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
                     me->showInformation(
-                        "Synced " + QString::number(synced) + " / " + QString::number(total)
+                        "Syncing... " + QString::number(synced) + " / " + QString::number(total)
                     );
                 }
             },
@@ -206,7 +206,7 @@ void ConnectionLoader::doAutoConnect()
                         qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
                         qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
                         me->showInformation(
-                            "Synced " + QString::number(synced) + " / " + QString::number(total)
+                            "Syncing... " + QString::number(synced) + " / " + QString::number(total)
                         );
                     }
                 },

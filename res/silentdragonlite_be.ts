@@ -748,7 +748,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2038"/>
-        <source>Import Privatkey</source>
+        <source>Import Private Key</source>
         <translation>Імпартаваць Прыватныключ</translation>
     </message>
     <message>
