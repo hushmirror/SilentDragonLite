@@ -328,11 +328,6 @@ QString Settings::getRandomServer() {
     return server;
 }
 
-QString Settings::getDefaultServer() {
-    qDebug() << __func__;
-    return "https://lite.hush.is";
-}
-
 void Settings::openAddressInExplorer(QString address) {
     QString url = "https://explorer.hush.is/address/" + address;
     QDesktopServices::openUrl(QUrl(url));

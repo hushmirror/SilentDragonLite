@@ -155,8 +155,11 @@ void ConnectionLoader::doAutoConnect()
         QString response = litelib_process_response(resp);
 
         if (response.toUpper().trimmed() != "OK") {
-            showError(response);
+            QString resp = "Error when connecting to " + config->server + ": " + response;
+            showError(resp);
             return;
+        } else {
+            qDebug() << __func__ << ": Successfully connected to " << config->server << " !!!";
         }
 
     } else {
