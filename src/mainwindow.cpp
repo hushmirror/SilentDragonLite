@@ -1057,7 +1057,7 @@ void MainWindow::payhushURI(QString uri, QString myAddr) {
      pui.helpLbl->setText(QString() %
                          tr("Please paste your private key(zs-Addr or R-addr) here, one per import") % ".\n" %
                          tr("Caution: If this key is for a zaddr it will be NOT included in your Seed. Please send them direct to a Seed zaddr") % ".\n" %
-                         tr("R-addr keys will be automatically sent to a zaddr in your Seed")
+                         tr("Transparent address (R.. or t1..) keys will be automatically sent to a zaddr in your Seed")
                          );  
 
      if (d.exec() == QDialog::Accepted && !pui.privKeyTxt->toPlainText().trimmed().isEmpty()) {
