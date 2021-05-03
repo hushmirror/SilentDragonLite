@@ -840,7 +840,7 @@ void MainWindow::setupSettingsModal() {
         
         // List of default servers
         settings.cmbServer->addItem("https://lite.hush.is");
-        settings.cmbServer->addItem("https://bies.xyz");
+        settings.cmbServer->addItem("https://lite.hush.community");
         settings.cmbServer->addItem("https://devo.crabdance.com");
         //settings.cmbServer->addItem("https://hush.leto.net:5420");
         //TODO: seperate lists of https/Tor servers, only show user or attempt

@@ -301,7 +301,7 @@ QString Settings::getRandomServer() {
     //TODO: This should be a much larger list which we randomly choose from
     servers[0] = "https://lite.hush.is";
     servers[1] = "https://devo.crabdance.com";
-    servers[2] = "https://bies.xyz";
+    servers[2] = "https://lite.hush.community";
     //servers[3] = "https://hush.leto.net";
     //servers[4] = "https://milktoast.attackingzcash.com";
 
