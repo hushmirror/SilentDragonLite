@@ -40,7 +40,7 @@ void LiteInterface::importTPrivKey(QString addr,const std::function<void(json)>&
     if (conn == nullptr)
         return;
 
-          conn->doRPCWithDefaultErrorHandling("timport", addr, cb);
+    conn->doRPCWithDefaultErrorHandling("timport", addr, cb);
 }
 
 

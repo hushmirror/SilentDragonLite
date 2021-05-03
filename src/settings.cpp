@@ -3,6 +3,7 @@
 #include "mainwindow.h"
 #include "settings.h"
 #include "camount.h"
+#include "../lib/silentdragonlitelib.h"
 
 Settings* Settings::instance = nullptr;
 
@@ -18,26 +19,49 @@ Settings* Settings::getInstance() {
 }
 
 Config Settings::getSettings() {
+    qDebug() << __func__;
     // Load from the QT Settings. 
     QSettings s;
     
     // this domain is stolen and malicious!
-    auto malicious     = "https://lite.myhush.org";
+    // More info: https://git.hush.is/hush/fraud/#gilardh
+    auto malicious     = "lite.myhush.org";
     auto server        = s.value("connection/server").toString();
-    if(server == malicious) {
-        server = "https://lite.hush.is";
+    bool sticky        = s.value("connection/stickyServer").toBool();
+    bool torOnly       = s.value("connection/torOnly").toBool();
+
+    // Users that have old configs generated from old SDLs will have this hostname
+    if(server == malicious or server == (QString("https://") + malicious)) {
         qDebug() << "Replacing malicious SDL server with " << server;
+        server = getRandomServer();
         s.setValue("connection/server", server);
-        s.sync();
-        // re-init to load correct settings
-        init();
     }
 
+    // default behavior : no server listed in conf, randomly choose from server list, unless sticky
     if (server.trimmed().isEmpty()) {
-        server = Settings::getDefaultServer();
+        server = Settings::getRandomServer();
+
+        // make sure existing server in conf is alive, otherwise choose random one
+        char* resp = litelib_initialize_existing(false, server.toStdString().c_str());
+        QString response = litelib_process_response(resp);
+
+        if (response.toUpper().trimmed() != "OK") {
+            qDebug() << "Lite server in conf " << server << " is down, getting a random one";
+            server = Settings::getRandomServer();
+            s.setValue("connection/server", server);
+        }
+    } else {
+        if (sticky) {
+            qDebug() << server << " is sticky";
+        }
+        // if it's down, oh well
     }
 
-    return Config{server};
+    s.sync();
+    // re-init to load correct settings
+    init();
+
+    return Config{server, torOnly, sticky};
 }
 
 void Settings::saveSettings(const QString& server) {
@@ -250,9 +274,7 @@ void Settings::set_theme_name(QString theme_name) {
     QSettings().setValue("options/theme_name", theme_name);
 }
 
-//=================================
 // Static Stuff
-//=================================
 void Settings::saveRestore(QDialog* d) {
     d->restoreGeometry(QSettings().value(d->objectName() % "geometry").toByteArray());
 
@@ -271,20 +293,43 @@ void Settings::saveRestoreTableHeader(QTableView* table, QDialog* d, QString tab
 }
 
 QString Settings::getRandomServer() {
+    qDebug() << __func__;
+    // The more servers from different TLDs, the better
+    QList<QString> servers = {
+    "https://lite.hush.is",
+    "https://devo.crabdance.com",
+    //"https://thisisdown1.example.com",
+    //"https://thisisdown2.example.com",
+    //"https://thisisdown3.example.com",
+    //"https://thisisdown4.example.com",
+    //"https://thisisdown5.example.com",
+    "https://lite.hush.community",
+    };
+
     // we don't need cryptographic random-ness, but we want
     // clients to never get "stuck" with the same server, which
     // prevents various attacks
-    QList<QString> servers;
-    //TODO: This should be a much larger list which we randomly choose from
-    servers[0] = "https://lite.hush.is";
-    servers[1] = "https://miodrag.zone:9876";
-    servers[2] = "https://hush.leto.net:5420";
-    int x = rand() % 3;
-    return servers[1];
-}
+    int  x      = rand() % servers.size();
+    auto server = servers[x];
+    int tries   = 0;
 
-QString Settings::getDefaultServer() {
-    return "https://miodrag.zone:9876";
+    // We try every server,in order, starting from a random place in the list
+    while (tries < servers.size() ) {
+        qDebug() << "Checking if lite server " << server << " is a alive, try=" << tries;
+        char* resp = litelib_initialize_existing(false, server.toStdString().c_str());
+        QString response = litelib_process_response(resp);
+
+        // if we see a valid connection, return this server
+        if (response.toUpper().trimmed() == "OK") {
+            qDebug() << "Choosing lite server " << server;
+            return server;
+        }
+        x++;
+        x = x % servers.size();
+        server = servers[x];
+        tries++;
+    }
+    return server;
 }
 
 void Settings::openAddressInExplorer(QString address) {
@@ -302,7 +347,7 @@ const QString Settings::txidStatusMessage = QString(QObject::tr("Tx submitted (r
 
 QString Settings::getTokenName() {
     if (Settings::getInstance()->isTestnet()) {
-        return "HUSHT";
+        return "TUSH";
     } else {
         return "HUSH";
     }

@@ -32,7 +32,7 @@ ConnectionLoader::ConnectionLoader(MainWindow* main, Controller* rpc)
     connD->setupUi(d);
 
     auto theme = Settings::getInstance()->get_theme_name();
-    qDebug() << theme << "theme has loaded";
+    qDebug() << theme << "theme " << theme << " has loaded";
     auto size  = QSize(512,512);
 
     if (theme == "Dark" || theme == "Midnight") {
@@ -114,7 +114,7 @@ void ConnectionLoader::ShowProgress()
                     qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
                     qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
                     me->showInformation(
-                        "Synced " + QString::number(synced) + " / " + QString::number(total)
+                        "Syncing... " + QString::number(synced) + " / " + QString::number(total)
                     );
                 }
             },
@@ -146,8 +146,7 @@ void ConnectionLoader::doAutoConnect()
     main->logger->write(QObject::tr("Attempting to initialize library with ") + config->server);
 
     // Check to see if there's an existing wallet
-    if (litelib_wallet_exists(Settings::getDefaultChainName().toStdString().c_str()))
-    {
+    if (litelib_wallet_exists(Settings::getDefaultChainName().toStdString().c_str())) {
         main->logger->write(QObject::tr("Using existing wallet."));
         char* resp = litelib_initialize_existing(
             config->dangerous,
@@ -155,10 +154,24 @@ void ConnectionLoader::doAutoConnect()
         );
         QString response = litelib_process_response(resp);
 
-        if (response.toUpper().trimmed() != "OK")
-        {
-            showError(response);
-            return;
+        if (response.toUpper().trimmed() != "OK") {
+            config->server = Settings::getRandomServer();
+
+            resp = litelib_initialize_existing(
+                config->dangerous,
+                config->server.toStdString().c_str()
+            );
+            response = litelib_process_response(resp);
+
+            if (response.toUpper().trimmed() != "OK") {
+                QString resp = "Error when connecting to " + config->server + ": " + response;
+                showError(resp);
+                return;
+            } else {
+                qDebug() << __func__ << ": Successfully connected to random server: " << config->server << " !!!";
+            }
+        } else {
+            qDebug() << __func__ << ": Successfully connected to " << config->server << " !!!";
         }
 
     } else {
@@ -208,7 +221,7 @@ void ConnectionLoader::doAutoConnect()
                         qint64 synced = reply["synced_blocks"].get<json::number_unsigned_t>();
                         qint64 total = reply["total_blocks"].get<json::number_unsigned_t>();
                         me->showInformation(
-                            "Synced " + QString::number(synced) + " / " + QString::number(total)
+                            "Syncing... " + QString::number(synced) + " / " + QString::number(total)
                         );
                     }
                 },

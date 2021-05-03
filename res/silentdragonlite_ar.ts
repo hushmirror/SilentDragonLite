@@ -94,29 +94,29 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1500"/>
+        <location filename="../src/controller.cpp" line="1479"/>
         <source>Wallet Password</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1501"/>
+        <location filename="../src/controller.cpp" line="1480"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1509"/>
-        <location filename="../src/controller.cpp" line="1529"/>
+        <location filename="../src/controller.cpp" line="1488"/>
+        <location filename="../src/controller.cpp" line="1508"/>
         <source>Wallet Decryption Failed</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1510"/>
+        <location filename="../src/controller.cpp" line="1489"/>
         <source>Please enter a valid password</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1599"/>
+        <location filename="../src/controller.cpp" line="1578"/>
         <source>Failed to unlock wallet</source>
         <translation></translation>
     </message>
@@ -550,7 +550,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2038"/>
-        <source>Import Privatkey</source>
+        <source>Import Private Key</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -712,7 +712,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1957"/>
-        <source>&amp;Hush Discord</source>
+        <source>&amp;Hush Telegram</source>
         <translation></translation>
     </message>
     <message>
@@ -1531,7 +1531,7 @@ Note: Funds need 1 confirmations before they can be spent</source>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="303"/>
-        <location filename="../src/controller.cpp" line="615"/>
+        <location filename="../src/controller.cpp" line="594"/>
         <source>Connection Error</source>
         <translation></translation>
     </message>
@@ -1539,7 +1539,7 @@ Note: Funds need 1 confirmations before they can be spent</source>
         <location filename="../src/chatmodel.cpp" line="666"/>
         <location filename="../src/chatmodel.cpp" line="1004"/>
         <location filename="../src/connection.cpp" line="416"/>
-        <location filename="../src/controller.cpp" line="1564"/>
+        <location filename="../src/controller.cpp" line="1543"/>
         <location filename="../src/mainwindow.cpp" line="2069"/>
         <location filename="../src/mainwindow.cpp" line="2352"/>
         <location filename="../src/sendtab.cpp" line="913"/>
@@ -1552,15 +1552,15 @@ Note: Funds need 1 confirmations before they can be spent</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="263"/>
-        <location filename="../src/controller.cpp" line="265"/>
+        <location filename="../src/controller.cpp" line="242"/>
+        <location filename="../src/controller.cpp" line="244"/>
         <source>No Connection</source>
         <translation></translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <location filename="../src/mainwindow.cpp" line="2063"/>
         <location filename="../src/mainwindow.cpp" line="2347"/>
         <location filename="../src/recurring.cpp" line="609"/>
@@ -1571,7 +1571,7 @@ Note: Funds need 1 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1556"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <location filename="../src/mainwindow.cpp" line="2063"/>
         <location filename="../src/mainwindow.cpp" line="2347"/>
         <location filename="../src/recurring.cpp" line="609"/>
@@ -1582,7 +1582,7 @@ Note: Funds need 1 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/controller.cpp" line="1539"/>
         <location filename="../src/mainwindow.cpp" line="2067"/>
         <location filename="../src/mainwindow.cpp" line="2350"/>
         <location filename="../src/sendtab.cpp" line="904"/>
@@ -1592,7 +1592,7 @@ Note: Funds need 1 confirmations before they can be spent</source>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1560"/>
+        <location filename="../src/controller.cpp" line="1539"/>
         <location filename="../src/mainwindow.cpp" line="2067"/>
         <location filename="../src/mainwindow.cpp" line="2350"/>
         <location filename="../src/sendtab.cpp" line="904"/>
@@ -1600,41 +1600,41 @@ Note: Funds need 1 confirmations before they can be spent</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="616"/>
+        <location filename="../src/controller.cpp" line="595"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1658"/>
+        <location filename="../src/controller.cpp" line="1637"/>
         <source>Update Available</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1659"/>
+        <location filename="../src/controller.cpp" line="1638"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1678"/>
+        <location filename="../src/controller.cpp" line="1657"/>
         <source>No updates available</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1679"/>
+        <location filename="../src/controller.cpp" line="1658"/>
         <source>You already have the latest release v%1</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2063"/>
-        <location filename="../src/controller.cpp" line="2071"/>
+        <location filename="../src/controller.cpp" line="2042"/>
+        <location filename="../src/controller.cpp" line="2050"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2064"/>
-        <location filename="../src/controller.cpp" line="2072"/>
+        <location filename="../src/controller.cpp" line="2043"/>
+        <location filename="../src/controller.cpp" line="2051"/>
         <source>Waiting for hushd to exit</source>
         <translation></translation>
     </message>

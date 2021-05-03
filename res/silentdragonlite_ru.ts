@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1" language="ru_RU">
 <context>
     <name>AddressBookModel</name>
     <message>
         <location filename="../src/addressbook.cpp" line="16"/>
         <source>Label</source>
-        <translation>Nom</translation>
+        <translation>Метка</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="16"/>
         <source>Address</source>
-        <translation>Adresse</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="16"/>
         <source>Avatar</source>
-        <translation type="unfinished"></translation>
+        <translation>Аватар</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="16"/>
         <source>HushChatAddress</source>
-        <translation type="unfinished"></translation>
+        <translation>HushChatАдрес</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="16"/>
         <source>CID</source>
-        <translation type="unfinished"></translation>
+        <translation>CID</translation>
     </message>
 </context>
 <context>
@@ -34,12 +34,12 @@
     <message>
         <location filename="../src/balancestablemodel.cpp" line="152"/>
         <source>Address</source>
-        <translation>Adresse</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="../src/balancestablemodel.cpp" line="153"/>
         <source>Amount</source>
-        <translation>Montant</translation>
+        <translation>Количество</translation>
     </message>
 </context>
 <context>
@@ -47,21 +47,25 @@
     <message>
         <location filename="../src/chatbubbleme.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../src/chatbubbleme.ui" line="38"/>
         <source>Speak And Transact Freely With Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Совершайте Сделки и Говорите Свободно с Hush</translation>
     </message>
     <message>
         <location filename="../src/chatbubbleme.ui" line="51"/>
         <source>01/01/2021 12:34</source>
-        <translation type="unfinished">01/01/2021 12:34</translation>
+        <translation>01/01/2021 12:34</translation>
+    </message>
+    <message>
+        <source>Lorem ipsum dolor sit amet</source>
+        <translation type="vanished">Lorem ipsum dolor sit amet</translation>
     </message>
     <message>
         <source>12/03/2020 12:34</source>
-        <translation type="obsolete">12/03/2020 12:34</translation>
+        <translation type="vanished">12/03/2020 12:34</translation>
     </message>
 </context>
 <context>
@@ -69,17 +73,17 @@
     <message>
         <location filename="../src/chatbubblepartner.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../src/chatbubblepartner.ui" line="38"/>
         <source>Lorem ipsum dolor sit amet</source>
-        <translation type="unfinished"></translation>
+        <translation>Lorem ipsum dolor sit amet</translation>
     </message>
     <message>
         <location filename="../src/chatbubblepartner.ui" line="51"/>
         <source>12/03/2020 12:34</source>
-        <translation type="unfinished">12/03/2020 12:34</translation>
+        <translation>12/03/2020 12:34</translation>
     </message>
 </context>
 <context>
@@ -96,7 +100,7 @@
     <message>
         <location filename="../src/connection.ui" line="70"/>
         <source>The Dragon Awakens...</source>
-        <translation type="unfinished"></translation>
+        <translation>Дракон пробуждается...</translation>
     </message>
     <message>
         <source>Starting Up</source>
@@ -108,30 +112,30 @@
     <message>
         <location filename="../src/controller.cpp" line="1479"/>
         <source>Wallet Password</source>
-        <translation>Mot de passe du wallet</translation>
+        <translation>Пароль Кошелька</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1480"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
-        <translation>Votre portefeuille est crypté.
-Veuillez entrer le mot de passe du wallet</translation>
+        <translation>Ваш кошелек зашифрован.
+Пожалуйста введите пароль вашего кошелька</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1488"/>
         <location filename="../src/controller.cpp" line="1508"/>
         <source>Wallet Decryption Failed</source>
-        <translation>Échec du déchiffrement du portefeuille</translation>
+        <translation>Ошибка Расшифровки Кошелька</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1489"/>
         <source>Please enter a valid password</source>
-        <translation>Veuillez entrer un mot de passe valide</translation>
+        <translation>Пожалуйста, введите правильный пароль</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1578"/>
         <source>Failed to unlock wallet</source>
-        <translation>Impossible de déverrouiller le wallet</translation>
+        <translation>Не удалось разблокировать кошелек</translation>
     </message>
 </context>
 <context>
@@ -143,7 +147,7 @@ Veuillez entrer le mot de passe du wallet</translation>
     <message>
         <location filename="../src/newwallet.ui" line="26"/>
         <source>Create New SDL Wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать Новый SDL Кошелек</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="88"/>
@@ -158,22 +162,32 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;By clicking OK, you agree to use Hush, the SilentDragon family of wallets, HushChat, and any software developed by The Hush Developers in accordance with your local laws, that all liabilities related to using this service are your own, and The Hush Developers WILL NOT BE RESPONSIBLE FOR any losses related to using this software.&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;h1 align=&quot;center&quot; style=&quot; margin-top:18px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Hush + HushChat Правила Пользования&lt;/span&gt;&lt;/h1&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Все пользователи соглашаются не использовать платформу для инициирования или угрозы любого насильственного вмешательства или насилия в отношении человека или его собственности или  &lt;a href=&quot;https://en.wikipedia.org/wiki/Non-aggression_principle&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;Принцип Ненападения&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;СЕРВИС ПРЕДОСТАВЛЯЕТСЯ &quot;КАК ЕСТЬ&quot;, и разработчики Hush НЕ ДЕЛАЮТ КАКИХ-ЛИБО КОНКРЕТНЫХ ОБЯЗАТЕЛЬСТВ ИЛИ ГАРАНТИЙ В ОТНОШЕНИИ СЕРВИСА.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Нажимая ОК, вы соглашаетесь использовать Hush и все кошельки  которые имеют отношение к SilentDragon и HushChat, и  так же любое программное обеспечение разработанное The Hush разработчиками в соответствии с вашим местным законодательством, что все обязательства, связанные с использованием этого сервиса, являются вашими собственными, и разработчики Hush НЕ НЕСУТ ОТВЕТСТВЕННОСТИ за любые убытки, связанные с использованием этого программного обеспечения.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="114"/>
         <source>I accept the Terms of Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Я принимаю Условия Предоставления Услуг</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="192"/>
         <source>Confirm Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Подтвердите Кодовую Фразу:</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="245"/>
         <source>Restore wallet from seed</source>
-        <translation>Restaurer le wallet de la phrase clé (graine)</translation>
+        <translation>Восстановить кошелек из seed</translation>
     </message>
     <message>
         <source>Restore an existing wallet, using the 24-word seed. </source>
@@ -182,22 +196,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/newwallet.ui" line="285"/>
         <source>Create a new wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать новый кошелек</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="172"/>
         <source>Encryption Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодовая Фраза для Шифрования:</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="149"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Passphrase don&apos;t match&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Кодовая фраза не совпадает&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/newwallet.ui" line="165"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;16 letters minimum&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Минимум 16 букв&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Create a new Wallet</source>
@@ -213,122 +227,122 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/contactrequest.ui" line="32"/>
         <source>Send Contact Request</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправить Запрос на Контакт</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="49"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Insert a nickname for your contact:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Вставьте псевдоним для вашего контакта:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="78"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Choose an avatar for your contact:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Выберите аватар для вашего контакта:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="100"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Insert a memo for your request:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Вставьте памятку по вашему запросу:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="121"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Your HushChat Address:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Ваш HushChat Адрес:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="159"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Insert the address of your contact:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Вставьте адрес вашего контакта:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="178"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#d3d7cf;&quot;&gt;Generate your HushChat Address - please wait a second - &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#d3d7cf;&quot;&gt;Создайте свой HushChat Адрес - пожалуйста подождите секунду - &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="232"/>
         <source>SDLogo</source>
-        <translation type="unfinished"></translation>
+        <translation>SDЛоготип</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="242"/>
         <source>Duke</source>
-        <translation type="unfinished"></translation>
+        <translation>Duke</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="252"/>
         <source>Denio</source>
-        <translation type="unfinished"></translation>
+        <translation>Denio</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="262"/>
         <source>Berg</source>
-        <translation type="unfinished"></translation>
+        <translation>Berg</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="272"/>
         <source>Stag</source>
-        <translation type="unfinished"></translation>
+        <translation>Stag</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="282"/>
         <source>Sharpee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sharpee</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="292"/>
         <source>Elsa</source>
-        <translation type="unfinished"></translation>
+        <translation>Elsa</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="302"/>
         <source>Yoda</source>
-        <translation type="unfinished"></translation>
+        <translation>Yoda</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="312"/>
         <source>Garfield</source>
-        <translation type="unfinished"></translation>
+        <translation>Garfield</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="322"/>
         <source>Snoopy</source>
-        <translation type="unfinished"></translation>
+        <translation>Snoopy</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="332"/>
         <source>Popey</source>
-        <translation type="unfinished"></translation>
+        <translation>Popey</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="342"/>
         <source>Pinguin</source>
-        <translation type="unfinished"></translation>
+        <translation>Pinguin</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="352"/>
         <source>Mickey</source>
-        <translation type="unfinished"></translation>
+        <translation>Mickey</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="389"/>
         <source>0/512</source>
-        <translation type="unfinished">0/512</translation>
+        <translation>0/512</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="396"/>
         <source>Add a memo to your request</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавьте памятку к вашему запросу</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="415"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../src/contactrequest.ui" line="428"/>
         <source>Add Contact and Send Request</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить Контакт и Отправить Запрос</translation>
     </message>
 </context>
 <context>
@@ -340,57 +354,57 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="567"/>
         <source>Balance</source>
-        <translation>Solde</translation>
+        <translation>Баланс</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="581"/>
         <source>Summary</source>
-        <translation>Résumé</translation>
+        <translation>Итог</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="598"/>
         <source>Shielded</source>
-        <translation>Privé</translation>
+        <translation>Экранированный</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="625"/>
         <source>Notarized</source>
-        <translation>Notarizé</translation>
+        <translation>Заверенный</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="652"/>
         <source>Transparent</source>
-        <translation>Transparant</translation>
+        <translation>Прозрачный</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="719"/>
         <source>Total</source>
-        <translation>Total</translation>
+        <translation>Всего</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="747"/>
         <source>Your node is still syncing, balances may not be updated.</source>
-        <translation>Votre nœud est toujours en cours de synchronisation, les soldes peuvent ne pas être mis à jour.</translation>
+        <translation>Ваша нода все еще синхронизируется, балансы могут не обновляться.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="766"/>
         <source>Some transactions are not yet confirmed. Balances may change.</source>
-        <translation>Certaines transactions ne sont pas encore confirmées. Les soldes peuvent changer.</translation>
+        <translation>Некоторые транзакции еще не подтверждены. Балансы могут измениться.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="891"/>
         <source>Total notarized funds available:</source>
-        <translation>Total des fonds notariés disponibles:</translation>
+        <translation>Всего заверенных денежных средств:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1303"/>
         <source>Next Address</source>
-        <translation></translation>
+        <translation>Следующий Адрес</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1418"/>
         <source>Your node is still syncing, balances may not be updated</source>
-        <translation>Votre nœud est toujours en cours de synchronisation, les soldes peuvent ne pas être mis à jour</translation>
+        <translation>Ваша нода все еще синхронизируется, балансы могут не обновиться</translation>
     </message>
     <message>
         <source>Some transactions are not yet confirmed</source>
@@ -399,13 +413,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="805"/>
         <source>Address Balances</source>
-        <translation>Solde des adresses</translation>
+        <translation>Балансы Адресов</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="854"/>
         <location filename="../src/mainwindow.ui" line="1218"/>
         <source>Send</source>
-        <translation>Envoyer</translation>
+        <translation>Отправить</translation>
     </message>
     <message>
         <source>From</source>
@@ -418,12 +432,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="928"/>
         <source>Send To</source>
-        <translation>Envoyer à</translation>
+        <translation>Отправить Для</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="967"/>
         <source>Recipient</source>
-        <translation>Destinataire</translation>
+        <translation>Получатель</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="975"/>
@@ -432,13 +446,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/sendtab.cpp" line="240"/>
         <location filename="../src/sendtab.cpp" line="245"/>
         <source>Address</source>
-        <translation>Adresse</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="989"/>
         <location filename="../src/sendtab.cpp" line="255"/>
         <source>Address Book</source>
-        <translation>Carnet d&apos;adresses</translation>
+        <translation>Адресная Книга</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1000"/>
@@ -446,25 +460,25 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/sendtab.cpp" line="268"/>
         <location filename="../src/sendtab.cpp" line="272"/>
         <source>Amount</source>
-        <translation>Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1030"/>
         <source>Max Available</source>
-        <translation>Maximum disponible</translation>
+        <translation>Максимально доступно</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1056"/>
-        <location filename="../src/mainwindow.cpp" line="1371"/>
-        <location filename="../src/mainwindow.cpp" line="1439"/>
+        <location filename="../src/mainwindow.cpp" line="1372"/>
+        <location filename="../src/mainwindow.cpp" line="1440"/>
         <location filename="../src/sendtab.cpp" line="294"/>
         <source>Memo</source>
-        <translation>Mémo</translation>
+        <translation>Памятка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1104"/>
         <source>Add Recipient</source>
-        <translation>Ajouter un destinataire</translation>
+        <translation>Добавить Получателя</translation>
     </message>
     <message>
         <source>Recurring payment</source>
@@ -482,8 +496,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1165"/>
         <location filename="../src/sendtab.cpp" line="749"/>
         <source>Miner Fee</source>
-        <translatorcomment>I replaced this with &quot;transaction fee&quot; which sounds much better in French.. I hope it&apos;s correct too.. </translatorcomment>
-        <translation>Frais de transaction</translation>
+        <translation>Комиссия Майнера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1178"/>
@@ -493,52 +506,61 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1234"/>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1244"/>
         <source>Receive</source>
-        <translation>Recevoir</translation>
+        <translation>Получать</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1252"/>
         <source>Address Type</source>
-        <translation>Type d&apos;adresse</translation>
+        <translation>Тип Адреса</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1716"/>
         <source>Version hushlightd</source>
-        <translation></translation>
+        <translation>Версия hushlightd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1952"/>
         <source>&amp;Send DenioD Feedback</source>
-        <translation>&amp;amp;Envoyer des commentaires à DenioD</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="1985"/>
-        <source>&amp;Export seed phrase</source>
-        <translation>&amp;amp;Exporter la phrase clé (graine)</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="2023"/>
-        <source>Encrypt Wallet</source>
-        <translation>Chiffrer le portefeuille</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="2028"/>
-        <source>Remove Wallet Encryption</source>
-        <translation>Supprimer le chiffrement de portefeuille</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="2033"/>
-        <source>Rescan</source>
-        <translation>Re-scanner</translation>
+        <translation>&amp;Отправить DenioD Фидбэк</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1957"/>
         <source>&amp;Hush Telegram</source>
-        <translation>&amp;amp;Telegram Hush</translation>
+        <translation>&amp;Hush Телеграм</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="1967"/>
+        <source>Check git for &amp;updates</source>
+        <translation>Проверьте git на наличие &amp;обновлений</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="1985"/>
+        <source>&amp;Export seed phrase</source>
+        <translation>&amp;Экспорт seed фразу</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="2023"/>
+        <source>Encrypt Wallet</source>
+        <translation>Зашифровать Кошелек</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="2028"/>
+        <source>Remove Wallet Encryption</source>
+        <translation>Убрать Шифрование Кошелька</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="2033"/>
+        <source>Rescan</source>
+        <translation>Повторное сканирование</translation>
+    </message>
+    <message>
+        <source>&amp;Hush Telegram</source>
+        <translation type="vanished">&amp;Hush Telegram</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="51"/>
@@ -548,22 +570,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="679"/>
         <source>Spendable</source>
-        <translation type="unfinished"></translation>
+        <translation>Расходный</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="776"/>
         <source>Deposit Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Пополнить Hush</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1481"/>
         <source>Information about Hush</source>
-        <translation></translation>
+        <translation>Информация о Hush</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1539"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Blockchain Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Информация о Hush Blockchain&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1555"/>
@@ -579,117 +601,117 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1809"/>
         <location filename="../src/mainwindow.ui" line="1830"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1576"/>
         <source>Next Halving</source>
-        <translation></translation>
+        <translation>Следующий Халвинг</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1653"/>
         <source>Difficulty</source>
-        <translation></translation>
+        <translation>Сложность</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1667"/>
         <source>Last Notarized Block</source>
-        <translation></translation>
+        <translation>Последний Заверенный Блок</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1688"/>
         <source>Total Supply</source>
-        <translation></translation>
+        <translation>Общий Сеплай</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1702"/>
         <source>Longestchain</source>
-        <translation></translation>
+        <translation>Longestchain</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1723"/>
         <source>BlockHeight</source>
-        <translation>Hauteur du block</translation>
+        <translation>ВысотаБлока</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1730"/>
         <source>Supply zAddr</source>
-        <translation></translation>
+        <translation>Количество zAddr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1758"/>
         <source>Supply tAddr</source>
-        <translation></translation>
+        <translation>Количество tAddr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1779"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Market Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Информация о Рынке Hush&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1802"/>
         <source>Market Cap</source>
-        <translation></translation>
+        <translation>Рыночная Капитализация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1823"/>
         <source>Volume on Exchanges</source>
-        <translation></translation>
+        <translation>Объем на Биржах</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;This is a Lightwallet, you cant mine with it!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>Ceci est un Lightwallet, vous ne pouvez pas miner avec cette application !</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Это Lightwallet, вы не можете майнить с Litewallet!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2038"/>
         <source>Import Private Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать Приватныйключ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="66"/>
         <source>HushChat</source>
-        <translation type="unfinished"></translation>
+        <translation>HushChat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
         <source>Incoming contact request</source>
-        <translation type="unfinished"></translation>
+        <translation>Входящий запрос на контакт</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="440"/>
         <source>Add  a new contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить новый контакт</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="476"/>
         <source>Get a new Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Получите новый адрес</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="529"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Contactlist&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Список Контактов&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="88"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Contact Name :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Имя Контакта :&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="101"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="132"/>
         <source>The locks shows you the status of the message. Red lock = unconfirmed, green lock = min. 1 confirmations, orange lock = message is notarized</source>
-        <translation type="unfinished"></translation>
+        <translation>Замки показывают статус сообщения. Красный замок = неподтвержденный, зеленый замок = мин. 1 подтверждение, оранжевый замок = сообщение является заверенным</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1962"/>
         <source>&amp;Hush Website</source>
-        <translation>&amp;Site Internet Hush</translation>
+        <translation>&amp;Сайт Hush&apos;а</translation>
     </message>
     <message>
         <source>z-Addr(Sapling)</source>
@@ -698,7 +720,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1279"/>
         <source>t-Addr</source>
-        <translation>Adresse-t</translation>
+        <translation>t-Addr</translation>
     </message>
     <message>
         <source>z-Addr(Sprout)</source>
@@ -711,28 +733,28 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1328"/>
         <source>Label</source>
-        <translation>Etiquette</translation>
+        <translation>Метка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1335"/>
         <source>Update Label</source>
-        <translation>Mettre à jour l&apos;étiquette</translation>
+        <translation>Обновить Метку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1349"/>
         <source>Address balance</source>
-        <translation>Solde de l&apos;adresse</translation>
+        <translation>Баланс Адреса</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1359"/>
         <source>Optional</source>
-        <translation>Optionnel</translation>
+        <translation>Необязательно</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1381"/>
-        <location filename="../src/mainwindow.cpp" line="2532"/>
+        <location filename="../src/mainwindow.cpp" line="2533"/>
         <source>Export Private Key</source>
-        <translation>Exporter la clef privée</translation>
+        <translation>Экспорт Приватного Ключа</translation>
     </message>
     <message>
         <source>Address used</source>
@@ -741,17 +763,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1266"/>
         <source>z-Addr</source>
-        <translation>z-Add</translation>
+        <translation>z-Addr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1310"/>
         <source>View All Addresses</source>
-        <translation>Voir toutes les adresses</translation>
+        <translation>Просмотреть Все Адреса</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1461"/>
         <source>Transactions</source>
-        <translation>Transactions</translation>
+        <translation>Транзакции</translation>
     </message>
     <message>
         <source>hushd</source>
@@ -775,7 +797,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1795"/>
         <location filename="../src/mainwindow.ui" line="1816"/>
         <source>Loading...</source>
-        <translation>Chargement...</translation>
+        <translation>Загрузка...</translation>
     </message>
     <message>
         <source>Blockheight</source>
@@ -788,7 +810,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1604"/>
         <source>Vendor</source>
-        <translation>Connections</translation>
+        <translation>Продавец</translation>
     </message>
     <message>
         <source>|</source>
@@ -797,37 +819,37 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1883"/>
         <source>&amp;File</source>
-        <translation>&amp;Fichier</translation>
+        <translation>&amp;Файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1897"/>
         <source>&amp;Help</source>
-        <translation>&amp;Aide</translation>
+        <translation>&amp;Помощь</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1908"/>
         <source>&amp;Apps</source>
-        <translation>&amp;Applications</translation>
+        <translation>&amp;Приложения</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1914"/>
         <source>&amp;Edit</source>
-        <translation>&amp;Edition</translation>
+        <translation>&amp;Редактировать</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1934"/>
         <source>E&amp;xit</source>
-        <translation>Q&amp;uiter</translation>
+        <translation>В&amp;ыйти</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1939"/>
         <source>&amp;About</source>
-        <translation>&amp;À propos</translation>
+        <translation>&amp;О приложении</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1944"/>
         <source>&amp;Settings</source>
-        <translation>&amp;Préférences</translation>
+        <translation>&amp;Настройки</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1947"/>
@@ -839,9 +861,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">&amp;Faire un don</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1967"/>
-        <source>Check git for &amp;updates</source>
-        <translation>Vérifier &amp;git pour des mises à jour</translation>
+        <source>Check github.com for &amp;updates</source>
+        <translation type="vanished">Проверить github.com на наличие &amp;обновлений</translation>
     </message>
     <message>
         <source>Sapling &amp;turnstile</source>
@@ -858,7 +879,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1972"/>
         <source>&amp;Export all private keys</source>
-        <translation>&amp;Exporter toutes les clefs privées</translation>
+        <translation>&amp;Экспортировать все приватные ключи</translation>
     </message>
     <message>
         <source>&amp;z-board.net</source>
@@ -871,7 +892,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="1977"/>
         <source>Address &amp;book</source>
-        <translation>Carnet &amp;d&apos;adresse</translation>
+        <translation>Адресная &amp;книга</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1980"/>
@@ -884,19 +905,19 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1990"/>
-        <location filename="../src/mainwindow.cpp" line="1135"/>
+        <location filename="../src/mainwindow.cpp" line="1136"/>
         <source>Export transactions</source>
-        <translation>Exporter les transactions</translation>
+        <translation>Экспортировать транзакции</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1995"/>
         <source>Pay hush &amp;URI...</source>
-        <translation>Payer une &amp;URI Hush...</translation>
+        <translation>Заплатить hush &amp;URI...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2000"/>
         <source>Connect mobile &amp;app</source>
-        <translation>Connexion à l&apos;&amp;application Mobile</translation>
+        <translation>Подключить мобильное &amp;приложение</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2003"/>
@@ -906,17 +927,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="2008"/>
         <source>&amp;Recurring Payments</source>
-        <translation>&amp;Paiements récurrents</translation>
+        <translation>&amp;Регулярные Платежи</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2013"/>
         <source>Request hush...</source>
-        <translation>Demande de Hush...</translation>
+        <translation>Запросить hush...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="2018"/>
         <source>File a bug...</source>
-        <translation>Déclarer un bug ...</translation>
+        <translation>Сообщить о баге...</translation>
     </message>
     <message>
         <source>Tor configuration is available only when running an embedded hushd.</source>
@@ -963,10 +984,10 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Calcul de la transaction en cours: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1092"/>
-        <location filename="../src/mainwindow.cpp" line="1108"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1109"/>
         <source>The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited</source>
-        <translation>Les clefs ont été importées. Cela peut prendre quelque minutes pour rescanner la blockchain. Durant cette période, les fonctionnalités peuvent être limitées</translation>
+        <translation>Ключи были импортированы. Повторное сканирование блокчейна может занять несколько минут. До тех пор функциональность может быть ограничена</translation>
     </message>
     <message>
         <source>Private key import rescan finished</source>
@@ -975,21 +996,21 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="773"/>
         <source>View tx on block explorer</source>
-        <translation>Voir la tx sur l&apos;explorateur de blocs</translation>
+        <translation>Посмотреть tx в проводнике блоков</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="778"/>
         <source>Refresh</source>
-        <translation>Rafraîchir</translation>
+        <translation>Обновить</translation>
     </message>
     <message>
         <source>Error paying hush URI</source>
         <translation type="vanished">Erreur lors du payement du URI hush</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <location filename="../src/mainwindow.cpp" line="1023"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
-        <translation>Le format URI doit être comme suit: &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
+        <translation>URI должен иметь форму &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
     <message>
         <source>Paste hush URI</source>
@@ -1012,14 +1033,14 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Les clef seront importées dans votre noeud hushd connecté</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1141"/>
+        <location filename="../src/mainwindow.cpp" line="1142"/>
         <source>Error</source>
-        <translation>Erreur</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1142"/>
+        <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Error exporting transactions, file was not saved</source>
-        <translation>Erreur lors de l&apos;exportation des transactions. Le fichier n&apos;a pas été sauvegardé</translation>
+        <translation>Ошибка экспорта транзакций, файл не сохранен</translation>
     </message>
     <message>
         <source>No wallet.dat</source>
@@ -1050,20 +1071,20 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Vous devez le sauvegarder manuellement.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1254"/>
+        <location filename="../src/mainwindow.cpp" line="1255"/>
         <source>These are all the private keys for all the addresses in your wallet</source>
-        <translation>Ce sont toutes les clés privées pour toutes les adresses de votre portefeuille</translation>
+        <translation>Это все приватные ключи для всех адресов в вашем кошельке</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1257"/>
         <source>Private key for </source>
-        <translation>Clef privée pour </translation>
+        <translation>Приватный ключ для </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1179"/>
-        <location filename="../src/mainwindow.cpp" line="1261"/>
+        <location filename="../src/mainwindow.cpp" line="1180"/>
+        <location filename="../src/mainwindow.cpp" line="1262"/>
         <source>Save File</source>
-        <translation>Sauvegarder le fichier</translation>
+        <translation>Сохранить Файл</translation>
     </message>
     <message>
         <source>Wallet is already encrypted</source>
@@ -1078,7 +1099,7 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
     <message>
         <location filename="../src/mainwindow.cpp" line="548"/>
         <source>Passwords don&apos;t match</source>
-        <translation>Les mots de passe ne correspondent pas</translation>
+        <translation>Пароли не совпадают</translation>
     </message>
     <message>
         <source>Error was:
@@ -1098,12 +1119,12 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
         <location filename="../src/mainwindow.cpp" line="613"/>
         <location filename="../src/mainwindow.cpp" line="693"/>
         <source>Wallet Encryption Failed</source>
-        <translation>Échec du chiffrement du wallet</translation>
+        <translation>Ошибка Шифрования Кошелька</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="533"/>
         <source>Wallet is not encrypted</source>
-        <translation>Votre wallet n&apos;est pas crypté</translation>
+        <translation>Кошелек не зашифрован</translation>
     </message>
     <message>
         <source>Your wallet is not encrypted with a password.</source>
@@ -1135,115 +1156,115 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="768"/>
-        <location filename="../src/mainwindow.cpp" line="1420"/>
+        <location filename="../src/mainwindow.cpp" line="1421"/>
         <source>Copy block explorer link</source>
-        <translation type="unfinished"></translation>
+        <translation>Скопировать ссылку на обозреватель блоков</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="832"/>
         <source>Currency Change</source>
-        <translation>Changement de la devise</translation>
+        <translation>Сменить Валюту</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1176"/>
         <source>This is your wallet seed. Please back it up carefully and safely.</source>
-        <translation>Ceci est la graine de wallet. Veuillez le sauvegarder avec soin et en toute sécurité.</translation>
+        <translation>Это seed вашего кошелька. Пожалуйста, сохраните резервную копию в надежном месте.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1183"/>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1184"/>
+        <location filename="../src/mainwindow.cpp" line="1266"/>
         <source>Unable to open file</source>
-        <translation>mpossible d&apos;ouvrir le fichier</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1233"/>
-        <source>Error getting private keys</source>
-        <translation>Erreur lors de l&apos;obtention des clés privées</translation>
+        <translation>Невозможно открыть файл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1234"/>
+        <source>Error getting private keys</source>
+        <translation>Ошибка получения приватных ключей</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1235"/>
         <source>Error loading private keys: </source>
-        <translation>Erreur lors du chargement des clés privées: </translation>
+        <translation>Ошибка загрузки приватных ключей: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1338"/>
-        <location filename="../src/mainwindow.cpp" line="1415"/>
+        <location filename="../src/mainwindow.cpp" line="1339"/>
+        <location filename="../src/mainwindow.cpp" line="1416"/>
         <source>Copy address</source>
-        <translation>Copier l&apos;adresse</translation>
+        <translation>Копировать адрес</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
-        <location filename="../src/mainwindow.cpp" line="1341"/>
-        <location filename="../src/mainwindow.cpp" line="1411"/>
-        <location filename="../src/mainwindow.cpp" line="1417"/>
+        <location filename="../src/mainwindow.cpp" line="1313"/>
+        <location filename="../src/mainwindow.cpp" line="1342"/>
+        <location filename="../src/mainwindow.cpp" line="1412"/>
+        <location filename="../src/mainwindow.cpp" line="1418"/>
         <source>Copied to clipboard</source>
-        <translation>Copié dans le presse-papier</translation>
+        <translation>Скопировано в буфер обмена</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="206"/>
         <location filename="../src/mainwindow.cpp" line="237"/>
         <source>Failed to restore wallet</source>
-        <translation type="unfinished">Échec de la restoration du wallet</translation>
+        <translation>Не удалось восстановить кошелек</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="207"/>
         <source>SilentDragonLite needs 24 words to restore wallet</source>
-        <translation type="unfinished">SilentDragonLite a besoin de 24 mots pour restaurer son wallet</translation>
+        <translation>SilentDragonLite требует 24 слова для восстановления кошелька</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="218"/>
         <source>Failed to parse wallet birthday</source>
-        <translation type="unfinished">Impossible d&apos;analyser l&apos;anniversaire du wallet</translation>
+        <translation>Не удалось разобрать день рождения кошелька</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="219"/>
         <source>Couldn&apos;t understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as &apos;0&apos; if you don&apos;t know what it should be.</source>
-        <translation type="unfinished">L&apos;anniversaire du wallet n&apos;est pas reconnue. Cela devrait être une hauteur de bloc à partir de laquelle numériser à nouveau le portefeuille. Vous pouvez laisser «0» si vous ne savez pas ce que cela devrait être.</translation>
+        <translation>Неверное день рождение бумажника. Должна быть высота блока, откуда можно повторно сканировать кошелек. Вы можете оставить его как &apos;0&apos;, если не знаете, каким оно должно быть.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="238"/>
         <source>Couldn&apos;t restore the wallet</source>
-        <translation type="unfinished">Impossible de restaurer le wallet</translation>
+        <translation>Не удалось восстановить кошелек</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="254"/>
         <source>Failed to save wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="255"/>
         <source>Couldn&apos;t save the wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="520"/>
         <source>Wallet Encryption Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Успешное Шифрование Кошелька</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="534"/>
         <source>Your wallet is not encrypted with a passphrase.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш кошелек не зашифрован парольной фразой.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="604"/>
         <source>Wallet decryption Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Успешная расшифровка Кошелька</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1345"/>
         <source>Get private key</source>
-        <translation>Obtenir la clef privée</translation>
+        <translation>Получить приватный ключ</translation>
     </message>
     <message>
         <source>Shield balance to Sapling</source>
         <translation type="vanished">Rendre privé le solde vers Sapling</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1350"/>
-        <location filename="../src/mainwindow.cpp" line="1425"/>
+        <location filename="../src/mainwindow.cpp" line="1351"/>
+        <location filename="../src/mainwindow.cpp" line="1426"/>
         <source>View on block explorer</source>
-        <translation>Voir dans l&apos;explorateur de block</translation>
+        <translation>Просмотр в проводнике блоков</translation>
     </message>
     <message>
         <source>Migrate to Sapling</source>
@@ -1251,9 +1272,9 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="765"/>
-        <location filename="../src/mainwindow.cpp" line="1409"/>
+        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Copy txid</source>
-        <translation>Copier l&apos;ID de transaction</translation>
+        <translation>Копировать txid</translation>
     </message>
     <message>
         <source>Restart</source>
@@ -1266,127 +1287,127 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
     <message>
         <location filename="../src/mainwindow.cpp" line="832"/>
         <source>This change can take a few seconds.</source>
-        <translation></translation>
+        <translation>Это изменение может занять несколько секунд.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="916"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>Some feedback about SilentDragonlite or Hush...</source>
-        <translation>Quelques commentaires sur SilentDragonlite ou Hush ...</translation>
+        <translation>Немного отзывов о SilentDragonlite или Hush...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="919"/>
         <source> or SilentDragonLite</source>
-        <translation> ou SilentDragonLite</translation>
+        <translation> или SilentDragonLite</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="919"/>
         <source>Send DenioD some private and shielded feedback about</source>
-        <translation>Envoyez à DenioD des commentaires privés et protégés sur</translation>
+        <translation>Отправить DenioD секретный и закрытый отзыв о</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="932"/>
+        <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Private key import rescan in progress. Your funds will be automaticly shield to a wallet seed zaddr. This will take some time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="954"/>
-        <source>Wrong Privatkey format</source>
-        <translation type="unfinished"></translation>
+        <translation>Выполняется повторное сканирование импорта приватного ключа. Ваши средства будут автоматически отправлены в seed zaddr кошелька. Это займет некоторое время</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="955"/>
+        <source>Wrong Privatkey format</source>
+        <translation>Неверный формат Приватногоключа</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="956"/>
         <source>Privatkey should start with U (for taddr) or secret- (for zaddr)</source>
-        <translation type="unfinished"></translation>
+        <translation>Приватныйключ должен начинаться с U (для taddr) или secret- (для zaddr)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1009"/>
+        <location filename="../src/mainwindow.cpp" line="1010"/>
         <source>Paste HUSH URI</source>
-        <translation>Coller l&apos;URI Hush</translation>
+        <translation>Вставить HUSH URI</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="1022"/>
         <source>Error paying HUSH URI</source>
-        <translation>Erreur lors du paiement de l&apos;URI Hush</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1053"/>
-        <source>Please paste your private key(zs-Addr or R-addr) here, one per import</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при оплате HUSH URI</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1054"/>
-        <source>Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr</source>
-        <translation type="unfinished"></translation>
+        <source>Please paste your private key(zs-Addr or R-addr) here, one per import</source>
+        <translation>Вставьте пожалуйста сюда свой приватный ключ (zs-Addr или R-addr), по одному при каждом импорте</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1055"/>
+        <source>Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr</source>
+        <translation>Внимание: если этот ключ предназначен для Zs-addr, то он НЕ будет включен в ваш Seed. Отправьте их напрямую в Seed zs-addr</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>R-addr keys will be autoshield to a seed zs-addr</source>
-        <translation type="unfinished"></translation>
+        <translation>R-addr ключи будут autoshield к zs-addr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1121"/>
+        <location filename="../src/mainwindow.cpp" line="1122"/>
         <source>The keys were imported without rescan option. The Address you imported will be visible without balance</source>
-        <translation type="unfinished"></translation>
+        <translation>Ключи были импортированы без возможности повторного сканирования. Импортированный вами адрес будет виден без баланса</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1431"/>
+        <location filename="../src/mainwindow.cpp" line="1432"/>
         <source>View Payment Request</source>
-        <translation>Afficher la demande de paiement</translation>
+        <translation>Просмотреть Запрос на Оплату</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1438"/>
+        <location filename="../src/mainwindow.cpp" line="1439"/>
         <source>View Memo</source>
-        <translation>Voir le mémo</translation>
+        <translation>Просмотреть Памятку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1453"/>
+        <location filename="../src/mainwindow.cpp" line="1454"/>
         <source>Reply to </source>
-        <translation>Répondre à </translation>
+        <translation>Ответить на </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1583"/>
         <source>Copied Hyperlink to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Гиперссылка Скопирована в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1618"/>
+        <location filename="../src/mainwindow.cpp" line="1619"/>
         <source>Copied message to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Сообщение скопировано в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1651"/>
+        <location filename="../src/mainwindow.cpp" line="1652"/>
         <source>Copied Txid to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Txid был скопирован в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2482"/>
+        <location filename="../src/mainwindow.cpp" line="2483"/>
         <source>Created new t-Addr</source>
-        <translation>Nouvelle Adresse-t créée</translation>
+        <translation>Создан новый t-Addr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2538"/>
+        <location filename="../src/mainwindow.cpp" line="2539"/>
         <source>Copy Address</source>
-        <translation>Copier l&apos;adresse</translation>
+        <translation>Копировать адрес</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2641"/>
+        <location filename="../src/mainwindow.cpp" line="2642"/>
         <source>Address has been previously used</source>
-        <translation>L&apos;adresse a été utilisée précédemment</translation>
+        <translation>Адрес использовался ранее</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2643"/>
+        <location filename="../src/mainwindow.cpp" line="2644"/>
         <source>Address is unused</source>
-        <translation>L&apos;adresse est inutilisée</translation>
+        <translation>Адрес не используется</translation>
     </message>
     <message>
         <location filename="../src/sendtab.cpp" line="231"/>
         <source>Recipient </source>
-        <translation>Destinataire </translation>
+        <translation>Получатель </translation>
     </message>
     <message>
         <location filename="../src/sendtab.cpp" line="376"/>
         <source>Only z-addresses can have memos</source>
-        <translation>Seules les Adresses-z peuvent avoir un mémo</translation>
+        <translation>Только z-адреса могут иметь заметки</translation>
     </message>
     <message>
         <source>Memos can only be used with z-addresses</source>
@@ -1408,18 +1429,18 @@ Cette adresse ne semble pas être de type adresse-z</translation>
         <location filename="../src/chatmodel.cpp" line="908"/>
         <location filename="../src/sendtab.cpp" line="861"/>
         <source>Please wait...</source>
-        <translation>Veuillez patienter...</translation>
+        <translation>Пожалуйста, подождите...</translation>
     </message>
     <message>
         <location filename="../src/sendtab.cpp" line="862"/>
         <source>Computing your transaction</source>
-        <translation>Calcul de votre transaction</translation>
+        <translation>Вычисление вашей транзакции</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="919"/>
         <location filename="../src/sendtab.cpp" line="871"/>
         <source>Done!</source>
-        <translation>Terminé!</translation>
+        <translation>Готово!</translation>
     </message>
     <message>
         <source>Not enough available funds to send this transaction
@@ -1442,12 +1463,12 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/sendtab.cpp" line="184"/>
         <source>Cannot support multiple addresses</source>
-        <translation>Ne peut pas supporter plusieurs adresses</translation>
+        <translation>Не может поддерживать несколько адресов</translation>
     </message>
     <message>
         <location filename="../src/sendtab.cpp" line="185"/>
         <source>Recurring payments doesn&apos;t currently support multiple addresses</source>
-        <translation>Les paiements récurrents ne prennent pas en charge plusieurs adresses pour le moment</translation>
+        <translation>Периодические платежи в настоящее время не поддерживают несколько адресов</translation>
     </message>
     <message>
         <source>Change from </source>
@@ -1464,7 +1485,7 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/sendtab.cpp" line="819"/>
         <source>Transaction Error</source>
-        <translation>Erreur de transaction</translation>
+        <translation>Ошибка Транзакции</translation>
     </message>
     <message>
         <source>From Address is Invalid</source>
@@ -1474,81 +1495,85 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
         <location filename="../src/chatmodel.cpp" line="556"/>
         <location filename="../src/chatmodel.cpp" line="841"/>
         <source>You have to select a contact and insert a Memo</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы должны выбрать контакт и добавить Памятку</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="557"/>
         <location filename="../src/chatmodel.cpp" line="842"/>
         <source>You have selected no Contact from Contactlist,
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Вы не выбрали ни одного контакта из списка контактов,
+</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="557"/>
         <location filename="../src/chatmodel.cpp" line="842"/>
         <source>
 or your Memo is empty</source>
-        <translation type="unfinished"></translation>
+        <translation>
+или ваша Памятка пустая</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="571"/>
         <location filename="../src/chatmodel.cpp" line="868"/>
         <source>Your Message is too long</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваше Сообщение слишком длинное</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="572"/>
         <source>You can only write messages with 235 character maximum 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете писать сообщения длиной не более 235 символов 
+</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="572"/>
         <location filename="../src/chatmodel.cpp" line="869"/>
         <source>
  Please reduce your message to 235 character.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+ Пожалуйста, сократите ваше сообщение до 235 символов.</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="585"/>
         <location filename="../src/chatmodel.cpp" line="882"/>
-        <location filename="../src/mainwindow.cpp" line="1990"/>
-        <location filename="../src/mainwindow.cpp" line="2279"/>
+        <location filename="../src/mainwindow.cpp" line="1991"/>
+        <location filename="../src/mainwindow.cpp" line="2280"/>
         <source>Message Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Сообщение Ошибка</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="701"/>
         <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2104"/>
-        <location filename="../src/mainwindow.cpp" line="2385"/>
+        <location filename="../src/mainwindow.cpp" line="2105"/>
+        <location filename="../src/mainwindow.cpp" line="2386"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source>Recipient Address </source>
-        <translation>Adresse du destinataire </translation>
+        <translation>Адрес Получателя </translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="701"/>
         <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2104"/>
-        <location filename="../src/mainwindow.cpp" line="2385"/>
+        <location filename="../src/mainwindow.cpp" line="2105"/>
+        <location filename="../src/mainwindow.cpp" line="2386"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source> is Invalid</source>
-        <translation> est invalide</translation>
+        <translation> является недействительным</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="708"/>
         <location filename="../src/chatmodel.cpp" line="1024"/>
-        <location filename="../src/mainwindow.cpp" line="2111"/>
-        <location filename="../src/mainwindow.cpp" line="2391"/>
+        <location filename="../src/mainwindow.cpp" line="2112"/>
+        <location filename="../src/mainwindow.cpp" line="2392"/>
         <location filename="../src/sendtab.cpp" line="932"/>
         <source>Amount for address &apos;%1&apos; is invalid!</source>
-        <translation>Le montant pour l&apos;adresse &apos;%1&apos; est invalide!</translation>
+        <translation>Сумма на адресе &apos;%1&apos; является недействительным!</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="718"/>
         <location filename="../src/chatmodel.cpp" line="1034"/>
-        <location filename="../src/mainwindow.cpp" line="2122"/>
-        <location filename="../src/mainwindow.cpp" line="2401"/>
+        <location filename="../src/mainwindow.cpp" line="2123"/>
+        <location filename="../src/mainwindow.cpp" line="2402"/>
         <location filename="../src/sendtab.cpp" line="942"/>
         <source>Not enough available funds to send this transaction
 
@@ -1556,25 +1581,24 @@ Have: %1
 Need: %2
 
 Note: Funds need 1 confirmations before they can be spent</source>
-        <translation type="unfinished">Vous n&apos;avez pas assez de fonds disponibles pour envoyer cette transaction
+        <translation>Недостаточно свободных средств для отправки этой транзакции
 
-Ont:%1
-Besoin:%2
+Есть: %1
+Нужно: %2
 
-Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépensés {1
-?} {2
-?} {1 ?}</translation>
+Примечание: Для использования средств необходимо одно подтверждение</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="869"/>
         <source>You can only write messages with 512 character maximum 
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Вы можете писать сообщения длиной не более 512 символов 
+</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="909"/>
         <source>Your contact request will be sent</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш запрос на контакты будет отправлен</translation>
     </message>
     <message>
         <source>Amount &apos;%1&apos; is invalid!</source>
@@ -1587,12 +1611,12 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
         <location filename="../src/memodialog.ui" line="14"/>
         <location filename="../src/memodialog.ui" line="43"/>
         <source>Memo</source>
-        <translation>Mémo</translation>
+        <translation>Памятка</translation>
     </message>
     <message>
         <location filename="../src/memodialog.ui" line="52"/>
         <source>Include Reply Address</source>
-        <translation>Inclure l&apos;adresse de réponse</translation>
+        <translation>Включить Ответный Адрес</translation>
     </message>
 </context>
 <context>
@@ -1600,7 +1624,7 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/memoedit.cpp" line="53"/>
         <source>Reply to</source>
-        <translation>Répondre à</translation>
+        <translation>Ответить на</translation>
     </message>
 </context>
 <context>
@@ -1608,32 +1632,32 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/migration.ui" line="14"/>
         <source>Migration Turnstile</source>
-        <translation>Tourniquet de migration</translation>
+        <translation>Миграция Turnstile</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="30"/>
         <source>Migration History</source>
-        <translation>Histoire de la migration</translation>
+        <translation>История Миграций</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="36"/>
         <source>Migrated Amount</source>
-        <translation>Montant migré</translation>
+        <translation>Перенесенная Сумма</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="50"/>
         <source>Unmigrated Amount</source>
-        <translation>Quantité non migrée</translation>
+        <translation>Неперенесенная Сумма</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="74"/>
         <source>Sprout -&gt; Sapling migration enabled</source>
-        <translation>Sprout -&gt; Migration du sapling activée</translation>
+        <translation>Sprout -&gt; Sapling миграция включена</translation>
     </message>
     <message>
         <location filename="../src/migration.ui" line="81"/>
         <source>If enabled, hushd will slowly migrate your Sprout shielded funds to your Sapling address. </source>
-        <translation>Si cette option est activée, hushd migrera lentement vos fonds protégés Sprout vers votre adresse Sapling. </translation>
+        <translation>Когда параметр включен, hushd будет медленно переносить ваши Sprout защищенные средства на ваш Sapling адрес. </translation>
     </message>
 </context>
 <context>
@@ -1645,53 +1669,53 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/mobileappconnector.ui" line="43"/>
         <source>QR Code</source>
-        <translation>QR Code</translation>
+        <translation>QR Код</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="49"/>
         <source>Connection String</source>
-        <translation>Chaîne de connexion</translation>
+        <translation>Подключение String</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="84"/>
         <source>Allow connections over the internet via silentdragon wormhole</source>
-        <translation>Autoriser les connexions sur Internet à l&apos;aide de SilentDragon Wormhole</translation>
+        <translation>Разрешить соединения через Интернет через silentdragon wormhole</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="36"/>
         <source>Scan this QRCode from your silentdragon companion app to connect your phone</source>
-        <translation>Scannez ce code QR à partir de votre application mobile SilentDragon pour connecter votre téléphone</translation>
+        <translation>Отсканируйте этот QR-код из приложения silentdragon, чтобы подключить свой телефон</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="14"/>
         <source>Mobile Connector App</source>
-        <translation type="unfinished"></translation>
+        <translation>Приложение Mobile Коннектор</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="94"/>
         <source>silentdragon Companion App</source>
-        <translation>SilentDragon Mobile Application</translation>
+        <translation>SilentDragon Приложение Компаньон</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="106"/>
         <source>Disconnect</source>
-        <translation>Déconnecter</translation>
+        <translation>Отключить</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="126"/>
         <location filename="../src/mobileappconnector.ui" line="160"/>
         <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <translation>ТекстоваяМетка</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="136"/>
         <source>Last seen:</source>
-        <translation>Vue pour la derniére fois :</translation>
+        <translation>Последний визит:</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="153"/>
         <source>Connection type:</source>
-        <translation>Type de connection :</translation>
+        <translation>Тип соединения:</translation>
     </message>
 </context>
 <context>
@@ -1699,7 +1723,7 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/firsttimewizard.cpp" line="234"/>
         <source>Passphrase don&apos;t match or You have entered too few letters (16 minimum)</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодовая фраза не совпадает или Вы ввели слишком мало букв (минимум 16)</translation>
     </message>
 </context>
 <context>
@@ -1707,27 +1731,27 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/newseed.ui" line="14"/>
         <source>Form</source>
-        <translation>Graine</translation>
+        <translation>Форма</translation>
     </message>
     <message>
         <location filename="../src/newseed.ui" line="20"/>
         <source>This is your new wallet&apos;s seed phrase. PLEASE BACK IT UP SECURELY.</source>
-        <translation>Ceci est la phrase clé de votre nouveau wallet. VEUILLEZ LE GARDER EN TOUTE SECURITE.</translation>
+        <translation>Это seed фраза вашего нового кошелька. ПОЖАЛУЙСТА, СОХРАНИТЕ ФРАЗУ НАДЕЖНО.</translation>
     </message>
     <message>
         <location filename="../src/newseed.ui" line="30"/>
         <source>The seed phrase is the only way to restore the wallet. If you forget the seed phrase, THERE IS NO WAY TO RESTORE YOUR WALLET AND THE FUNDS in it</source>
-        <translation>La phrase clé (graine) est le seul moyen de restaurer le wallet. Si vous oubliez la phrase clé, IL N&apos;Y A AUCUN MOYEN DE RESTAURER VOTRE WALLET ET LES FONDS</translation>
+        <translation>Seed фраза это единственный способ восстановить кошелек. Если вы забыли seed фразу, ВОССТАНОВЛЕНИЕ ВАШЕГО КОШЕЛЬКА И ВСЕХ СРЕДСТВ БУДЕТ НЕ ВОЗМОЖНЫМ</translation>
     </message>
     <message>
         <location filename="../src/newseed.ui" line="62"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;This is the birthday of your Seed. Please back it up too&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Это день рождение вашей seed фразы. Пожалуйста, сделайте резервную копию&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/newseed.ui" line="74"/>
         <source>Birthday of the Seed :</source>
-        <translation type="unfinished"></translation>
+        <translation>День рождение Seed:</translation>
     </message>
 </context>
 <context>
@@ -1735,27 +1759,27 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/firsttimewizard.cpp" line="282"/>
         <source>Error creating a wallet</source>
-        <translation>Erreur lors de la création du wallet</translation>
+        <translation>Ошибка при создании кошелька</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="598"/>
         <source>Failed to save wallet</source>
-        <translation>Échec lors de la sauvvegarde du wallet</translation>
+        <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="599"/>
         <source>Couldn&apos;t save the wallet</source>
-        <translation>Impossible d&apos;enregister le wallet</translation>
+        <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="613"/>
         <source>Wrong Seed</source>
-        <translation type="unfinished"></translation>
+        <translation>Неправильная Seed</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="614"/>
         <source>Please try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, попробуйте еще раз</translation>
     </message>
 </context>
 <context>
@@ -1767,12 +1791,12 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
     <message>
         <location filename="../src/privkey.ui" line="14"/>
         <source>Private Keys</source>
-        <translation>Clés privées</translation>
+        <translation>Приватные Ключи</translation>
     </message>
     <message>
         <location filename="../src/privkey.ui" line="44"/>
         <source>Rescan Wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторно сканировать Кошелек</translation>
     </message>
 </context>
 <context>
@@ -1889,39 +1913,39 @@ Not starting embedded hushd because --no-embedded was passed</source>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
         <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
-        <location filename="../src/mainwindow.cpp" line="2350"/>
+        <location filename="../src/mainwindow.cpp" line="2068"/>
+        <location filename="../src/mainwindow.cpp" line="2351"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source>The transaction with id </source>
-        <translation>La transaction avec ID </translation>
+        <translation>Транзакция с id </translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="664"/>
         <location filename="../src/chatmodel.cpp" line="1002"/>
         <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
-        <location filename="../src/mainwindow.cpp" line="2350"/>
+        <location filename="../src/mainwindow.cpp" line="2068"/>
+        <location filename="../src/mainwindow.cpp" line="2351"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source> failed. The error was</source>
-        <translation> a échoué. L&apos;erreur était</translation>
+        <translation> не удалось. Ошибка была</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
         <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2063"/>
-        <location filename="../src/mainwindow.cpp" line="2347"/>
+        <location filename="../src/mainwindow.cpp" line="2064"/>
+        <location filename="../src/mainwindow.cpp" line="2348"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> failed</source>
-        <translation> a échoué</translation>
+        <translation> не удалось</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="660"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
         <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2063"/>
-        <location filename="../src/mainwindow.cpp" line="2347"/>
+        <location filename="../src/mainwindow.cpp" line="2064"/>
+        <location filename="../src/mainwindow.cpp" line="2348"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> Tx </source>
@@ -1934,37 +1958,37 @@ Not starting embedded hushd because --no-embedded was passed</source>
     <message>
         <location filename="../src/controller.cpp" line="595"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
-        <translation type="unfinished"></translation>
+        <translation>При подключении к серверу произошла ошибка. Пожалуйста, проверьте ваше интернет-соединение. Ошибка была</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1637"/>
         <source>Update Available</source>
-        <translation>MàJ disponible</translation>
+        <translation>Доступно Обновление</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1638"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
-        <translation>Une nouvelle version v%1 est disponible! Vous avez la version v%2.
+        <translation>Новый выпуск v%1 уже доступен! У вас сейчас v%2.
 
-Voulez-vous visiter la page des nouvelles versions ?</translation>
+Хотели бы вы посетить страницу релизов?</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1657"/>
         <source>No updates available</source>
-        <translation>Pas de MàJ disponible</translation>
+        <translation>Нет доступных обновлений</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="1658"/>
         <source>You already have the latest release v%1</source>
-        <translation>Vous utilisez déjà la dernière version v%1</translation>
+        <translation>У вас уже есть последняя версия v%1</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="2042"/>
         <location filename="../src/controller.cpp" line="2050"/>
         <source>Please wait for SilentDragonLite to exit</source>
-        <translation>Merci d&apos;attendre la fermeture de SilentDragonLite</translation>
+        <translation>Пожалуйста подождите SilentDragonLite для выхода</translation>
     </message>
     <message>
         <source>Please wait for silentdragon to exit</source>
@@ -1974,7 +1998,7 @@ Voulez-vous visiter la page des nouvelles versions ?</translation>
         <location filename="../src/controller.cpp" line="2043"/>
         <location filename="../src/controller.cpp" line="2051"/>
         <source>Waiting for hushd to exit</source>
-        <translation>Attente de la fermeture de hushd</translation>
+        <translation>Ожидание выхода hushd</translation>
     </message>
     <message>
         <source> failed. Please check the help site for more info</source>
@@ -2011,71 +2035,71 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
     <message>
         <location filename="../src/connection.cpp" line="146"/>
         <source>Attempting to initialize library with </source>
-        <translation>Tentative d’initialisation de la bibliothèque avec </translation>
+        <translation>Попытка инициализировать библиотеку с помощью </translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="151"/>
         <source>Using existing wallet.</source>
-        <translation>Utiliser le wallet existant.</translation>
+        <translation>Использование существующего кошелька.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="165"/>
         <source>Create/restore wallet.</source>
-        <translation>Créer / restaurer un wallet.</translation>
+        <translation>Создать/восстановить кошелек.</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="303"/>
         <location filename="../src/controller.cpp" line="594"/>
         <source>Connection Error</source>
-        <translation>Erreur de connection</translation>
+        <translation>Ошибка Соединения</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="666"/>
         <location filename="../src/chatmodel.cpp" line="1004"/>
         <location filename="../src/connection.cpp" line="416"/>
         <location filename="../src/controller.cpp" line="1543"/>
-        <location filename="../src/mainwindow.cpp" line="2069"/>
-        <location filename="../src/mainwindow.cpp" line="2352"/>
+        <location filename="../src/mainwindow.cpp" line="2070"/>
+        <location filename="../src/mainwindow.cpp" line="2353"/>
         <location filename="../src/sendtab.cpp" line="913"/>
         <source>Transaction Error</source>
-        <translation>Erreur de transaction</translation>
+        <translation>Ошибка Транзакции</translation>
     </message>
     <message>
         <location filename="../src/connection.cpp" line="417"/>
         <source>There was an error sending the transaction. The error was:</source>
-        <translation>Une erreur est survenue en envoyant la transaction. L&apos;erreur est:</translation>
+        <translation>При отправке произошла ошибка. Ошибка была:</translation>
     </message>
     <message>
         <location filename="../src/controller.cpp" line="242"/>
         <location filename="../src/controller.cpp" line="244"/>
         <source>No Connection</source>
-        <translation>Pas de connection</translation>
+        <translation>Нет Соединения</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="145"/>
         <source>Pick</source>
-        <translation>Choisir</translation>
+        <translation>Выбрать</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="203"/>
         <location filename="../src/chatmodel.cpp" line="233"/>
         <location filename="../src/chatmodel.cpp" line="942"/>
         <source>Address or Label Error</source>
-        <translation>Erreur dans l&apos;adresse ou le libellé</translation>
+        <translation>Ошибка в Адресе или Этикетке</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="204"/>
         <location filename="../src/chatmodel.cpp" line="234"/>
         <location filename="../src/chatmodel.cpp" line="943"/>
         <source>Address or Label cannot be empty</source>
-        <translation>L&apos;adresse ou le libellé ne peuvent pas être vide</translation>
+        <translation>Адрес или Метка не могут быть пустыми</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="214"/>
         <location filename="../src/chatmodel.cpp" line="259"/>
         <location filename="../src/chatmodel.cpp" line="965"/>
         <source>Address Format Error</source>
-        <translation>Erreur de format d&apos;adresse</translation>
+        <translation>Ошибка в Формате Адреса</translation>
     </message>
     <message>
         <source> doesn&apos;t seem to be a valid hush address.</source>
@@ -2086,7 +2110,7 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
         <location filename="../src/chatmodel.cpp" line="260"/>
         <location filename="../src/chatmodel.cpp" line="966"/>
         <source>%1 doesn&apos;t seem to be a valid hush address.</source>
-        <translation>%1 ne semble pas être une adresse Hush valide.</translation>
+        <translation>%1 недействительный hush адрес.</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="226"/>
@@ -2094,7 +2118,7 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
         <location filename="../src/chatmodel.cpp" line="855"/>
         <location filename="../src/chatmodel.cpp" line="953"/>
         <source>Label Error</source>
-        <translation>Erreur sur le libellé</translation>
+        <translation>Ошибка Ярлыка</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="227"/>
@@ -2102,59 +2126,59 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
         <location filename="../src/chatmodel.cpp" line="856"/>
         <location filename="../src/chatmodel.cpp" line="954"/>
         <source>The label &apos;%1&apos; already exists. Please remove the existing label.</source>
-        <translation>Le libellé &apos;%1&apos; existe déjà. Veuillez supprimer l&apos;étiquette existante.</translation>
+        <translation>Метка &apos;%1&apos; уже существует. Удалите существующую.</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="238"/>
         <location filename="../src/chatmodel.cpp" line="978"/>
         <source>Added Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавлен Контакт</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="239"/>
         <location filename="../src/chatmodel.cpp" line="979"/>
         <source>successfully added your new contact</source>
-        <translation type="unfinished"></translation>
+        <translation>ваш новый контакт был успешно добавлен</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="264"/>
         <source>Import Address Book</source>
-        <translation>Importer le carnet d&apos;adresses</translation>
+        <translation>Импортировать Адресную Книгу</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="276"/>
         <source>Unable to open file</source>
-        <translation>Impossible d&apos;ouvrir le fichier</translation>
+        <translation>Невозможно открыть файл</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="301"/>
         <source>Address Book Import Done</source>
-        <translation>Import du carnet d&apos;adresses terminé</translation>
+        <translation>Импорт Адресной Книги Завершен</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="302"/>
         <source>Imported %1 new Address book entries</source>
-        <translation>%1 nouvelle(s) entrée(s) importée(s) dans le carnet d&apos;adresses</translation>
+        <translation>Импортированы %1 новые записи в Адресной книге</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="349"/>
         <source>Copy address</source>
-        <translation>Copier l&apos;adresse</translation>
+        <translation>Копировать адрес</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="351"/>
         <source>Copied to clipboard</source>
-        <translation>Copiée dans le presse papier</translation>
+        <translation>Скопировано в буфер обмена</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="354"/>
         <source>Delete label</source>
-        <translation>Effacer l&apos;étiquette</translation>
+        <translation>Удалить метку</translation>
     </message>
     <message>
         <location filename="../src/settings.cpp" line="301"/>
         <source>Tx submitted (right click to copy) txid:</source>
-        <translation>Tx soumise. (clic droit pour copier) txid:</translation>
+        <translation>Tx отправлен (нажмите правой кнопкой мыши, чтобы скопировать) txid:</translation>
     </message>
     <message>
         <source>Locked funds</source>
@@ -2173,80 +2197,80 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Type</source>
-        <translation>Type</translation>
+        <translation>Тип</translation>
     </message>
     <message>
         <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Address</source>
-        <translation>Adresse</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Date/Time</source>
-        <translation>Date/Heure</translation>
+        <translation>Дата/Время</translation>
     </message>
     <message>
         <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Amount</source>
-        <translation>Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/txtablemodel.cpp" line="9"/>
         <source>Confirmations</source>
-        <translation>Confirmations</translation>
+        <translation>Подтверждения</translation>
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="388"/>
         <source>Connected directly</source>
-        <translation>Connecté directement</translation>
+        <translation>Подключен напрямую</translation>
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="391"/>
         <source>Connected over the internet via silentdragon wormhole service</source>
-        <translation>Connecté sur Internet via le service Wormhole de SilentDragon</translation>
+        <translation>Подключено через Интернет с wormhole silentdragon сервис</translation>
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="695"/>
         <location filename="../src/websockets.cpp" line="786"/>
         <source>Node is still syncing.</source>
-        <translation>Le nœud est toujours en cours de synchronisation.</translation>
+        <translation>Нода все еще синхронизируется.</translation>
     </message>
     <message>
         <location filename="../src/websockets.cpp" line="719"/>
         <location filename="../src/websockets.cpp" line="810"/>
         <source>No sapling or transparent addresses with enough balance to spend.</source>
-        <translation>Il n&apos;y a pas d&apos;adresse de type Sapling ou d&apos;adresses transparentes avec un solde suffisant à dépenser.</translation>
+        <translation>Нет никаких sapling или прозрачных адресов с достаточным балансом для расходов.</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="553"/>
         <source>No hush price was available to convert from USD</source>
-        <translation>Aucun prix de Hush n&apos;est pour convertir à partir de USD</translation>
+        <translation>Отсутствует цена hush для конвертации из долларов США</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="659"/>
         <source>View on block explorer</source>
-        <translation>Voir dans l&apos;explorateur de block</translation>
+        <translation>Просмотр в проводнике блоков</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="672"/>
         <source>View Error</source>
-        <translation>Voir l&apos;erreur</translation>
+        <translation>Просмотр Ошибки</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="673"/>
         <source>Reported Error</source>
-        <translation>Erreur signalée</translation>
+        <translation>Сообщенная Ошибка</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="710"/>
         <location filename="../src/recurring.cpp" line="711"/>
         <source>Are you sure you want to delete the recurring payment?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer le paiement récurrent?</translation>
+        <translation>Вы уверены, что хотите удалить повторяющийся платеж?</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="712"/>
         <source>All future payments will be cancelled.</source>
-        <translation>Tous les paiements futurs seront annulés.</translation>
+        <translation>Все будущие платежи будут отменены.</translation>
     </message>
 </context>
 <context>
@@ -2258,17 +2282,17 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/recurringdialog.ui" line="14"/>
         <source>Reccuring Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторяющийся Диалог</translation>
     </message>
     <message>
         <location filename="../src/recurringdialog.ui" line="35"/>
         <source>View</source>
-        <translation>Voir</translation>
+        <translation>Посмотреть</translation>
     </message>
     <message>
         <location filename="../src/recurringdialog.ui" line="42"/>
         <source>Delete</source>
-        <translation>Supprimer</translation>
+        <translation>Удалить</translation>
     </message>
 </context>
 <context>
@@ -2276,37 +2300,37 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/recurring.cpp" line="734"/>
         <source>Amount</source>
-        <translation>Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="734"/>
         <source>Schedule</source>
-        <translation>Liste</translation>
+        <translation>График</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="734"/>
         <source>Payments Left</source>
-        <translation>Payments Left</translation>
+        <translation>Платежей Осталось</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="735"/>
         <source>Next Payment</source>
-        <translation>Prochain paiement</translation>
+        <translation>Следующий Платеж</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="735"/>
         <source>To</source>
-        <translation>À</translation>
+        <translation>Кому</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="752"/>
         <source>Every </source>
-        <translation>Chaque </translation>
+        <translation>Каждый </translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="756"/>
         <source>None</source>
-        <translation>Aucun</translation>
+        <translation>Нисколько</translation>
     </message>
 </context>
 <context>
@@ -2318,7 +2342,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/recurringpayments.ui" line="14"/>
         <source>Reocurring Payments</source>
-        <translation type="unfinished"></translation>
+        <translation>Регулярные Платежи</translation>
     </message>
 </context>
 <context>
@@ -2326,12 +2350,12 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/recurring.cpp" line="785"/>
         <source>Date</source>
-        <translation>Date</translation>
+        <translation>Дата</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="785"/>
         <source>Status</source>
-        <translation>Statut</translation>
+        <translation>Статус</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="785"/>
@@ -2341,33 +2365,33 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/recurring.cpp" line="805"/>
         <source>Not due yet</source>
-        <translation>Pas encore dû</translation>
+        <translation>Еще не готово</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="806"/>
         <source>Pending</source>
-        <translation>En attente</translation>
+        <translation>В ожидании</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="807"/>
         <source>Skipped</source>
-        <translation>Suivant</translation>
+        <translation>Пропущено</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="808"/>
         <source>Paid</source>
-        <translation>Payé</translation>
+        <translation>Оплаченный</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="809"/>
         <source>Error</source>
-        <translation>Erreur</translation>
+        <translation>Ошибка</translation>
     </message>
     <message>
         <location filename="../src/recurring.cpp" line="810"/>
         <location filename="../src/recurring.cpp" line="811"/>
         <source>Unknown</source>
-        <translation>Inconnu</translation>
+        <translation>Неизвестно</translation>
     </message>
 </context>
 <context>
@@ -2379,62 +2403,62 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/recurringmultiple.ui" line="14"/>
         <source>Recurring Multiple Payments</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторяющиеся Множественные Платежи</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="20"/>
         <source>No payments will be processed. You can manually pay them from the Recurring Payments Dialog box</source>
-        <translation>Aucun paiement ne sera traité. Vous pouvez les payer manuellement à partir de la boîte de dialogue &quot;Paiements récurrents&quot;</translation>
+        <translation>Платежи обрабатываться не будут. Вы можете оплатить их вручную в Диалоговом Окне Периодических платежей</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="37"/>
         <source>Schedule</source>
-        <translation>Liste</translation>
+        <translation>График</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="44"/>
         <source>How should silentdragon proceed?</source>
-        <translation>Comment doit procéder SilentDragon?</translation>
+        <translation>Как следует настроить silentdragon?</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="51"/>
         <source>Pay All in 1 Tx</source>
-        <translation>Uout payer en 1 Tx</translation>
+        <translation>Оплатить Все в 1 Tx</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="58"/>
         <source>Only the latest pending payment will be processed. All previous pending payments will be skipped</source>
-        <translation>Seul le dernier paiement en attente sera traité. Tous les paiements en attente antérieurs seront ignorés</translation>
+        <translation>Будет обработан только последний ожидающий платеж. Все предыдущие ожидающие платежи будут пропущены</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="68"/>
         <source>Pay Latest Only</source>
-        <translation>Payer le dernier seulement</translation>
+        <translation>Оплачивать Только Последние</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="75"/>
         <source>Pay None</source>
-        <translation>Payez aucun</translation>
+        <translation>Не Платить</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="96"/>
         <source>All pending payments collected, added up and paid in a single transaction</source>
-        <translation>Tous les paiements en attente sont collectés, additionnés et payés en une seule transaction</translation>
+        <translation>Были собраны все ожидающие платежи, суммированы и оплачены одной транзакцией</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="116"/>
         <source>Description</source>
-        <translation>Description</translation>
+        <translation>Описание</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="123"/>
         <source>To</source>
-        <translation>à</translation>
+        <translation>Кому</translation>
     </message>
     <message>
         <location filename="../src/recurringmultiple.ui" line="137"/>
         <source>The following recurring payment has multiple payments pending</source>
-        <translation>Le paiement récurrent ci&apos;dessous à plusieurs paiements en attente</translation>
+        <translation>Следующий регулярный платеж имеет несколько ожидающих платежей</translation>
     </message>
 </context>
 <context>
@@ -2442,92 +2466,92 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/requestdialog.ui" line="14"/>
         <source>Payment Request</source>
-        <translation>Demande de paiement</translation>
+        <translation>Платежный Запрос</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="153"/>
         <source>AddressBook</source>
-        <translation>Carnet d&apos;adresses</translation>
+        <translation>Адресная Книга</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="27"/>
         <source>Request From</source>
-        <translation>Demande de</translation>
+        <translation>Запрос От</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="188"/>
         <source>My Address</source>
-        <translation>Mon adresse</translation>
+        <translation>Мой Адресс</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="215"/>
         <source>Amount in </source>
-        <translation>Montant en </translation>
+        <translation>Количество в </translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="181"/>
         <source>z address</source>
-        <translation>z address</translation>
+        <translation>z адрес</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="208"/>
         <source>Amount</source>
-        <translation>Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="34"/>
         <source>The recipient will see this address in the &quot;to&quot; field when they pay your request.</source>
-        <translation>Le destinataire verra cette adresse dans le champ &quot;à&quot; lorsqu&apos;il paiera votre demande.</translation>
+        <translation>Получатель увидит этот адрес в поле &quot;Кому&quot; при оплате вашего запроса.</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="121"/>
         <source>Amount USD</source>
-        <translation>Montant en USD</translation>
+        <translation>Количество USD</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="84"/>
         <source>Memo</source>
-        <translation>Mémo</translation>
+        <translation>Памятка</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="54"/>
         <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <translation>ТекстоваяМетка</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.ui" line="162"/>
         <source>Request payment from a Sapling address. You&apos;ll send a hush 0.0001 transaction to the address with a hush payment URI. The memo will be included in the transaction when the address pays you.</source>
-        <translation>Demander le paiement à une adresse de type Sapling. Vous enverrez une transaction de 0.0001 Hush à l&apos;adresse avec un URI de paiement Hush. Le mémo sera inclus dans la transaction lorsque l&apos;adresse vous payera.</translation>
+        <translation>Запросить оплату с Sapling адреса. Вы отправите hush 0.0001 транзакцию на адрес с URI hush платежа. Памятка будет включена в транзакцию, когда адрес заплатит вам.</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.cpp" line="52"/>
         <source>Error paying hush URI</source>
-        <translation>Erreur lors du paiement du URI Hush</translation>
+        <translation>Ошибка при оплате Hush URI</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.cpp" line="53"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
-        <translation>Le format URI doit être comme suit: &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
+        <translation>URI должен иметь форму &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.cpp" line="67"/>
         <source>Pay To</source>
-        <translation>Payer à</translation>
+        <translation>Отправить</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.cpp" line="87"/>
         <source>Pay</source>
-        <translation>Payer</translation>
+        <translation>Оплатить</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.cpp" line="89"/>
         <source>You are paying a payment request. Your address will not be visible to the person requesting this payment.</source>
-        <translation>Vous payez une demande de paiement. Votre adresse ne sera pas visible pour la personne qui demande ce paiement.</translation>
+        <translation>Вы оплачиваете запрос на оплату. Ваш адрес не будет виден лицу, запрашивающему этот платеж.</translation>
     </message>
     <message>
         <location filename="../src/requestdialog.cpp" line="108"/>
         <source>Can only request from Sapling addresses</source>
-        <translation>Ne peut demander qu&apos;aux adresses de type Sapling</translation>
+        <translation>Можно запрашивать только с Sapling адресов</translation>
     </message>
 </context>
 <context>
@@ -2535,32 +2559,32 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/seedrestore.ui" line="14"/>
         <source>Restore your Wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановите свой Кошелек</translation>
     </message>
     <message>
         <location filename="../src/seedrestore.ui" line="32"/>
         <source>Birthday :</source>
-        <translation type="unfinished"></translation>
+        <translation>День рождения:</translation>
     </message>
     <message>
         <location filename="../src/seedrestore.ui" line="39"/>
         <source>Quantity :</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество :</translation>
     </message>
     <message>
         <location filename="../src/seedrestore.ui" line="68"/>
         <source>180000</source>
-        <translation type="unfinished">180000</translation>
+        <translation>180000</translation>
     </message>
     <message>
         <location filename="../src/seedrestore.ui" line="81"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../src/seedrestore.ui" line="109"/>
         <source>Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить</translation>
     </message>
 </context>
 <context>
@@ -2572,42 +2596,42 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/restoreseed.ui" line="14"/>
         <source>Restore Wallet Seed</source>
-        <translation type="unfinished"></translation>
+        <translation>Восстановить Seed Кошелька</translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="53"/>
         <source>180000</source>
-        <translation type="unfinished">180000</translation>
+        <translation>180000</translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="75"/>
         <source>Quantity </source>
-        <translation type="unfinished"></translation>
+        <translation>Количество </translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="82"/>
         <source>10</source>
-        <translation type="unfinished">10</translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="94"/>
         <source>The quantity of shielded addresses that gets recreated during the restore process</source>
-        <translation type="unfinished"></translation>
+        <translation>Количество экранированных адресов, которые воссоздаются в процессе восстановления</translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="107"/>
         <source>Please enter your 24-word seed below</source>
-        <translation>Veuillez entrer votre graine de 24 mots ci-dessous</translation>
+        <translation>Пожалуйста, введите вашу seed фразу из 24 слов</translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="32"/>
         <source>Wallet Seed</source>
-        <translation>Graine du wallet</translation>
+        <translation>Кошелек Seed</translation>
     </message>
     <message>
         <location filename="../src/restoreseed.ui" line="46"/>
         <source>Wallet Birthday</source>
-        <translation>Anniversaire du wallet</translation>
+        <translation>День Рождение Кошелька</translation>
     </message>
     <message>
         <source>0</source>
@@ -2616,7 +2640,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/restoreseed.ui" line="65"/>
         <source>Wallet birthday is the block height at which the wallet had the first transaction. If you don&apos;t know this, you can leave it as &quot;0&quot; (It&apos;ll take longer to rescan)</source>
-        <translation>L&apos;anniversaire du wallet correspond à la hauteur de bloc à laquelle le portefeuille a effectué la première transaction. Si vous ne le savez pas, vous pouvez le laisser comme &quot;0&quot; (il faudra plus de temps pour numériser à nouveau)</translation>
+        <translation>День рождение кошелька это высота блока, на которой кошелек совершил первую транзакцию. Если вы этого не знаете, вы можете оставить значение &quot;0&quot; (повторное сканирование займет больше времени)</translation>
     </message>
 </context>
 <context>
@@ -2625,37 +2649,37 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
         <location filename="../src/firsttimewizard.cpp" line="642"/>
         <location filename="../src/firsttimewizard.cpp" line="670"/>
         <source>Failed to restore wallet</source>
-        <translation>Échec de la restoration du wallet</translation>
+        <translation>Не удалось восстановить кошелек</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="643"/>
         <source>SilentDragonLite needs 24 words to restore wallet</source>
-        <translation>SilentDragonLite a besoin de 24 mots pour restaurer son wallet</translation>
+        <translation>SilentDragonLite нужно 24 слова для восстановления кошелька</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="653"/>
         <source>Failed to parse wallet birthday</source>
-        <translation>Impossible d&apos;analyser l&apos;anniversaire du wallet</translation>
+        <translation>Не удалось разобрать день рождение кошелька</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="654"/>
         <source>Couldn&apos;t understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as &apos;0&apos; if you don&apos;t know what it should be.</source>
-        <translation>L&apos;anniversaire du wallet n&apos;est pas reconnue. Cela devrait être une hauteur de bloc à partir de laquelle numériser à nouveau le portefeuille. Vous pouvez laisser «0» si vous ne savez pas ce que cela devrait être.</translation>
+        <translation>Не удалось распознать день рождение бумажника. Это должна быть высота блока, откуда можно повторно сканировать кошелек. Вы можете оставить значение как &apos;0&apos;, если не знаете, каким оно должно быть.</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="671"/>
         <source>Couldn&apos;t restore the wallet</source>
-        <translation>Impossible de restaurer le wallet</translation>
+        <translation>Не удалось восстановить кошелек</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="684"/>
         <source>Failed to save wallet</source>
-        <translation>Échec de la sauvegarde du wallet</translation>
+        <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
         <location filename="../src/firsttimewizard.cpp" line="685"/>
         <source>Couldn&apos;t save the wallet</source>
-        <translation>Impossible d&apos;enregister  le wallet</translation>
+        <translation>Не удалось сохранить кошелек</translation>
     </message>
 </context>
 <context>
@@ -2663,7 +2687,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/settings.ui" line="32"/>
         <source>Settings</source>
-        <translation>Paramétres</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <source>hushd connection</source>
@@ -2688,42 +2712,41 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/settings.ui" line="99"/>
         <source>Options</source>
-        <translation>Options</translation>
+        <translation>Параметры</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="118"/>
         <source>Dark</source>
-        <translation type="unfinished"></translation>
+        <translation>Тёмный</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="123"/>
         <source>Midnight</source>
-        <translation type="unfinished"></translation>
+        <translation>Полночь</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="128"/>
         <source>Light</source>
-        <translation type="unfinished"></translation>
+        <translation>Светлый</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="133"/>
         <source>Blue</source>
-        <translation type="unfinished"></translation>
+        <translation>Синий</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="138"/>
         <source>Default</source>
-        <translation type="unfinished"></translation>
+        <translation>По умолчанию</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="143"/>
         <source>test</source>
-        <translation type="unfinished"></translation>
+        <translation>тест</translation>
     </message>
     <message>
-        <location filename="../src/settings.ui" line="170"/>
-        <source>Check git for updates at startup</source>
-        <translation>Rechercher les mises à jour sur GitHub au démarrage</translation>
+        <source>Check github for updates at startup</source>
+        <translation type="vanished">Проверить github для обновлений при запуске</translation>
     </message>
     <message>
         <source>Connect to the Tor network via SOCKS proxy running on 127.0.0.1:9050. Please note that you&apos;ll have to install and run the Tor service externally.</source>
@@ -2738,24 +2761,23 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
         <translation type="vanished">Se connecter via Tor</translation>
     </message>
     <message>
-        <location filename="../src/settings.ui" line="183"/>
-        <source>Connect to git on startup to check for updates</source>
-        <translation>Connexion à GitHub au démarragede l&apos;application  pour rechercher les mises à jour</translation>
+        <source>Connect to github on startup to check for updates</source>
+        <translation type="vanished">Подключиться к github при запуске, чтобы проверить наличие обновлений</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="237"/>
         <source>Connect to the internet to fetch hush prices</source>
-        <translation>Connexion  à Internet pour obtenir des prix de Hush</translation>
+        <translation>Подключитесь к Интернету, чтобы узнать цену hush</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="202"/>
         <source>Theme</source>
-        <translation>Thème</translation>
+        <translation>Тема</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="67"/>
         <source>Lightwallet Server</source>
-        <translation>Serveur Lightwallet</translation>
+        <translation>Lightwallet Сервер</translation>
     </message>
     <message>
         <source>default</source>
@@ -2764,7 +2786,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/settings.ui" line="45"/>
         <source>Connection</source>
-        <translation>Connexion</translation>
+        <translation>Подключение</translation>
     </message>
     <message>
         <source>blue</source>
@@ -2781,12 +2803,22 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/settings.ui" line="157"/>
         <source>Fetch hush prices</source>
-        <translation>Récupérer les prix de Hush</translation>
+        <translation>Получить цену hush</translation>
+    </message>
+    <message>
+        <location filename="../src/settings.ui" line="170"/>
+        <source>Check git for updates at startup</source>
+        <translation>Проверять git на наличие обновлений при запуске</translation>
+    </message>
+    <message>
+        <location filename="../src/settings.ui" line="183"/>
+        <source>Connect to git on startup to check for updates</source>
+        <translation>Подключаться к git при запуске, чтобы проверить наличие обновлений</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="256"/>
         <source>Currency</source>
-        <translation>Devise</translation>
+        <translation>Валюта</translation>
     </message>
     <message>
         <location filename="../src/settings.ui" line="279"/>
@@ -2930,12 +2962,12 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/viewalladdresses.ui" line="14"/>
         <source>All Addresses</source>
-        <translation>Toutes les adresses</translation>
+        <translation>Все Адреса</translation>
     </message>
     <message>
         <location filename="../src/viewalladdresses.ui" line="30"/>
         <source>Export All Keys</source>
-        <translation>Exporter toutes les clés</translation>
+        <translation>Экспорт всех ключей</translation>
     </message>
 </context>
 <context>
@@ -2943,12 +2975,12 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/viewalladdresses.cpp" line="9"/>
         <source>Address</source>
-        <translation>Adresse</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="../src/viewalladdresses.cpp" line="9"/>
         <source>Balance (%1)</source>
-        <translation>Solde (%1)</translation>
+        <translation>Баланс (%1)</translation>
     </message>
 </context>
 <context>
@@ -2956,7 +2988,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/about.ui" line="14"/>
         <source>About</source>
-        <translation>À propos</translation>
+        <translation>О программе</translation>
     </message>
 </context>
 <context>
@@ -2964,107 +2996,107 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/addressbook.ui" line="14"/>
         <source>Address Book</source>
-        <translation>Carnet d&apos;adresses</translation>
+        <translation>Адресная Книга</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="57"/>
         <source>Add New Address</source>
-        <translation>Ajouter une nouvelle adresse</translation>
+        <translation>Добавить Новый Адрес</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="63"/>
         <source>Address (z-Addr or t-Addr)</source>
-        <translation>Adresse (Adresse-z ou Adresse-t)</translation>
+        <translation>Адрес (z-Addr или t-Addr)</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="70"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nickname :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Никнейм :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="100"/>
         <source>HushChat Address - give this Address only to your contact</source>
-        <translation type="unfinished"></translation>
+        <translation>HushChat Адрес - отправьте этот адрес только своему контакту</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="117"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Conversation ID:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Переписка ID:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="148"/>
         <source>SDLogo</source>
-        <translation type="unfinished"></translation>
+        <translation>SDЛого</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="158"/>
         <source>Duke</source>
-        <translation type="unfinished"></translation>
+        <translation>Duke</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="168"/>
         <source>Denio</source>
-        <translation type="unfinished"></translation>
+        <translation>Denio</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="178"/>
         <source>Berg</source>
-        <translation type="unfinished"></translation>
+        <translation>Berg</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="188"/>
         <source>Sharpee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sharpee</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="198"/>
         <source>Elsa</source>
-        <translation type="unfinished"></translation>
+        <translation>Elsa</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="208"/>
         <source>Yoda</source>
-        <translation type="unfinished"></translation>
+        <translation>Yoda</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="218"/>
         <source>Garflied</source>
-        <translation type="unfinished"></translation>
+        <translation>Garflied</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="228"/>
         <source>Snoopy</source>
-        <translation type="unfinished"></translation>
+        <translation>Snoopy</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="238"/>
         <source>Popey</source>
-        <translation type="unfinished"></translation>
+        <translation>Popey</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="248"/>
         <source>Pinguin</source>
-        <translation type="unfinished"></translation>
+        <translation>Pinguin</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="258"/>
         <source>Mickey</source>
-        <translation type="unfinished"></translation>
+        <translation>Mickey</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="268"/>
         <source>Stag</source>
-        <translation type="unfinished"></translation>
+        <translation>Stag</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="281"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Avatar :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Аватар :&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="294"/>
         <source>Create a new HushChat zaddr</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать новый HushChat zaddr</translation>
     </message>
     <message>
         <source>Label</source>
@@ -3073,12 +3105,12 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/addressbook.ui" line="140"/>
         <source>Add to Address Book</source>
-        <translation>Ajouter au carnet d&apos;adresse</translation>
+        <translation>Добавить в Адресную Книгу</translation>
     </message>
     <message>
         <location filename="../src/addressbook.ui" line="22"/>
         <source>Import Address Book</source>
-        <translation>Importer de carnet d&apos;adresses</translation>
+        <translation>Импортировать Адресную Книгу</translation>
     </message>
 </context>
 <context>
@@ -3086,7 +3118,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/confirm.ui" line="14"/>
         <source>Confirm Transaction</source>
-        <translation>Confirmer la transaction</translation>
+        <translation>Подтвердить Транзакцию</translation>
     </message>
     <message>
         <source>From</source>
@@ -3095,17 +3127,17 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/confirm.ui" line="20"/>
         <source>To</source>
-        <translation>À</translation>
+        <translation>Кому</translation>
     </message>
     <message>
         <location filename="../src/confirm.ui" line="132"/>
         <source>Recurring Payment</source>
-        <translation>Paiement récurrent</translation>
+        <translation>Периодический Платеж</translation>
     </message>
     <message>
         <location filename="../src/confirm.ui" line="138"/>
         <source>TextLabel</source>
-        <translation>TextLabel</translation>
+        <translation>ТекстоваяМетка</translation>
     </message>
     <message>
         <source>hushd doesn&apos;t seem to have any peers. You might not be connected to the internet, so this Transaction might not work.</source>
@@ -3114,7 +3146,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/confirm.ui" line="164"/>
         <source>You are sending a transaction while your node is still syncing. This may not work.</source>
-        <translation>Vous envoyer une transaction alors que votre noeud se synchronize encore. Cela ne pourrait pas fonctionner.</translation>
+        <translation>Вы отправляете транзакцию, когда ваша нода все еще синхронизируется. Это может не сработать.</translation>
     </message>
     <message>
         <source>You are using a custom fee. Since fees are transparent, you are giving up some privacy. Please use this only if you know what you are doing!</source>
@@ -3126,52 +3158,52 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/createhushconfdialog.ui" line="14"/>
         <source>Configure hush.conf</source>
-        <translation>Configuration de hush.conf</translation>
+        <translation>Настроить hush.conf</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="22"/>
         <source>Show Advanced Configuration</source>
-        <translation>Afficher la configuration avancée</translation>
+        <translation>Показать Расширенную Конфигурацию</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="146"/>
         <source>Your hush node will be configured for you automatically</source>
-        <translation>Votre nœud hush sera automatiquement.configuré pour vous</translation>
+        <translation>Ваша hush нода будет настроена для вас автоматически</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="67"/>
         <source>Use custom datadir</source>
-        <translation>Utiliser un repertoire  personnalisé</translation>
+        <translation>Использовать кастомный datadir</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="112"/>
         <source>Connect to the internet for updates and price feeds</source>
-        <translation>Se connecter à Internet pour obtenir les mises à jour et les flux de prix</translation>
+        <translation>Подключиться к Интернету для получения обновлений и цен</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="122"/>
         <source>Please choose a directory to store your wallet.dat and blockchain</source>
-        <translation>Veuillez choisir un répertoire pour stocker votre wallet.dat et votre blockchain</translation>
+        <translation>Выберите директорию для хранения вашего wallet.dat и блокчейна</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="76"/>
         <source>Choose directory</source>
-        <translation>Choisir un répertoire</translation>
+        <translation>Выбрать директорию</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="60"/>
         <source>Allow connections to the internet to check for updates, get hush prices etc...</source>
-        <translation>Autoriser les connexions à Internet pour vérifier les mises à jour, obtenir les prix de Hush, etc...</translation>
+        <translation>Разрешить подключение к Интернету для проверки обновлений, получения скрытых цен и т.д...</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="129"/>
         <source>Connect over Tor</source>
-        <translation>Connecter sur Tor</translation>
+        <translation>Подключиться с помощью Tor</translation>
     </message>
     <message>
         <location filename="../src/createhushconfdialog.ui" line="105"/>
         <source>Please note that you&apos;ll need to already have a Tor service configured on port 9050</source>
-        <translation>Veuillez noter que vous devez déjà avoir un service Tor configuré sur le port 9050</translation>
+        <translation>Обратите внимание, что вам необходимо настроить сервис Tor через порт 9050</translation>
     </message>
 </context>
 <context>
@@ -3179,7 +3211,7 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
     <message>
         <location filename="../src/deposithush.ui" line="14"/>
         <source>Deposit Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Депозит Hush</translation>
     </message>
     <message>
         <location filename="../src/deposithush.ui" line="26"/>
@@ -3188,27 +3220,31 @@ Vous avez soit des fonds non confirmés soit le solde est trop petit pour une mi
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:16pt;&quot;&gt;Please use the following hush address to transfer funds to SilentDragonLite. You can either copy the address or use the QR Code. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Ubuntu&apos;; font-size:16pt;&quot;&gt;Используйте следующий hush адрес для перевода средств в SilentDragonLite. Вы можете скопировать адрес или использовать QR-код. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/deposithush.ui" line="37"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;QR Code of your Hush Address&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;QR Код вашего Hush Адреса&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/deposithush.ui" line="44"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Your Hush Address &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;Ваш Hush Адрес &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/deposithush.ui" line="51"/>
         <source>Hush zaddr</source>
-        <translation type="unfinished"></translation>
+        <translation>Hush zaddr</translation>
     </message>
     <message>
         <location filename="../src/deposithush.ui" line="58"/>
         <source>Copy Address</source>
-        <translation type="unfinished">Copier l&apos;adresse</translation>
+        <translation>Скопировтаь Адрес</translation>
     </message>
 </context>
 <context>
@@ -3216,7 +3252,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/emoji.ui" line="14"/>
         <source>Emoji</source>
-        <translation type="unfinished"></translation>
+        <translation>Emoji</translation>
     </message>
 </context>
 <context>
@@ -3224,32 +3260,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/encryption.ui" line="32"/>
         <source>Encrypt Your Wallet</source>
-        <translation>Cryptez votre wallet</translation>
+        <translation>Зашифруйте Ваш Кошелек</translation>
     </message>
     <message>
         <location filename="../src/encryption.ui" line="38"/>
         <source>Encryption Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодовая Фраза Шифрования:</translation>
     </message>
     <message>
         <location filename="../src/encryption.ui" line="64"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ef2929;&quot;&gt;WARNING:&lt;/span&gt; If you forget your passphrase, the only way to recover the wallet is from the seed phrase. If you don&apos;t have a backup of your seed phrase, please do it now!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ef2929;&quot;&gt;ПРЕДУПРЕЖДЕНИЕ:&lt;/span&gt; Если вы забудете свою кодовую фразу, единственный способ восстановить кошелек это seed фраза. Если у вас нет резервной копии исходной фразы, сделайте это сейчас!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/encryption.ui" line="91"/>
         <source>Confirm Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Подтвердить Кодовую Фразу:</translation>
     </message>
     <message>
         <location filename="../src/encryption.ui" line="153"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Passphrase don&apos;t match&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Кодовая фраза не совпадает&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/encryption.ui" line="169"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;16 letters minimum&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;минимум 16 букв&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <source>Encryption Password:</source>
@@ -3273,57 +3309,57 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/hushrequest.ui" line="14"/>
         <source>Request Payment</source>
-        <translation type="unfinished"></translation>
+        <translation>Запросить Оплату</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="20"/>
         <source>TextLabel</source>
-        <translation type="unfinished">TextLabel</translation>
+        <translation>ТекстоваяМетка</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="30"/>
         <source>Request payment from a Sapling address. You&apos;ll send a hush 0.0001 transaction to the address with a hush payment URI. The memo will be included in the transaction when the address pays you.</source>
-        <translation type="unfinished">Demander le paiement à une adresse de type Sapling. Vous enverrez une transaction de 0.0001 Hush à l&apos;adresse avec un URI de paiement Hush. Le mémo sera inclus dans la transaction lorsque l&apos;adresse vous payera.</translation>
+        <translation>Запросить оплату с Sapling адреса. Вы отправите 0.0001 hush на адрес с URI hush платежа. Памятка будет включена в транзакцию, когда адрес будет вам платит.</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="40"/>
         <source>Request From</source>
-        <translation type="unfinished">Demande de</translation>
+        <translation>Запрос От</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="60"/>
         <source>zaddr</source>
-        <translation type="unfinished"></translation>
+        <translation>zaddr</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="67"/>
         <source>Amount in </source>
-        <translation type="unfinished">Montant en </translation>
+        <translation>Количество в </translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="77"/>
         <source>Amount</source>
-        <translation type="unfinished">Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="84"/>
         <source>Amount USD</source>
-        <translation type="unfinished">Montant en USD</translation>
+        <translation>Количество USD</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="94"/>
         <source>Memo</source>
-        <translation type="unfinished">Mémo</translation>
+        <translation>Памятка</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="121"/>
         <source>My Address</source>
-        <translation type="unfinished">Mon adresse</translation>
+        <translation>Мой Адрес</translation>
     </message>
     <message>
         <location filename="../src/hushrequest.ui" line="128"/>
         <source>The recipient will see this address in the &quot;to&quot; field when they pay your request.</source>
-        <translation type="unfinished">Le destinataire verra cette adresse dans le champ &quot;à&quot; lorsqu&apos;il paiera votre demande.</translation>
+        <translation>Получатель увидит этот адрес в поле &quot;кому&quot; при оплате вашего запроса.</translation>
     </message>
 </context>
 <context>
@@ -3331,47 +3367,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/newrecurring.ui" line="14"/>
         <source>Edit Schedule</source>
-        <translation>Modifier la liste</translation>
+        <translation>Изменить Расписание</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="54"/>
         <source>Schedule</source>
-        <translation>Liste</translation>
+        <translation>Расписание</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="20"/>
         <source>Payment Description</source>
-        <translation>Description du paiement</translation>
+        <translation>Описание Платежа</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="142"/>
         <source>From</source>
-        <translation>De</translation>
+        <translation>От</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="166"/>
         <source>Number of payments</source>
-        <translation>Nombre de paiement</translation>
+        <translation>Количество платежей</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="75"/>
         <source>Amount</source>
-        <translation>Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="68"/>
         <source>Next Payment</source>
-        <translation>Prochain paiement</translation>
+        <translation>Следующий Платеж</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="135"/>
         <source>To</source>
-        <translation>À</translation>
+        <translation>Кому</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="121"/>
         <source>Memo</source>
-        <translation>Mémo</translation>
+        <translation>Памятка</translation>
     </message>
 </context>
 <context>
@@ -3379,32 +3415,32 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/removeencryption.ui" line="32"/>
         <source>Decrypt Your Wallet</source>
-        <translation type="unfinished"></translation>
+        <translation>Расшифровать Кошелек</translation>
     </message>
     <message>
         <location filename="../src/removeencryption.ui" line="45"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ef2929;&quot;&gt;WARNING:&lt;/span&gt; If you remove your wallet.dat encryption, all your transactions and contacts are plaintext on disk!&lt;br/&gt;&lt;br/&gt;Messages sent and received are always encrypted.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; color:#ef2929;&quot;&gt;ПРЕДУПРЕЖДЕНИЕ:&lt;/span&gt; Если вы удалите шифрование с wallet.dat, все ваши транзакции и контакты будут храниться на диске в виде открытого текста! &lt;br/&gt; &lt;br/&gt; Отправленные и полученные сообщения всегда зашифрованы.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/removeencryption.ui" line="71"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;16 letters minimum&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;минимум 16 букв&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/removeencryption.ui" line="94"/>
         <source>Encryption Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодовая Фраза Шифрования:</translation>
     </message>
     <message>
         <location filename="../src/removeencryption.ui" line="101"/>
         <source>Confirm Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Подтвердите Кодовую Фразу:</translation>
     </message>
     <message>
         <location filename="../src/removeencryption.ui" line="131"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Passphrase don&apos;t match&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;Кодовая фраза не совпадает&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -3412,145 +3448,153 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/requestContactDialog.ui" line="32"/>
         <source>Incoming Contact Request</source>
-        <translation type="unfinished"></translation>
+        <translation>Входящий Запрос на Контакт</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="44"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Memo of the request&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Заметка в запросе&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Open requests&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Открытые запросы&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="97"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Open requests from:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Открытые запросы от:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="172"/>
         <source>Request from:</source>
-        <translation type="unfinished"></translation>
+        <translation>Запрос от:</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="223"/>
         <source>Add New Contact</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить Новый Контакт</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="258"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Choose an avatar for your contact:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выбрать аватар для вашего контакта:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="277"/>
         <source>My Zaddr:</source>
-        <translation type="unfinished"></translation>
+        <translation>Мой Zaddr:</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="315"/>
         <source>Cancel</source>
-        <translation type="unfinished">Annuler</translation>
+        <translation>Отменить</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="347"/>
         <source>SDLogo</source>
-        <translation type="unfinished"></translation>
+        <translation>SDЛого</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="357"/>
         <source>Duke</source>
-        <translation type="unfinished"></translation>
+        <translation>Duke</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="367"/>
         <source>Denio</source>
-        <translation type="unfinished"></translation>
+        <translation>Denio</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="377"/>
         <source>Berg</source>
-        <translation type="unfinished"></translation>
+        <translation>Berg</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="387"/>
         <source>Sharpee</source>
-        <translation type="unfinished"></translation>
+        <translation>Sharpee</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="397"/>
         <source>Elsa</source>
-        <translation type="unfinished"></translation>
+        <translation>Elsa</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="407"/>
         <source>Yoda</source>
-        <translation type="unfinished"></translation>
+        <translation>Yoda</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="417"/>
         <source>Garfield</source>
-        <translation type="unfinished"></translation>
+        <translation>Garfield</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="427"/>
         <source>Snoopy</source>
-        <translation type="unfinished"></translation>
+        <translation>Snoopy</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="437"/>
         <source>Popey</source>
-        <translation type="unfinished"></translation>
+        <translation>Popey</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="447"/>
         <source>Pinguin</source>
-        <translation type="unfinished"></translation>
+        <translation>Pinguin</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="457"/>
         <source>Mickey</source>
-        <translation type="unfinished"></translation>
+        <translation>Mickey</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="467"/>
         <source>Stag</source>
-        <translation type="unfinished"></translation>
+        <translation>Stag</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="486"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Recently closed requests&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Недавно закрытые запросы&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="505"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Details of the request&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Детали запроса&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/requestContactDialog.ui" line="524"/>
         <source>Give a Nickname:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ввести никнейм:</translation>
     </message>
 </context>
 <context>
     <name>startup</name>
     <message>
+        <source>SDL Startup Decryption</source>
+        <translation type="vanished">SDL Startup Decryption</translation>
+    </message>
+    <message>
         <location filename="../src/startupencryption.ui" line="32"/>
         <source>Welcome Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Добро Пожаловать</translation>
     </message>
     <message>
         <location filename="../src/startupencryption.ui" line="38"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;If you have forgotten your passphrase, restore your wallet with your seed!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Если вы забыли кодовую фразу, восстановите свой кошелек с помощью seed!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/startupencryption.ui" line="51"/>
         <source>Create new Wallet or Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать новый Кошелек или Восстановить</translation>
     </message>
     <message>
         <location filename="../src/startupencryption.ui" line="65"/>
         <source>Encryption Passphrase:</source>
-        <translation type="unfinished"></translation>
+        <translation>Кодовая Фраза Шифрования:</translation>
     </message>
 </context>
 <context>
@@ -3558,60 +3602,68 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="14"/>
         <source>Send or Request Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправить или Запросить Hush</translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="20"/>
         <source>To :</source>
-        <translation type="unfinished"></translation>
+        <translation>Кому :</translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="91"/>
         <source>Amount: </source>
-        <translation type="unfinished"></translation>
+        <translation>Количество: </translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="116"/>
         <source>Amount</source>
-        <translation type="unfinished">Montant</translation>
+        <translation>Количество</translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="129"/>
         <source>Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Hush</translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="138"/>
         <source>Memo :</source>
-        <translation type="unfinished"></translation>
+        <translation>Памятка :</translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="207"/>
         <source>Request Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Запросить Hush</translation>
     </message>
     <message>
         <location filename="../src/sendHushTransactionChat.ui" line="220"/>
         <source>Send Hush</source>
-        <translation type="unfinished"></translation>
+        <translation>Отправить Hush</translation>
     </message>
 </context>
 <context>
     <name>verifyseed</name>
     <message>
+        <source>Dialog</source>
+        <translation type="vanished">Диалог</translation>
+    </message>
+    <message>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Please verify, that you have backup your Seed and Birthday. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600; text-decoration: underline;&quot;&gt;Пожалуйста, убедитесь, что у вас есть резервная копия seed и дня рождения. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
         <location filename="../src/verifyseed.ui" line="14"/>
         <source>Please verify, that you have backup your Seed and Birthday</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, убедитесь, что у вас есть резервная копия вашего Seed и дня рождения</translation>
     </message>
     <message>
         <location filename="../src/verifyseed.ui" line="23"/>
         <source>Please enter your Seed :</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, введите ваш seed:</translation>
     </message>
     <message>
         <location filename="../src/verifyseed.ui" line="200"/>
         <source>Please enter the birthday of the Seed :</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста, введите день рождениe Seed:</translation>
     </message>
 </context>
 <context>

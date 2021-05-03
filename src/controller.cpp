@@ -153,22 +153,17 @@ void Controller::fillTxJsonParams(json& allRecepients, Tx tx)
     int sizerandomString = 512;
     const int randomStringLength = sizerandomString;
 
-      for(uint8_t i = 0; i < 8; i++)
-    {
-
+    for(uint8_t i = 0; i < 8; i++) {
         QString randomString;
-
         QRandomGenerator *gen = QRandomGenerator::system();
 
-    for(int i=0; i<randomStringLength; ++i)
-    {
+        for(int i=0; i<randomStringLength; ++i) {
+           int index = gen->bounded(0, possibleCharacters.length() - 1);
+           QChar nextChar = possibleCharacters.at(index);
+           randomString.append(nextChar);
+        }
 
-       int index = gen->bounded(0, possibleCharacters.length() - 1);
-       QChar nextChar = possibleCharacters.at(index);
-       randomString.append(nextChar);
-    }
-
-    dust.at(i)["memo"] = randomString.toStdString();
+        dust.at(i)["memo"] = randomString.toStdString();
 
     }
 
@@ -176,12 +171,11 @@ void Controller::fillTxJsonParams(json& allRecepients, Tx tx)
     {
         it["amount"] = 0;
     }
-
         
     // For each addr/amt/memo, construct the JSON and also build the confirm dialog box   
     for (int i=0; i < tx.toAddrs.size(); i++) 
     {
-        auto toAddr = tx.toAddrs[i];
+        auto toAddr    = tx.toAddrs[i];
         rec["address"] = toAddr.addr.toStdString();
         rec["amount"]  = toAddr.amount.toqint64();
         if (Settings::isZAddress(toAddr.addr) && !toAddr.memo.trimmed().isEmpty())
@@ -192,65 +186,50 @@ void Controller::fillTxJsonParams(json& allRecepients, Tx tx)
 
     int decider = rand() % 100 + 1 ;  ; // random int between 1 and 100
 
-if (tx.toAddrs.size() < 2)
-{
-
-if(decider % 4 == 3) 
-{
-
-    allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),    
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4),
-            dust.at(5)
-
-        }) ;
-      
-}else{
-
- allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4),
-            dust.at(5),
-            dust.at(6)
-
-        }) ;
-
-}
-}else{
-
-if(decider % 4 == 3) 
-{
-
-    allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),    
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4)
-
-
-        }) ;
-      
-}else{
-
- allRecepients.insert(std::begin(allRecepients), {
-            dust.at(0),
-            dust.at(1),
-            dust.at(2),
-            dust.at(3),
-            dust.at(4),
-            dust.at(5)
-
-        }) ;
-
-}
-}
+    if (tx.toAddrs.size() < 2) {
+    
+        if(decider % 4 == 3) {
+            allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),    
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4),
+                    dust.at(5)
+                }) ;
+              
+        } else {
+         allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4),
+                    dust.at(5),
+                    dust.at(6)
+                }) ;
+        }
+    } else {
+    
+        if(decider % 4 == 3) {
+            allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),    
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4)
+                }) ;
+        } else {
+         allRecepients.insert(std::begin(allRecepients), {
+                    dust.at(0),
+                    dust.at(1),
+                    dust.at(2),
+                    dust.at(3),
+                    dust.at(4),
+                    dust.at(5)
+                }) ;
+        }
+    }
 
 
 }
@@ -319,14 +298,16 @@ void Controller::getInfoThenRefresh(bool force)
     static bool prevCallSucceeded = false;
 
     zrpc->fetchInfo([=] (const json& reply) {
-        prevCallSucceeded = true;       
-        int curBlock  = reply["latest_block_height"].get<json::number_integer_t>();
-        bool doUpdate = force || (model->getLatestBlock() != curBlock);
-        int difficulty = reply["difficulty"].get<json::number_integer_t>();
-        int blocks_until_halving= 340000 - curBlock;
-        int halving_days = (blocks_until_halving * 150) / (60 * 60 * 24) ;
-        int longestchain = reply["longestchain"].get<json::number_integer_t>();
-        int notarized = reply["notarized"].get<json::number_integer_t>();
+        prevCallSucceeded        = true;
+        int curBlock             = reply["latest_block_height"].get<json::number_integer_t>();
+        bool doUpdate            = force || (model->getLatestBlock() != curBlock);
+        int difficulty           = reply["difficulty"].get<json::number_integer_t>();
+        int num_halvings         = 1; // number of halvings that have occured already
+        int blocks_until_halving = (num_halvings*1680000 + 340000) - curBlock;
+        int blocktime            = 75;
+        int halving_days         = (blocks_until_halving * blocktime) / (60 * 60 * 24) ;
+        int longestchain         = reply["longestchain"].get<json::number_integer_t>();
+        int notarized            = reply["notarized"].get<json::number_integer_t>();
         
         model->setLatestBlock(curBlock);
         if (
@@ -351,9 +332,7 @@ void Controller::getInfoThenRefresh(bool force)
                 (QLocale(QLocale::German).toString(blocks_until_halving)) + 
                 " Blocks or , " + (QLocale(QLocale::German).toString(halving_days)  + " days" )
             );
-        }
-        else 
-        {
+        } else {
             ui->blockHeight->setText(
                 "Block: " + QLocale(QLocale::English).toString(curBlock)
             );
@@ -2061,7 +2040,7 @@ void Controller::shutdownhushd()
         connD.topIcon->setMovie(movie2);
         movie2->start();
         connD.status->setText(QObject::tr("Please wait for SilentDragonLite to exit"));
-        connD.statusDetail->setText(QObject::tr("Waiting for hushd to exit"));
+        connD.statusDetail->setText(QObject::tr("Please wait for SilentDragonLite to exit"));
     } else {
         QMovie *movie1 = new QMovie(":/img/res/silentdragonlite-animated-startup.gif");;
         movie1->setScaledSize(size);
