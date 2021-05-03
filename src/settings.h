@@ -9,7 +9,12 @@
 using json = nlohmann::json;
 
 struct Config {
+    // The randomly chosen server we are talking to OR user-specific server
     QString server;
+    // Shouuld we only speak Tor to this server?
+    bool torOnly {false};
+    // Should we randomly try other servers if specified server is down?
+    bool stickyServer {false};
 };
 
 struct ToFields;
