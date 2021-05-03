@@ -1056,8 +1056,8 @@ void MainWindow::payhushURI(QString uri, QString myAddr) {
      pui.buttonBox->button(QDialogButtonBox::Save)->setVisible(true);
      pui.helpLbl->setText(QString() %
                          tr("Please paste your private key(zs-Addr or R-addr) here, one per import") % ".\n" %
-                         tr("Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr") % ".\n" %
-                         tr("R-addr keys will be autoshield to a seed zs-addr")
+                         tr("Caution: If this key is for a zaddr it will be NOT included in your Seed. Please send them direct to a Seed zaddr") % ".\n" %
+                         tr("R-addr keys will be automatically sent to a zaddr in your Seed")
                          );  
 
      if (d.exec() == QDialog::Accepted && !pui.privKeyTxt->toPlainText().trimmed().isEmpty()) {
