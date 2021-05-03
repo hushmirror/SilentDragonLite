@@ -155,9 +155,21 @@ void ConnectionLoader::doAutoConnect()
         QString response = litelib_process_response(resp);
 
         if (response.toUpper().trimmed() != "OK") {
-            QString resp = "Error when connecting to " + config->server + ": " + response;
-            showError(resp);
-            return;
+            config->server = Settings::getRandomServer();
+
+            resp = litelib_initialize_existing(
+                config->dangerous,
+                config->server.toStdString().c_str()
+            );
+            response = litelib_process_response(resp);
+
+            if (response.toUpper().trimmed() != "OK") {
+                QString resp = "Error when connecting to " + config->server + ": " + response;
+                showError(resp);
+                return;
+            } else {
+                qDebug() << __func__ << ": Successfully connected to random server: " << config->server << " !!!";
+            }
         } else {
             qDebug() << __func__ << ": Successfully connected to " << config->server << " !!!";
         }

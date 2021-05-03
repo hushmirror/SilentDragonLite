@@ -25,15 +25,15 @@ Config Settings::getSettings() {
     
     // this domain is stolen and malicious!
     // More info: https://git.hush.is/hush/fraud/#gilardh
-    auto malicious     = "https://lite.myhush.org";
+    auto malicious     = "lite.myhush.org";
     auto server        = s.value("connection/server").toString();
     bool sticky        = s.value("connection/stickyServer").toBool();
     bool torOnly       = s.value("connection/torOnly").toBool();
 
     // Users that have old configs generated from old SDLs will have this hostname
-    if(server == malicious) {
+    if(server == malicious or server == (QString("https://") + malicious)) {
         qDebug() << "Replacing malicious SDL server with " << server;
-        server = "https://lite.hush.is";
+        server = getRandomServer();
         s.setValue("connection/server", server);
     }
 
@@ -294,24 +294,27 @@ void Settings::saveRestoreTableHeader(QTableView* table, QDialog* d, QString tab
 
 QString Settings::getRandomServer() {
     qDebug() << __func__;
+    // The more servers from different TLDs, the better
+    QList<QString> servers = {
+    "https://lite.hush.is",
+    "https://devo.crabdance.com",
+    //"https://thisisdown1.example.com",
+    //"https://thisisdown2.example.com",
+    //"https://thisisdown3.example.com",
+    //"https://thisisdown4.example.com",
+    //"https://thisisdown5.example.com",
+    "https://lite.hush.community",
+    };
+
     // we don't need cryptographic random-ness, but we want
     // clients to never get "stuck" with the same server, which
     // prevents various attacks
-    QList<QString> servers;
-    //TODO: This should be a much larger list which we randomly choose from
-    servers[0] = "https://lite.hush.is";
-    servers[1] = "https://devo.crabdance.com";
-    servers[2] = "https://lite.hush.community";
-    //servers[3] = "https://hush.leto.net";
-    //servers[4] = "https://milktoast.attackingzcash.com";
-
-    // start at a random place in the list
-    int x       = rand() % servers.size();
+    int  x      = rand() % servers.size();
     auto server = servers[x];
-    int tries = 0;
+    int tries   = 0;
 
     // We try every server,in order, starting from a random place in the list
-    while (tries <= servers.size() ) {
+    while (tries < servers.size() ) {
         qDebug() << "Checking if lite server " << server << " is a alive, try=" << tries;
         char* resp = litelib_initialize_existing(false, server.toStdString().c_str());
         QString response = litelib_process_response(resp);
@@ -321,8 +324,9 @@ QString Settings::getRandomServer() {
             qDebug() << "Choosing lite server " << server;
             return server;
         }
-        server = servers[++x % servers.size()];
-
+        x++;
+        x = x % servers.size();
+        server = servers[x];
         tries++;
     }
     return server;

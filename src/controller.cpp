@@ -2040,7 +2040,7 @@ void Controller::shutdownhushd()
         connD.topIcon->setMovie(movie2);
         movie2->start();
         connD.status->setText(QObject::tr("Please wait for SilentDragonLite to exit"));
-        connD.statusDetail->setText(QObject::tr("Waiting for hushd to exit"));
+        connD.statusDetail->setText(QObject::tr("Please wait for SilentDragonLite to exit"));
     } else {
         QMovie *movie1 = new QMovie(":/img/res/silentdragonlite-animated-startup.gif");;
         movie1->setScaledSize(size);
