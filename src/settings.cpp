@@ -30,6 +30,11 @@ Config Settings::getSettings() {
     bool sticky        = s.value("connection/stickyServer").toBool();
     bool torOnly       = s.value("connection/torOnly").toBool();
 
+    while (server.endsWith("/")) {
+        // trailing slashes make Rust sad
+        server.chop(1);
+    }
+
     // Users that have old configs generated from old SDLs will have this hostname
     if(server == malicious or server == (QString("https://") + malicious)) {
         qDebug() << "Replacing malicious SDL server with " << server;
