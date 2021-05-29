@@ -45,7 +45,7 @@ Go to the [releases page](https://git.hush.is/hush/SilentDragonLite/releases) an
 
 * SilentDragonLite is written in C++ 14, and can be compiled with g++/clang++/visual c++. 
 * It also depends on Qt5, which you can get from [here](https://www.qt.io/download) or install using your Linux version's package manager.
-* You'll need Rust v1.41 +
+* You'll need Rust v1.49
 
 #### Building on Linux
 
@@ -74,7 +74,7 @@ sudo apt install torsocks
 NOTE: Tor server is currently under maintenance.
 
 ```
-* Open SDL  Edit->Settings->LightwalletServer->6onaaujm4ozaokzu.onion:80
+* Open SDL  Edit->Settings->LightwalletServer->nope.onion:80
 * Open the folder of SDL in a Terminal -> Enter: TORSOCKS_LOG_LEVEL=1 torsocks -i ./SilentDragonLite
 ```
 ### Note Management
