@@ -973,9 +973,9 @@ void Controller::refreshTransactions() {
                     }
 
                     QString memo;
-                    QString cid;
-                    QString headerbytes;
-                    QString publickey;
+                    QString cid = "";
+                    QString headerbytes = "";
+                    QString publickey = "";
                     if (!o["memo"].is_null()) {
                     memo = QString::fromStdString(o["memo"].get<json::string_t>());
                     
@@ -994,35 +994,27 @@ void Controller::refreshTransactions() {
                             }
                         }
                           
-                        bool isNotarized;
+                        bool isNotarized = false;;
 
                         if (confirmations > getLag())
                         {
                             isNotarized = true;
-                        } else {
-                            isNotarized = false;
-                        } 
+                        }
 
                         if (chatModel->getCidByTx(txid) != QString("0xdeadbeef"))
                         {
                             cid = chatModel->getCidByTx(txid);
-                        } else {
-                            cid = "";
                         }
 
 
                         if (chatModel->getHeaderByTx(txid) != QString("0xdeadbeef"))
                         {
                             headerbytes = chatModel->getHeaderByTx(txid);
-                        } else {
-                            headerbytes = "";
                         }
 
                         if (main->getPubkeyByAddress(address) != QString("0xdeadbeef"))
                         {
                             publickey = main->getPubkeyByAddress(address);
-                        } else {
-                            publickey = "";
                         }
                     
                         /////We need to filter out Memos smaller then the ciphertext size, or it will dump
@@ -1060,6 +1052,8 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0)
                             {
                                  main->logger->write("Suspicious client public outgoing key, bail out ");
+                                 qDebug() << "Suspicious client public outgoing key, aborting!";
+                                 return;
                             }
                 
                             const QByteArray ba = QByteArray::fromHex(memo.toUtf8());
@@ -1094,20 +1088,21 @@ void Controller::refreshTransactions() {
                                 //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                                 if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, server_tx) != 0) {
                                     /* Invalid header, no need to go any further */
+                                    qDebug() << "crypto_secretstream_xchacha20poly1305_init_pull error!";
+                                    return;
                                 }
  
                                 if (crypto_secretstream_xchacha20poly1305_pull
                                     (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                     /* Invalid/incomplete/corrupted ciphertext - abort */
+                                    qDebug() << "crypto_secretstream_xchacha20poly1305_pull error!";
+                                    return;
                                 }
 
                                 std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
             
                                 memodecrypt = QString::fromUtf8( decryptedMemo.data(), decryptedMemo.size());
-                            }
-                            else
-                            {
-                               
+                            } else {
                                 memodecrypt = "";
                             }
 
@@ -1251,9 +1246,7 @@ void Controller::refreshTransactions() {
                             if (position == 1)
                             {
                                 chatModel->addMemo(txid, headerbytes);
-                            }
-                            else
-                            {
+                            } else {
                                 //
                             }
 
@@ -1401,8 +1394,7 @@ void Controller::refreshTransactions() {
         // Update model data, which updates the table view
         transactionsTableModel->replaceData(txdata);
         chat->renderChatBox(ui, ui->listChat,ui->memoSizeChat);
-        ui->listChat->verticalScrollBar()->setValue(
-        ui->listChat->verticalScrollBar()->maximum());
+        ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
         
     });
     
@@ -1411,16 +1403,14 @@ void Controller::refreshTransactions() {
 void Controller::refreshChat(QListView *listWidget, QLabel *label)
 {
     chat->renderChatBox(ui, listWidget, label);
-    ui->listChat->verticalScrollBar()->setValue(
-    ui->listChat->verticalScrollBar()->maximum());
+    ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
   
 }
 
 void Controller::refreshContacts(QListView *listWidget)
 {
     contactModel->renderContactList(listWidget);
-    ui->listChat->verticalScrollBar()->setValue(
-        ui->listChat->verticalScrollBar()->maximum());
+    ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
 }
 
 // If the wallet is encrpyted and locked, we need to unlock it 
