@@ -477,20 +477,23 @@ Tx MainWindow::createTxFromChatPage() {
         unsigned char pk[crypto_kx_PUBLICKEYBYTES];
         unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
       
-                if (crypto_kx_seed_keypair(pk,sk,
-                           MESSAGEAS1) !=0) {
+        if (crypto_kx_seed_keypair(pk,sk, MESSAGEAS1) !=0) {
+               this->logger->write("Suspicious keypair, bail out ");
+               qDebug() << __func__<< ": Suspicious client public outgoing key from crypto_kx_seed_keypair, aborting!";
+               return;
+          }
 
-                               this->logger->write("Suspicious keypair, bail out ");
-                           }
          ////////////////Get the pubkey from Bob, so we can create the share key
 
         const QByteArray pubkeyBobArray = QByteArray::fromHex(pubkey.toLatin1());
         const unsigned char *pubkeyBob = reinterpret_cast<const unsigned char *>(pubkeyBobArray.constData());
-                    /////Create the shared key for sending the message
 
-            if (crypto_kx_server_session_keys(server_rx, server_tx,
-                                  pk, sk, pubkeyBob) != 0) {
-            this->logger->write("Suspicious client public send key, bail out ");
+        /////Create the shared key for sending the message
+
+            if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0) {
+               this->logger->write("Suspicious client public send key, bail out ");
+               qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_server_session_keys, aborting!";
+               return;
              }
 
     
@@ -821,6 +824,8 @@ Tx MainWindow::createTxForSafeContactRequest()
 
          if (crypto_kx_seed_keypair(pk, sk, MESSAGEAS1) !=0) {
             this->logger->write("Suspicious client public contact request key, bail out ");
+             qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_seed_keypair, aborting!";
+             return;
          }
 
          QString publicKey = QByteArray(reinterpret_cast<const char*>(pk), crypto_kx_PUBLICKEYBYTES).toHex();
