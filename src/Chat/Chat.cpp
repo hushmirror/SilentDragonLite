@@ -107,7 +107,7 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 QStandardItem *Items = new QStandardItem(c.second.toChatLine());
 
                 Items->setData(OUTGOING, Qt::UserRole + 1);
-                qDebug() << __func__ << ": appending row to OUTGOING chatitems to contact " << p.getName();
+                qDebug() << __func__ << ": appending row to OUTGOING chatitems to contact " << p.getName() << " with item " << Items;
                 chat->appendRow(Items);
                 ui->listChat->setModel(chat);
        
@@ -124,7 +124,7 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
             {
                 QStandardItem *Items1 = new QStandardItem(c.second.toChatLine());
                 Items1->setData(INCOMING, Qt::UserRole + 1);
-                qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << p.getName() << "with cid=" << p.getCid();
+                qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << p.getName() << "with cid=" << p.getCid() << " and item " << Items1;
                 chat->appendRow(Items1);
                 ui->listChat->setModel(chat);
                 ui->memoTxtChat->setEnabled(true);

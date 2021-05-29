@@ -1,4 +1,4 @@
-// Copyright 2019-2020 The Hush developers
+// Copyright 2019-2021 The Hush developers
 // GPLv3
 
 #include "contactmodel.h"
@@ -18,11 +18,6 @@ void ContactModel::addLabel(QString addr, QString label)
 
 QString ContactModel::getContactbyAddress(QString addr)
 {
-    for(auto& pair : this->AddressMap)
-    {
-
-    }
-
     if(this->AddressMap.count(addr) > 0)
     {
         return this->AddressMap[addr];
@@ -65,9 +60,7 @@ void MainWindow::showRequesthush() {
     for(auto &p : AddressBook::getInstance()->getAllAddressLabels())
     {
 
-        if (p.getName() == label)
-
-        {
+        if (p.getName() == label) {
 
             QString addr = p.getPartnerAddress();
             QString myzaddr = p.getMyAddress();
@@ -135,7 +128,8 @@ void MainWindow::showRequesthush() {
 
         }
     }
-            if (d.exec() == QDialog::Accepted) {
+
+    if (d.exec() == QDialog::Accepted) {
         // Construct a hush Payment URI with the data and pay it immediately.
         CAmount amount = CAmount::fromDecimalString(req.txtAmount->text());
         QString memoURI = "hush:" +  req.lblAddressInfo->text()
@@ -150,10 +144,6 @@ void MainWindow::showRequesthush() {
         // sapling address
         this->payhushURI(sendURI,  req.lblAddressInfo->text());
 
-
-
     }
 
 }
-
-

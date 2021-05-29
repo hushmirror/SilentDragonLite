@@ -950,15 +950,13 @@ void Controller::refreshTransactions() {
             // First, check if there's outgoing metadata
             if (!it["outgoing_metadata"].is_null()) {
             
-                for (auto o: it["outgoing_metadata"].get<json::array_t>())
-                 
-                {    
+                for (auto o: it["outgoing_metadata"].get<json::array_t>()) {    
                     // if (chatModel->getCidByTx(txid) == QString("0xdeadbeef")){
                     QString address;
     
                     address = QString::fromStdString(o["address"]);
 
-                    // Sent items are -ve
+                    // Sent items are negative
                     CAmount amount = CAmount::fromqint64(-1* o["value"].get<json::number_unsigned_t>());
                     
                     // Check for Memos
@@ -979,7 +977,7 @@ void Controller::refreshTransactions() {
                     QString headerbytes = "";
                     QString publickey = "";
                     if (!o["memo"].is_null()) {
-                    memo = QString::fromStdString(o["memo"].get<json::string_t>());
+                        memo = QString::fromStdString(o["memo"].get<json::string_t>());
                     
                         if (memo.startsWith("{")) {
                             try {
@@ -1007,7 +1005,6 @@ void Controller::refreshTransactions() {
                         {
                             cid = chatModel->getCidByTx(txid);
                         }
-
 
                         if (chatModel->getHeaderByTx(txid) != QString("0xdeadbeef"))
                         {
@@ -1042,6 +1039,8 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_seed_keypair(pk, sk, MESSAGEAS1) !=0)
                             {
                                 main->logger->write("Keypair outgoing error");
+                                qDebug() << "refreshTransactions: crypto_kx_seed_keypair error";
+                                continue;
                             }
                 
                             unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
@@ -1054,8 +1053,8 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0)
                             {
                                  main->logger->write("Suspicious client public outgoing key, bail out ");
-                                 qDebug() << "Suspicious client public outgoing key, aborting!";
-                                 return;
+                                 qDebug() << "refreshTransactions: Suspicious client public outgoing key, aborting!";
+                                 continue;
                             }
                 
                             const QByteArray ba = QByteArray::fromHex(memo.toUtf8());
@@ -1090,14 +1089,14 @@ void Controller::refreshTransactions() {
                                 //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                                 if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, server_tx) != 0) {
                                     /* Invalid header, no need to go any further */
-                                    qDebug() << __func__ << ": crypto_secretstream_xchacha20poly1305_init_pull error!";
-                                    return;
+                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_init_pull error!";
+                                    continue;
                                 }
  
                                 if (crypto_secretstream_xchacha20poly1305_pull(&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                     /* Invalid/incomplete/corrupted ciphertext - abort */
-                                    qDebug() << __func__ << ": crypto_secretstream_xchacha20poly1305_pull error!";
-                                    return;
+                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_pull error!";
+                                    continue;
                                 }
 
                                 std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
@@ -1125,6 +1124,7 @@ void Controller::refreshTransactions() {
                                 false
                             );
 
+                            qDebug() << "refreshTransactions: adding chatItem with memodecrypt=" << memodecrypt;
                             DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
                            // updateUIBalances();
                         }
@@ -1270,6 +1270,8 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_seed_keypair(pk, sk, MESSAGEAS1) !=0)
                             {
                                main->logger->write("Suspicious  outgoing key pair, bail out ");
+                               qDebug() << "refreshTransactions: (incoming) crypto_kx_seed_keypair error!";
+                               continue;
                             }
 
                             unsigned char client_rx[crypto_kx_SESSIONKEYBYTES], client_tx[crypto_kx_SESSIONKEYBYTES];
@@ -1277,10 +1279,11 @@ void Controller::refreshTransactions() {
                             ////////////////Get the pubkey from Bob, so we can create the share key
 
                             /////Create the shared key for sending the message
-
                             if (crypto_kx_client_session_keys(client_rx, client_tx, pk, sk, pubkeyBob) != 0)
                             {
                                main->logger->write("Suspicious client public incoming key, bail out ");
+                               qDebug() << "refreshTransactions: (incoming) crypto_kx_client_session_keys error!";
+                               continue;
                             }
 
                             const QByteArray ba = QByteArray::fromHex(memo.toUtf8());
@@ -1312,15 +1315,15 @@ void Controller::refreshTransactions() {
                             //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                             if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, client_rx) != 0) {
                                main->logger->write("Invalid header incoming, no need to go any further "); 
-                               qDebug() << __func__ << ":crypto_secretstream_xchacha20poly1305_init_pull error!";
-                               return;
+                               qDebug() <<"refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_init_pull error!";
+                               continue;
                             }
 
                             if (crypto_secretstream_xchacha20poly1305_pull
                                 (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                  main->logger->write("Invalid/incomplete/corrupted ciphertext - abort");
-                                 qDebug() << __func__ << ":crypto_secretstream_xchacha20poly1305_pull error!";
-                                 return;
+                                 qDebug() << "refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_pull error!";
+                                 continue;
                             }
 
                             std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
@@ -1347,6 +1350,7 @@ void Controller::refreshTransactions() {
                                 isContact
                             );
 
+                            qDebug() << "refreshTransactions: adding chatItem with memodecrypt=" << memodecrypt;
                             DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
 
                         } else {
@@ -1368,6 +1372,8 @@ void Controller::refreshTransactions() {
                             isNotarized,
                             isContact
                         );
+
+                        qDebug() << "refreshTransactions: adding chatItem with memo=" << memo;
                         DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
                     }
                 }

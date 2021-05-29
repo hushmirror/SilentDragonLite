@@ -1,4 +1,4 @@
-// Copyright 2019-2020 The Hush developers
+// Copyright 2019-2021 The Hush developers
 // GPLv3
 
 #ifndef CHATDELEGATOR_H
@@ -42,6 +42,7 @@ inline ListViewDelegate::ListViewDelegate(QObject *parent): QAbstractItemDelegat
 
 }
 
+//TODO: this data must be kept in sync with sizeHint(), refactor 
 inline void ListViewDelegate::paint(QPainter *painter, QStyleOptionViewItem const &option, QModelIndex const &index) const
 {
     QTextDocument bodydoc;
