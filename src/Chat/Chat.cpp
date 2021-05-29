@@ -22,8 +22,7 @@ void ChatMemoEdit::updateDisplayChat() {
 
         if (lenDisplayLabelchat)
             lenDisplayLabelchat->setStyleSheet("");
-    }
-    else {
+    } else {
         // Overweight
         if (sendChatButton)
             sendChatButton->setEnabled(false);
@@ -62,8 +61,7 @@ void ChatMemoEditRequest::updateDisplayChatRequest() {
 
         if (lenDisplayLabelchatRequest)
             lenDisplayLabelchatRequest->setStyleSheet("");
-    }
-    else {
+    } else {
         // Overweight
         if (sendRequestButton)
             sendRequestButton->setEnabled(false);
@@ -85,6 +83,7 @@ void ChatMemoEditRequest::SetSendRequestButton(QPushButton* button) {
 void ChatMemoEditRequest::setLenDisplayLabelChatRequest(QLabel* label) {
     this->lenDisplayLabelchatRequest = label;
 }
+
 void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
 {
     
@@ -140,4 +139,3 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
     } 
 }  
 
-  

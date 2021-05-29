@@ -980,8 +980,7 @@ void Controller::refreshTransactions() {
                     memo = QString::fromStdString(o["memo"].get<json::string_t>());
                     
                         if (memo.startsWith("{")) {
-                            try
-                            {
+                            try {
                                 QJsonDocument headermemo = QJsonDocument::fromJson(memo.toUtf8());
 
                                 cid = headermemo["cid"].toString();
@@ -990,10 +989,8 @@ void Controller::refreshTransactions() {
                                 chatModel->addCid(txid, cid);
                                 chatModel->addHeader(txid, headerbytes);
 
-                            }
-                            catch (...)
-                            {
-                                // on any exception caught
+                            } catch (...) {
+                                qDebug() << "Invalid JSON in memo detected! memo=" << memo;
                             }
                         }
                           
@@ -1002,18 +999,14 @@ void Controller::refreshTransactions() {
                         if (confirmations > getLag())
                         {
                             isNotarized = true;
-                        }
-                        else
-                        {
+                        } else {
                             isNotarized = false;
                         } 
 
                         if (chatModel->getCidByTx(txid) != QString("0xdeadbeef"))
                         {
                             cid = chatModel->getCidByTx(txid);
-                        }
-                        else
-                        {
+                        } else {
                             cid = "";
                         }
 
@@ -1021,18 +1014,14 @@ void Controller::refreshTransactions() {
                         if (chatModel->getHeaderByTx(txid) != QString("0xdeadbeef"))
                         {
                             headerbytes = chatModel->getHeaderByTx(txid);
-                        }
-                        else
-                        {
+                        } else {
                             headerbytes = "";
                         }
 
                         if (main->getPubkeyByAddress(address) != QString("0xdeadbeef"))
                         {
                             publickey = main->getPubkeyByAddress(address);
-                        }
-                        else
-                        {
+                        } else {
                             publickey = "";
                         }
                     
@@ -1163,9 +1152,7 @@ void Controller::refreshTransactions() {
                    "send", datetime, address, txid,confirmations, items
                 });
                 
-            }
-            else
-            {
+            } else {
                
                { // Incoming Transaction
                 address = (it["address"].is_null() ? "" : QString::fromStdString(it["address"]));
@@ -1175,10 +1162,9 @@ void Controller::refreshTransactions() {
                 if (!it["memo"].is_null()) {
                     memo = QString::fromStdString(it["memo"]);
                 }
-                items.push_back(TransactionItemDetail{
-                        address,
+                items.push_back(TransactionItemDetail{ address,
                     CAmount::fromqint64(it["amount"].get<json::number_integer_t>()),
-                        memo
+                    memo
                 });
 
                 TransactionItem tx{
@@ -1186,79 +1172,59 @@ void Controller::refreshTransactions() {
                 };
 
                 txdata.push_back(tx);
-               
-
            
-                    QString type;
-                    QString publickey;
-                    QString headerbytes;
-                    QString cid;
-                    QString requestZaddr;
-                    QString contactname;
-                    bool isContact;
+                QString type = "";
+                QString publickey = "";
+                QString headerbytes = "";
+                QString cid = "";
+                QString requestZaddr = "";
+                QString contactname = "";
+                bool isContact = false;
 
                 if (!it["memo"].is_null()) {
 
                 if (memo.startsWith("{")) {
-                 try 
-                 {
+                 try {
                   QJsonDocument headermemo = QJsonDocument::fromJson(memo.toUtf8());
 
-                  cid = headermemo["cid"].toString();
-                  type = headermemo["t"].toString();
-                  requestZaddr =  headermemo["z"].toString();
-                  headerbytes = headermemo["e"].toString();
-                  publickey = headermemo["p"].toString();
+                  cid          = headermemo["cid"].toString();
+                  type         = headermemo["t"].toString();
+                  requestZaddr = headermemo["z"].toString();
+                  headerbytes  = headermemo["e"].toString();
+                  publickey    = headermemo["p"].toString();
 
-                    chatModel->addCid(txid, cid);
-                    chatModel->addrequestZaddr(txid, requestZaddr);
-                    chatModel->addHeader(txid, headerbytes);
+                  chatModel->addCid(txid, cid);
+                  chatModel->addrequestZaddr(txid, requestZaddr);
+                  chatModel->addHeader(txid, headerbytes);
 
-                if (publickey.length() > 10){
-                    main->addPubkey(requestZaddr, publickey);
-                }
+                  // TODO: better validation of valid public key
+                  if (publickey.length() > 10){
+                      main->addPubkey(requestZaddr, publickey);
+                  }
 
+                        } catch (...) {
+                            qDebug() << __func__ << ": Invalid JSON in memo! memo=" << memo.toUtf8();
                         }
-                        catch (...)
-                        {
-                            // on any exception
-                        }
-                    }
+                 }
   
                     if (chatModel->getCidByTx(txid) != QString("0xdeadbeef"))
                     {
                         cid = chatModel->getCidByTx(txid);
-                    }
-                    else
-                    {
-                        cid = "";
                     }
     
                     if (chatModel->getrequestZaddrByTx(txid) != QString("0xdeadbeef"))
                     {
                         requestZaddr = chatModel->getrequestZaddrByTx(txid);
                     }
-                    else
-                    {
-                        requestZaddr = "";
-                    }
 
                     if (chatModel->getHeaderByTx(txid) != QString("0xdeadbeef"))
                     {
                         headerbytes = chatModel->getHeaderByTx(txid);
                     }
-                    else
-                    {
-                        headerbytes = "";
-                    }
 
                     if (main->getPubkeyByAddress(requestZaddr) != QString("0xdeadbeef"))
                     {
                         publickey = main->getPubkeyByAddress(requestZaddr);
-                    }
-                    else
-                    {
-                        publickey = "";
                     }
 
                     if (contactModel->getContactbyAddress(requestZaddr) != QString("0xdeadbeef"))
@@ -1266,21 +1232,12 @@ void Controller::refreshTransactions() {
                          isContact = true;
                          contactname = contactModel->getContactbyAddress(requestZaddr);
                     }
-                    else
-                    {
-                         isContact = false;
-                         contactname = "";
-                    }
 
-                    bool isNotarized;
+                    bool isNotarized = false;
 
                     if (confirmations > getLag())
                     {
                         isNotarized = true;
-                    }
-                    else
-                    {
-                        isNotarized = false;
                     }
 
                     int position = it["position"].get<json::number_integer_t>(); 
@@ -1361,11 +1318,15 @@ void Controller::refreshTransactions() {
                             //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                             if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, client_rx) != 0) {
                                main->logger->write("Invalid header incoming, no need to go any further "); 
+                               qDebug() << "crypto_secretstream_xchacha20poly1305_init_pull error!";
+                               return;
                             }
 
                             if (crypto_secretstream_xchacha20poly1305_pull
                                 (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                  main->logger->write("Invalid/incomplete/corrupted ciphertext - abort");
+                                 qDebug() << "crypto_secretstream_xchacha20poly1305_pull error!";
+                                 return;
                             }
 
                             std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
@@ -1375,8 +1336,7 @@ void Controller::refreshTransactions() {
 
                             memodecrypt = QString::fromUtf8( decryptedMemo.data(), decryptedMemo.size());
 
-                            // }
-                            //////////////Give us the output of the decrypted message as debug to see if it was successfully
+                            ////Give us the output of the decrypted message as debug to see if it was successfully
 
                             ChatItem item = ChatItem(
                                 datetime,
@@ -1395,15 +1355,11 @@ void Controller::refreshTransactions() {
 
                             DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
 
-                        }
-                        else
-                        {
+                        } else {
                             //
                         }
 
-                    }
-                    else
-                    {
+                    } else {
                         ChatItem item = ChatItem(
                             datetime,
                             address,
