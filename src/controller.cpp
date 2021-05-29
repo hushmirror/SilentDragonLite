@@ -922,7 +922,7 @@ void Controller::refreshBalances()
     });
 }
 
-void Controller::refreshTransactions() {   
+void Controller::refreshTransactions() {
     if (!zrpc->haveConnection()) 
         return noConnection();
 
@@ -1044,7 +1044,6 @@ void Controller::refreshTransactions() {
                             }
                 
                             unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
-
       
                             ////////////////Get the pubkey from Bob, so we can create the share key
 
@@ -1315,14 +1314,13 @@ void Controller::refreshTransactions() {
                             //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                             if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, client_rx) != 0) {
                                main->logger->write("Invalid header incoming, no need to go any further "); 
-                               qDebug() <<"refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_init_pull error!";
+                               qDebug() <<"refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_init_pull error! memo=" << memo;
                                continue;
                             }
 
-                            if (crypto_secretstream_xchacha20poly1305_pull
-                                (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
+                            if (crypto_secretstream_xchacha20poly1305_pull(&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                  main->logger->write("Invalid/incomplete/corrupted ciphertext - abort");
-                                 qDebug() << "refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_pull error!";
+                                 qDebug() << "refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_pull error! memo=" << memo;
                                  continue;
                             }
 
