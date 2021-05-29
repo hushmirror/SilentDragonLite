@@ -115,7 +115,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // File a bug
     QObject::connect(ui->actionFile_a_bug, &QAction::triggered, [=]() {
-        QDesktopServices::openUrl(QUrl("https://git.hush.is/hush/SilentDragonLite/issues/new"));
+        QDesktopServices::openUrl(QUrl("https://hush.is/tg_support"));
     });
 
     // Set up check for updates action
@@ -168,24 +168,13 @@ MainWindow::MainWindow(QWidget *parent) :
     // Rescan
     QObject::connect(ui->actionRescan, &QAction::triggered, [=]() {
 
-       /* QFile file(dirwalletenc);
-        QFile file1(dirwallet);
-
-        if(fileExists(dirwalletenc))
-
-          {
-        file.remove();
-        file1.remove();
-          }*/
-
-
     Ui_Restore restoreSeed;
     QDialog dialog(this);
     restoreSeed.setupUi(&dialog);
     Settings::saveRestore(&dialog);
 
 
-            rpc->fetchSeed([=](json reply) {
+    rpc->fetchSeed([=](json reply) {
         if (isJsonError(reply)) {
             return;
         }
@@ -197,7 +186,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
         QString birthday = QString::number(reply["birthday"].get<json::number_unsigned_t>());
         restoreSeed.birthday->setPlainText(birthday);
-        });
+    });
 
     QObject::connect(restoreSeed.restore, &QPushButton::clicked, [&](){
 
@@ -1205,11 +1194,6 @@ void MainWindow::addPubkey(QString requestZaddr, QString pubkey)
 
 QString MainWindow::getPubkeyByAddress(QString requestZaddr)
 {
-    for(auto& pair : this->pubkeyMap)
-    {
-
-    }
-
     if(this->pubkeyMap.count(requestZaddr) > 0)
     {
         return this->pubkeyMap[requestZaddr];
