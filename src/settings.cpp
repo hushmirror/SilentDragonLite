@@ -144,8 +144,8 @@ bool Settings::isSaplingActive() {
     return  (isTestnet() && getBlockNumber() > 0) || (!isTestnet() && getBlockNumber() > 0);
 }
 
-double Settings::getZECPrice() { 
-    return ZECPrice; 
+double Settings::getHUSHPrice() { 
+    return HUSHPrice; 
 }
 double Settings::getEURPrice() { 
     return EURPrice; 

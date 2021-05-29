@@ -43,7 +43,7 @@ double CAmount::getDblAmount() const
 
 QString CAmount::toDecimalUSDString() const 
 {
-    double price = Settings::getInstance()->getZECPrice();
+    double price = Settings::getInstance()->getHUSHPrice();
     return "$ " + QLocale(QLocale::English).toString(this->getDblAmount() * price, 'f', 2);
 }
 

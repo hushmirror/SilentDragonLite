@@ -42,7 +42,7 @@ Controller::Controller(MainWindow* main)
     priceTimer = new QTimer(main);
     QObject::connect(priceTimer, &QTimer::timeout, [=]() {
         if (Settings::getInstance()->getAllowFetchPrices()) 
-            refreshZECPrice();          
+            refreshHUSHPrice();          
         
     });
     priceTimer->start(Settings::priceRefreshSpeed);  // Every 5 Min
@@ -89,7 +89,7 @@ void Controller::setConnection(Connection* c)
 
     // If we're allowed to get the Hush Price, get the prices
     if (Settings::getInstance()->getAllowFetchPrices()) {
-        refreshZECPrice();
+        refreshHUSHPrice();
         supplyUpdate();
     }
 
@@ -369,7 +369,7 @@ void Controller::getInfoThenRefresh(bool force)
 
         if (Settings::getInstance()->get_currency_name() == "USD") 
         {
-            double price = Settings::getInstance()->getZECPrice();
+            double price = Settings::getInstance()->getHUSHPrice();
             double volume = Settings::getInstance()->getUSDVolume();
             double cap =  Settings::getInstance()->getUSDCAP();
             main->statusLabel->setText(
@@ -546,7 +546,7 @@ void Controller::getInfoThenRefresh(bool force)
         else 
         {
             main->statusLabel->setText(
-                " HUSH/USD=$" + QString::number(Settings::getInstance()->getZECPrice(),'f',2 )
+                " HUSH/USD=$" + QString::number(Settings::getInstance()->getHUSHPrice(),'f',2 )
             );
             ui->volumeExchange->setText(
                 " $  " + QString::number((double)  Settings::getInstance()->getUSDVolume() ,'f',2)
@@ -1626,7 +1626,7 @@ void Controller::checkForUpdate(bool silent)
 }
 
 // Get the hush->USD price from coinmarketcap using their API
-void Controller::refreshZECPrice() 
+void Controller::refreshHUSHPrice() 
 {
     if (!zrpc->haveConnection()) 
         return noConnection();
@@ -1652,7 +1652,7 @@ void Controller::refreshZECPrice()
                 else
                     qDebug() << reply->errorString();
 
-                Settings::getInstance()->setZECPrice(0);
+                Settings::getInstance()->setHUSHPrice(0);
                 Settings::getInstance()->setEURPrice(0);
                 Settings::getInstance()->setBTCPrice(0);
                 Settings::getInstance()->setCNYPrice(0);
@@ -1693,7 +1693,7 @@ void Controller::refreshZECPrice()
             auto parsed = json::parse(all, nullptr, false);
             if (parsed.is_discarded()) 
             {
-                Settings::getInstance()->setZECPrice(0);
+                Settings::getInstance()->setHUSHPrice(0);
                 Settings::getInstance()->setEURPrice(0);
                 Settings::getInstance()->setBTCPrice(0);
                 Settings::getInstance()->setCNYPrice(0);
@@ -1736,7 +1736,7 @@ void Controller::refreshZECPrice()
             {
                 qDebug() << "Found hush key in price json";
                 qDebug() << "HUSH = $" << QString::number((double)hush["usd"]);
-                Settings::getInstance()->setZECPrice( hush["usd"] );
+                Settings::getInstance()->setHUSHPrice( hush["usd"] );
             }
 
             if (hush["eur"] >= 0)
@@ -1940,7 +1940,7 @@ void Controller::refreshZECPrice()
         }
 
         // If nothing, then set the price to 0;
-        Settings::getInstance()->setZECPrice(0);
+        Settings::getInstance()->setHUSHPrice(0);
         Settings::getInstance()->setEURPrice(0);
         Settings::getInstance()->setBTCPrice(0);
         Settings::getInstance()->setCNYPrice(0);

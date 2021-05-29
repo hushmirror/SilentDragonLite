@@ -904,7 +904,10 @@ void AppDataServer::processGetInfo(QJsonObject jobj, MainWindow* mainWindow, std
         {"maxspendable", maxSpendable.toDecimalDouble()},
         {"maxzspendable", maxZSpendable.toDecimalDouble()},
         {"tokenName", Settings::getTokenName()},
-        {"zecprice", Settings::getInstance()->getZECPrice()},
+        // changing this to hushprice is a backward incompatible change that requires
+        // changing SDL, litewalletd and SDA in unison, and would break older clients
+        // so we just leave it for now
+        {"zecprice", Settings::getInstance()->getHUSHPrice()},
         {"serverversion", QString(APP_VERSION)}
     }).toJson();
     pClient->sendTextMessage(encryptOutgoing(r));

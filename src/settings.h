@@ -76,7 +76,7 @@ public:
 
     bool    isSaplingActive();
 
-    void    setZECPrice(double p) { ZECPrice = p; }
+    void    setHUSHPrice(double p) { HUSHPrice = p; }
     void    setEURPrice(double p) { EURPrice = p; }
     void    setBTCPrice(double p) { BTCPrice = p; }
     void    setCNYPrice(double p) { CNYPrice = p; }
@@ -109,7 +109,7 @@ public:
     void    setINRCAP(double p) { INRCAP = p; }
     void    setGBPCAP(double p) { GBPCAP = p; }
     void    setAUDCAP(double p) { AUDCAP = p; }
-    double  getZECPrice();
+    double  getHUSHPrice();
     double  getEURPrice();
     double  getBTCPrice();
     double  getCNYPrice();
@@ -195,7 +195,7 @@ private:
     bool    _useEmbedded      = false;
     bool    _headless         = false;
     
-    double  ZECPrice          = 0.0;
+    double  HUSHPrice          = 0.0;
     double  BTCPrice          = 0.0;
     double  EURPrice          = 0.0;
     double  CNYPrice          = 0.0;
