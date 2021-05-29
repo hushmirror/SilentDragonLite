@@ -924,7 +924,7 @@ void MainWindow::donate() {
      QString key = keys->first();
      QString key1 = key + QString(" ") + QString("0");
      keys->pop_front();
-     bool rescan = keys->isEmpty();
+     //bool rescan = keys->isEmpty();
      
      if (key.startsWith("SK") || key.startsWith("secret")) { 
          rpc->importZPrivKey(key, [=] (auto) { this->doImport(keys); });  
