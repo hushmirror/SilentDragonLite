@@ -1,5 +1,5 @@
 // Copyright 2019-2021 The Hush developers
-// GPLv3
+// Released under the GPLv3
 
 #include "Chat.h"
 #include "../addressbook.h"
@@ -91,6 +91,8 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
     
     QStandardItemModel *chat = new QStandardItemModel();
     DataStore::getChatDataStore()->dump(); // test to see if the chat items in datastore are correctly dumped to json
+
+    qDebug() << __func__ << ": looking at memos...";
     for (auto &p : AddressBook::getInstance()->getAllAddressLabels())
     {
         for (auto &c : DataStore::getChatDataStore()->getAllMemos())
@@ -105,6 +107,7 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 QStandardItem *Items = new QStandardItem(c.second.toChatLine());
 
                 Items->setData(OUTGOING, Qt::UserRole + 1);
+                qDebug() << __func__ << ": appending row to OUTGOING chatitems to contact " << p.getName();
                 chat->appendRow(Items);
                 ui->listChat->setModel(chat);
        
@@ -121,6 +124,7 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
             {
                 QStandardItem *Items1 = new QStandardItem(c.second.toChatLine());
                 Items1->setData(INCOMING, Qt::UserRole + 1);
+                qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << p.getName() << "with cid=" << p.getCid();
                 chat->appendRow(Items1);
                 ui->listChat->setModel(chat);
                 ui->memoTxtChat->setEnabled(true);

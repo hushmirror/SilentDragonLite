@@ -1,5 +1,5 @@
-// Copyright 2019-2020 The Hush developers
-// GPLv3
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 
 #include "controller.h"
 #include "mainwindow.h"
@@ -662,29 +662,29 @@ void Controller::updateUI(bool anyUnconfirmed)
 
 void Controller::supplyUpdate() {
 
-    qDebug()<<"Supply";
+    qDebug()<< __func__ << ": updating supply";
 
-       // Get the total supply and render it with thousand decimal
-        zrpc->fetchSupply([=] (const json& reply) {   
-            int supply  = reply["supply"].get<json::number_integer_t>();
-            int zfunds  = reply["zfunds"].get<json::number_integer_t>();
-            int total   = reply["total"].get<json::number_integer_t>();;
-            if (
-                Settings::getInstance()->get_currency_name() == "EUR" || 
-                Settings::getInstance()->get_currency_name() == "CHF" || 
-                Settings::getInstance()->get_currency_name() == "RUB"
-            ) 
-            {
-                ui->supply_taddr->setText((QLocale(QLocale::German).toString(supply)+ " HUSH"));
-                ui->supply_zaddr->setText((QLocale(QLocale::German).toString(zfunds)+ " HUSH"));
-                ui->supply_total->setText((QLocale(QLocale::German).toString(total)+ " HUSH"));
-            } else {
-                ui->supply_taddr->setText("HUSH " + (QLocale(QLocale::English).toString(supply)));
-                ui->supply_zaddr->setText("HUSH " +(QLocale(QLocale::English).toString(zfunds)));
-                ui->supply_total->setText("HUSH " +(QLocale(QLocale::English).toString(total)));
-            }
-
-        });
+    // Get the total supply and render it with thousand decimal
+    zrpc->fetchSupply([=] (const json& reply) {   
+        int supply  = reply["supply"].get<json::number_integer_t>();
+        int zfunds  = reply["zfunds"].get<json::number_integer_t>();
+        int total   = reply["total"].get<json::number_integer_t>();;
+        if (Settings::getInstance()->get_currency_name() == "EUR" || 
+            Settings::getInstance()->get_currency_name() == "CHF" || 
+            Settings::getInstance()->get_currency_name() == "RUB"
+        ) {
+            // TODO: assuming German locale is incorrect
+            ui->supply_taddr->setText((QLocale(QLocale::German).toString(supply)+ " HUSH"));
+            ui->supply_zaddr->setText((QLocale(QLocale::German).toString(zfunds)+ " HUSH"));
+            ui->supply_total->setText((QLocale(QLocale::German).toString(total)+ " HUSH"));
+        } else {
+            // TODO: assuming English locale is incorrect as well
+            ui->supply_taddr->setText("HUSH " + (QLocale(QLocale::English).toString(supply)));
+            ui->supply_zaddr->setText("HUSH " +(QLocale(QLocale::English).toString(zfunds)));
+            ui->supply_total->setText("HUSH " +(QLocale(QLocale::English).toString(total)));
+        }
+        qDebug() << __func__ << ": supply=" << supply;
+    });
 
 }
 
@@ -720,9 +720,9 @@ void Controller::processUnspent(const json& reply, QMap<QString, CAmount>* balan
 
 void Controller::updateUIBalances() 
 {
-    CAmount balT = getModel()->getBalT();
-    CAmount balZ = getModel()->getBalZ();
-    CAmount balVerified = getModel()->getBalVerified();
+    CAmount balT         = getModel()->getBalT();
+    CAmount balZ         = getModel()->getBalZ();
+    CAmount balVerified  = getModel()->getBalVerified();
     CAmount balSpendable = getModel()->getBalSpendable();
 
     // Reduce the BalanceZ by the pending outgoing amount. We're adding
@@ -743,6 +743,7 @@ void Controller::updateUIBalances()
     ui->balSpendable->setText(balSpendable.toDecimalhushString());
     ui->balTotal->setText(balTotal.toDecimalhushString());
 
+    //TODO: refactor this madness into functions like SD uses, with currency as a variable
     if (Settings::getInstance()->get_currency_name() == "USD") 
     {
         ui->balSheilded->setToolTip(balZ.toDecimalUSDString());
@@ -925,6 +926,7 @@ void Controller::refreshTransactions() {
     if (!zrpc->haveConnection()) 
         return noConnection();
 
+    qDebug() << __func__ << ": fetchTransactions";
     zrpc->fetchTransactions([=] (json reply) {
         QList<TransactionItem> txdata;        
 
@@ -1088,14 +1090,13 @@ void Controller::refreshTransactions() {
                                 //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                                 if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, server_tx) != 0) {
                                     /* Invalid header, no need to go any further */
-                                    qDebug() << "crypto_secretstream_xchacha20poly1305_init_pull error!";
+                                    qDebug() << __func__ << ": crypto_secretstream_xchacha20poly1305_init_pull error!";
                                     return;
                                 }
  
-                                if (crypto_secretstream_xchacha20poly1305_pull
-                                    (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
+                                if (crypto_secretstream_xchacha20poly1305_pull(&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                     /* Invalid/incomplete/corrupted ciphertext - abort */
-                                    qDebug() << "crypto_secretstream_xchacha20poly1305_pull error!";
+                                    qDebug() << __func__ << ": crypto_secretstream_xchacha20poly1305_pull error!";
                                     return;
                                 }
 
@@ -1311,14 +1312,14 @@ void Controller::refreshTransactions() {
                             //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                             if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, client_rx) != 0) {
                                main->logger->write("Invalid header incoming, no need to go any further "); 
-                               qDebug() << "crypto_secretstream_xchacha20poly1305_init_pull error!";
+                               qDebug() << __func__ << ":crypto_secretstream_xchacha20poly1305_init_pull error!";
                                return;
                             }
 
                             if (crypto_secretstream_xchacha20poly1305_pull
                                 (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                  main->logger->write("Invalid/incomplete/corrupted ciphertext - abort");
-                                 qDebug() << "crypto_secretstream_xchacha20poly1305_pull error!";
+                                 qDebug() << __func__ << ":crypto_secretstream_xchacha20poly1305_pull error!";
                                  return;
                             }
 
@@ -1393,6 +1394,7 @@ void Controller::refreshTransactions() {
 
         // Update model data, which updates the table view
         transactionsTableModel->replaceData(txdata);
+        qDebug() << __func__ << ": calling renderChatBox";
         chat->renderChatBox(ui, ui->listChat,ui->memoSizeChat);
         ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
         
@@ -1402,6 +1404,7 @@ void Controller::refreshTransactions() {
 
 void Controller::refreshChat(QListView *listWidget, QLabel *label)
 {
+    qDebug() << __func__ << ": calling renderChatBox";
     chat->renderChatBox(ui, listWidget, label);
     ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
   
