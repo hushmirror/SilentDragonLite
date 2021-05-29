@@ -49,6 +49,8 @@ ChatMemoEditRequest::ChatMemoEditRequest(QWidget* parent) : QTextEdit(parent) {
     QObject::connect(this, &QTextEdit::textChanged, this, &ChatMemoEditRequest::updateDisplayChatRequest);
 }
 
+
+// TODO: unify this with updateDisplayChat()
 void ChatMemoEditRequest::updateDisplayChatRequest() {
     QString txt = this->toPlainText();
     if (lenDisplayLabelchatRequest)
@@ -98,7 +100,6 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 (p.getName() == ui->contactNameMemo->text().trimmed()) &&
                 (p.getPartnerAddress() == c.second.getAddress()) &&
                 (c.second.isOutgoing() == true))
-               
             {
 
                 QStandardItem *Items = new QStandardItem(c.second.toChatLine());
@@ -106,11 +107,8 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 Items->setData(OUTGOING, Qt::UserRole + 1);
                 chat->appendRow(Items);
                 ui->listChat->setModel(chat);
-            
        
-            }
-            else
-            {
+            } else {
                 ui->listChat->setModel(chat);
             }
 
@@ -129,10 +127,7 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 ui->emojiButton->setEnabled(true);
                 ui->sendChatButton->setEnabled(true);
                
-            }
-            else
-            {
-
+            } else {
                 ui->listChat->setModel(chat);
             }
         }

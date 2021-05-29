@@ -163,22 +163,15 @@ QString ChatItem::toChatLine()
     QString moneyTextRequest;
     myDateTime.setTime_t(_timestamp);
 
-    if (_notarize == true)
-
-    {
-
+    if (_notarize == true) {
         lock = "<b> <img src=':/icons/res/lock_orange.png'><b>";
+    } else {
+        lock = "<b> <img src=':/icons/res/unlocked.png'><b>";
+    }
 
-    }else{
-        
-         lock = "<b> <img src=':/icons/res/unlocked.png'><b>";
-        }
-        if ((_confirmations > 0) && (_notarize == false))
-        
-        {
-
+    if ((_confirmations > 0) && (_notarize == false)) {
         lock = "<b> <img src=':/icons/res/lock_green.png'><b>";
-        }else{}
+    }
 
     if (_memo.startsWith("Money transaction of :"))
     {
@@ -210,8 +203,6 @@ QString ChatItem::toChatLine()
     }else{moneyTextRequest = "";
     moneyTextRequest = "";    }
 
-    
-    
 
     QString line = QString("<small>") + myDateTime.toString("yyyy-MM-dd hh:mm");
     line += QString(lock) + QString(moneyText) + QString(moneyTextRequest) +  QString("</small>");
@@ -223,16 +214,16 @@ QString ChatItem::toChatLine()
 json ChatItem::toJson()
 {
     json j;
-    j["_timestamp"] = _timestamp;
-    j["_address"] = _address.toStdString();
-    j["_contact"] = _contact.toStdString();
-    j["_memo"] = _memo.toStdString();
-    j["_requestZaddr"] = _requestZaddr.toStdString();
-    j["_type"] = _type.toStdString();
-    j["_cid"] = _cid.toStdString();
-    j["_txid"] = _txid.toStdString();
+    j["_timestamp"]     = _timestamp;
+    j["_address"]       = _address.toStdString();
+    j["_contact"]       = _contact.toStdString();
+    j["_memo"]          = _memo.toStdString();
+    j["_requestZaddr"]  = _requestZaddr.toStdString();
+    j["_type"]          = _type.toStdString();
+    j["_cid"]           = _cid.toStdString();
+    j["_txid"]          = _txid.toStdString();
     j["_confirmations"] = _confirmations;
-    j["_outgoing"] = _outgoing;
+    j["_outgoing"]      = _outgoing;
     return j;
 }
 
