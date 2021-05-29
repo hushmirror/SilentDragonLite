@@ -1887,7 +1887,7 @@ Tx MainWindow::createTxFromSendChatPage() {
         if (crypto_kx_seed_keypair(pk,sk, MESSAGEAS1) !=0) {
             this->logger->write("Suspicious keypair, bail out ");
             qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_seed_keypair, aborting!";
-            return;
+            return tx;
         }
          ////////////////Get the pubkey from Bob, so we can create the share key
 
@@ -1898,7 +1898,7 @@ Tx MainWindow::createTxFromSendChatPage() {
             if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0) {
                 this->logger->write("Suspicious client public send key, bail out ");
                 qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_server_session_keys, aborting!";
-                return;
+                return tx;
             }
 
     
@@ -2175,7 +2175,7 @@ Tx MainWindow::createTxFromSendRequestChatPage() {
            if (crypto_kx_seed_keypair(pk,sk, MESSAGEAS1) !=0) {
                this->logger->write("Suspicious keypair, bail out ");
                qDebug() << __func__<< ": Suspicious client public outgoing key from crypto_kx_seed_keypair, aborting!";
-               return;
+               return tx;
            }
          ////////////////Get the pubkey from Bob, so we can create the share key
 
@@ -2186,7 +2186,7 @@ Tx MainWindow::createTxFromSendRequestChatPage() {
             if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0) {
                 this->logger->write("Suspicious client public send key, bail out ");
                qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_server_session_keys, aborting!";
-               return;
+               return tx;
             }
 
     
