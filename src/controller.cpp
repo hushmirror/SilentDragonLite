@@ -1348,8 +1348,9 @@ void Controller::refreshTransactions() {
                                 isContact
                             );
 
-                            qDebug() << "refreshTransactions: adding chatItem with memodecrypt=" << memodecrypt;
-                            DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
+                            auto iid = ChatIDGenerator::getInstance()->generateID(item);
+                            qDebug() << "refreshTransactions: adding chatItem with item id=" << iid << " memodecrypt=" << memodecrypt;
+                            DataStore::getChatDataStore()->setData(iid, item);
 
                         } else {
                             qDebug() << __func__ << ": ignoring txid="<< txid;
@@ -1373,9 +1374,9 @@ void Controller::refreshTransactions() {
                             isNotarized,
                             isContact
                         );
-
-                        qDebug() << "refreshTransactions: adding chatItem for initial CR with memo=" << memo;
-                        DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
+                        auto iid = ChatIDGenerator::getInstance()->generateID(item);
+                        qDebug() << "refreshTransactions: adding chatItem for initial CR with item id="<< iid << " memo='" << memo << "'";
+                        DataStore::getChatDataStore()->setData(iid, item);
                     }
                 }
                }

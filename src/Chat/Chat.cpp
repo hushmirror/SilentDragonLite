@@ -91,6 +91,7 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
     
     QStandardItemModel *chat = new QStandardItemModel();
     DataStore::getChatDataStore()->dump(); // test to see if the chat items in datastore are correctly dumped to json
+    std::map<QString,int> seenTxids;
 
     qDebug() << __func__ << ": looking at memos...";
     for (auto &contact : AddressBook::getInstance()->getAllAddressLabels())
@@ -120,11 +121,27 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 QStandardItem *Items1 = new QStandardItem(memo.second.toChatLine());
                 Items1->setData(INCOMING, Qt::UserRole + 1);
                 qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << contact.getName() << "with txid=" << memo.second.getTxid() << " cid=" << contact.getCid() << " item " << Items1 << " memo=" << memo.second.getMemo();
-                chat->appendRow(Items1);
-                ui->listChat->setModel(chat);
-                ui->memoTxtChat->setEnabled(true);
-                ui->emojiButton->setEnabled(true);
-                ui->sendChatButton->setEnabled(true);
+
+
+                if(seenTxids.count( memo.second.getTxid() ) > 0) {
+                    // Do not render the same chat multiple times
+                    // TODO: this should also look at outputindex to allow for multi-part memos, when that is supported
+                    qDebug() << __func__ << ": INCOMING ignoring txid=" << memo.second.getTxid();
+                    continue;
+                }
+
+                // TODO: better header memo detection
+                if (memo.second.getMemo().startsWith("{")) {
+                    qDebug() << __func__ << ": ignoring header memo=" << memo.second.getMemo();
+                } else {
+                    chat->appendRow(Items1);
+                    ui->listChat->setModel(chat);
+                    ui->memoTxtChat->setEnabled(true);
+                    ui->emojiButton->setEnabled(true);
+                    ui->sendChatButton->setEnabled(true);
+
+                    seenTxids[ memo.second.getTxid() ] = 1;
+                }
                
             } else {
                 ui->listChat->setModel(chat);
