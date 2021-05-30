@@ -86,15 +86,17 @@ MainWindow::MainWindow(QWidget *parent) :
     }else{}
 
     logger = new Logger(this, QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("silentdragonlite-wallet.log"));
+
     // Check for encryption
- 
     if(fileExists(dirwalletenc))
     {
+        qDebug() << __func__ << ": decrypting wallet=" << dirwalletenc;
         this->removeWalletEncryptionStartUp();
     }
 
      ui->memoTxtChat->setAutoFillBackground(false);
-     ui->memoTxtChat->setPlaceholderText("Send Message (you can only write messages after the initial message from your contact)");
+     // TODO: make this HTML with some emoji
+     ui->memoTxtChat->setPlaceholderText("Send Memo (you can only write memo after the initial message from your contact)");
      ui->memoTxtChat->setTextColor(Qt::white);
     
     // Status Bar
@@ -543,10 +545,8 @@ void MainWindow::removeWalletEncryption() {
     QObject::connect(ed.txtConfirmPassword, &QLineEdit::textChanged, fnPasswordEdited);
     QObject::connect(ed.txtPassword, &QLineEdit::textChanged, fnPasswordEdited);
 
-    if (d.exec() == QDialog::Accepted) 
-    {
+    if (d.exec() == QDialog::Accepted) {
     QString passphraseBlank = ed.txtPassword->text(); // data comes from user inputs
-
     QString passphrase = QString("HUSH3") + passphraseBlank + QString("SDL");
 
     int length = passphrase.length();
@@ -563,18 +563,17 @@ void MainWindow::removeWalletEncryption() {
 
 
     #define hash ((const unsigned char *) sequence1)
-
     #define PASSWORD sequence
     #define KEY_LEN crypto_box_SEEDBYTES
 
     unsigned char key[KEY_LEN];
 
-    if (crypto_pwhash
-    (key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
-     crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE,
-     crypto_pwhash_ALG_DEFAULT) != 0) {
+    if (crypto_pwhash(key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
+     crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE, crypto_pwhash_ALG_DEFAULT) != 0) {
     /* out of memory */
-}
+    qDebug() << "crypto_pwhash failed!";
+    return;
+    }
   
         auto dir =  QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
         auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
@@ -587,9 +586,7 @@ void MainWindow::removeWalletEncryption() {
      QFile filencrypted(dirwalletenc);
      QFile wallet(dirwallet);
        
-    if (wallet.size() > 0)
-    {
-      
+    if (wallet.size() > 0) {
          QMessageBox::information(this, tr("Wallet decryption Success"),
                     QString("Successfully delete the encryption"),
                     QMessageBox::Ok
@@ -597,7 +594,7 @@ void MainWindow::removeWalletEncryption() {
 
         filencrypted.remove();  
 
-        }else{
+    } else {
                
          QMessageBox::critical(this, tr("Wallet Encryption Failed"),
                     QString("False password, please try again"),

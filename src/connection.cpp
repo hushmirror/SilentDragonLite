@@ -267,6 +267,7 @@ void ConnectionLoader::doRPCSetConnection(Connection* conn)
     try {
         QFile plaintextWallet(dirwalletconnection);
         main->logger->write("Path to Wallet.dat : " );
+        qDebug() << __func__ << ": wallet path =" << plaintextWallet;
         plaintextWallet.remove();
     
     } catch (...) {
@@ -286,6 +287,7 @@ void ConnectionLoader::doRPCSetConnectionShield(Connection* conn)
     try {
         QFile plaintextWallet(dirwalletconnection);
         main->logger->write("Path to Wallet.dat : " );
+        qDebug() << __func__ << ": wallet path =" << plaintextWallet;
         plaintextWallet.remove();
     } catch (...) {
         main->logger->write("no Plaintext wallet.dat");

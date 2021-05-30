@@ -1236,13 +1236,13 @@ void Controller::refreshTransactions() {
                     }
 
                     int position = it["position"].get<json::number_integer_t>(); 
-
                     int ciphercheck = memo.length() - crypto_secretstream_xchacha20poly1305_ABYTES;
+                    qDebug() << __func__ << ": position=" << position << " headerbytes=" << headerbytes
+                             << " ciphercheck=" << ciphercheck << " for memo=" << memo;
 
                     if ((memo.startsWith("{") == false) && (headerbytes > 0) && (ciphercheck > 0))
                     {
-                        if (chatModel->getMemoByTx(txid) == QString("0xdeadbeef"))
-                        {
+                        if (chatModel->getMemoByTx(txid) == QString("0xdeadbeef")) {
                             if (position == 1)
                             {
                                 chatModel->addMemo(txid, headerbytes);
@@ -1352,10 +1352,13 @@ void Controller::refreshTransactions() {
                             DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
 
                         } else {
-                            //
+                            qDebug() << __func__ << ": ignoring txid="<< txid;
                         }
 
+                    //} else if (memo.startsWith("{")) {
+                    //qDebug() << __func__ << ": ignoring a header memo";
                     } else {
+                        // Add a chatitem for the initial CR
                         ChatItem item = ChatItem(
                             datetime,
                             address,
@@ -1371,7 +1374,7 @@ void Controller::refreshTransactions() {
                             isContact
                         );
 
-                        qDebug() << "refreshTransactions: adding chatItem with memo=" << memo;
+                        qDebug() << "refreshTransactions: adding chatItem for initial CR with memo=" << memo;
                         DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
                     }
                 }

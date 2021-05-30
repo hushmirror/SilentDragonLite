@@ -93,21 +93,17 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
     DataStore::getChatDataStore()->dump(); // test to see if the chat items in datastore are correctly dumped to json
 
     qDebug() << __func__ << ": looking at memos...";
-    for (auto &p : AddressBook::getInstance()->getAllAddressLabels())
+    for (auto &contact : AddressBook::getInstance()->getAllAddressLabels())
     {
-        for (auto &c : DataStore::getChatDataStore()->getAllMemos())
-        {
+        for (auto &memo : DataStore::getChatDataStore()->getAllMemos()) {
+            if ( (contact.getName() == ui->contactNameMemo->text().trimmed()) &&
+                (contact.getPartnerAddress() == memo.second.getAddress()) &&
+                (memo.second.isOutgoing() == true)) {
 
-            if (
-                (p.getName() == ui->contactNameMemo->text().trimmed()) &&
-                (p.getPartnerAddress() == c.second.getAddress()) &&
-                (c.second.isOutgoing() == true))
-            {
-
-                QStandardItem *Items = new QStandardItem(c.second.toChatLine());
+                QStandardItem *Items = new QStandardItem(memo.second.toChatLine());
 
                 Items->setData(OUTGOING, Qt::UserRole + 1);
-                qDebug() << __func__ << ": appending row to OUTGOING chatitems to contact " << p.getName() << " with item " << Items;
+                qDebug() << __func__ << ": appending row to OUTGOING chatitems to contact " << contact.getName() << " with item " << Items;
                 chat->appendRow(Items);
                 ui->listChat->setModel(chat);
        
@@ -115,16 +111,15 @@ void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
                 ui->listChat->setModel(chat);
             }
 
-            if (
-                (p.getName() == ui->contactNameMemo->text().trimmed()) &&
-                (p.getMyAddress() == c.second.getAddress()) &&
-                (c.second.isOutgoing() == false) &&
-                (c.second.getCid() == p.getCid())
-                )
-            {
-                QStandardItem *Items1 = new QStandardItem(c.second.toChatLine());
+            qDebug() << __func__ << ": memo.first=" << memo.first;
+            if ( (contact.getName() == ui->contactNameMemo->text().trimmed()) &&
+                (contact.getMyAddress() == memo.second.getAddress()) &&
+                (memo.second.isOutgoing() == false) &&
+                (memo.second.getCid() == contact.getCid())
+                ) {
+                QStandardItem *Items1 = new QStandardItem(memo.second.toChatLine());
                 Items1->setData(INCOMING, Qt::UserRole + 1);
-                qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << p.getName() << "with cid=" << p.getCid() << " and item " << Items1;
+                qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << contact.getName() << "with txid=" << memo.second.getTxid() << " cid=" << contact.getCid() << " item " << Items1 << " memo=" << memo.second.getMemo();
                 chat->appendRow(Items1);
                 ui->listChat->setModel(chat);
                 ui->memoTxtChat->setEnabled(true);
