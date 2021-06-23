@@ -308,7 +308,7 @@ QString Settings::getRandomServer() {
     //"https://thisisdown3.example.com",
     //"https://thisisdown4.example.com",
     //"https://thisisdown5.example.com",
-    "https://lite.hush.community",
+    "https://lite.hush.land"
     };
 
     // we don't need cryptographic random-ness, but we want
