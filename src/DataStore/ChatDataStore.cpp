@@ -160,14 +160,7 @@ std::map<QString, ChatItem> ChatDataStore::getAllMemos()
     std::map<QString, ChatItem> filteredItems;
     for(auto &c: this->data)
     {
-        if (
-
-            (c.second.getMemo().startsWith("{") == false) &&
-            (c.second.getMemo().isEmpty() == false) 
-           
-               
-        ) 
-        {
+        if ((c.second.getMemo().startsWith("{") == false) && (c.second.getMemo().isEmpty() == false) ) {
             filteredItems[c.first] = c.second;
         }
     }

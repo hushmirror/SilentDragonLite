@@ -65,11 +65,12 @@ void ChatModel::addMessage(QString timestamp, ChatItem item)
 
 void ChatModel::showMessages()
 {
+/*
     for(auto &c : this->chatItems)
     {
 
     }
-          
+ */         
 }
 
 void ChatModel::addAddressbylabel(QString address, QString label)
@@ -79,11 +80,6 @@ void ChatModel::addAddressbylabel(QString address, QString label)
 
 QString ChatModel::Addressbylabel(QString address)
 {
-    for(auto& pair : this->AddressbyLabelMap)
-    {
-
-    }
-
     if(this->AddressbyLabelMap.count(address) > 0)
     {
         return this->AddressbyLabelMap[address];
@@ -306,11 +302,6 @@ void ChatModel::addconfirmations(QString tx, int confirmation)
 
 QString ChatModel::getCidByTx(QString tx)
 {
-    for(auto& pair : this->cidMap)
-    {
-
-    }
-
     if(this->cidMap.count(tx) > 0)
     {
         return this->cidMap[tx];
@@ -321,11 +312,6 @@ QString ChatModel::getCidByTx(QString tx)
 
 QString ChatModel::getMemoByTx(QString tx)
 {
-    for(auto& pair : this->OldMemoByTx)
-    {
-
-    }
-
     if(this->OldMemoByTx.count(tx) > 0)
     {
         return this->OldMemoByTx[tx];
@@ -339,11 +325,6 @@ QString ChatModel::getMemoByTx(QString tx)
 
 QString ChatModel::getHeaderByTx(QString tx)
 {
-    for(auto& pair : this->headerMap)
-    {
-
-    }
-
     if(this->headerMap.count(tx) > 0)
     {
         return this->headerMap[tx];
@@ -354,11 +335,6 @@ QString ChatModel::getHeaderByTx(QString tx)
 
 QString ChatModel::getConfirmationByTx(QString tx)
 {
-    for(auto& pair : this->confirmationsMap)
-    {
-
-    }
-
     if(this->confirmationsMap.count(tx) > 0)
     {
         return this->confirmationsMap[tx];
@@ -369,11 +345,6 @@ QString ChatModel::getConfirmationByTx(QString tx)
 
 QString ChatModel::getrequestZaddrByTx(QString tx)
 {
-    for(auto& pair : this->requestZaddrMap)
-    {
-
-    }
-
     if(this->requestZaddrMap.count(tx) > 0)
     {
         return this->requestZaddrMap[tx];
@@ -477,20 +448,23 @@ Tx MainWindow::createTxFromChatPage() {
         unsigned char pk[crypto_kx_PUBLICKEYBYTES];
         unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
       
-                if (crypto_kx_seed_keypair(pk,sk,
-                           MESSAGEAS1) !=0) {
+        if (crypto_kx_seed_keypair(pk,sk, MESSAGEAS1) !=0) {
+               this->logger->write("Suspicious keypair, bail out ");
+               qDebug() << __func__<< ": Suspicious client public outgoing key from crypto_kx_seed_keypair, aborting!";
+               return tx;
+          }
 
-                               this->logger->write("Suspicious keypair, bail out ");
-                           }
          ////////////////Get the pubkey from Bob, so we can create the share key
 
         const QByteArray pubkeyBobArray = QByteArray::fromHex(pubkey.toLatin1());
         const unsigned char *pubkeyBob = reinterpret_cast<const unsigned char *>(pubkeyBobArray.constData());
-                    /////Create the shared key for sending the message
 
-            if (crypto_kx_server_session_keys(server_rx, server_tx,
-                                  pk, sk, pubkeyBob) != 0) {
-            this->logger->write("Suspicious client public send key, bail out ");
+        /////Create the shared key for sending the message
+
+            if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0) {
+               this->logger->write("Suspicious client public send key, bail out ");
+               qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_server_session_keys, aborting!";
+               return tx;
              }
 
     
@@ -821,6 +795,8 @@ Tx MainWindow::createTxForSafeContactRequest()
 
          if (crypto_kx_seed_keypair(pk, sk, MESSAGEAS1) !=0) {
             this->logger->write("Suspicious client public contact request key, bail out ");
+             qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_seed_keypair, aborting!";
+             return tx;
          }
 
          QString publicKey = QByteArray(reinterpret_cast<const char*>(pk), crypto_kx_PUBLICKEYBYTES).toHex();

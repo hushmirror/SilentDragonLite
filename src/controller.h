@@ -46,7 +46,7 @@ public:
     int _lag;
    
     void checkForUpdate(bool silent = true);
-    void refreshZECPrice();
+    void refreshHUSHPrice();
     void refreshEURPrice();
     void refreshBTCPrice();
     void refreshCNYPrice();

@@ -279,7 +279,7 @@ void Recurring::updateInfoWithTx(RecurringPaymentInfo* r, Tx tx) {
     r->fromAddr = tx.fromAddr;
     if (r->currency.isEmpty() || r->currency == "USD") {
         r->currency = "USD";
-        r->amt = tx.toAddrs[0].amount.toqint64() * Settings::getInstance()->getZECPrice();
+        r->amt = tx.toAddrs[0].amount.toqint64() * Settings::getInstance()->getHUSHPrice();
     }
     else {
         r->currency = Settings::getTokenName();
@@ -547,7 +547,7 @@ void Recurring::executeRecurringPayment(MainWindow* main, RecurringPaymentInfo r
     double amount = rpi.amt;
     if (rpi.currency == "USD") {
         // If there is no price, then fail the payment
-        if (Settings::getInstance()->getZECPrice() == 0) {
+        if (Settings::getInstance()->getHUSHPrice() == 0) {
             for (auto paymentNumber: paymentNumbers) {
                 updatePaymentItem(rpi.getHash(), paymentNumber, 
                     "", QObject::tr("No hush price was available to convert from USD"),
@@ -559,7 +559,7 @@ void Recurring::executeRecurringPayment(MainWindow* main, RecurringPaymentInfo r
         }
         
         // Translate it into hush
-        amount = rpi.amt / Settings::getInstance()->getZECPrice();
+        amount = rpi.amt / Settings::getInstance()->getHUSHPrice();
     }
 
     // Build a Tx

@@ -86,15 +86,17 @@ MainWindow::MainWindow(QWidget *parent) :
     }else{}
 
     logger = new Logger(this, QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)).filePath("silentdragonlite-wallet.log"));
+
     // Check for encryption
- 
     if(fileExists(dirwalletenc))
     {
+        qDebug() << __func__ << ": decrypting wallet=" << dirwalletenc;
         this->removeWalletEncryptionStartUp();
     }
 
      ui->memoTxtChat->setAutoFillBackground(false);
-     ui->memoTxtChat->setPlaceholderText("Send Message (you can only write messages after the initial message from your contact)");
+     // TODO: make this HTML with some emoji
+     ui->memoTxtChat->setPlaceholderText("Send Memo (you can only write memo after the initial message from your contact)");
      ui->memoTxtChat->setTextColor(Qt::white);
     
     // Status Bar
@@ -115,7 +117,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // File a bug
     QObject::connect(ui->actionFile_a_bug, &QAction::triggered, [=]() {
-        QDesktopServices::openUrl(QUrl("https://git.hush.is/hush/SilentDragonLite/issues/new"));
+        QDesktopServices::openUrl(QUrl("https://hush.is/tg_support"));
     });
 
     // Set up check for updates action
@@ -168,24 +170,13 @@ MainWindow::MainWindow(QWidget *parent) :
     // Rescan
     QObject::connect(ui->actionRescan, &QAction::triggered, [=]() {
 
-       /* QFile file(dirwalletenc);
-        QFile file1(dirwallet);
-
-        if(fileExists(dirwalletenc))
-
-          {
-        file.remove();
-        file1.remove();
-          }*/
-
-
     Ui_Restore restoreSeed;
     QDialog dialog(this);
     restoreSeed.setupUi(&dialog);
     Settings::saveRestore(&dialog);
 
 
-            rpc->fetchSeed([=](json reply) {
+    rpc->fetchSeed([=](json reply) {
         if (isJsonError(reply)) {
             return;
         }
@@ -197,7 +188,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
         QString birthday = QString::number(reply["birthday"].get<json::number_unsigned_t>());
         restoreSeed.birthday->setPlainText(birthday);
-        });
+    });
 
     QObject::connect(restoreSeed.restore, &QPushButton::clicked, [&](){
 
@@ -554,10 +545,8 @@ void MainWindow::removeWalletEncryption() {
     QObject::connect(ed.txtConfirmPassword, &QLineEdit::textChanged, fnPasswordEdited);
     QObject::connect(ed.txtPassword, &QLineEdit::textChanged, fnPasswordEdited);
 
-    if (d.exec() == QDialog::Accepted) 
-    {
+    if (d.exec() == QDialog::Accepted) {
     QString passphraseBlank = ed.txtPassword->text(); // data comes from user inputs
-
     QString passphrase = QString("HUSH3") + passphraseBlank + QString("SDL");
 
     int length = passphrase.length();
@@ -574,18 +563,17 @@ void MainWindow::removeWalletEncryption() {
 
 
     #define hash ((const unsigned char *) sequence1)
-
     #define PASSWORD sequence
     #define KEY_LEN crypto_box_SEEDBYTES
 
     unsigned char key[KEY_LEN];
 
-    if (crypto_pwhash
-    (key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
-     crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE,
-     crypto_pwhash_ALG_DEFAULT) != 0) {
+    if (crypto_pwhash(key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
+     crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE, crypto_pwhash_ALG_DEFAULT) != 0) {
     /* out of memory */
-}
+    qDebug() << "crypto_pwhash failed!";
+    return;
+    }
   
         auto dir =  QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
         auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
@@ -598,9 +586,7 @@ void MainWindow::removeWalletEncryption() {
      QFile filencrypted(dirwalletenc);
      QFile wallet(dirwallet);
        
-    if (wallet.size() > 0)
-    {
-      
+    if (wallet.size() > 0) {
          QMessageBox::information(this, tr("Wallet decryption Success"),
                     QString("Successfully delete the encryption"),
                     QMessageBox::Ok
@@ -608,7 +594,7 @@ void MainWindow::removeWalletEncryption() {
 
         filencrypted.remove();  
 
-        }else{
+    } else {
                
          QMessageBox::critical(this, tr("Wallet Encryption Failed"),
                     QString("False password, please try again"),
@@ -840,7 +826,7 @@ void MainWindow::setupSettingsModal() {
         
         // List of default servers
         settings.cmbServer->addItem("https://lite.hush.is");
-        settings.cmbServer->addItem("https://lite.hush.community");
+        settings.cmbServer->addItem("https://lite.hush.land");
         settings.cmbServer->addItem("https://devo.crabdance.com");
         //settings.cmbServer->addItem("https://hush.leto.net:5420");
         //TODO: seperate lists of https/Tor servers, only show user or attempt
@@ -935,7 +921,7 @@ void MainWindow::donate() {
      QString key = keys->first();
      QString key1 = key + QString(" ") + QString("0");
      keys->pop_front();
-     bool rescan = keys->isEmpty();
+     //bool rescan = keys->isEmpty();
      
      if (key.startsWith("SK") || key.startsWith("secret")) { 
          rpc->importZPrivKey(key, [=] (auto) { this->doImport(keys); });  
@@ -1205,11 +1191,6 @@ void MainWindow::addPubkey(QString requestZaddr, QString pubkey)
 
 QString MainWindow::getPubkeyByAddress(QString requestZaddr)
 {
-    for(auto& pair : this->pubkeyMap)
-    {
-
-    }
-
     if(this->pubkeyMap.count(requestZaddr) > 0)
     {
         return this->pubkeyMap[requestZaddr];
@@ -1363,7 +1344,7 @@ void MainWindow::setupBalancesTab() {
 }
 
 void MainWindow::setuphushdTab() {    
-    ui->hushdlogo->setBasePixmap(QPixmap(":/img/res/hushdlogo.gif"));
+    ui->hushdlogo->setBasePixmap(QPixmap(":/img/res/hushdlogo.png"));
 }
 
 void MainWindow::setupTransactionsTab() {
@@ -1900,21 +1881,22 @@ Tx MainWindow::createTxFromSendChatPage() {
         unsigned char pk[crypto_kx_PUBLICKEYBYTES];
         unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
       
-                if (crypto_kx_seed_keypair(pk,sk,
-                           MESSAGEAS1) !=0) {
-
-                               this->logger->write("Suspicious keypair, bail out ");
-                           }
+        if (crypto_kx_seed_keypair(pk,sk, MESSAGEAS1) !=0) {
+            this->logger->write("Suspicious keypair, bail out ");
+            qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_seed_keypair, aborting!";
+            return tx;
+        }
          ////////////////Get the pubkey from Bob, so we can create the share key
 
         const QByteArray pubkeyBobArray = QByteArray::fromHex(pubkey.toLatin1());
         const unsigned char *pubkeyBob = reinterpret_cast<const unsigned char *>(pubkeyBobArray.constData());
                     /////Create the shared key for sending the message
 
-            if (crypto_kx_server_session_keys(server_rx, server_tx,
-                                  pk, sk, pubkeyBob) != 0) {
-            this->logger->write("Suspicious client public send key, bail out ");
-             }
+            if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0) {
+                this->logger->write("Suspicious client public send key, bail out ");
+                qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_server_session_keys, aborting!";
+                return tx;
+            }
 
     
             // Let's try to preserve Unicode characters
@@ -1953,10 +1935,8 @@ Tx MainWindow::createTxFromSendChatPage() {
              /////Ciphertext Memo
             QString memo = QByteArray(reinterpret_cast<const char*>(ciphertext), CIPHERTEXT_LEN).toHex();
          
-   
              tx.toAddrs.push_back(ToFields{addr, amtHm, hmemo});
              tx.toAddrs.push_back(ToFields{addr, amt, memo});
-
    } 
    }
 
@@ -2189,21 +2169,22 @@ Tx MainWindow::createTxFromSendRequestChatPage() {
         unsigned char pk[crypto_kx_PUBLICKEYBYTES];
         unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
       
-                if (crypto_kx_seed_keypair(pk,sk,
-                           MESSAGEAS1) !=0) {
-
-                               this->logger->write("Suspicious keypair, bail out ");
-                           }
+           if (crypto_kx_seed_keypair(pk,sk, MESSAGEAS1) !=0) {
+               this->logger->write("Suspicious keypair, bail out ");
+               qDebug() << __func__<< ": Suspicious client public outgoing key from crypto_kx_seed_keypair, aborting!";
+               return tx;
+           }
          ////////////////Get the pubkey from Bob, so we can create the share key
 
         const QByteArray pubkeyBobArray = QByteArray::fromHex(pubkey.toLatin1());
         const unsigned char *pubkeyBob = reinterpret_cast<const unsigned char *>(pubkeyBobArray.constData());
                     /////Create the shared key for sending the message
 
-            if (crypto_kx_server_session_keys(server_rx, server_tx,
-                                  pk, sk, pubkeyBob) != 0) {
-            this->logger->write("Suspicious client public send key, bail out ");
-             }
+            if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0) {
+                this->logger->write("Suspicious client public send key, bail out ");
+               qDebug() << __func__ << ": Suspicious client public send key from crypto_kx_server_session_keys, aborting!";
+               return tx;
+            }
 
     
             // Let's try to preserve Unicode characters
@@ -2433,7 +2414,7 @@ void MainWindow::addNewZaddr(bool sapling) {
             ui->listReceiveAddresses->insertItem(0, addr); 
             ui->listReceiveAddresses->setCurrentIndex(0);
 
-            ui->statusBar->showMessage(QString::fromStdString("Created new zAddr") %
+            ui->statusBar->showMessage(QString::fromStdString("Created new zaddr") %
                                        (sapling ? "(Sapling)" : "(Sprout)"), 
                                        10 * 1000);
         }
@@ -2795,11 +2776,8 @@ void MainWindow::slot_change_currency(const QString& currency_name)
     {
        saved_currency_name = Settings::getInstance()->get_currency_name();
        
-    }
-    catch (...)
-    {
-        saved_currency_name = "USD";
-        
+    } catch (...) {
+        saved_currency_name = "BTC";
     }
 }
 
@@ -2861,6 +2839,8 @@ void MainWindow::on_givemeZaddr_clicked()
                 });
 }
 
+
+// TODO: The way emoji work really need to change, this is madness
 void MainWindow::on_emojiButton_clicked()
 {
 
@@ -2976,8 +2956,6 @@ QObject::connect(emoji.sd, &QPushButton::clicked, [&] () {
 
         
 });
-
-
 
     emojiDialog.exec();
 }

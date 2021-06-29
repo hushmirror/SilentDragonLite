@@ -1,5 +1,5 @@
-// Copyright 2019-2020 The Hush developers
-// GPLv3
+// Copyright 2019-2021 The Hush developers
+// Released under the GPLv3
 
 #include "controller.h"
 #include "mainwindow.h"
@@ -42,7 +42,7 @@ Controller::Controller(MainWindow* main)
     priceTimer = new QTimer(main);
     QObject::connect(priceTimer, &QTimer::timeout, [=]() {
         if (Settings::getInstance()->getAllowFetchPrices()) 
-            refreshZECPrice();          
+            refreshHUSHPrice();          
         
     });
     priceTimer->start(Settings::priceRefreshSpeed);  // Every 5 Min
@@ -89,7 +89,7 @@ void Controller::setConnection(Connection* c)
 
     // If we're allowed to get the Hush Price, get the prices
     if (Settings::getInstance()->getAllowFetchPrices()) {
-        refreshZECPrice();
+        refreshHUSHPrice();
         supplyUpdate();
     }
 
@@ -369,7 +369,7 @@ void Controller::getInfoThenRefresh(bool force)
 
         if (Settings::getInstance()->get_currency_name() == "USD") 
         {
-            double price = Settings::getInstance()->getZECPrice();
+            double price = Settings::getInstance()->getHUSHPrice();
             double volume = Settings::getInstance()->getUSDVolume();
             double cap =  Settings::getInstance()->getUSDCAP();
             main->statusLabel->setText(
@@ -546,7 +546,7 @@ void Controller::getInfoThenRefresh(bool force)
         else 
         {
             main->statusLabel->setText(
-                " HUSH/USD=$" + QString::number(Settings::getInstance()->getZECPrice(),'f',2 )
+                " HUSH/USD=$" + QString::number(Settings::getInstance()->getHUSHPrice(),'f',2 )
             );
             ui->volumeExchange->setText(
                 " $  " + QString::number((double)  Settings::getInstance()->getUSDVolume() ,'f',2)
@@ -662,29 +662,29 @@ void Controller::updateUI(bool anyUnconfirmed)
 
 void Controller::supplyUpdate() {
 
-    qDebug()<<"Supply";
+    qDebug()<< __func__ << ": updating supply";
 
-       // Get the total supply and render it with thousand decimal
-        zrpc->fetchSupply([=] (const json& reply) {   
-            int supply  = reply["supply"].get<json::number_integer_t>();
-            int zfunds  = reply["zfunds"].get<json::number_integer_t>();
-            int total   = reply["total"].get<json::number_integer_t>();;
-            if (
-                Settings::getInstance()->get_currency_name() == "EUR" || 
-                Settings::getInstance()->get_currency_name() == "CHF" || 
-                Settings::getInstance()->get_currency_name() == "RUB"
-            ) 
-            {
-                ui->supply_taddr->setText((QLocale(QLocale::German).toString(supply)+ " HUSH"));
-                ui->supply_zaddr->setText((QLocale(QLocale::German).toString(zfunds)+ " HUSH"));
-                ui->supply_total->setText((QLocale(QLocale::German).toString(total)+ " HUSH"));
-            } else {
-                ui->supply_taddr->setText("HUSH " + (QLocale(QLocale::English).toString(supply)));
-                ui->supply_zaddr->setText("HUSH " +(QLocale(QLocale::English).toString(zfunds)));
-                ui->supply_total->setText("HUSH " +(QLocale(QLocale::English).toString(total)));
-            }
-
-        });
+    // Get the total supply and render it with thousand decimal
+    zrpc->fetchSupply([=] (const json& reply) {   
+        int supply  = reply["supply"].get<json::number_integer_t>();
+        int zfunds  = reply["zfunds"].get<json::number_integer_t>();
+        int total   = reply["total"].get<json::number_integer_t>();;
+        if (Settings::getInstance()->get_currency_name() == "EUR" || 
+            Settings::getInstance()->get_currency_name() == "CHF" || 
+            Settings::getInstance()->get_currency_name() == "RUB"
+        ) {
+            // TODO: assuming German locale is incorrect
+            ui->supply_taddr->setText((QLocale(QLocale::German).toString(supply)+ " HUSH"));
+            ui->supply_zaddr->setText((QLocale(QLocale::German).toString(zfunds)+ " HUSH"));
+            ui->supply_total->setText((QLocale(QLocale::German).toString(total)+ " HUSH"));
+        } else {
+            // TODO: assuming English locale is incorrect as well
+            ui->supply_taddr->setText("HUSH " + (QLocale(QLocale::English).toString(supply)));
+            ui->supply_zaddr->setText("HUSH " +(QLocale(QLocale::English).toString(zfunds)));
+            ui->supply_total->setText("HUSH " +(QLocale(QLocale::English).toString(total)));
+        }
+        qDebug() << __func__ << ": supply=" << supply;
+    });
 
 }
 
@@ -720,9 +720,9 @@ void Controller::processUnspent(const json& reply, QMap<QString, CAmount>* balan
 
 void Controller::updateUIBalances() 
 {
-    CAmount balT = getModel()->getBalT();
-    CAmount balZ = getModel()->getBalZ();
-    CAmount balVerified = getModel()->getBalVerified();
+    CAmount balT         = getModel()->getBalT();
+    CAmount balZ         = getModel()->getBalZ();
+    CAmount balVerified  = getModel()->getBalVerified();
     CAmount balSpendable = getModel()->getBalSpendable();
 
     // Reduce the BalanceZ by the pending outgoing amount. We're adding
@@ -743,6 +743,7 @@ void Controller::updateUIBalances()
     ui->balSpendable->setText(balSpendable.toDecimalhushString());
     ui->balTotal->setText(balTotal.toDecimalhushString());
 
+    //TODO: refactor this madness into functions like SD uses, with currency as a variable
     if (Settings::getInstance()->get_currency_name() == "USD") 
     {
         ui->balSheilded->setToolTip(balZ.toDecimalUSDString());
@@ -921,10 +922,11 @@ void Controller::refreshBalances()
     });
 }
 
-void Controller::refreshTransactions() {   
+void Controller::refreshTransactions() {
     if (!zrpc->haveConnection()) 
         return noConnection();
 
+    qDebug() << __func__ << ": fetchTransactions";
     zrpc->fetchTransactions([=] (json reply) {
         QList<TransactionItem> txdata;        
 
@@ -948,15 +950,13 @@ void Controller::refreshTransactions() {
             // First, check if there's outgoing metadata
             if (!it["outgoing_metadata"].is_null()) {
             
-                for (auto o: it["outgoing_metadata"].get<json::array_t>())
-                 
-                {    
+                for (auto o: it["outgoing_metadata"].get<json::array_t>()) {    
                     // if (chatModel->getCidByTx(txid) == QString("0xdeadbeef")){
                     QString address;
     
                     address = QString::fromStdString(o["address"]);
 
-                    // Sent items are -ve
+                    // Sent items are negative
                     CAmount amount = CAmount::fromqint64(-1* o["value"].get<json::number_unsigned_t>());
                     
                     // Check for Memos
@@ -973,15 +973,14 @@ void Controller::refreshTransactions() {
                     }
 
                     QString memo;
-                    QString cid;
-                    QString headerbytes;
-                    QString publickey;
+                    QString cid = "";
+                    QString headerbytes = "";
+                    QString publickey = "";
                     if (!o["memo"].is_null()) {
-                    memo = QString::fromStdString(o["memo"].get<json::string_t>());
+                        memo = QString::fromStdString(o["memo"].get<json::string_t>());
                     
                         if (memo.startsWith("{")) {
-                            try
-                            {
+                            try {
                                 QJsonDocument headermemo = QJsonDocument::fromJson(memo.toUtf8());
 
                                 cid = headermemo["cid"].toString();
@@ -990,50 +989,31 @@ void Controller::refreshTransactions() {
                                 chatModel->addCid(txid, cid);
                                 chatModel->addHeader(txid, headerbytes);
 
-                            }
-                            catch (...)
-                            {
-                                // on any exception caught
+                            } catch (...) {
+                                qDebug() << "Invalid JSON in memo detected! memo=" << memo;
                             }
                         }
                           
-                        bool isNotarized;
+                        bool isNotarized = false;;
 
                         if (confirmations > getLag())
                         {
                             isNotarized = true;
                         }
-                        else
-                        {
-                            isNotarized = false;
-                        } 
 
                         if (chatModel->getCidByTx(txid) != QString("0xdeadbeef"))
                         {
                             cid = chatModel->getCidByTx(txid);
                         }
-                        else
-                        {
-                            cid = "";
-                        }
-
 
                         if (chatModel->getHeaderByTx(txid) != QString("0xdeadbeef"))
                         {
                             headerbytes = chatModel->getHeaderByTx(txid);
                         }
-                        else
-                        {
-                            headerbytes = "";
-                        }
 
                         if (main->getPubkeyByAddress(address) != QString("0xdeadbeef"))
                         {
                             publickey = main->getPubkeyByAddress(address);
-                        }
-                        else
-                        {
-                            publickey = "";
                         }
                     
                         /////We need to filter out Memos smaller then the ciphertext size, or it will dump
@@ -1059,10 +1039,11 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_seed_keypair(pk, sk, MESSAGEAS1) !=0)
                             {
                                 main->logger->write("Keypair outgoing error");
+                                qDebug() << "refreshTransactions: crypto_kx_seed_keypair error";
+                                continue;
                             }
                 
                             unsigned char server_rx[crypto_kx_SESSIONKEYBYTES], server_tx[crypto_kx_SESSIONKEYBYTES];
-
       
                             ////////////////Get the pubkey from Bob, so we can create the share key
 
@@ -1071,6 +1052,8 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_server_session_keys(server_rx, server_tx, pk, sk, pubkeyBob) != 0)
                             {
                                  main->logger->write("Suspicious client public outgoing key, bail out ");
+                                 qDebug() << "refreshTransactions: Suspicious client public outgoing key, aborting!";
+                                 continue;
                             }
                 
                             const QByteArray ba = QByteArray::fromHex(memo.toUtf8());
@@ -1105,20 +1088,20 @@ void Controller::refreshTransactions() {
                                 //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                                 if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, server_tx) != 0) {
                                     /* Invalid header, no need to go any further */
+                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_init_pull error!";
+                                    continue;
                                 }
  
-                                if (crypto_secretstream_xchacha20poly1305_pull
-                                    (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
+                                if (crypto_secretstream_xchacha20poly1305_pull(&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                     /* Invalid/incomplete/corrupted ciphertext - abort */
+                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_pull error!";
+                                    continue;
                                 }
 
                                 std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
             
                                 memodecrypt = QString::fromUtf8( decryptedMemo.data(), decryptedMemo.size());
-                            }
-                            else
-                            {
-                               
+                            } else {
                                 memodecrypt = "";
                             }
 
@@ -1140,6 +1123,7 @@ void Controller::refreshTransactions() {
                                 false
                             );
 
+                            qDebug() << "refreshTransactions: adding chatItem with memodecrypt=" << memodecrypt;
                             DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
                            // updateUIBalances();
                         }
@@ -1163,9 +1147,7 @@ void Controller::refreshTransactions() {
                    "send", datetime, address, txid,confirmations, items
                 });
                 
-            }
-            else
-            {
+            } else {
                
                { // Incoming Transaction
                 address = (it["address"].is_null() ? "" : QString::fromStdString(it["address"]));
@@ -1175,10 +1157,9 @@ void Controller::refreshTransactions() {
                 if (!it["memo"].is_null()) {
                     memo = QString::fromStdString(it["memo"]);
                 }
-                items.push_back(TransactionItemDetail{
-                        address,
+                items.push_back(TransactionItemDetail{ address,
                     CAmount::fromqint64(it["amount"].get<json::number_integer_t>()),
-                        memo
+                    memo
                 });
 
                 TransactionItem tx{
@@ -1186,79 +1167,59 @@ void Controller::refreshTransactions() {
                 };
 
                 txdata.push_back(tx);
-               
-
            
-                    QString type;
-                    QString publickey;
-                    QString headerbytes;
-                    QString cid;
-                    QString requestZaddr;
-                    QString contactname;
-                    bool isContact;
+                QString type = "";
+                QString publickey = "";
+                QString headerbytes = "";
+                QString cid = "";
+                QString requestZaddr = "";
+                QString contactname = "";
+                bool isContact = false;
 
                 if (!it["memo"].is_null()) {
 
                 if (memo.startsWith("{")) {
-                 try 
-                 {
+                 try {
                   QJsonDocument headermemo = QJsonDocument::fromJson(memo.toUtf8());
 
-                  cid = headermemo["cid"].toString();
-                  type = headermemo["t"].toString();
-                  requestZaddr =  headermemo["z"].toString();
-                  headerbytes = headermemo["e"].toString();
-                  publickey = headermemo["p"].toString();
+                  cid          = headermemo["cid"].toString();
+                  type         = headermemo["t"].toString();
+                  requestZaddr = headermemo["z"].toString();
+                  headerbytes  = headermemo["e"].toString();
+                  publickey    = headermemo["p"].toString();
 
-                    chatModel->addCid(txid, cid);
-                    chatModel->addrequestZaddr(txid, requestZaddr);
-                    chatModel->addHeader(txid, headerbytes);
+                  chatModel->addCid(txid, cid);
+                  chatModel->addrequestZaddr(txid, requestZaddr);
+                  chatModel->addHeader(txid, headerbytes);
 
-                if (publickey.length() > 10){
-                    main->addPubkey(requestZaddr, publickey);
-                }
+                  // TODO: better validation of valid public key
+                  if (publickey.length() > 10){
+                      main->addPubkey(requestZaddr, publickey);
+                  }
 
+                        } catch (...) {
+                            qDebug() << __func__ << ": Invalid JSON in memo! memo=" << memo.toUtf8();
                         }
-                        catch (...)
-                        {
-                            // on any exception
-                        }
-                    }
+                 }
   
                     if (chatModel->getCidByTx(txid) != QString("0xdeadbeef"))
                     {
                         cid = chatModel->getCidByTx(txid);
-                    }
-                    else
-                    {
-                        cid = "";
                     }
     
                     if (chatModel->getrequestZaddrByTx(txid) != QString("0xdeadbeef"))
                     {
                         requestZaddr = chatModel->getrequestZaddrByTx(txid);
                     }
-                    else
-                    {
-                        requestZaddr = "";
-                    }
 
                     if (chatModel->getHeaderByTx(txid) != QString("0xdeadbeef"))
                     {
                         headerbytes = chatModel->getHeaderByTx(txid);
                     }
-                    else
-                    {
-                        headerbytes = "";
-                    }
 
                     if (main->getPubkeyByAddress(requestZaddr) != QString("0xdeadbeef"))
                     {
                         publickey = main->getPubkeyByAddress(requestZaddr);
-                    }
-                    else
-                    {
-                        publickey = "";
                     }
 
                     if (contactModel->getContactbyAddress(requestZaddr) != QString("0xdeadbeef"))
@@ -1266,37 +1227,26 @@ void Controller::refreshTransactions() {
                          isContact = true;
                          contactname = contactModel->getContactbyAddress(requestZaddr);
                     }
-                    else
-                    {
-                         isContact = false;
-                         contactname = "";
-                    }
 
-                    bool isNotarized;
+                    bool isNotarized = false;
 
                     if (confirmations > getLag())
                     {
                         isNotarized = true;
                     }
-                    else
-                    {
-                        isNotarized = false;
-                    }
 
                     int position = it["position"].get<json::number_integer_t>(); 
-
                     int ciphercheck = memo.length() - crypto_secretstream_xchacha20poly1305_ABYTES;
+                    qDebug() << __func__ << ": position=" << position << " headerbytes=" << headerbytes
+                             << " ciphercheck=" << ciphercheck << " for memo=" << memo;
 
                     if ((memo.startsWith("{") == false) && (headerbytes > 0) && (ciphercheck > 0))
                     {
-                        if (chatModel->getMemoByTx(txid) == QString("0xdeadbeef"))
-                        {
+                        if (chatModel->getMemoByTx(txid) == QString("0xdeadbeef")) {
                             if (position == 1)
                             {
                                 chatModel->addMemo(txid, headerbytes);
-                            }
-                            else
-                            {
+                            } else {
                                 //
                             }
 
@@ -1319,6 +1269,8 @@ void Controller::refreshTransactions() {
                             if (crypto_kx_seed_keypair(pk, sk, MESSAGEAS1) !=0)
                             {
                                main->logger->write("Suspicious  outgoing key pair, bail out ");
+                               qDebug() << "refreshTransactions: (incoming) crypto_kx_seed_keypair error!";
+                               continue;
                             }
 
                             unsigned char client_rx[crypto_kx_SESSIONKEYBYTES], client_tx[crypto_kx_SESSIONKEYBYTES];
@@ -1326,10 +1278,11 @@ void Controller::refreshTransactions() {
                             ////////////////Get the pubkey from Bob, so we can create the share key
 
                             /////Create the shared key for sending the message
-
                             if (crypto_kx_client_session_keys(client_rx, client_tx, pk, sk, pubkeyBob) != 0)
                             {
                                main->logger->write("Suspicious client public incoming key, bail out ");
+                               qDebug() << "refreshTransactions: (incoming) crypto_kx_client_session_keys error!";
+                               continue;
                             }
 
                             const QByteArray ba = QByteArray::fromHex(memo.toUtf8());
@@ -1361,11 +1314,14 @@ void Controller::refreshTransactions() {
                             //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                             if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, client_rx) != 0) {
                                main->logger->write("Invalid header incoming, no need to go any further "); 
+                               qDebug() <<"refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_init_pull error! memo=" << memo;
+                               continue;
                             }
 
-                            if (crypto_secretstream_xchacha20poly1305_pull
-                                (&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
+                            if (crypto_secretstream_xchacha20poly1305_pull(&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                  main->logger->write("Invalid/incomplete/corrupted ciphertext - abort");
+                                 qDebug() << "refreshTransactions: (incoming) crypto_secretstream_xchacha20poly1305_pull error! memo=" << memo;
+                                 continue;
                             }
 
                             std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
@@ -1375,8 +1331,7 @@ void Controller::refreshTransactions() {
 
                             memodecrypt = QString::fromUtf8( decryptedMemo.data(), decryptedMemo.size());
 
-                            // }
-                            //////////////Give us the output of the decrypted message as debug to see if it was successfully
+                            ////Give us the output of the decrypted message as debug to see if it was successfully
 
                             ChatItem item = ChatItem(
                                 datetime,
@@ -1393,17 +1348,18 @@ void Controller::refreshTransactions() {
                                 isContact
                             );
 
-                            DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
+                            auto iid = ChatIDGenerator::getInstance()->generateID(item);
+                            qDebug() << "refreshTransactions: adding chatItem with item id=" << iid << " memodecrypt=" << memodecrypt;
+                            DataStore::getChatDataStore()->setData(iid, item);
 
-                        }
-                        else
-                        {
-                            //
+                        } else {
+                            qDebug() << __func__ << ": ignoring txid="<< txid;
                         }
 
-                    }
-                    else
-                    {
+                    //} else if (memo.startsWith("{")) {
+                    //qDebug() << __func__ << ": ignoring a header memo";
+                    } else {
+                        // Add a chatitem for the initial CR
                         ChatItem item = ChatItem(
                             datetime,
                             address,
@@ -1418,7 +1374,9 @@ void Controller::refreshTransactions() {
                             isNotarized,
                             isContact
                         );
-                        DataStore::getChatDataStore()->setData(ChatIDGenerator::getInstance()->generateID(item), item);
+                        auto iid = ChatIDGenerator::getInstance()->generateID(item);
+                        qDebug() << "refreshTransactions: adding chatItem for initial CR with item id="<< iid << " memo='" << memo << "'";
+                        DataStore::getChatDataStore()->setData(iid, item);
                     }
                 }
                }
@@ -1444,9 +1402,9 @@ void Controller::refreshTransactions() {
 
         // Update model data, which updates the table view
         transactionsTableModel->replaceData(txdata);
+        qDebug() << __func__ << ": calling renderChatBox";
         chat->renderChatBox(ui, ui->listChat,ui->memoSizeChat);
-        ui->listChat->verticalScrollBar()->setValue(
-        ui->listChat->verticalScrollBar()->maximum());
+        ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
         
     });
     
@@ -1454,17 +1412,16 @@ void Controller::refreshTransactions() {
 
 void Controller::refreshChat(QListView *listWidget, QLabel *label)
 {
+    qDebug() << __func__ << ": calling renderChatBox";
     chat->renderChatBox(ui, listWidget, label);
-    ui->listChat->verticalScrollBar()->setValue(
-    ui->listChat->verticalScrollBar()->maximum());
+    ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
   
 }
 
 void Controller::refreshContacts(QListView *listWidget)
 {
     contactModel->renderContactList(listWidget);
-    ui->listChat->verticalScrollBar()->setValue(
-        ui->listChat->verticalScrollBar()->maximum());
+    ui->listChat->verticalScrollBar()->setValue(ui->listChat->verticalScrollBar()->maximum());
 }
 
 // If the wallet is encrpyted and locked, we need to unlock it 
@@ -1670,7 +1627,7 @@ void Controller::checkForUpdate(bool silent)
 }
 
 // Get the hush->USD price from coinmarketcap using their API
-void Controller::refreshZECPrice() 
+void Controller::refreshHUSHPrice() 
 {
     if (!zrpc->haveConnection()) 
         return noConnection();
@@ -1696,7 +1653,7 @@ void Controller::refreshZECPrice()
                 else
                     qDebug() << reply->errorString();
 
-                Settings::getInstance()->setZECPrice(0);
+                Settings::getInstance()->setHUSHPrice(0);
                 Settings::getInstance()->setEURPrice(0);
                 Settings::getInstance()->setBTCPrice(0);
                 Settings::getInstance()->setCNYPrice(0);
@@ -1737,7 +1694,7 @@ void Controller::refreshZECPrice()
             auto parsed = json::parse(all, nullptr, false);
             if (parsed.is_discarded()) 
             {
-                Settings::getInstance()->setZECPrice(0);
+                Settings::getInstance()->setHUSHPrice(0);
                 Settings::getInstance()->setEURPrice(0);
                 Settings::getInstance()->setBTCPrice(0);
                 Settings::getInstance()->setCNYPrice(0);
@@ -1780,7 +1737,7 @@ void Controller::refreshZECPrice()
             {
                 qDebug() << "Found hush key in price json";
                 qDebug() << "HUSH = $" << QString::number((double)hush["usd"]);
-                Settings::getInstance()->setZECPrice( hush["usd"] );
+                Settings::getInstance()->setHUSHPrice( hush["usd"] );
             }
 
             if (hush["eur"] >= 0)
@@ -1984,7 +1941,7 @@ void Controller::refreshZECPrice()
         }
 
         // If nothing, then set the price to 0;
-        Settings::getInstance()->setZECPrice(0);
+        Settings::getInstance()->setHUSHPrice(0);
         Settings::getInstance()->setEURPrice(0);
         Settings::getInstance()->setBTCPrice(0);
         Settings::getInstance()->setCNYPrice(0);

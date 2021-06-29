@@ -1,5 +1,5 @@
 // Copyright 2019-2021 The Hush developers
-// GPLv3
+// Released under the GPLv3
 
 #include "Chat.h"
 #include "../addressbook.h"
@@ -22,8 +22,7 @@ void ChatMemoEdit::updateDisplayChat() {
 
         if (lenDisplayLabelchat)
             lenDisplayLabelchat->setStyleSheet("");
-    }
-    else {
+    } else {
         // Overweight
         if (sendChatButton)
             sendChatButton->setEnabled(false);
@@ -50,6 +49,8 @@ ChatMemoEditRequest::ChatMemoEditRequest(QWidget* parent) : QTextEdit(parent) {
     QObject::connect(this, &QTextEdit::textChanged, this, &ChatMemoEditRequest::updateDisplayChatRequest);
 }
 
+
+// TODO: unify this with updateDisplayChat()
 void ChatMemoEditRequest::updateDisplayChatRequest() {
     QString txt = this->toPlainText();
     if (lenDisplayLabelchatRequest)
@@ -62,8 +63,7 @@ void ChatMemoEditRequest::updateDisplayChatRequest() {
 
         if (lenDisplayLabelchatRequest)
             lenDisplayLabelchatRequest->setStyleSheet("");
-    }
-    else {
+    } else {
         // Overweight
         if (sendRequestButton)
             sendRequestButton->setEnabled(false);
@@ -85,59 +85,68 @@ void ChatMemoEditRequest::SetSendRequestButton(QPushButton* button) {
 void ChatMemoEditRequest::setLenDisplayLabelChatRequest(QLabel* label) {
     this->lenDisplayLabelchatRequest = label;
 }
+
 void Chat::renderChatBox(Ui::MainWindow *ui, QListView *view, QLabel *label)
 {
     
     QStandardItemModel *chat = new QStandardItemModel();
     DataStore::getChatDataStore()->dump(); // test to see if the chat items in datastore are correctly dumped to json
-    for (auto &p : AddressBook::getInstance()->getAllAddressLabels())
+    std::map<QString,int> seenTxids;
+
+    qDebug() << __func__ << ": looking at memos...";
+    for (auto &contact : AddressBook::getInstance()->getAllAddressLabels())
     {
-        for (auto &c : DataStore::getChatDataStore()->getAllMemos())
-        {
+        for (auto &memo : DataStore::getChatDataStore()->getAllMemos()) {
+            if ( (contact.getName() == ui->contactNameMemo->text().trimmed()) &&
+                (contact.getPartnerAddress() == memo.second.getAddress()) &&
+                (memo.second.isOutgoing() == true)) {
 
-            if (
-                (p.getName() == ui->contactNameMemo->text().trimmed()) &&
-                (p.getPartnerAddress() == c.second.getAddress()) &&
-                (c.second.isOutgoing() == true))
-               
-            {
-
-                QStandardItem *Items = new QStandardItem(c.second.toChatLine());
+                QStandardItem *Items = new QStandardItem(memo.second.toChatLine());
 
                 Items->setData(OUTGOING, Qt::UserRole + 1);
+                qDebug() << __func__ << ": appending row to OUTGOING chatitems to contact " << contact.getName() << " with item " << Items;
                 chat->appendRow(Items);
                 ui->listChat->setModel(chat);
-            
        
-            }
-            else
-            {
+            } else {
                 ui->listChat->setModel(chat);
             }
 
-            if (
-                (p.getName() == ui->contactNameMemo->text().trimmed()) &&
-                (p.getMyAddress() == c.second.getAddress()) &&
-                (c.second.isOutgoing() == false) &&
-                (c.second.getCid() == p.getCid())
-                )
-            {
-                QStandardItem *Items1 = new QStandardItem(c.second.toChatLine());
+            qDebug() << __func__ << ": memo.first=" << memo.first;
+            if ( (contact.getName() == ui->contactNameMemo->text().trimmed()) &&
+                (contact.getMyAddress() == memo.second.getAddress()) &&
+                (memo.second.isOutgoing() == false) &&
+                (memo.second.getCid() == contact.getCid())
+                ) {
+                QStandardItem *Items1 = new QStandardItem(memo.second.toChatLine());
                 Items1->setData(INCOMING, Qt::UserRole + 1);
-                chat->appendRow(Items1);
-                ui->listChat->setModel(chat);
-                ui->memoTxtChat->setEnabled(true);
-                ui->emojiButton->setEnabled(true);
-                ui->sendChatButton->setEnabled(true);
-               
-            }
-            else
-            {
+                qDebug() << __func__ << ": appending row to INCOMING chatitems to contact " << contact.getName() << "with txid=" << memo.second.getTxid() << " cid=" << contact.getCid() << " item " << Items1 << " memo=" << memo.second.getMemo();
 
+
+                if(seenTxids.count( memo.second.getTxid() ) > 0) {
+                    // Do not render the same chat multiple times
+                    // TODO: this should also look at outputindex to allow for multi-part memos, when that is supported
+                    qDebug() << __func__ << ": INCOMING ignoring txid=" << memo.second.getTxid();
+                    continue;
+                }
+
+                // TODO: better header memo detection
+                if (memo.second.getMemo().startsWith("{")) {
+                    qDebug() << __func__ << ": ignoring header memo=" << memo.second.getMemo();
+                } else {
+                    chat->appendRow(Items1);
+                    ui->listChat->setModel(chat);
+                    ui->memoTxtChat->setEnabled(true);
+                    ui->emojiButton->setEnabled(true);
+                    ui->sendChatButton->setEnabled(true);
+
+                    seenTxids[ memo.second.getTxid() ] = 1;
+                }
+               
+            } else {
                 ui->listChat->setModel(chat);
             }
         }
     } 
 }  
 
-  

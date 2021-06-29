@@ -10,9 +10,6 @@
     <a href="https://fosstodon.org/@myhushteam">
         <img src="https://img.shields.io/badge/Mastodon-MyHushTeam-blue"
             alt="follow on Mastodon"></a>
-    <a href="https://www.reddit.com/r/Myhush/">
-        <img src="https://img.shields.io/reddit/subreddit-subscribers/Myhush?style=social"
-            alt="MyHushTeam's Reddit"></a>
 </p>
 
 SilentDragonLite is a lightwallet for HUSH ($HUSH) runs on Linux and Windows which does not require you to download the full blockchain. This is experimental software under active development!
@@ -44,20 +41,21 @@ Go to the [releases page](https://git.hush.is/hush/SilentDragonLite/releases) an
 ### Option 2: Compile Release Yourself
 
 * SilentDragonLite is written in C++ 14, and can be compiled with g++/clang++/visual c++. 
-* It also depends on Qt5, which you can get from [here](https://www.qt.io/download) or install using your Linux version's package manager.
-* You'll need Rust v1.49
+* It also depends on Qt5, which you can get from [here](https://www.qt.io/download) or we recommend installing using your Linux version's package manager (if available).
+* **You'll need Rust v1.49**, so install it via [Rustup in Linux](https://rustup.rs/).
 
 #### Building on Linux
+
+**Nothing below will work without rust. Check that your system has rustc 1.49. If not then you need to use [Rustup in Linux](https://rustup.rs/).**
+
+Compiling can take some time, so be patient and wait for it to finish. It will take potentially a long time for slower systems. Be Patient and please report compiler problems!
 
 ##### Ubuntu 18.04 and 20.04:
 ```shell script
 sudo apt-get -y install qt5-default qt5-qmake libqt5websockets5-dev qtcreator
 git clone https://git.hush.is/hush/SilentDragonLite
 cd SilentDragonLite
-# sometimes have to build the translations before building the binary
 ./build.sh linguist
-# the next step will take potentially a long time for slower systems
-# Be Patient and please report compiler problems!
 ./build.sh
 ./SilentDragonLite
 ```
@@ -88,20 +86,9 @@ SilentDragonLite does automatic note and utxo management, which means it doesn't
 
 ## Support
 
-```
-git clone https://git.hush.is/hush/SilenDragonLite
-cd SilentDragonLite
-# the next step will take potentially a long time for slower systems
-# Be Patient and please report compiler problems!
-./build.sh
-./SilentDragonLite
-```
-
-## Support
-
 For support join us on [Telegram Support](https://hush.is/telegram_support), or our [Main Telegram](https://hush.is/telegram) or tweet at [@MyHushTeam](https://twitter.com/MyHushTeam), or toot at our [Mastodon](https://fosstodon.org/@myhushteam), or [file an issue](https://git.hush.is/hush/SilentDragonLite/issues).
 
-You can also subscribe to our channel on [YouTube](https://hush.is/yt)
+You can also subscribe to our channels on [PeerTube](https://videos.hush.is), on [YouTube](https://hush.is/yt), or on [Odyssee/LBRY](https://odysee.com/@MyHushTeam:3).
 
 ## License
 

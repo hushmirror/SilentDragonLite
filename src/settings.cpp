@@ -30,6 +30,11 @@ Config Settings::getSettings() {
     bool sticky        = s.value("connection/stickyServer").toBool();
     bool torOnly       = s.value("connection/torOnly").toBool();
 
+    while (server.endsWith("/")) {
+        // trailing slashes make Rust sad
+        server.chop(1);
+    }
+
     // Users that have old configs generated from old SDLs will have this hostname
     if(server == malicious or server == (QString("https://") + malicious)) {
         qDebug() << "Replacing malicious SDL server with " << server;
@@ -139,8 +144,8 @@ bool Settings::isSaplingActive() {
     return  (isTestnet() && getBlockNumber() > 0) || (!isTestnet() && getBlockNumber() > 0);
 }
 
-double Settings::getZECPrice() { 
-    return ZECPrice; 
+double Settings::getHUSHPrice() { 
+    return HUSHPrice; 
 }
 double Settings::getEURPrice() { 
     return EURPrice; 
@@ -303,7 +308,7 @@ QString Settings::getRandomServer() {
     //"https://thisisdown3.example.com",
     //"https://thisisdown4.example.com",
     //"https://thisisdown5.example.com",
-    "https://lite.hush.community",
+    "https://lite.hush.land"
     };
 
     // we don't need cryptographic random-ness, but we want
