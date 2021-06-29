@@ -54,6 +54,7 @@
 
     </qresource>
     <qresource prefix="/img">
+        <file>res/hushdlogo.png</file>
         <file>res/hushdlogo.gif</file>
         <file>res/silentdragonlite-animated.gif</file>
         <file>res/silentdragonlite-animated-dark.gif</file>

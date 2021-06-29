@@ -1344,7 +1344,7 @@ void MainWindow::setupBalancesTab() {
 }
 
 void MainWindow::setuphushdTab() {    
-    ui->hushdlogo->setBasePixmap(QPixmap(":/img/res/hushdlogo.gif"));
+    ui->hushdlogo->setBasePixmap(QPixmap(":/img/res/hushdlogo.png"));
 }
 
 void MainWindow::setupTransactionsTab() {
