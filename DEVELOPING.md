@@ -52,7 +52,7 @@ make -j$(nproc) install
 ```
 # Build MXE (Cross-compiled Qt5 for Windows in Linux)
 ```
-mkdir ~/github && cd ~/github
+mkdir ~/git && cd ~/git
 git clone https://github.com/mxe/mxe.git
 cd mxe
 
