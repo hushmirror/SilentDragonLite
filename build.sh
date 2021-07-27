@@ -1,5 +1,6 @@
 #!/bin/bash
 # Copyright 2019-2021 The Hush Developers
+# Released under the GPLv3
 
 UNAME=$(uname)
 
@@ -17,12 +18,12 @@ fi
 if ! command -v rustc &> /dev/null
 then
     echo "rustc could not be found. Please install it and try again."
-    exit
+    exit 1
 fi
 if ! command -v cargo &> /dev/null
 then
     echo "cargo could not be found. Please install it and try again."
-    exit
+    exit 1
 fi
 
 VERSION=$(cat src/version.h |cut -d\" -f2)
