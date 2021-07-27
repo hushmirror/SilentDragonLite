@@ -11,6 +11,12 @@ fi
 
 echo "Building libsodium $VERSION"
 
+if ! command -v curl &> /dev/null
+then
+    echo "curl could not be found. Please install it and try again."
+    exit 1
+fi
+
 # Go into the lib sodium directory
 cd res/libsodium
 if [ ! -f libsodium-1.0.18.tar.gz ]; then
