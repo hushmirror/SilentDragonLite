@@ -516,16 +516,22 @@ void MainWindow::encryptWallet() {
 }
 
 void MainWindow::removeWalletEncryption() {
+    qDebug() << __func__ << ": removing wallet encryption";
     QDialog d(this);
     Ui_removeencryption ed;
     ed.setupUi(&d);
+
+    qDebug() << __func__ << ": done with setupUi";
 
     if (fileExists(dirwalletenc) == false) {
         QMessageBox::information(this, tr("Wallet is not encrypted"), 
                     tr("Your wallet is not encrypted with a passphrase."),
                     QMessageBox::Ok
                 );
+        qDebug() << __func__ << ": wallet=" << dirwalletenc << " does NOT exist";
         return;
+    } else {
+        qDebug() << __func__ << ": wallet=" << dirwalletenc << " exists";
     }
 
      auto fnPasswordEdited = [=](const QString&) {
@@ -545,11 +551,15 @@ void MainWindow::removeWalletEncryption() {
     QObject::connect(ed.txtConfirmPassword, &QLineEdit::textChanged, fnPasswordEdited);
     QObject::connect(ed.txtPassword, &QLineEdit::textChanged, fnPasswordEdited);
 
+    qDebug() << __func__ << ": connected GUI events";
+
     if (d.exec() == QDialog::Accepted) {
     QString passphraseBlank = ed.txtPassword->text(); // data comes from user inputs
     QString passphrase = QString("HUSH3") + passphraseBlank + QString("SDL");
 
     int length = passphrase.length();
+
+    qDebug() << __func__ << ": Passphrase length = " << length;
 
     char *sequence = NULL;
     sequence = new char[length+1];
@@ -561,7 +571,6 @@ void MainWindow::removeWalletEncryption() {
     sequence1 = new char[length+1];
     strncpy(sequence1, passphraseHash.toUtf8(), length+1);
 
-
     #define hash ((const unsigned char *) sequence1)
     #define PASSWORD sequence
     #define KEY_LEN crypto_box_SEEDBYTES
@@ -571,43 +580,41 @@ void MainWindow::removeWalletEncryption() {
     if (crypto_pwhash(key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
      crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE, crypto_pwhash_ALG_DEFAULT) != 0) {
     /* out of memory */
-    qDebug() << "crypto_pwhash failed!";
-    return;
+        qDebug() << __func__ << ": crypto_pwhash failed! Possibly out of memory";
+        return;
     }
   
-        auto dir =  QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
-        auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
-        QString target_encwallet_file = dirwalletenc;
-        QString target_decwallet_file = dirwallet;
+    auto dir =  QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+    auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
+    QString target_encwallet_file = dirwalletenc;
+    QString target_decwallet_file = dirwallet;
 
-        FileEncryption::decrypt(target_decwallet_file, target_encwallet_file, key);
-
+    FileEncryption::decrypt(target_decwallet_file, target_encwallet_file, key);
     
-     QFile filencrypted(dirwalletenc);
-     QFile wallet(dirwallet);
+    QFile filencrypted(dirwalletenc);
+    QFile wallet(dirwallet);
+
+    qDebug() << __func__ << ": wallet size=" << wallet.size();
        
     if (wallet.size() > 0) {
          QMessageBox::information(this, tr("Wallet decryption Success"),
                     QString("Successfully delete the encryption"),
                     QMessageBox::Ok
                 );   
-
         filencrypted.remove();  
-
     } else {
-               
          QMessageBox::critical(this, tr("Wallet Encryption Failed"),
                     QString("False password, please try again"),
                     QMessageBox::Ok
                 );
-                 this->removeWalletEncryption();
+         this->removeWalletEncryption();
         }    
-
     }
    
 }
 
 void MainWindow::removeWalletEncryptionStartUp() {
+    qDebug() << __func__ << ": removing wallet encryption";
    QDialog d(this);
     Ui_startup ed;
     ed.setupUi(&d);
@@ -652,30 +659,29 @@ void MainWindow::removeWalletEncryptionStartUp() {
 
     unsigned char key[KEY_LEN];
 
-    if (crypto_pwhash
-    (key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
+    if (crypto_pwhash(key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
      crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE,
      crypto_pwhash_ALG_DEFAULT) != 0) {
-    /* out of memory */
-}
-        QString passphraseHash1 = QByteArray(reinterpret_cast<const char*>(key), KEY_LEN).toHex();
-        DataStore::getChatDataStore()->setPassword(passphraseHash1);
+        /* out of memory */
+        qDebug() << __func__ << ": crypto_pwhash failed! Possibly out of memory";
+        return;
+    }
 
-        auto dir =  QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
+    QString passphraseHash1 = QByteArray(reinterpret_cast<const char*>(key), KEY_LEN).toHex();
+    DataStore::getChatDataStore()->setPassword(passphraseHash1);
 
-        QString target_encwallet_file = dirwalletenc;
-        QString target_decwallet_file = dirwallet;
+    auto dir =  QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
 
-        FileEncryption::decrypt(target_decwallet_file, target_encwallet_file, key);
+    QString target_encwallet_file = dirwalletenc;
+    QString target_decwallet_file = dirwallet;
 
+    FileEncryption::decrypt(target_decwallet_file, target_encwallet_file, key);
+
+    auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
+    QFile wallet(dirwallet);
+    qDebug() << __func__ << ": wallet size=" << wallet.size();
     
-
-     auto dirHome =  QDir(QStandardPaths::writableLocation(QStandardPaths::HomeLocation));
-     QFile wallet(dirwallet);
-    
-    if (wallet.size() == 0)
-    {
-         
+    if (wallet.size() == 0) {
          QMessageBox::critical(this, tr("Wallet Encryption Failed"),
                     QString("false password please try again"),
                     QMessageBox::Ok
@@ -684,7 +690,6 @@ void MainWindow::removeWalletEncryptionStartUp() {
         }else{}   
 
     }else{
-
         this->doClosePw();
     }
 

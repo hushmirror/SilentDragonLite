@@ -1083,21 +1083,20 @@ void Controller::refreshTransactions() {
                                 unsigned char tag[crypto_secretstream_xchacha20poly1305_TAG_FINAL];
                                 crypto_secretstream_xchacha20poly1305_state state;
 
-                                /////Our decrypted message is now in decrypted. We need it as QString to render it
-                                /////Only the QString gives weird data, so convert first to std::string
-                                //   crypto_secretstream_xchacha20poly1305_keygen(client_rx);
                                 if (crypto_secretstream_xchacha20poly1305_init_pull(&state, header, server_tx) != 0) {
                                     /* Invalid header, no need to go any further */
-                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_init_pull error!";
+                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_init_pull error! Invalid header";
                                     continue;
                                 }
  
                                 if (crypto_secretstream_xchacha20poly1305_pull(&state, decrypted, NULL, tag, MESSAGE2, CIPHERTEXT1_LEN, NULL, 0) != 0) {
                                     /* Invalid/incomplete/corrupted ciphertext - abort */
-                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_pull error!";
+                                    qDebug() << "refreshTransactions: crypto_secretstream_xchacha20poly1305_pull error! Invalid ciphertext";
                                     continue;
                                 }
 
+                                /////Our decrypted message is now in decrypted. We need it as QString to render it
+                                /////Only the QString gives weird data, so convert first to std::string
                                 std::string decryptedMemo(reinterpret_cast<char*>(decrypted),MESSAGE1_LEN);
             
                                 memodecrypt = QString::fromUtf8( decryptedMemo.data(), decryptedMemo.size());

@@ -42,3 +42,5 @@ silentdragonlite_plugin_import.cpp
 silentdragonlite_resource.rc
 SilentDragonLite
 .gdb_history
+.*sw?
+core
