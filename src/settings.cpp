@@ -303,6 +303,7 @@ QString Settings::getRandomServer() {
     QList<QString> servers = {
     "https://lite.hush.is",
     "https://devo.crabdance.com",
+    "https://lite.nyami.org",
     //"https://thisisdown1.example.com",
     //"https://thisisdown2.example.com",
     //"https://thisisdown3.example.com",
