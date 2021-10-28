@@ -304,6 +304,7 @@ QString Settings::getRandomServer() {
     "https://lite.hush.is",
     "https://devo.crabdance.com",
     "https://lite.nyami.org",
+    "https://poop.granitefone.me:9067",
     //"https://thisisdown1.example.com",
     //"https://thisisdown2.example.com",
     //"https://thisisdown3.example.com",
