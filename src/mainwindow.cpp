@@ -834,6 +834,7 @@ void MainWindow::setupSettingsModal() {
         settings.cmbServer->addItem("https://lite.hush.land");
         settings.cmbServer->addItem("https://devo.crabdance.com");
         settings.cmbServer->addItem("https://lite.nyami.org");
+        settings.cmbServer->addItem("https://poop.granitefone.me:9067");
         //settings.cmbServer->addItem("https://hush.leto.net:5420");
         //TODO: seperate lists of https/Tor servers, only show user or attempt
         // connection to .onion if user has it enabled
