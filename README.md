@@ -48,11 +48,18 @@ Go to the [releases page](https://git.hush.is/hush/SilentDragonLite/releases) an
 
 **Nothing below will work without rust. Check that your system has rustc 1.49. If not then you need to use [Rustup in Linux](https://rustup.rs/).**
 
+##### Install Rust & Change Version
+```
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup default 1.49
+rustup -V
+``` 
+
 Compiling can take some time, so be patient and wait for it to finish. It will take potentially a long time for slower systems. Be Patient and please report compiler problems!
 
 ##### Ubuntu 18.04 and 20.04:
 ```shell script
-sudo apt-get -y install qt5-default qt5-qmake libqt5websockets5-dev qtcreator
+sudo apt-get -y install qt5-default qt5-qmake libqt5websockets5-dev qtcreator qttools5-dev-tools
 git clone https://git.hush.is/hush/SilentDragonLite
 cd SilentDragonLite
 ./build.sh linguist
