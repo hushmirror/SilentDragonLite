@@ -51,6 +51,7 @@ Go to the [releases page](https://git.hush.is/hush/SilentDragonLite/releases) an
 ##### Install Rust & Change Version
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup install 1.49
 rustup default 1.49
 rustup -V
 ``` 
