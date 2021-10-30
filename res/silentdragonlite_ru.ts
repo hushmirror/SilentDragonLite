@@ -110,30 +110,30 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1479"/>
+        <location filename="../src/controller.cpp" line="1435"/>
         <source>Wallet Password</source>
         <translation>Пароль Кошелька</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1480"/>
+        <location filename="../src/controller.cpp" line="1436"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation>Ваш кошелек зашифрован.
 Пожалуйста введите пароль вашего кошелька</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1488"/>
-        <location filename="../src/controller.cpp" line="1508"/>
+        <location filename="../src/controller.cpp" line="1444"/>
+        <location filename="../src/controller.cpp" line="1464"/>
         <source>Wallet Decryption Failed</source>
         <translation>Ошибка Расшифровки Кошелька</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1489"/>
+        <location filename="../src/controller.cpp" line="1445"/>
         <source>Please enter a valid password</source>
         <translation>Пожалуйста, введите правильный пароль</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1578"/>
+        <location filename="../src/controller.cpp" line="1534"/>
         <source>Failed to unlock wallet</source>
         <translation>Не удалось разблокировать кошелек</translation>
     </message>
@@ -469,8 +469,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1056"/>
-        <location filename="../src/mainwindow.cpp" line="1372"/>
-        <location filename="../src/mainwindow.cpp" line="1440"/>
+        <location filename="../src/mainwindow.cpp" line="1364"/>
+        <location filename="../src/mainwindow.cpp" line="1432"/>
         <location filename="../src/sendtab.cpp" line="294"/>
         <source>Memo</source>
         <translation>Памятка</translation>
@@ -557,10 +557,6 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="2033"/>
         <source>Rescan</source>
         <translation>Повторное сканирование</translation>
-    </message>
-    <message>
-        <source>&amp;Hush Telegram</source>
-        <translation type="vanished">&amp;Hush Telegram</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="51"/>
@@ -752,7 +748,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1381"/>
-        <location filename="../src/mainwindow.cpp" line="2533"/>
+        <location filename="../src/mainwindow.cpp" line="2525"/>
         <source>Export Private Key</source>
         <translation>Экспорт Приватного Ключа</translation>
     </message>
@@ -905,7 +901,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1990"/>
-        <location filename="../src/mainwindow.cpp" line="1136"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Export transactions</source>
         <translation>Экспортировать транзакции</translation>
     </message>
@@ -984,8 +980,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Calcul de la transaction en cours: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
-        <location filename="../src/mainwindow.cpp" line="1109"/>
+        <location filename="../src/mainwindow.cpp" line="1090"/>
+        <location filename="../src/mainwindow.cpp" line="1106"/>
         <source>The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited</source>
         <translation>Ключи были импортированы. Повторное сканирование блокчейна может занять несколько минут. До тех пор функциональность может быть ограничена</translation>
     </message>
@@ -994,12 +990,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Rescan de l&apos;import de la clef privée achevé</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="773"/>
+        <location filename="../src/mainwindow.cpp" line="764"/>
         <source>View tx on block explorer</source>
         <translation>Посмотреть tx в проводнике блоков</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="778"/>
+        <location filename="../src/mainwindow.cpp" line="769"/>
         <source>Refresh</source>
         <translation>Обновить</translation>
     </message>
@@ -1008,7 +1004,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Erreur lors du payement du URI hush</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1023"/>
+        <location filename="../src/mainwindow.cpp" line="1020"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
         <translation>URI должен иметь форму &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
@@ -1033,12 +1029,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Les clef seront importées dans votre noeud hushd connecté</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1142"/>
+        <location filename="../src/mainwindow.cpp" line="1139"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1143"/>
+        <location filename="../src/mainwindow.cpp" line="1140"/>
         <source>Error exporting transactions, file was not saved</source>
         <translation>Ошибка экспорта транзакций, файл не сохранен</translation>
     </message>
@@ -1071,18 +1067,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Vous devez le sauvegarder manuellement.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1255"/>
+        <location filename="../src/mainwindow.cpp" line="1247"/>
         <source>These are all the private keys for all the addresses in your wallet</source>
         <translation>Это все приватные ключи для всех адресов в вашем кошельке</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1257"/>
+        <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Private key for </source>
         <translation>Приватный ключ для </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1180"/>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1254"/>
         <source>Save File</source>
         <translation>Сохранить Файл</translation>
     </message>
@@ -1097,7 +1093,7 @@ Please use &apos;Remove Wallet Encryption&apos; if you want to remove the wallet
 Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhaitez supprimer le chiffrement du portefeuille.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="548"/>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Passwords don&apos;t match</source>
         <translation>Пароли не совпадают</translation>
     </message>
@@ -1116,13 +1112,13 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
         <translation type="vanished">Votre portefeuille a été crypté avec succès! Le mot de passe sera nécessaire pour envoyer des fonds ou exporter des clés privées.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="613"/>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="606"/>
+        <location filename="../src/mainwindow.cpp" line="685"/>
         <source>Wallet Encryption Failed</source>
         <translation>Ошибка Шифрования Кошелька</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="533"/>
+        <location filename="../src/mainwindow.cpp" line="527"/>
         <source>Wallet is not encrypted</source>
         <translation>Кошелек не зашифрован</translation>
     </message>
@@ -1155,104 +1151,145 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
         <translation type="vanished">Votre portefeuille a été déchiffré avec succès! Vous n&apos;aurez plus besoin d&apos;un mot de passe pour envoyer des fonds ou exporter des clés privées.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="768"/>
-        <location filename="../src/mainwindow.cpp" line="1421"/>
+        <location filename="../src/mainwindow.cpp" line="759"/>
+        <location filename="../src/mainwindow.cpp" line="1413"/>
         <source>Copy block explorer link</source>
         <translation>Скопировать ссылку на обозреватель блоков</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="832"/>
+        <location filename="../src/mainwindow.cpp" line="823"/>
         <source>Currency Change</source>
         <translation>Сменить Валюту</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1176"/>
+        <location filename="../src/mainwindow.cpp" line="1173"/>
         <source>This is your wallet seed. Please back it up carefully and safely.</source>
         <translation>Это seed вашего кошелька. Пожалуйста, сохраните резервную копию в надежном месте.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1184"/>
-        <location filename="../src/mainwindow.cpp" line="1266"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1258"/>
         <source>Unable to open file</source>
         <translation>Невозможно открыть файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1234"/>
+        <location filename="../src/mainwindow.cpp" line="1226"/>
         <source>Error getting private keys</source>
         <translation>Ошибка получения приватных ключей</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1235"/>
+        <location filename="../src/mainwindow.cpp" line="1227"/>
         <source>Error loading private keys: </source>
         <translation>Ошибка загрузки приватных ключей: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1339"/>
-        <location filename="../src/mainwindow.cpp" line="1416"/>
+        <location filename="../src/mainwindow.cpp" line="1331"/>
+        <location filename="../src/mainwindow.cpp" line="1408"/>
         <source>Copy address</source>
         <translation>Копировать адрес</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1313"/>
-        <location filename="../src/mainwindow.cpp" line="1342"/>
-        <location filename="../src/mainwindow.cpp" line="1412"/>
-        <location filename="../src/mainwindow.cpp" line="1418"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
+        <location filename="../src/mainwindow.cpp" line="1404"/>
+        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Copied to clipboard</source>
         <translation>Скопировано в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="206"/>
-        <location filename="../src/mainwindow.cpp" line="237"/>
+        <location filename="../src/mainwindow.cpp" line="197"/>
+        <location filename="../src/mainwindow.cpp" line="228"/>
         <source>Failed to restore wallet</source>
         <translation>Не удалось восстановить кошелек</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="207"/>
+        <location filename="../src/mainwindow.cpp" line="198"/>
         <source>SilentDragonLite needs 24 words to restore wallet</source>
         <translation>SilentDragonLite требует 24 слова для восстановления кошелька</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="218"/>
+        <location filename="../src/mainwindow.cpp" line="209"/>
         <source>Failed to parse wallet birthday</source>
         <translation>Не удалось разобрать день рождения кошелька</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="219"/>
+        <location filename="../src/mainwindow.cpp" line="210"/>
         <source>Couldn&apos;t understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as &apos;0&apos; if you don&apos;t know what it should be.</source>
         <translation>Неверное день рождение бумажника. Должна быть высота блока, откуда можно повторно сканировать кошелек. Вы можете оставить его как &apos;0&apos;, если не знаете, каким оно должно быть.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="238"/>
+        <location filename="../src/mainwindow.cpp" line="229"/>
         <source>Couldn&apos;t restore the wallet</source>
         <translation>Не удалось восстановить кошелек</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="254"/>
+        <location filename="../src/mainwindow.cpp" line="245"/>
         <source>Failed to save wallet</source>
         <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="255"/>
+        <location filename="../src/mainwindow.cpp" line="246"/>
         <source>Couldn&apos;t save the wallet</source>
         <translation>Не удалось сохранить кошелек</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="511"/>
         <source>Wallet Encryption Success</source>
         <translation>Успешное Шифрование Кошелька</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="528"/>
         <source>Your wallet is not encrypted with a passphrase.</source>
         <translation>Ваш кошелек не зашифрован парольной фразой.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="604"/>
+        <location filename="../src/mainwindow.cpp" line="600"/>
         <source>Wallet decryption Success</source>
         <translation>Успешная расшифровка Кошелька</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1345"/>
+        <location filename="../src/mainwindow.cpp" line="909"/>
+        <source>Send some private and shielded feedback about</source>
+        <translation>Отправить приватный и экранированный отзыв о </translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="923"/>
+        <source>Private key import rescan in progress. Your funds will be shielded into this wallet and backed up by your seed phrase. This will take some time</source>
+        <translation>Выполняется повторное сканирование через импорт приватного ключа. Ваши средства будут экранированы этим кошельком и будут поддерживаться seed фразой. Это займет некоторое время</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="940"/>
+        <location filename="../src/mainwindow.cpp" line="946"/>
+        <source>Wrong Private key format</source>
+        <translation>Неверный формат приватного ключа</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="941"/>
+        <source>That private key is too long. It should be 51 or 52 characters.</source>
+        <translation>Этот приватный ключ слишком длинный. Должно быть 51 или 52 символа.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="947"/>
+        <source>That private key is too short. It should be 51 or 52 characters.</source>
+        <translation>Этот приватный ключ слишком короткий. Должно быть 51 или 52 символа.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="953"/>
+        <source>Privatkey should start with 5, K, L or U (for taddr) or secret- (for zaddr)</source>
+        <translation>Приватный ключ должен начинаться с 5, K, L или U (для taddr) или secret- (для zaddr)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <source>Caution: If this key is for a zaddr it will be NOT included in your Seed. Please send them direct to a Seed zaddr</source>
+        <translation>Внимание: если этот ключ предназначен для zaddr, он НЕ будет включен в ваш Seed. Пожалуйста, отправьте их прямо на Seed zaddr</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <source>Transparent address (R.. or t1..) keys will be automatically sent to a zaddr in your Seed</source>
+        <translation>Ключи с прозрачным адресом (R.. или t1..) будут автоматически отправлены на zaddr в вашем Seed.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>Get private key</source>
         <translation>Получить приватный ключ</translation>
     </message>
@@ -1261,8 +1298,8 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
         <translation type="vanished">Rendre privé le solde vers Sapling</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1351"/>
-        <location filename="../src/mainwindow.cpp" line="1426"/>
+        <location filename="../src/mainwindow.cpp" line="1343"/>
+        <location filename="../src/mainwindow.cpp" line="1418"/>
         <source>View on block explorer</source>
         <translation>Просмотр в проводнике блоков</translation>
     </message>
@@ -1271,8 +1308,8 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
         <translation type="vanished">Migrer vers Sapling</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="765"/>
-        <location filename="../src/mainwindow.cpp" line="1410"/>
+        <location filename="../src/mainwindow.cpp" line="756"/>
+        <location filename="../src/mainwindow.cpp" line="1402"/>
         <source>Copy txid</source>
         <translation>Копировать txid</translation>
     </message>
@@ -1285,117 +1322,112 @@ Veuillez utiliser &quot;Supprimer le chiffrement du wallet&quot; si vous souhait
         <translation type="vanished">Veuillez redémarrer SilentDragonLite pour aplliqué le thème.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="832"/>
+        <location filename="../src/mainwindow.cpp" line="823"/>
         <source>This change can take a few seconds.</source>
         <translation>Это изменение может занять несколько секунд.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="917"/>
+        <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Some feedback about SilentDragonlite or Hush...</source>
         <translation>Немного отзывов о SilentDragonlite или Hush...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="919"/>
+        <location filename="../src/mainwindow.cpp" line="909"/>
         <source> or SilentDragonLite</source>
         <translation> или SilentDragonLite</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="919"/>
         <source>Send DenioD some private and shielded feedback about</source>
-        <translation>Отправить DenioD секретный и закрытый отзыв о</translation>
+        <translation type="vanished">Отправить DenioD секретный и закрытый отзыв о</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="933"/>
         <source>Private key import rescan in progress. Your funds will be automaticly shield to a wallet seed zaddr. This will take some time</source>
-        <translation>Выполняется повторное сканирование импорта приватного ключа. Ваши средства будут автоматически отправлены в seed zaddr кошелька. Это займет некоторое время</translation>
+        <translation type="vanished">Выполняется повторное сканирование импорта приватного ключа. Ваши средства будут автоматически отправлены в seed zaddr кошелька. Это займет некоторое время</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="955"/>
+        <location filename="../src/mainwindow.cpp" line="952"/>
         <source>Wrong Privatkey format</source>
         <translation>Неверный формат Приватногоключа</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
         <source>Privatkey should start with U (for taddr) or secret- (for zaddr)</source>
-        <translation>Приватныйключ должен начинаться с U (для taddr) или secret- (для zaddr)</translation>
+        <translation type="vanished">Приватныйключ должен начинаться с U (для taddr) или secret- (для zaddr)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1010"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>Paste HUSH URI</source>
         <translation>Вставить HUSH URI</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>Error paying HUSH URI</source>
         <translation>Ошибка при оплате HUSH URI</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
+        <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Please paste your private key(zs-Addr or R-addr) here, one per import</source>
         <translation>Вставьте пожалуйста сюда свой приватный ключ (zs-Addr или R-addr), по одному при каждом импорте</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr</source>
-        <translation>Внимание: если этот ключ предназначен для Zs-addr, то он НЕ будет включен в ваш Seed. Отправьте их напрямую в Seed zs-addr</translation>
+        <translation type="vanished">Внимание: если этот ключ предназначен для Zs-addr, то он НЕ будет включен в ваш Seed. Отправьте их напрямую в Seed zs-addr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1056"/>
         <source>R-addr keys will be autoshield to a seed zs-addr</source>
-        <translation>R-addr ключи будут autoshield к zs-addr</translation>
+        <translation type="vanished">R-addr ключи будут autoshield к zs-addr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1122"/>
+        <location filename="../src/mainwindow.cpp" line="1119"/>
         <source>The keys were imported without rescan option. The Address you imported will be visible without balance</source>
         <translation>Ключи были импортированы без возможности повторного сканирования. Импортированный вами адрес будет виден без баланса</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1432"/>
+        <location filename="../src/mainwindow.cpp" line="1424"/>
         <source>View Payment Request</source>
         <translation>Просмотреть Запрос на Оплату</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1439"/>
+        <location filename="../src/mainwindow.cpp" line="1431"/>
         <source>View Memo</source>
         <translation>Просмотреть Памятку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1454"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>Reply to </source>
         <translation>Ответить на </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1583"/>
+        <location filename="../src/mainwindow.cpp" line="1575"/>
         <source>Copied Hyperlink to clipboard</source>
         <translation>Гиперссылка Скопирована в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1619"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>Copied message to clipboard</source>
         <translation>Сообщение скопировано в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1652"/>
+        <location filename="../src/mainwindow.cpp" line="1644"/>
         <source>Copied Txid to clipboard</source>
         <translation>Txid был скопирован в буфер обмена</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2483"/>
+        <location filename="../src/mainwindow.cpp" line="2475"/>
         <source>Created new t-Addr</source>
         <translation>Создан новый t-Addr</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2539"/>
+        <location filename="../src/mainwindow.cpp" line="2531"/>
         <source>Copy Address</source>
         <translation>Копировать адрес</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2642"/>
+        <location filename="../src/mainwindow.cpp" line="2634"/>
         <source>Address has been previously used</source>
         <translation>Адрес использовался ранее</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2644"/>
+        <location filename="../src/mainwindow.cpp" line="2636"/>
         <source>Address is unused</source>
         <translation>Адрес не используется</translation>
     </message>
@@ -1426,7 +1458,7 @@ doesn&apos;t look like a z-address</source>
 Cette adresse ne semble pas être de type adresse-z</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="908"/>
+        <location filename="../src/chatmodel.cpp" line="884"/>
         <location filename="../src/sendtab.cpp" line="861"/>
         <source>Please wait...</source>
         <translation>Пожалуйста, подождите...</translation>
@@ -1437,7 +1469,7 @@ Cette adresse ne semble pas être de type adresse-z</translation>
         <translation>Вычисление вашей транзакции</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="919"/>
+        <location filename="../src/chatmodel.cpp" line="895"/>
         <location filename="../src/sendtab.cpp" line="871"/>
         <source>Done!</source>
         <translation>Готово!</translation>
@@ -1492,88 +1524,88 @@ Remarque: Les fonds nécessitent 5 confirmations avant de pouvoir être dépens�
         <translation type="vanished">L&apos;adresse de l&apos;émetteur est invalide</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="556"/>
-        <location filename="../src/chatmodel.cpp" line="841"/>
+        <location filename="../src/chatmodel.cpp" line="530"/>
+        <location filename="../src/chatmodel.cpp" line="817"/>
         <source>You have to select a contact and insert a Memo</source>
         <translation>Вы должны выбрать контакт и добавить Памятку</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="557"/>
-        <location filename="../src/chatmodel.cpp" line="842"/>
+        <location filename="../src/chatmodel.cpp" line="531"/>
+        <location filename="../src/chatmodel.cpp" line="818"/>
         <source>You have selected no Contact from Contactlist,
 </source>
         <translation>Вы не выбрали ни одного контакта из списка контактов,
 </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="557"/>
-        <location filename="../src/chatmodel.cpp" line="842"/>
+        <location filename="../src/chatmodel.cpp" line="531"/>
+        <location filename="../src/chatmodel.cpp" line="818"/>
         <source>
 or your Memo is empty</source>
         <translation>
 или ваша Памятка пустая</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="571"/>
-        <location filename="../src/chatmodel.cpp" line="868"/>
+        <location filename="../src/chatmodel.cpp" line="545"/>
+        <location filename="../src/chatmodel.cpp" line="844"/>
         <source>Your Message is too long</source>
         <translation>Ваше Сообщение слишком длинное</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="572"/>
+        <location filename="../src/chatmodel.cpp" line="546"/>
         <source>You can only write messages with 235 character maximum 
 </source>
         <translation>Вы можете писать сообщения длиной не более 235 символов 
 </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="572"/>
-        <location filename="../src/chatmodel.cpp" line="869"/>
+        <location filename="../src/chatmodel.cpp" line="546"/>
+        <location filename="../src/chatmodel.cpp" line="845"/>
         <source>
  Please reduce your message to 235 character.</source>
         <translation>
  Пожалуйста, сократите ваше сообщение до 235 символов.</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="585"/>
-        <location filename="../src/chatmodel.cpp" line="882"/>
-        <location filename="../src/mainwindow.cpp" line="1991"/>
-        <location filename="../src/mainwindow.cpp" line="2280"/>
+        <location filename="../src/chatmodel.cpp" line="559"/>
+        <location filename="../src/chatmodel.cpp" line="858"/>
+        <location filename="../src/mainwindow.cpp" line="1982"/>
+        <location filename="../src/mainwindow.cpp" line="2272"/>
         <source>Message Error</source>
         <translation>Сообщение Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="701"/>
-        <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2105"/>
-        <location filename="../src/mainwindow.cpp" line="2386"/>
+        <location filename="../src/chatmodel.cpp" line="675"/>
+        <location filename="../src/chatmodel.cpp" line="994"/>
+        <location filename="../src/mainwindow.cpp" line="2096"/>
+        <location filename="../src/mainwindow.cpp" line="2378"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source>Recipient Address </source>
         <translation>Адрес Получателя </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="701"/>
-        <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2105"/>
-        <location filename="../src/mainwindow.cpp" line="2386"/>
+        <location filename="../src/chatmodel.cpp" line="675"/>
+        <location filename="../src/chatmodel.cpp" line="994"/>
+        <location filename="../src/mainwindow.cpp" line="2096"/>
+        <location filename="../src/mainwindow.cpp" line="2378"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source> is Invalid</source>
         <translation> является недействительным</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="708"/>
-        <location filename="../src/chatmodel.cpp" line="1024"/>
-        <location filename="../src/mainwindow.cpp" line="2112"/>
-        <location filename="../src/mainwindow.cpp" line="2392"/>
+        <location filename="../src/chatmodel.cpp" line="682"/>
+        <location filename="../src/chatmodel.cpp" line="1000"/>
+        <location filename="../src/mainwindow.cpp" line="2103"/>
+        <location filename="../src/mainwindow.cpp" line="2384"/>
         <location filename="../src/sendtab.cpp" line="932"/>
         <source>Amount for address &apos;%1&apos; is invalid!</source>
         <translation>Сумма на адресе &apos;%1&apos; является недействительным!</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="718"/>
-        <location filename="../src/chatmodel.cpp" line="1034"/>
-        <location filename="../src/mainwindow.cpp" line="2123"/>
-        <location filename="../src/mainwindow.cpp" line="2402"/>
+        <location filename="../src/chatmodel.cpp" line="692"/>
+        <location filename="../src/chatmodel.cpp" line="1010"/>
+        <location filename="../src/mainwindow.cpp" line="2114"/>
+        <location filename="../src/mainwindow.cpp" line="2394"/>
         <location filename="../src/sendtab.cpp" line="942"/>
         <source>Not enough available funds to send this transaction
 
@@ -1589,14 +1621,14 @@ Note: Funds need 1 confirmations before they can be spent</source>
 Примечание: Для использования средств необходимо одно подтверждение</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="869"/>
+        <location filename="../src/chatmodel.cpp" line="845"/>
         <source>You can only write messages with 512 character maximum 
 </source>
         <translation>Вы можете писать сообщения длиной не более 512 символов 
 </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="909"/>
+        <location filename="../src/chatmodel.cpp" line="885"/>
         <source>Your contact request will be sent</source>
         <translation>Ваш запрос на контакты будет отправлен</translation>
     </message>
@@ -1910,42 +1942,42 @@ Not starting embedded hushd because --no-embedded was passed</source>
         <translation type="vanished">Une erreur est survenue lors de la connection à hushd. L&apos;erreur est</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="664"/>
-        <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2068"/>
-        <location filename="../src/mainwindow.cpp" line="2351"/>
+        <location filename="../src/chatmodel.cpp" line="638"/>
+        <location filename="../src/chatmodel.cpp" line="978"/>
+        <location filename="../src/controller.cpp" line="1495"/>
+        <location filename="../src/mainwindow.cpp" line="2059"/>
+        <location filename="../src/mainwindow.cpp" line="2343"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source>The transaction with id </source>
         <translation>Транзакция с id </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="664"/>
-        <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2068"/>
-        <location filename="../src/mainwindow.cpp" line="2351"/>
+        <location filename="../src/chatmodel.cpp" line="638"/>
+        <location filename="../src/chatmodel.cpp" line="978"/>
+        <location filename="../src/controller.cpp" line="1495"/>
+        <location filename="../src/mainwindow.cpp" line="2059"/>
+        <location filename="../src/mainwindow.cpp" line="2343"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source> failed. The error was</source>
         <translation> не удалось. Ошибка была</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="660"/>
-        <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2064"/>
-        <location filename="../src/mainwindow.cpp" line="2348"/>
+        <location filename="../src/chatmodel.cpp" line="634"/>
+        <location filename="../src/chatmodel.cpp" line="970"/>
+        <location filename="../src/controller.cpp" line="1491"/>
+        <location filename="../src/mainwindow.cpp" line="2055"/>
+        <location filename="../src/mainwindow.cpp" line="2340"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> failed</source>
         <translation> не удалось</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="660"/>
-        <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2064"/>
-        <location filename="../src/mainwindow.cpp" line="2348"/>
+        <location filename="../src/chatmodel.cpp" line="634"/>
+        <location filename="../src/chatmodel.cpp" line="970"/>
+        <location filename="../src/controller.cpp" line="1491"/>
+        <location filename="../src/mainwindow.cpp" line="2055"/>
+        <location filename="../src/mainwindow.cpp" line="2340"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> Tx </source>
@@ -1961,12 +1993,12 @@ Not starting embedded hushd because --no-embedded was passed</source>
         <translation>При подключении к серверу произошла ошибка. Пожалуйста, проверьте ваше интернет-соединение. Ошибка была</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1637"/>
+        <location filename="../src/controller.cpp" line="1593"/>
         <source>Update Available</source>
         <translation>Доступно Обновление</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1638"/>
+        <location filename="../src/controller.cpp" line="1594"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
@@ -1975,18 +2007,19 @@ Would you like to visit the releases page?</source>
 Хотели бы вы посетить страницу релизов?</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1657"/>
+        <location filename="../src/controller.cpp" line="1613"/>
         <source>No updates available</source>
         <translation>Нет доступных обновлений</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1658"/>
+        <location filename="../src/controller.cpp" line="1614"/>
         <source>You already have the latest release v%1</source>
         <translation>У вас уже есть последняя версия v%1</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2042"/>
-        <location filename="../src/controller.cpp" line="2050"/>
+        <location filename="../src/controller.cpp" line="1998"/>
+        <location filename="../src/controller.cpp" line="1999"/>
+        <location filename="../src/controller.cpp" line="2006"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation>Пожалуйста подождите SilentDragonLite для выхода</translation>
     </message>
@@ -1995,8 +2028,7 @@ Would you like to visit the releases page?</source>
         <translation type="vanished">Veuillez patienter. Fermeture de silentdragon en cours</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2043"/>
-        <location filename="../src/controller.cpp" line="2051"/>
+        <location filename="../src/controller.cpp" line="2007"/>
         <source>Waiting for hushd to exit</source>
         <translation>Ожидание выхода hushd</translation>
     </message>
@@ -2038,34 +2070,34 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
         <translation>Попытка инициализировать библиотеку с помощью </translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="151"/>
+        <location filename="../src/connection.cpp" line="150"/>
         <source>Using existing wallet.</source>
         <translation>Использование существующего кошелька.</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="165"/>
+        <location filename="../src/connection.cpp" line="178"/>
         <source>Create/restore wallet.</source>
         <translation>Создать/восстановить кошелек.</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="303"/>
+        <location filename="../src/connection.cpp" line="318"/>
         <location filename="../src/controller.cpp" line="594"/>
         <source>Connection Error</source>
         <translation>Ошибка Соединения</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="666"/>
-        <location filename="../src/chatmodel.cpp" line="1004"/>
-        <location filename="../src/connection.cpp" line="416"/>
-        <location filename="../src/controller.cpp" line="1543"/>
-        <location filename="../src/mainwindow.cpp" line="2070"/>
-        <location filename="../src/mainwindow.cpp" line="2353"/>
+        <location filename="../src/chatmodel.cpp" line="640"/>
+        <location filename="../src/chatmodel.cpp" line="980"/>
+        <location filename="../src/connection.cpp" line="431"/>
+        <location filename="../src/controller.cpp" line="1499"/>
+        <location filename="../src/mainwindow.cpp" line="2061"/>
+        <location filename="../src/mainwindow.cpp" line="2345"/>
         <location filename="../src/sendtab.cpp" line="913"/>
         <source>Transaction Error</source>
         <translation>Ошибка Транзакции</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="417"/>
+        <location filename="../src/connection.cpp" line="432"/>
         <source>There was an error sending the transaction. The error was:</source>
         <translation>При отправке произошла ошибка. Ошибка была:</translation>
     </message>
@@ -2082,22 +2114,22 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="203"/>
-        <location filename="../src/chatmodel.cpp" line="233"/>
-        <location filename="../src/chatmodel.cpp" line="942"/>
+        <location filename="../src/chatmodel.cpp" line="229"/>
+        <location filename="../src/chatmodel.cpp" line="918"/>
         <source>Address or Label Error</source>
         <translation>Ошибка в Адресе или Этикетке</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="204"/>
-        <location filename="../src/chatmodel.cpp" line="234"/>
-        <location filename="../src/chatmodel.cpp" line="943"/>
+        <location filename="../src/chatmodel.cpp" line="230"/>
+        <location filename="../src/chatmodel.cpp" line="919"/>
         <source>Address or Label cannot be empty</source>
         <translation>Адрес или Метка не могут быть пустыми</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="214"/>
-        <location filename="../src/chatmodel.cpp" line="259"/>
-        <location filename="../src/chatmodel.cpp" line="965"/>
+        <location filename="../src/chatmodel.cpp" line="255"/>
+        <location filename="../src/chatmodel.cpp" line="941"/>
         <source>Address Format Error</source>
         <translation>Ошибка в Формате Адреса</translation>
     </message>
@@ -2107,36 +2139,36 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="215"/>
-        <location filename="../src/chatmodel.cpp" line="260"/>
-        <location filename="../src/chatmodel.cpp" line="966"/>
+        <location filename="../src/chatmodel.cpp" line="256"/>
+        <location filename="../src/chatmodel.cpp" line="942"/>
         <source>%1 doesn&apos;t seem to be a valid hush address.</source>
         <translation>%1 недействительный hush адрес.</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="226"/>
-        <location filename="../src/chatmodel.cpp" line="246"/>
-        <location filename="../src/chatmodel.cpp" line="855"/>
-        <location filename="../src/chatmodel.cpp" line="953"/>
+        <location filename="../src/chatmodel.cpp" line="242"/>
+        <location filename="../src/chatmodel.cpp" line="831"/>
+        <location filename="../src/chatmodel.cpp" line="929"/>
         <source>Label Error</source>
         <translation>Ошибка Ярлыка</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="227"/>
-        <location filename="../src/chatmodel.cpp" line="247"/>
-        <location filename="../src/chatmodel.cpp" line="856"/>
-        <location filename="../src/chatmodel.cpp" line="954"/>
+        <location filename="../src/chatmodel.cpp" line="243"/>
+        <location filename="../src/chatmodel.cpp" line="832"/>
+        <location filename="../src/chatmodel.cpp" line="930"/>
         <source>The label &apos;%1&apos; already exists. Please remove the existing label.</source>
         <translation>Метка &apos;%1&apos; уже существует. Удалите существующую.</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="238"/>
-        <location filename="../src/chatmodel.cpp" line="978"/>
+        <location filename="../src/chatmodel.cpp" line="954"/>
         <source>Added Contact</source>
         <translation>Добавлен Контакт</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="239"/>
-        <location filename="../src/chatmodel.cpp" line="979"/>
+        <location filename="../src/chatmodel.cpp" line="955"/>
         <source>successfully added your new contact</source>
         <translation>ваш новый контакт был успешно добавлен</translation>
     </message>
@@ -2176,7 +2208,7 @@ Veuillez configurer l&apos;hôte/port et utilisateur/mot de passe dans le menu E
         <translation>Удалить метку</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="301"/>
+        <location filename="../src/settings.cpp" line="353"/>
         <source>Tx submitted (right click to copy) txid:</source>
         <translation>Tx отправлен (нажмите правой кнопкой мыши, чтобы скопировать) txid:</translation>
     </message>
