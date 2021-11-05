@@ -30,6 +30,12 @@ Controller::Controller(MainWindow* main)
     this->main = main;
     this->ui = main->ui;
 
+    auto current_server = Settings::getInstance()->getSettings().server;
+    main->ui->current_server->setText(current_server);
+
+    auto stickyServer = Settings::getInstance()->getSettings().stickyServer;
+    main->ui->sticky_server->setText( stickyServer ? "True" : "False" );
+
     // Setup balances table model
     balancesTableModel = new BalancesTableModel(main->ui->balancesTable);
     main->ui->balancesTable->setModel(balancesTableModel);
@@ -37,6 +43,7 @@ Controller::Controller(MainWindow* main)
     // Setup transactions table model
     transactionsTableModel = new TxTableModel(ui->transactionsTable);
     main->ui->transactionsTable->setModel(transactionsTableModel);
+
     
     // Set up timer to refresh Price
     priceTimer = new QTimer(main);
@@ -60,10 +67,6 @@ Controller::Controller(MainWindow* main)
         supplyUpdate();
     });
     timer->start(Settings::priceRefreshSpeed); 
-
-    main->ui->current_server->setText("current.server");
-    main->ui->config_server->setText("config.server");
-    main->ui->sticky_server->setText("Sticky?");
 
     // Create the data model
     model = new DataModel();

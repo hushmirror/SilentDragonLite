@@ -1692,46 +1692,45 @@
              </item>
 
              <item row="10" column="0">
-              <widget class="QLabel" name="current_server">
+              <widget class="QLabel" name="current_server_label">
                <property name="text">
                 <string>Current Server</string>
                </property>
               </widget>
              </item>
-             <item row="10" column="2">
-              <widget class="QLabel" name="label_39">
+             <item row="10" column="1">
+              <widget class="QLabel" name="label_23">
                <property name="text">
-                <string>...</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="2">
+              <widget class="QLabel" name="current_server">
+               <property name="text">
+                <string>Loading...</string>
                </property>
               </widget>
              </item>
 
              <item row="11" column="0">
-              <widget class="QLabel" name="config_server">
-               <property name="text">
-                <string>Configured Server</string>
-               </property>
-              </widget>
-             </item>
-             <item row="11" column="2">
-              <widget class="QLabel" name="label_40">
-               <property name="text">
-                <string>...</string>
-               </property>
-              </widget>
-             </item>
-
-             <item row="12" column="0">
-              <widget class="QLabel" name="sticky_server">
+              <widget class="QLabel" name="sticky_server_label">
                <property name="text">
                 <string>Sticky Server</string>
                </property>
               </widget>
              </item>
-             <item row="12" column="2">
-              <widget class="QLabel" name="label_41">
+             <item row="11" column="1">
+              <widget class="QLabel" name="label_23">
                <property name="text">
-                <string>...</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="2">
+              <widget class="QLabel" name="sticky_server">
+               <property name="text">
+                <string>Loading...</string>
                </property>
               </widget>
              </item>
