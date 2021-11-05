@@ -20,9 +20,22 @@ then
     echo "rustc could not be found. Please install it and try again."
     exit 1
 fi
+
 if ! command -v cargo &> /dev/null
 then
     echo "cargo could not be found. Please install it and try again."
+    exit 1
+fi
+
+if ! command -v qmake &> /dev/null
+then
+    echo "qmake could not be found. Please install QT and try again."
+    exit 1
+fi
+
+if ! command -v make &> /dev/null
+then
+    echo "make could not be found. Please install it and try again."
     exit 1
 fi
 
