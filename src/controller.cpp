@@ -61,6 +61,10 @@ Controller::Controller(MainWindow* main)
     });
     timer->start(Settings::priceRefreshSpeed); 
 
+    main->ui->current_server->setText("current.server");
+    main->ui->config_server->setText("config.server");
+    main->ui->sticky_server->setText("Sticky?");
+
     // Create the data model
     model = new DataModel();
 

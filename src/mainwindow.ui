@@ -1682,6 +1682,7 @@
                </property>
               </widget>
              </item>
+
              <item row="9" column="0">
               <widget class="QLabel" name="label_37">
                <property name="text">
@@ -1689,6 +1690,52 @@
                </property>
               </widget>
              </item>
+
+             <item row="10" column="0">
+              <widget class="QLabel" name="current_server">
+               <property name="text">
+                <string>Current Server</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="2">
+              <widget class="QLabel" name="label_39">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+
+             <item row="11" column="0">
+              <widget class="QLabel" name="config_server">
+               <property name="text">
+                <string>Configured Server</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="2">
+              <widget class="QLabel" name="label_40">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+
+             <item row="12" column="0">
+              <widget class="QLabel" name="sticky_server">
+               <property name="text">
+                <string>Sticky Server</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="2">
+              <widget class="QLabel" name="label_41">
+               <property name="text">
+                <string>...</string>
+               </property>
+              </widget>
+             </item>
+
              <item row="3" column="1">
               <widget class="QLabel" name="label_13">
                <property name="text">
