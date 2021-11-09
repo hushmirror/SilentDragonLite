@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=SilentDragonLite
+Exec=/home/user/SilentDragonLite/SilentDragonLite
+Icon=/home/user/SilentDragonLite/res/SDLogo.png
+Terminal=false
+Type=Application
