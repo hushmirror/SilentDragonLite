@@ -84,6 +84,12 @@ SilentDragonLite does automatic note and utxo management, which means it doesn't
 * Will automatically shield your transparent funds at the first opportunity
 * When sending an outgoing transaction to a shielded address, SilentDragonLite can decide to use the transaction to additionally shield your transparent funds (i.e., send your transparent funds to your own shielded address in the same transaction)
 
+## Where is my wallet stored?
+
+Linux: `~/.silentdragonlite`
+
+Windows 10: `C:\Users\%user\AppData\Roaming\silentdragonlite`
+
 ## Support
 
 For support join us on [Telegram Support](https://hush.is/telegram_support), or our [Main Telegram](https://hush.is/telegram) or tweet at [@MyHushTeam](https://twitter.com/MyHushTeam), or toot at our [Mastodon](https://fosstodon.org/@myhushteam), or [file an issue](https://git.hush.is/hush/SilentDragonLite/issues).
