@@ -163,6 +163,7 @@ TRANSLATIONS = res/silentdragonlite_ar.ts \
                res/silentdragonlite_hr.ts \
                res/silentdragonlite_id.ts \
                res/silentdragonlite_it.ts \
+               res/silentdragonlite_nl.ts \
                res/silentdragonlite_pt.ts \
                res/silentdragonlite_ro.ts \
                res/silentdragonlite_ru.ts \
