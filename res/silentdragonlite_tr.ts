@@ -110,29 +110,29 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1479"/>
+        <location filename="../src/controller.cpp" line="1442"/>
         <source>Wallet Password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1480"/>
+        <location filename="../src/controller.cpp" line="1443"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1488"/>
-        <location filename="../src/controller.cpp" line="1508"/>
+        <location filename="../src/controller.cpp" line="1451"/>
+        <location filename="../src/controller.cpp" line="1471"/>
         <source>Wallet Decryption Failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1489"/>
+        <location filename="../src/controller.cpp" line="1452"/>
         <source>Please enter a valid password</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1578"/>
+        <location filename="../src/controller.cpp" line="1541"/>
         <source>Failed to unlock wallet</source>
         <translation type="unfinished"></translation>
     </message>
@@ -412,8 +412,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1056"/>
-        <location filename="../src/mainwindow.cpp" line="1371"/>
-        <location filename="../src/mainwindow.cpp" line="1439"/>
+        <location filename="../src/mainwindow.cpp" line="1364"/>
+        <location filename="../src/mainwindow.cpp" line="1432"/>
         <location filename="../src/sendtab.cpp" line="294"/>
         <source>Memo</source>
         <translation>Memo</translation>
@@ -472,11 +472,13 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1646"/>
         <location filename="../src/mainwindow.ui" line="1660"/>
         <location filename="../src/mainwindow.ui" line="1681"/>
-        <location filename="../src/mainwindow.ui" line="1695"/>
-        <location filename="../src/mainwindow.ui" line="1709"/>
-        <location filename="../src/mainwindow.ui" line="1737"/>
-        <location filename="../src/mainwindow.ui" line="1809"/>
-        <location filename="../src/mainwindow.ui" line="1830"/>
+        <location filename="../src/mainwindow.ui" line="1704"/>
+        <location filename="../src/mainwindow.ui" line="1726"/>
+        <location filename="../src/mainwindow.ui" line="1741"/>
+        <location filename="../src/mainwindow.ui" line="1755"/>
+        <location filename="../src/mainwindow.ui" line="1783"/>
+        <location filename="../src/mainwindow.ui" line="1855"/>
+        <location filename="../src/mainwindow.ui" line="1876"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -496,17 +498,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1688"/>
+        <location filename="../src/mainwindow.ui" line="1689"/>
         <source>Total Supply</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1702"/>
+        <location filename="../src/mainwindow.ui" line="1697"/>
+        <source>Current Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="1719"/>
+        <source>Sticky Server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="1748"/>
         <source>Longestchain</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2038"/>
+        <location filename="../src/mainwindow.ui" line="2084"/>
         <source>Import Private Key</source>
         <translation type="unfinished"></translation>
     </message>
@@ -551,12 +563,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1957"/>
+        <location filename="../src/mainwindow.ui" line="2003"/>
         <source>&amp;Hush Telegram</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1962"/>
+        <location filename="../src/mainwindow.ui" line="2008"/>
         <source>&amp;Hush Website</source>
         <translation type="unfinished"></translation>
     </message>
@@ -665,7 +677,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1381"/>
-        <location filename="../src/mainwindow.cpp" line="2532"/>
+        <location filename="../src/mainwindow.cpp" line="2525"/>
         <source>Export Private Key</source>
         <translation>Özel Anahtarı Dışarı Aktar</translation>
     </message>
@@ -675,62 +687,62 @@ p, li { white-space: pre-wrap; }
         <translation>İşlemler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1716"/>
+        <location filename="../src/mainwindow.ui" line="1762"/>
         <source>Version hushlightd</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1723"/>
+        <location filename="../src/mainwindow.ui" line="1769"/>
         <source>BlockHeight</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1730"/>
+        <location filename="../src/mainwindow.ui" line="1776"/>
         <source>Supply zAddr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1758"/>
+        <location filename="../src/mainwindow.ui" line="1804"/>
         <source>Supply tAddr</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1779"/>
+        <location filename="../src/mainwindow.ui" line="1825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Market Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1802"/>
+        <location filename="../src/mainwindow.ui" line="1848"/>
         <source>Market Cap</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1823"/>
+        <location filename="../src/mainwindow.ui" line="1869"/>
         <source>Volume on Exchanges</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1846"/>
+        <location filename="../src/mainwindow.ui" line="1892"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;This is a Lightwallet, you cant mine with it!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1952"/>
+        <location filename="../src/mainwindow.ui" line="1998"/>
         <source>&amp;Send DenioD Feedback</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2023"/>
+        <location filename="../src/mainwindow.ui" line="2069"/>
         <source>Encrypt Wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2028"/>
+        <location filename="../src/mainwindow.ui" line="2074"/>
         <source>Remove Wallet Encryption</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2033"/>
+        <location filename="../src/mainwindow.ui" line="2079"/>
         <source>Rescan</source>
         <translation type="unfinished">Yeniden tara</translation>
     </message>
@@ -751,10 +763,12 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1625"/>
         <location filename="../src/mainwindow.ui" line="1632"/>
         <location filename="../src/mainwindow.ui" line="1674"/>
-        <location filename="../src/mainwindow.ui" line="1744"/>
-        <location filename="../src/mainwindow.ui" line="1751"/>
-        <location filename="../src/mainwindow.ui" line="1795"/>
-        <location filename="../src/mainwindow.ui" line="1816"/>
+        <location filename="../src/mainwindow.ui" line="1711"/>
+        <location filename="../src/mainwindow.ui" line="1733"/>
+        <location filename="../src/mainwindow.ui" line="1790"/>
+        <location filename="../src/mainwindow.ui" line="1797"/>
+        <location filename="../src/mainwindow.ui" line="1841"/>
+        <location filename="../src/mainwindow.ui" line="1862"/>
         <source>Loading...</source>
         <translation>Yükleniyor...</translation>
     </message>
@@ -776,42 +790,42 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">|</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1883"/>
+        <location filename="../src/mainwindow.ui" line="1929"/>
         <source>&amp;File</source>
         <translation>Dosya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1897"/>
+        <location filename="../src/mainwindow.ui" line="1943"/>
         <source>&amp;Help</source>
         <translation>Yardım</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1908"/>
+        <location filename="../src/mainwindow.ui" line="1954"/>
         <source>&amp;Apps</source>
         <translation>Uygulamalar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1914"/>
+        <location filename="../src/mainwindow.ui" line="1960"/>
         <source>&amp;Edit</source>
         <translation>Düzenle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1934"/>
+        <location filename="../src/mainwindow.ui" line="1980"/>
         <source>E&amp;xit</source>
         <translation>Çıkış</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1939"/>
+        <location filename="../src/mainwindow.ui" line="1985"/>
         <source>&amp;About</source>
         <translation>Hakkında</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1944"/>
+        <location filename="../src/mainwindow.ui" line="1990"/>
         <source>&amp;Settings</source>
         <translation>Ayarlar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1947"/>
+        <location filename="../src/mainwindow.ui" line="1993"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
@@ -820,7 +834,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Bağış Yap</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1967"/>
+        <location filename="../src/mainwindow.ui" line="2013"/>
         <source>Check git for &amp;updates</source>
         <translation>Güncellemeler için git adresini kontrol edin</translation>
     </message>
@@ -837,48 +851,48 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Özel anahtarı içeri aktar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1972"/>
+        <location filename="../src/mainwindow.ui" line="2018"/>
         <source>&amp;Export all private keys</source>
         <translation>Tüm özel anahtarları dışarı aktar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1985"/>
+        <location filename="../src/mainwindow.ui" line="2031"/>
         <source>&amp;Export seed phrase</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1990"/>
-        <location filename="../src/mainwindow.cpp" line="1135"/>
+        <location filename="../src/mainwindow.ui" line="2036"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Export transactions</source>
         <translation>İşlemleri dışa aktar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1995"/>
+        <location filename="../src/mainwindow.ui" line="2041"/>
         <source>Pay hush &amp;URI...</source>
         <translation>hush URI öde...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2000"/>
+        <location filename="../src/mainwindow.ui" line="2046"/>
         <source>Connect mobile &amp;app</source>
         <translation>Mobil uygulamayı bağla</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2003"/>
+        <location filename="../src/mainwindow.ui" line="2049"/>
         <source>Ctrl+M</source>
         <translation>Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2008"/>
+        <location filename="../src/mainwindow.ui" line="2054"/>
         <source>&amp;Recurring Payments</source>
         <translation>Düzenli Ödemeler</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2013"/>
+        <location filename="../src/mainwindow.ui" line="2059"/>
         <source>Request hush...</source>
         <translation>hush iste...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2018"/>
+        <location filename="../src/mainwindow.ui" line="2064"/>
         <source>File a bug...</source>
         <translation>Hata bildir...</translation>
     </message>
@@ -895,12 +909,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Ctrl+A, Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1977"/>
+        <location filename="../src/mainwindow.ui" line="2023"/>
         <source>Address &amp;book</source>
         <translation>Adres defteri</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1980"/>
+        <location filename="../src/mainwindow.ui" line="2026"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
@@ -934,8 +948,8 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">İşlem Hesaplama: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1092"/>
-        <location filename="../src/mainwindow.cpp" line="1108"/>
+        <location filename="../src/mainwindow.cpp" line="1090"/>
+        <location filename="../src/mainwindow.cpp" line="1106"/>
         <source>The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited</source>
         <translation>Anahtarlar içeri aktarıldı. Blockchain&apos;i yeniden taramak birkaç dakika sürebilir. O zamana kadar, işlevsellik sınırlı olabilir</translation>
     </message>
@@ -952,12 +966,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">hushd henüz hazır değil. Lütfen arayüzün yüklenmesini bekleyin</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="773"/>
+        <location filename="../src/mainwindow.cpp" line="764"/>
         <source>View tx on block explorer</source>
         <translation>İşlemi blok gezgininde görüntüle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="778"/>
+        <location filename="../src/mainwindow.cpp" line="769"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
@@ -1022,7 +1036,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">hush URI ödeme hatası</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1022"/>
+        <location filename="../src/mainwindow.cpp" line="1020"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
         <translation>URI bu şekilde olmalıdır: &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
@@ -1036,12 +1050,12 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">YOUR_TRANSLATION_HERE</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1141"/>
+        <location filename="../src/mainwindow.cpp" line="1139"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1142"/>
+        <location filename="../src/mainwindow.cpp" line="1140"/>
         <source>Error exporting transactions, file was not saved</source>
         <translation>İşlemler dışa aktarılırken hata oluştu, dosya kaydedilmedi</translation>
     </message>
@@ -1078,127 +1092,168 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Bu birkaç dakika sürebilir. Yükleniyor...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1254"/>
+        <location filename="../src/mainwindow.cpp" line="1247"/>
         <source>These are all the private keys for all the addresses in your wallet</source>
         <translation>Bunlar, cüzdanınızdaki tüm adreslerin özel anahtarlarıdır</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Private key for </source>
         <translation> için özel anahtar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1179"/>
-        <location filename="../src/mainwindow.cpp" line="1261"/>
+        <location filename="../src/mainwindow.cpp" line="1177"/>
+        <location filename="../src/mainwindow.cpp" line="1254"/>
         <source>Save File</source>
         <translation>Dosyayı Kaydet</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="548"/>
+        <location filename="../src/mainwindow.cpp" line="545"/>
         <source>Passwords don&apos;t match</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="613"/>
-        <location filename="../src/mainwindow.cpp" line="693"/>
+        <location filename="../src/mainwindow.cpp" line="606"/>
+        <location filename="../src/mainwindow.cpp" line="685"/>
         <source>Wallet Encryption Failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="533"/>
+        <location filename="../src/mainwindow.cpp" line="527"/>
         <source>Wallet is not encrypted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="206"/>
-        <location filename="../src/mainwindow.cpp" line="237"/>
+        <location filename="../src/mainwindow.cpp" line="197"/>
+        <location filename="../src/mainwindow.cpp" line="228"/>
         <source>Failed to restore wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="207"/>
+        <location filename="../src/mainwindow.cpp" line="198"/>
         <source>SilentDragonLite needs 24 words to restore wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="218"/>
+        <location filename="../src/mainwindow.cpp" line="209"/>
         <source>Failed to parse wallet birthday</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="219"/>
+        <location filename="../src/mainwindow.cpp" line="210"/>
         <source>Couldn&apos;t understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as &apos;0&apos; if you don&apos;t know what it should be.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="238"/>
+        <location filename="../src/mainwindow.cpp" line="229"/>
         <source>Couldn&apos;t restore the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="254"/>
+        <location filename="../src/mainwindow.cpp" line="245"/>
         <source>Failed to save wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="255"/>
+        <location filename="../src/mainwindow.cpp" line="246"/>
         <source>Couldn&apos;t save the wallet</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="768"/>
-        <location filename="../src/mainwindow.cpp" line="1420"/>
+        <location filename="../src/mainwindow.cpp" line="759"/>
+        <location filename="../src/mainwindow.cpp" line="1413"/>
         <source>Copy block explorer link</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="832"/>
+        <location filename="../src/mainwindow.cpp" line="823"/>
         <source>Currency Change</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="909"/>
+        <source>Send some private and shielded feedback about</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="923"/>
+        <source>Private key import rescan in progress. Your funds will be shielded into this wallet and backed up by your seed phrase. This will take some time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="940"/>
+        <location filename="../src/mainwindow.cpp" line="946"/>
+        <source>Wrong Private key format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="941"/>
+        <source>That private key is too long. It should be 51 or 52 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="947"/>
+        <source>That private key is too short. It should be 51 or 52 characters.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="953"/>
+        <source>Privatkey should start with 5, K, L or U (for taddr) or secret- (for zaddr)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <source>Caution: If this key is for a zaddr it will be NOT included in your Seed. Please send them direct to a Seed zaddr</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <source>Transparent address (R.. or t1..) keys will be automatically sent to a zaddr in your Seed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1173"/>
         <source>This is your wallet seed. Please back it up carefully and safely.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1183"/>
-        <location filename="../src/mainwindow.cpp" line="1265"/>
+        <location filename="../src/mainwindow.cpp" line="1181"/>
+        <location filename="../src/mainwindow.cpp" line="1258"/>
         <source>Unable to open file</source>
         <translation>Dosya açılamıyor</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1233"/>
+        <location filename="../src/mainwindow.cpp" line="1226"/>
         <source>Error getting private keys</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1234"/>
+        <location filename="../src/mainwindow.cpp" line="1227"/>
         <source>Error loading private keys: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1338"/>
-        <location filename="../src/mainwindow.cpp" line="1415"/>
+        <location filename="../src/mainwindow.cpp" line="1331"/>
+        <location filename="../src/mainwindow.cpp" line="1408"/>
         <source>Copy address</source>
         <translation>Adresi kopyala</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1312"/>
-        <location filename="../src/mainwindow.cpp" line="1341"/>
-        <location filename="../src/mainwindow.cpp" line="1411"/>
-        <location filename="../src/mainwindow.cpp" line="1417"/>
+        <location filename="../src/mainwindow.cpp" line="1305"/>
+        <location filename="../src/mainwindow.cpp" line="1334"/>
+        <location filename="../src/mainwindow.cpp" line="1404"/>
+        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Copied to clipboard</source>
         <translation>Panoya kopyalandı</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1344"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
         <source>Get private key</source>
         <translation>Özel anahtarı al</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1350"/>
-        <location filename="../src/mainwindow.cpp" line="1425"/>
+        <location filename="../src/mainwindow.cpp" line="1343"/>
+        <location filename="../src/mainwindow.cpp" line="1418"/>
         <source>View on block explorer</source>
         <translation>Blok gezgini üzerinde göster</translation>
     </message>
@@ -1207,138 +1262,113 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Sapling&apos;e geç</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2538"/>
+        <location filename="../src/mainwindow.cpp" line="2531"/>
         <source>Copy Address</source>
         <translation>Adresi kopyala</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2641"/>
+        <location filename="../src/mainwindow.cpp" line="2634"/>
         <source>Address has been previously used</source>
         <translation>Adres daha önce kullanılmış</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2643"/>
+        <location filename="../src/mainwindow.cpp" line="2636"/>
         <source>Address is unused</source>
         <translation>Adres kullanılmamış</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="765"/>
-        <location filename="../src/mainwindow.cpp" line="1409"/>
+        <location filename="../src/mainwindow.cpp" line="756"/>
+        <location filename="../src/mainwindow.cpp" line="1402"/>
         <source>Copy txid</source>
         <translation>txid&apos;i kopyala</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="520"/>
+        <location filename="../src/mainwindow.cpp" line="511"/>
         <source>Wallet Encryption Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="534"/>
+        <location filename="../src/mainwindow.cpp" line="528"/>
         <source>Your wallet is not encrypted with a passphrase.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="604"/>
+        <location filename="../src/mainwindow.cpp" line="600"/>
         <source>Wallet decryption Success</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="832"/>
+        <location filename="../src/mainwindow.cpp" line="823"/>
         <source>This change can take a few seconds.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="916"/>
+        <location filename="../src/mainwindow.cpp" line="908"/>
         <source>Some feedback about SilentDragonlite or Hush...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
+        <location filename="../src/mainwindow.cpp" line="909"/>
         <source> or SilentDragonLite</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
-        <source>Send DenioD some private and shielded feedback about</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="932"/>
-        <source>Private key import rescan in progress. Your funds will be automaticly shield to a wallet seed zaddr. This will take some time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="954"/>
+        <location filename="../src/mainwindow.cpp" line="952"/>
         <source>Wrong Privatkey format</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="955"/>
-        <source>Privatkey should start with U (for taddr) or secret- (for zaddr)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1009"/>
+        <location filename="../src/mainwindow.cpp" line="1007"/>
         <source>Paste HUSH URI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1021"/>
+        <location filename="../src/mainwindow.cpp" line="1019"/>
         <source>Error paying HUSH URI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Please paste your private key(zs-Addr or R-addr) here, one per import</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1054"/>
-        <source>Caution: If this key is for Zs-addr it will be NOT inlcude in your Seed. Please send them direct to a Seed zs-addr</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1055"/>
-        <source>R-addr keys will be autoshield to a seed zs-addr</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1121"/>
+        <location filename="../src/mainwindow.cpp" line="1119"/>
         <source>The keys were imported without rescan option. The Address you imported will be visible without balance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1431"/>
+        <location filename="../src/mainwindow.cpp" line="1424"/>
         <source>View Payment Request</source>
         <translation>Ödeme Talebini Görüntüle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1438"/>
+        <location filename="../src/mainwindow.cpp" line="1431"/>
         <source>View Memo</source>
         <translation>Memo&apos;yu Görüntüle</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1453"/>
+        <location filename="../src/mainwindow.cpp" line="1446"/>
         <source>Reply to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1582"/>
+        <location filename="../src/mainwindow.cpp" line="1575"/>
         <source>Copied Hyperlink to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1618"/>
+        <location filename="../src/mainwindow.cpp" line="1611"/>
         <source>Copied message to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1651"/>
+        <location filename="../src/mainwindow.cpp" line="1644"/>
         <source>Copied Txid to clipboard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2482"/>
+        <location filename="../src/mainwindow.cpp" line="2475"/>
         <source>Created new t-Addr</source>
         <translation>Yeni t-Addr oluşturuldu</translation>
     </message>
@@ -1379,7 +1409,7 @@ doesn&apos;t look like a z-address</source>
 z-adres&apos;i gibi görünmüyor</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="908"/>
+        <location filename="../src/chatmodel.cpp" line="884"/>
         <location filename="../src/sendtab.cpp" line="861"/>
         <source>Please wait...</source>
         <translation type="unfinished"></translation>
@@ -1390,7 +1420,7 @@ z-adres&apos;i gibi görünmüyor</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="919"/>
+        <location filename="../src/chatmodel.cpp" line="895"/>
         <location filename="../src/sendtab.cpp" line="871"/>
         <source>Done!</source>
         <translation type="unfinished"></translation>
@@ -1417,84 +1447,84 @@ z-adres&apos;i gibi görünmüyor</translation>
         <translation type="vanished">Gönderen Adresi Geçersiz</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="556"/>
-        <location filename="../src/chatmodel.cpp" line="841"/>
+        <location filename="../src/chatmodel.cpp" line="530"/>
+        <location filename="../src/chatmodel.cpp" line="817"/>
         <source>You have to select a contact and insert a Memo</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="557"/>
-        <location filename="../src/chatmodel.cpp" line="842"/>
+        <location filename="../src/chatmodel.cpp" line="531"/>
+        <location filename="../src/chatmodel.cpp" line="818"/>
         <source>You have selected no Contact from Contactlist,
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="557"/>
-        <location filename="../src/chatmodel.cpp" line="842"/>
+        <location filename="../src/chatmodel.cpp" line="531"/>
+        <location filename="../src/chatmodel.cpp" line="818"/>
         <source>
 or your Memo is empty</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="571"/>
-        <location filename="../src/chatmodel.cpp" line="868"/>
+        <location filename="../src/chatmodel.cpp" line="545"/>
+        <location filename="../src/chatmodel.cpp" line="844"/>
         <source>Your Message is too long</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="572"/>
+        <location filename="../src/chatmodel.cpp" line="546"/>
         <source>You can only write messages with 235 character maximum 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="572"/>
-        <location filename="../src/chatmodel.cpp" line="869"/>
+        <location filename="../src/chatmodel.cpp" line="546"/>
+        <location filename="../src/chatmodel.cpp" line="845"/>
         <source>
  Please reduce your message to 235 character.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="585"/>
-        <location filename="../src/chatmodel.cpp" line="882"/>
-        <location filename="../src/mainwindow.cpp" line="1990"/>
-        <location filename="../src/mainwindow.cpp" line="2279"/>
+        <location filename="../src/chatmodel.cpp" line="559"/>
+        <location filename="../src/chatmodel.cpp" line="858"/>
+        <location filename="../src/mainwindow.cpp" line="1982"/>
+        <location filename="../src/mainwindow.cpp" line="2272"/>
         <source>Message Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="701"/>
-        <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2104"/>
-        <location filename="../src/mainwindow.cpp" line="2385"/>
+        <location filename="../src/chatmodel.cpp" line="675"/>
+        <location filename="../src/chatmodel.cpp" line="994"/>
+        <location filename="../src/mainwindow.cpp" line="2096"/>
+        <location filename="../src/mainwindow.cpp" line="2378"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source>Recipient Address </source>
         <translation>Alıcı Adresi </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="701"/>
-        <location filename="../src/chatmodel.cpp" line="1018"/>
-        <location filename="../src/mainwindow.cpp" line="2104"/>
-        <location filename="../src/mainwindow.cpp" line="2385"/>
+        <location filename="../src/chatmodel.cpp" line="675"/>
+        <location filename="../src/chatmodel.cpp" line="994"/>
+        <location filename="../src/mainwindow.cpp" line="2096"/>
+        <location filename="../src/mainwindow.cpp" line="2378"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source> is Invalid</source>
         <translation> geçersizdir</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="708"/>
-        <location filename="../src/chatmodel.cpp" line="1024"/>
-        <location filename="../src/mainwindow.cpp" line="2111"/>
-        <location filename="../src/mainwindow.cpp" line="2391"/>
+        <location filename="../src/chatmodel.cpp" line="682"/>
+        <location filename="../src/chatmodel.cpp" line="1000"/>
+        <location filename="../src/mainwindow.cpp" line="2103"/>
+        <location filename="../src/mainwindow.cpp" line="2384"/>
         <location filename="../src/sendtab.cpp" line="932"/>
         <source>Amount for address &apos;%1&apos; is invalid!</source>
         <translation>&apos;% 1&apos; adresinin tutarı geçersiz!</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="718"/>
-        <location filename="../src/chatmodel.cpp" line="1034"/>
-        <location filename="../src/mainwindow.cpp" line="2122"/>
-        <location filename="../src/mainwindow.cpp" line="2401"/>
+        <location filename="../src/chatmodel.cpp" line="692"/>
+        <location filename="../src/chatmodel.cpp" line="1010"/>
+        <location filename="../src/mainwindow.cpp" line="2114"/>
+        <location filename="../src/mainwindow.cpp" line="2394"/>
         <location filename="../src/sendtab.cpp" line="942"/>
         <source>Not enough available funds to send this transaction
 
@@ -1505,13 +1535,13 @@ Note: Funds need 1 confirmations before they can be spent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="869"/>
+        <location filename="../src/chatmodel.cpp" line="845"/>
         <source>You can only write messages with 512 character maximum 
 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="909"/>
+        <location filename="../src/chatmodel.cpp" line="885"/>
         <source>Your contact request will be sent</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1852,37 +1882,37 @@ daemon=1</translation>
         <translation type="vanished">hushd ile bağlantı kurulurken bir hata oluştu. Hata</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="664"/>
-        <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
-        <location filename="../src/mainwindow.cpp" line="2350"/>
+        <location filename="../src/chatmodel.cpp" line="638"/>
+        <location filename="../src/chatmodel.cpp" line="978"/>
+        <location filename="../src/controller.cpp" line="1502"/>
+        <location filename="../src/mainwindow.cpp" line="2059"/>
+        <location filename="../src/mainwindow.cpp" line="2343"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source>The transaction with id </source>
         <translation>id ile işlem </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="664"/>
-        <location filename="../src/chatmodel.cpp" line="1002"/>
-        <location filename="../src/controller.cpp" line="1539"/>
-        <location filename="../src/mainwindow.cpp" line="2067"/>
-        <location filename="../src/mainwindow.cpp" line="2350"/>
+        <location filename="../src/chatmodel.cpp" line="638"/>
+        <location filename="../src/chatmodel.cpp" line="978"/>
+        <location filename="../src/controller.cpp" line="1502"/>
+        <location filename="../src/mainwindow.cpp" line="2059"/>
+        <location filename="../src/mainwindow.cpp" line="2343"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source> failed. The error was</source>
         <translation> başarısız oldu. Hata</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="595"/>
+        <location filename="../src/controller.cpp" line="602"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1637"/>
+        <location filename="../src/controller.cpp" line="1600"/>
         <source>Update Available</source>
         <translation>Güncelleme Mevcut</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1638"/>
+        <location filename="../src/controller.cpp" line="1601"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
@@ -1891,18 +1921,19 @@ Would you like to visit the releases page?</source>
 Yayınlanan sürümler sayfasını ziyaret etmek ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1657"/>
+        <location filename="../src/controller.cpp" line="1620"/>
         <source>No updates available</source>
         <translation>Güncelleme yok</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1658"/>
+        <location filename="../src/controller.cpp" line="1621"/>
         <source>You already have the latest release v%1</source>
         <translation>Zaten en son sürüme (v%1) sahipsiniz</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2042"/>
-        <location filename="../src/controller.cpp" line="2050"/>
+        <location filename="../src/controller.cpp" line="2005"/>
+        <location filename="../src/controller.cpp" line="2006"/>
+        <location filename="../src/controller.cpp" line="2013"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1920,22 +1951,22 @@ Yayınlanan sürümler sayfasını ziyaret etmek ister misiniz?</translation>
         <translation type="vanished">Düzenli İşlem Hesaplama: </translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="660"/>
-        <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2063"/>
-        <location filename="../src/mainwindow.cpp" line="2347"/>
+        <location filename="../src/chatmodel.cpp" line="634"/>
+        <location filename="../src/chatmodel.cpp" line="970"/>
+        <location filename="../src/controller.cpp" line="1498"/>
+        <location filename="../src/mainwindow.cpp" line="2055"/>
+        <location filename="../src/mainwindow.cpp" line="2340"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> failed</source>
         <translation> başarısız oldu</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="660"/>
-        <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/controller.cpp" line="1535"/>
-        <location filename="../src/mainwindow.cpp" line="2063"/>
-        <location filename="../src/mainwindow.cpp" line="2347"/>
+        <location filename="../src/chatmodel.cpp" line="634"/>
+        <location filename="../src/chatmodel.cpp" line="970"/>
+        <location filename="../src/controller.cpp" line="1498"/>
+        <location filename="../src/mainwindow.cpp" line="2055"/>
+        <location filename="../src/mainwindow.cpp" line="2340"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> Tx </source>
@@ -1976,8 +2007,7 @@ Yayınlanan sürümler sayfasını ziyaret etmek ister misiniz?</translation>
         <translation type="vanished">Lütfen çıkmak için silentdragon&apos;i bekleyin</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2043"/>
-        <location filename="../src/controller.cpp" line="2051"/>
+        <location filename="../src/controller.cpp" line="2014"/>
         <source>Waiting for hushd to exit</source>
         <translation>Çıkmak için hushd bekleniyor</translation>
     </message>
@@ -2023,47 +2053,47 @@ Lütfen Düzenle-&gt;Ayarlar menüsünde sunucu/bağlantı noktası ve kullanıc
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="151"/>
+        <location filename="../src/connection.cpp" line="150"/>
         <source>Using existing wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="165"/>
+        <location filename="../src/connection.cpp" line="178"/>
         <source>Create/restore wallet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="303"/>
-        <location filename="../src/controller.cpp" line="594"/>
+        <location filename="../src/connection.cpp" line="318"/>
+        <location filename="../src/controller.cpp" line="601"/>
         <source>Connection Error</source>
         <translation>Bağlantı Hatası</translation>
     </message>
     <message>
-        <location filename="../src/chatmodel.cpp" line="666"/>
-        <location filename="../src/chatmodel.cpp" line="1004"/>
-        <location filename="../src/connection.cpp" line="416"/>
-        <location filename="../src/controller.cpp" line="1543"/>
-        <location filename="../src/mainwindow.cpp" line="2069"/>
-        <location filename="../src/mainwindow.cpp" line="2352"/>
+        <location filename="../src/chatmodel.cpp" line="640"/>
+        <location filename="../src/chatmodel.cpp" line="980"/>
+        <location filename="../src/connection.cpp" line="431"/>
+        <location filename="../src/controller.cpp" line="1506"/>
+        <location filename="../src/mainwindow.cpp" line="2061"/>
+        <location filename="../src/mainwindow.cpp" line="2345"/>
         <location filename="../src/sendtab.cpp" line="913"/>
         <source>Transaction Error</source>
         <translation>İşlem Hatası</translation>
     </message>
     <message>
-        <location filename="../src/connection.cpp" line="417"/>
+        <location filename="../src/connection.cpp" line="432"/>
         <source>There was an error sending the transaction. The error was:</source>
         <translation>İşlem gönderilirken bir hata oluştu. Hata:</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="242"/>
-        <location filename="../src/controller.cpp" line="244"/>
+        <location filename="../src/controller.cpp" line="249"/>
+        <location filename="../src/controller.cpp" line="251"/>
         <source>No Connection</source>
         <translation>Bağlantı Yok</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="214"/>
-        <location filename="../src/chatmodel.cpp" line="259"/>
-        <location filename="../src/chatmodel.cpp" line="965"/>
+        <location filename="../src/chatmodel.cpp" line="255"/>
+        <location filename="../src/chatmodel.cpp" line="941"/>
         <source>Address Format Error</source>
         <translation>Adres Formatı Hatası</translation>
     </message>
@@ -2078,50 +2108,50 @@ Lütfen Düzenle-&gt;Ayarlar menüsünde sunucu/bağlantı noktası ve kullanıc
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="203"/>
-        <location filename="../src/chatmodel.cpp" line="233"/>
-        <location filename="../src/chatmodel.cpp" line="942"/>
+        <location filename="../src/chatmodel.cpp" line="229"/>
+        <location filename="../src/chatmodel.cpp" line="918"/>
         <source>Address or Label Error</source>
         <translation>Adres veya Etiket Hatası</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="204"/>
-        <location filename="../src/chatmodel.cpp" line="234"/>
-        <location filename="../src/chatmodel.cpp" line="943"/>
+        <location filename="../src/chatmodel.cpp" line="230"/>
+        <location filename="../src/chatmodel.cpp" line="919"/>
         <source>Address or Label cannot be empty</source>
         <translation>Adres veya Etiket boş olamaz</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="215"/>
-        <location filename="../src/chatmodel.cpp" line="260"/>
-        <location filename="../src/chatmodel.cpp" line="966"/>
+        <location filename="../src/chatmodel.cpp" line="256"/>
+        <location filename="../src/chatmodel.cpp" line="942"/>
         <source>%1 doesn&apos;t seem to be a valid hush address.</source>
         <translation>%1 geçerli bir hush adresi gibi gözükmüyor.</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="226"/>
-        <location filename="../src/chatmodel.cpp" line="246"/>
-        <location filename="../src/chatmodel.cpp" line="855"/>
-        <location filename="../src/chatmodel.cpp" line="953"/>
+        <location filename="../src/chatmodel.cpp" line="242"/>
+        <location filename="../src/chatmodel.cpp" line="831"/>
+        <location filename="../src/chatmodel.cpp" line="929"/>
         <source>Label Error</source>
         <translation>Etiket Hatası</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="227"/>
-        <location filename="../src/chatmodel.cpp" line="247"/>
-        <location filename="../src/chatmodel.cpp" line="856"/>
-        <location filename="../src/chatmodel.cpp" line="954"/>
+        <location filename="../src/chatmodel.cpp" line="243"/>
+        <location filename="../src/chatmodel.cpp" line="832"/>
+        <location filename="../src/chatmodel.cpp" line="930"/>
         <source>The label &apos;%1&apos; already exists. Please remove the existing label.</source>
         <translation>&apos;%1&apos; etiketi zaten var. Lütfen mevcut etiketi kaldırın.</translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="238"/>
-        <location filename="../src/chatmodel.cpp" line="978"/>
+        <location filename="../src/chatmodel.cpp" line="954"/>
         <source>Added Contact</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/addressbook.cpp" line="239"/>
-        <location filename="../src/chatmodel.cpp" line="979"/>
+        <location filename="../src/chatmodel.cpp" line="955"/>
         <source>successfully added your new contact</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2161,7 +2191,7 @@ Lütfen Düzenle-&gt;Ayarlar menüsünde sunucu/bağlantı noktası ve kullanıc
         <translation>Etiketi sil</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="301"/>
+        <location filename="../src/settings.cpp" line="353"/>
         <source>Tx submitted (right click to copy) txid:</source>
         <translation>İşlem gönderildi (kopyalamak için sağ tıklayın) id:</translation>
     </message>
