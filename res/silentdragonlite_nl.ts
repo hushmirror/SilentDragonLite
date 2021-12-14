@@ -94,30 +94,30 @@
 <context>
     <name>Controller</name>
     <message>
-        <location filename="../src/controller.cpp" line="1442"/>
+        <location filename="../src/controller.cpp" line="1436"/>
         <source>Wallet Password</source>
         <translation>Wallet wachtwoord</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1443"/>
+        <location filename="../src/controller.cpp" line="1437"/>
         <source>Your wallet is encrypted.
 Please enter your wallet password</source>
         <translation>Uw wallet is versleuteld
 Voer uw wallet wachtwoord in</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1451"/>
-        <location filename="../src/controller.cpp" line="1471"/>
+        <location filename="../src/controller.cpp" line="1445"/>
+        <location filename="../src/controller.cpp" line="1465"/>
         <source>Wallet Decryption Failed</source>
         <translation>Ontsleuteling wallet niet gelukt</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1452"/>
+        <location filename="../src/controller.cpp" line="1446"/>
         <source>Please enter a valid password</source>
         <translation>Voer een geldig wachtwoord in</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1541"/>
+        <location filename="../src/controller.cpp" line="1535"/>
         <source>Failed to unlock wallet</source>
         <translation>Kon wallet niet ontgrendelen</translation>
     </message>
@@ -302,6 +302,11 @@ p, li { white-space: pre-wrap; }
         <source>Add Contact and Send Request</source>
         <translation>Voeg contact toe en stuur verzoek</translation>
     </message>
+    <message>
+        <location filename="../src/fundhushchat.ui" line="16"/>
+        <source>Dialog</source>
+        <translation></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
@@ -406,8 +411,8 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1056"/>
-        <location filename="../src/mainwindow.cpp" line="1364"/>
-        <location filename="../src/mainwindow.cpp" line="1432"/>
+        <location filename="../src/mainwindow.cpp" line="1358"/>
+        <location filename="../src/mainwindow.cpp" line="1426"/>
         <location filename="../src/sendtab.cpp" line="294"/>
         <source>Memo</source>
         <translation>Bericht</translation>
@@ -480,7 +485,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="1381"/>
-        <location filename="../src/mainwindow.cpp" line="2525"/>
+        <location filename="../src/mainwindow.cpp" line="2519"/>
         <source>Export Private Key</source>
         <translation>Private key exporteren</translation>
     </message>
@@ -490,42 +495,32 @@ p, li { white-space: pre-wrap; }
         <translation>Transacties</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1697"/>
-        <source>Current Server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="1719"/>
-        <source>Sticky Server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="1762"/>
+        <location filename="../src/mainwindow.ui" line="1716"/>
         <source>Version hushlightd</source>
         <translation>Hushlightd versie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1998"/>
+        <location filename="../src/mainwindow.ui" line="1952"/>
         <source>&amp;Send DenioD Feedback</source>
-        <translation>Stuur DenioD feedback</translation>
+        <translation>&amp;Stuur DenioD feedback</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2031"/>
+        <location filename="../src/mainwindow.ui" line="1985"/>
         <source>&amp;Export seed phrase</source>
-        <translation>Seed exporteren</translation>
+        <translation>Seed &amp;exporteren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2069"/>
+        <location filename="../src/mainwindow.ui" line="2023"/>
         <source>Encrypt Wallet</source>
         <translation>Wallet versleutelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2074"/>
+        <location filename="../src/mainwindow.ui" line="2028"/>
         <source>Remove Wallet Encryption</source>
         <translation>Versleuteling verwijderen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2079"/>
+        <location filename="../src/mainwindow.ui" line="2033"/>
         <source>Rescan</source>
         <translation>Opnieuw scannen</translation>
     </message>
@@ -543,12 +538,10 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1625"/>
         <location filename="../src/mainwindow.ui" line="1632"/>
         <location filename="../src/mainwindow.ui" line="1674"/>
-        <location filename="../src/mainwindow.ui" line="1711"/>
-        <location filename="../src/mainwindow.ui" line="1733"/>
-        <location filename="../src/mainwindow.ui" line="1790"/>
-        <location filename="../src/mainwindow.ui" line="1797"/>
-        <location filename="../src/mainwindow.ui" line="1841"/>
-        <location filename="../src/mainwindow.ui" line="1862"/>
+        <location filename="../src/mainwindow.ui" line="1744"/>
+        <location filename="../src/mainwindow.ui" line="1751"/>
+        <location filename="../src/mainwindow.ui" line="1795"/>
+        <location filename="../src/mainwindow.ui" line="1816"/>
         <source>Loading...</source>
         <translation>Laden...</translation>
     </message>
@@ -585,13 +578,11 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="1646"/>
         <location filename="../src/mainwindow.ui" line="1660"/>
         <location filename="../src/mainwindow.ui" line="1681"/>
-        <location filename="../src/mainwindow.ui" line="1704"/>
-        <location filename="../src/mainwindow.ui" line="1726"/>
-        <location filename="../src/mainwindow.ui" line="1741"/>
-        <location filename="../src/mainwindow.ui" line="1755"/>
-        <location filename="../src/mainwindow.ui" line="1783"/>
-        <location filename="../src/mainwindow.ui" line="1855"/>
-        <location filename="../src/mainwindow.ui" line="1876"/>
+        <location filename="../src/mainwindow.ui" line="1695"/>
+        <location filename="../src/mainwindow.ui" line="1709"/>
+        <location filename="../src/mainwindow.ui" line="1737"/>
+        <location filename="../src/mainwindow.ui" line="1809"/>
+        <location filename="../src/mainwindow.ui" line="1830"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;|&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation></translation>
     </message>
@@ -611,47 +602,47 @@ p, li { white-space: pre-wrap; }
         <translation>Laatst genotariseerde block</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1689"/>
+        <location filename="../src/mainwindow.ui" line="1688"/>
         <source>Total Supply</source>
         <translation>Totaal aanbod</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1748"/>
+        <location filename="../src/mainwindow.ui" line="1702"/>
         <source>Longestchain</source>
         <translation>Langste chain</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1769"/>
+        <location filename="../src/mainwindow.ui" line="1723"/>
         <source>BlockHeight</source>
         <translation>Blockhoogte</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1776"/>
+        <location filename="../src/mainwindow.ui" line="1730"/>
         <source>Supply zAddr</source>
         <translation>Verborgen coins in netwerk</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1804"/>
+        <location filename="../src/mainwindow.ui" line="1758"/>
         <source>Supply tAddr</source>
         <translation>Transparante coins in netwerk</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1825"/>
+        <location filename="../src/mainwindow.ui" line="1779"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Market Information&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Hush Markt Informatie&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1848"/>
+        <location filename="../src/mainwindow.ui" line="1802"/>
         <source>Market Cap</source>
         <translation>Marktkapitalisatie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1869"/>
+        <location filename="../src/mainwindow.ui" line="1823"/>
         <source>Volume on Exchanges</source>
         <translation>Volume op alle exchanges</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1892"/>
+        <location filename="../src/mainwindow.ui" line="1846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;This is a Lightwallet, you cant mine with it!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Dit is een Lightwallet. U kunt hier niet mee minen!&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -701,247 +692,247 @@ p, li { white-space: pre-wrap; }
         <translation>Besteedbaar</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1929"/>
+        <location filename="../src/mainwindow.ui" line="1883"/>
         <source>&amp;File</source>
-        <translation>Bestand</translation>
+        <translation>&amp;Bestand</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1943"/>
+        <location filename="../src/mainwindow.ui" line="1897"/>
         <source>&amp;Help</source>
-        <translation>Help</translation>
+        <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1954"/>
+        <location filename="../src/mainwindow.ui" line="1908"/>
         <source>&amp;Apps</source>
-        <translation>Smartphone</translation>
+        <translation>&amp;Apps</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1960"/>
+        <location filename="../src/mainwindow.ui" line="1914"/>
         <source>&amp;Edit</source>
-        <translation>Bewerken</translation>
+        <translation>Be&amp;werken</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1980"/>
+        <location filename="../src/mainwindow.ui" line="1934"/>
         <source>E&amp;xit</source>
-        <translation>Afsluiten</translation>
+        <translation>Af&amp;sluiten</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1985"/>
+        <location filename="../src/mainwindow.ui" line="1939"/>
         <source>&amp;About</source>
-        <translation>Over</translation>
+        <translation>&amp;Over</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1990"/>
+        <location filename="../src/mainwindow.ui" line="1944"/>
         <source>&amp;Settings</source>
-        <translation>Instellingen</translation>
+        <translation>&amp;Instellingen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="1993"/>
+        <location filename="../src/mainwindow.ui" line="1947"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2003"/>
+        <location filename="../src/mainwindow.ui" line="1957"/>
         <source>&amp;Hush Telegram</source>
         <translation>&amp;Hush Telegram</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2008"/>
+        <location filename="../src/mainwindow.ui" line="1962"/>
         <source>&amp;Hush Website</source>
-        <translation>&amp;Hush Website</translation>
+        <translation>&amp;Hush website</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2013"/>
+        <location filename="../src/mainwindow.ui" line="1967"/>
         <source>Check git for &amp;updates</source>
-        <translation>Check git voor updates</translation>
+        <translation>Check git voor &amp;updates</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2018"/>
+        <location filename="../src/mainwindow.ui" line="1972"/>
         <source>&amp;Export all private keys</source>
-        <translation>Exporteer alle private keys</translation>
+        <translation>&amp;Exporteer alle private keys</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2023"/>
+        <location filename="../src/mainwindow.ui" line="1977"/>
         <source>Address &amp;book</source>
-        <translation>Adresboek</translation>
+        <translation>Adres&amp;boek</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2026"/>
+        <location filename="../src/mainwindow.ui" line="1980"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2036"/>
-        <location filename="../src/mainwindow.cpp" line="1133"/>
+        <location filename="../src/mainwindow.ui" line="1990"/>
+        <location filename="../src/mainwindow.cpp" line="1127"/>
         <source>Export transactions</source>
         <translation>Transacties exporteren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2041"/>
+        <location filename="../src/mainwindow.ui" line="1995"/>
         <source>Pay hush &amp;URI...</source>
         <translation>Betaal Hush &amp;URI...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2046"/>
+        <location filename="../src/mainwindow.ui" line="2000"/>
         <source>Connect mobile &amp;app</source>
-        <translation>Smartphone verbinden</translation>
+        <translation>Mobiele &amp;app verbinden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2049"/>
+        <location filename="../src/mainwindow.ui" line="2003"/>
         <source>Ctrl+M</source>
         <translation>Ctrl+M</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2054"/>
+        <location filename="../src/mainwindow.ui" line="2008"/>
         <source>&amp;Recurring Payments</source>
         <translation>Terugkerende betalingen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2059"/>
+        <location filename="../src/mainwindow.ui" line="2013"/>
         <source>Request hush...</source>
         <translation>Hush vragen...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2064"/>
+        <location filename="../src/mainwindow.ui" line="2018"/>
         <source>File a bug...</source>
         <translation>Een fout melden...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="2084"/>
+        <location filename="../src/mainwindow.ui" line="2038"/>
         <source>Import Private Key</source>
         <translation>Importeer private key</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="756"/>
-        <location filename="../src/mainwindow.cpp" line="1402"/>
+        <location filename="../src/mainwindow.cpp" line="751"/>
+        <location filename="../src/mainwindow.cpp" line="1396"/>
         <source>Copy txid</source>
         <translation>Transactie-ID kopiëren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="764"/>
+        <location filename="../src/mainwindow.cpp" line="759"/>
         <source>View tx on block explorer</source>
         <translation>Transactie op blockexplorer bekijken</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="769"/>
+        <location filename="../src/mainwindow.cpp" line="764"/>
         <source>Refresh</source>
         <translation>Verversen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="908"/>
+        <location filename="../src/mainwindow.cpp" line="902"/>
         <source>Some feedback about SilentDragonlite or Hush...</source>
         <translation>Feedback betreffende Silent Dragon Lite of Hush...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="909"/>
+        <location filename="../src/mainwindow.cpp" line="903"/>
         <source> or SilentDragonLite</source>
         <translation> of Silent Dragon Lite</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1007"/>
+        <location filename="../src/mainwindow.cpp" line="1001"/>
         <source>Paste HUSH URI</source>
         <translation>Hush URI invoegen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1019"/>
+        <location filename="../src/mainwindow.cpp" line="1013"/>
         <source>Error paying HUSH URI</source>
         <translation>Fout bij betalen Hush URI</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1020"/>
+        <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>URI should be of the form &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</source>
         <translation>De URI moet in het volgende formaat zijn &apos;hush:&lt;addr&gt;?amt=x&amp;memo=y</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1139"/>
+        <location filename="../src/mainwindow.cpp" line="1133"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1140"/>
+        <location filename="../src/mainwindow.cpp" line="1134"/>
         <source>Error exporting transactions, file was not saved</source>
         <translation>Fout bij het exporteren van transacties. Het bestand is niet opgeslagen.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1226"/>
+        <location filename="../src/mainwindow.cpp" line="1220"/>
         <source>Error getting private keys</source>
         <translation>Fout bij het ophalen van de private keys</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1227"/>
+        <location filename="../src/mainwindow.cpp" line="1221"/>
         <source>Error loading private keys: </source>
         <translation>Fout bij het laden van de private keys: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1247"/>
+        <location filename="../src/mainwindow.cpp" line="1241"/>
         <source>These are all the private keys for all the addresses in your wallet</source>
         <translation>Dit zijn alle private keys voor alle adressen in uw wallet</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1249"/>
+        <location filename="../src/mainwindow.cpp" line="1243"/>
         <source>Private key for </source>
         <translation>Private key voor </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1177"/>
-        <location filename="../src/mainwindow.cpp" line="1254"/>
+        <location filename="../src/mainwindow.cpp" line="1171"/>
+        <location filename="../src/mainwindow.cpp" line="1248"/>
         <source>Save File</source>
         <translation>Bestand opslaan</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="545"/>
+        <location filename="../src/mainwindow.cpp" line="539"/>
         <source>Passwords don&apos;t match</source>
         <translation>Wachtwoorden komen niet overeen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="606"/>
-        <location filename="../src/mainwindow.cpp" line="685"/>
+        <location filename="../src/mainwindow.cpp" line="599"/>
+        <location filename="../src/mainwindow.cpp" line="679"/>
         <source>Wallet Encryption Failed</source>
         <translation>Versleuteling wallet niet gelukt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="527"/>
+        <location filename="../src/mainwindow.cpp" line="524"/>
         <source>Wallet is not encrypted</source>
         <translation>Wallet is niet versleuteld</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="759"/>
-        <location filename="../src/mainwindow.cpp" line="1413"/>
+        <location filename="../src/mainwindow.cpp" line="754"/>
+        <location filename="../src/mainwindow.cpp" line="1407"/>
         <source>Copy block explorer link</source>
         <translation>Blockexplorer link kopiëren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="818"/>
         <source>Currency Change</source>
         <translation>Valuta wijzigen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="823"/>
+        <location filename="../src/mainwindow.cpp" line="818"/>
         <source>This change can take a few seconds.</source>
         <translation>Deze wijziging kan enkele seconden duren.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1173"/>
+        <location filename="../src/mainwindow.cpp" line="1167"/>
         <source>This is your wallet seed. Please back it up carefully and safely.</source>
         <translation>Dit is de seed van uw wallet. Berg deze a.u.b. zorgvuldig en veilig op.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1181"/>
-        <location filename="../src/mainwindow.cpp" line="1258"/>
+        <location filename="../src/mainwindow.cpp" line="1175"/>
+        <location filename="../src/mainwindow.cpp" line="1252"/>
         <source>Unable to open file</source>
         <translation>Kan het bestand niet openen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1331"/>
-        <location filename="../src/mainwindow.cpp" line="1408"/>
+        <location filename="../src/mainwindow.cpp" line="1325"/>
+        <location filename="../src/mainwindow.cpp" line="1402"/>
         <source>Copy address</source>
         <translation>Adres kopiëren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1305"/>
-        <location filename="../src/mainwindow.cpp" line="1334"/>
+        <location filename="../src/mainwindow.cpp" line="1299"/>
+        <location filename="../src/mainwindow.cpp" line="1328"/>
+        <location filename="../src/mainwindow.cpp" line="1398"/>
         <location filename="../src/mainwindow.cpp" line="1404"/>
-        <location filename="../src/mainwindow.cpp" line="1410"/>
         <source>Copied to clipboard</source>
         <translation>Naar het klembord gekopiëerd</translation>
     </message>
@@ -987,135 +978,135 @@ p, li { white-space: pre-wrap; }
         <translation>Wallet versleuteling succes</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="528"/>
+        <location filename="../src/mainwindow.cpp" line="525"/>
         <source>Your wallet is not encrypted with a passphrase.</source>
         <translation>Uw wallet is niet versleuteld met een wachtwoordzin.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="600"/>
+        <location filename="../src/mainwindow.cpp" line="590"/>
         <source>Wallet decryption Success</source>
         <translation>Wallet ontsleuteling succes</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="952"/>
+        <location filename="../src/mainwindow.cpp" line="946"/>
         <source>Wrong Privatkey format</source>
         <translation>Onjuist formaat private key</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1051"/>
+        <location filename="../src/mainwindow.cpp" line="1045"/>
         <source>Please paste your private key(zs-Addr or R-addr) here, one per import</source>
         <translation>Plak uw private key (zs-addr of R-addr) hier, één per import</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="909"/>
+        <location filename="../src/mainwindow.cpp" line="903"/>
         <source>Send some private and shielded feedback about</source>
         <translation>Stuur privé en versleutelde feedback over </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="923"/>
+        <location filename="../src/mainwindow.cpp" line="917"/>
         <source>Private key import rescan in progress. Your funds will be shielded into this wallet and backed up by your seed phrase. This will take some time</source>
         <translation>Bezig met private key import herscan. Uw saldo wordt verborgen opgeslagen in deze wallet en beveiligd door uw seed. Dit kan even duren.</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.cpp" line="934"/>
         <location filename="../src/mainwindow.cpp" line="940"/>
-        <location filename="../src/mainwindow.cpp" line="946"/>
         <source>Wrong Private key format</source>
         <translation>Fout formaat private key</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="941"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>That private key is too long. It should be 51 or 52 characters.</source>
         <translation>De private key is te lang. Hij moet 51 of 52 karakters zijn.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="947"/>
+        <location filename="../src/mainwindow.cpp" line="941"/>
         <source>That private key is too short. It should be 51 or 52 characters.</source>
         <translation>De private key is te kort. Hij moet 51 of 52 karakters zijn.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="953"/>
+        <location filename="../src/mainwindow.cpp" line="947"/>
         <source>Privatkey should start with 5, K, L or U (for taddr) or secret- (for zaddr)</source>
         <translation>Uw private key moet beginnen met 5, K, L or U (voor t-addr) of secret- (voor z-addr)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1046"/>
         <source>Caution: If this key is for a zaddr it will be NOT included in your Seed. Please send them direct to a Seed zaddr</source>
         <translation>Let op: Als deze key voor een verborgen adres (z-addr) is, zal deze NIET toegevoegd worden aan uw seed. Zend deze direct naar een seed verborgen adres</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1053"/>
+        <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Transparent address (R.. or t1..) keys will be automatically sent to a zaddr in your Seed</source>
         <translation>Transparante adres keys (R.. of t1..) worden automatisch naar een verborgen adres (z-addr) gestuurd in uw seed</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1090"/>
-        <location filename="../src/mainwindow.cpp" line="1106"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1100"/>
         <source>The keys were imported. It may take several minutes to rescan the blockchain. Until then, functionality may be limited</source>
         <translation>De keys zijn geïmporteerd. Het opnieuw scannen van de blockchain kan enkele minuten duren. Tot dit gereed is kan er tijdelijk beperkte functionaliteit zijn.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1119"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>The keys were imported without rescan option. The Address you imported will be visible without balance</source>
         <translation>De keys zijn geïmporteerd zonder de optie om opnieuw te scannen. Het adres wat u geïmporteerd heeft zal zichtbaar zijn zonder saldo.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1331"/>
         <source>Get private key</source>
         <translation>Private Key ophalen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1343"/>
-        <location filename="../src/mainwindow.cpp" line="1418"/>
+        <location filename="../src/mainwindow.cpp" line="1337"/>
+        <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>View on block explorer</source>
         <translation>Op blockexplorer bekijken</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1424"/>
+        <location filename="../src/mainwindow.cpp" line="1418"/>
         <source>View Payment Request</source>
         <translation>Betalingsverzoek bekijken</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1431"/>
+        <location filename="../src/mainwindow.cpp" line="1425"/>
         <source>View Memo</source>
         <translation>Bericht bekijken</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1446"/>
+        <location filename="../src/mainwindow.cpp" line="1440"/>
         <source>Reply to </source>
         <translation>Antwoorden aan </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1575"/>
+        <location filename="../src/mainwindow.cpp" line="1569"/>
         <source>Copied Hyperlink to clipboard</source>
         <translation>Hyperlink naar klembord gekopieerd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1611"/>
+        <location filename="../src/mainwindow.cpp" line="1605"/>
         <source>Copied message to clipboard</source>
         <translation>Bericht naar klembord gekopieerd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1644"/>
+        <location filename="../src/mainwindow.cpp" line="1638"/>
         <source>Copied Txid to clipboard</source>
         <translation>Transactie-ID naar het klembord gekopieerd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2475"/>
+        <location filename="../src/mainwindow.cpp" line="2469"/>
         <source>Created new t-Addr</source>
         <translation>Nieuw transparant adres (t-addr) aangemaakt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2531"/>
+        <location filename="../src/mainwindow.cpp" line="2525"/>
         <source>Copy Address</source>
         <translation>Adres kopiëren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2634"/>
+        <location filename="../src/mainwindow.cpp" line="2628"/>
         <source>Address has been previously used</source>
         <translation>Dit adres is al een keer gebruikt</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="2636"/>
+        <location filename="../src/mainwindow.cpp" line="2630"/>
         <source>Address is unused</source>
         <translation>Dit adres is ongebruikt</translation>
     </message>
@@ -1207,16 +1198,16 @@ of uw bericht is leeg</translation>
     <message>
         <location filename="../src/chatmodel.cpp" line="559"/>
         <location filename="../src/chatmodel.cpp" line="858"/>
-        <location filename="../src/mainwindow.cpp" line="1982"/>
-        <location filename="../src/mainwindow.cpp" line="2272"/>
+        <location filename="../src/mainwindow.cpp" line="1976"/>
+        <location filename="../src/mainwindow.cpp" line="2266"/>
         <source>Message Error</source>
         <translation>Berichtfout</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="675"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/mainwindow.cpp" line="2096"/>
-        <location filename="../src/mainwindow.cpp" line="2378"/>
+        <location filename="../src/mainwindow.cpp" line="2090"/>
+        <location filename="../src/mainwindow.cpp" line="2372"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source>Recipient Address </source>
         <translation>Adres ontvanger </translation>
@@ -1224,8 +1215,8 @@ of uw bericht is leeg</translation>
     <message>
         <location filename="../src/chatmodel.cpp" line="675"/>
         <location filename="../src/chatmodel.cpp" line="994"/>
-        <location filename="../src/mainwindow.cpp" line="2096"/>
-        <location filename="../src/mainwindow.cpp" line="2378"/>
+        <location filename="../src/mainwindow.cpp" line="2090"/>
+        <location filename="../src/mainwindow.cpp" line="2372"/>
         <location filename="../src/sendtab.cpp" line="926"/>
         <source> is Invalid</source>
         <translation> is ongeldig</translation>
@@ -1233,8 +1224,8 @@ of uw bericht is leeg</translation>
     <message>
         <location filename="../src/chatmodel.cpp" line="682"/>
         <location filename="../src/chatmodel.cpp" line="1000"/>
-        <location filename="../src/mainwindow.cpp" line="2103"/>
-        <location filename="../src/mainwindow.cpp" line="2384"/>
+        <location filename="../src/mainwindow.cpp" line="2097"/>
+        <location filename="../src/mainwindow.cpp" line="2378"/>
         <location filename="../src/sendtab.cpp" line="932"/>
         <source>Amount for address &apos;%1&apos; is invalid!</source>
         <translation>Bedrag voor adres &apos;%1&apos; is niet geldig!</translation>
@@ -1242,8 +1233,8 @@ of uw bericht is leeg</translation>
     <message>
         <location filename="../src/chatmodel.cpp" line="692"/>
         <location filename="../src/chatmodel.cpp" line="1010"/>
-        <location filename="../src/mainwindow.cpp" line="2114"/>
-        <location filename="../src/mainwindow.cpp" line="2394"/>
+        <location filename="../src/mainwindow.cpp" line="2108"/>
+        <location filename="../src/mainwindow.cpp" line="2388"/>
         <location filename="../src/sendtab.cpp" line="942"/>
         <source>Not enough available funds to send this transaction
 
@@ -1336,27 +1327,27 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
     <message>
         <location filename="../src/mobileappconnector.ui" line="36"/>
         <source>Scan this QRCode from your silentdragon companion app to connect your phone</source>
-        <translation>Scan de QR code om uw mobiel apparaat te verbinden</translation>
+        <translation>Scan deze QR-code in SilentDragonAndroid om te verbinden met uw apparaat</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="43"/>
         <source>QR Code</source>
-        <translation>QR code</translation>
+        <translation>QR-code</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="49"/>
         <source>Connection String</source>
-        <translation>Verbindingsteken</translation>
+        <translation>Connection string</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="84"/>
         <source>Allow connections over the internet via silentdragon wormhole</source>
-        <translation>Verbindingen over het internet via Silent Dragon wormhole toestaan</translation>
+        <translation>Sta verbindingen over het internet toe via SilenDragon wormhole</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="94"/>
         <source>silentdragon Companion App</source>
-        <translation>Silent Dragon app</translation>
+        <translation>SilentDragon app</translation>
     </message>
     <message>
         <location filename="../src/mobileappconnector.ui" line="106"/>
@@ -1572,7 +1563,7 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
     </message>
     <message>
         <location filename="../src/connection.cpp" line="318"/>
-        <location filename="../src/controller.cpp" line="601"/>
+        <location filename="../src/controller.cpp" line="594"/>
         <source>Connection Error</source>
         <translation>Verbindingsfout</translation>
     </message>
@@ -1580,9 +1571,9 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
         <location filename="../src/chatmodel.cpp" line="640"/>
         <location filename="../src/chatmodel.cpp" line="980"/>
         <location filename="../src/connection.cpp" line="431"/>
-        <location filename="../src/controller.cpp" line="1506"/>
-        <location filename="../src/mainwindow.cpp" line="2061"/>
-        <location filename="../src/mainwindow.cpp" line="2345"/>
+        <location filename="../src/controller.cpp" line="1500"/>
+        <location filename="../src/mainwindow.cpp" line="2055"/>
+        <location filename="../src/mainwindow.cpp" line="2339"/>
         <location filename="../src/sendtab.cpp" line="913"/>
         <source>Transaction Error</source>
         <translation>Transactiefout</translation>
@@ -1593,17 +1584,17 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
         <translation>Er is een fout opgetreden bij het versturen van de transactie. De fout was:</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="249"/>
-        <location filename="../src/controller.cpp" line="251"/>
+        <location filename="../src/controller.cpp" line="242"/>
+        <location filename="../src/controller.cpp" line="244"/>
         <source>No Connection</source>
         <translation>Geen verbinding</translation>
     </message>
     <message>
         <location filename="../src/chatmodel.cpp" line="634"/>
         <location filename="../src/chatmodel.cpp" line="970"/>
-        <location filename="../src/controller.cpp" line="1498"/>
-        <location filename="../src/mainwindow.cpp" line="2055"/>
-        <location filename="../src/mainwindow.cpp" line="2340"/>
+        <location filename="../src/controller.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="2049"/>
+        <location filename="../src/mainwindow.cpp" line="2334"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> Tx </source>
@@ -1612,9 +1603,9 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
     <message>
         <location filename="../src/chatmodel.cpp" line="634"/>
         <location filename="../src/chatmodel.cpp" line="970"/>
-        <location filename="../src/controller.cpp" line="1498"/>
-        <location filename="../src/mainwindow.cpp" line="2055"/>
-        <location filename="../src/mainwindow.cpp" line="2340"/>
+        <location filename="../src/controller.cpp" line="1492"/>
+        <location filename="../src/mainwindow.cpp" line="2049"/>
+        <location filename="../src/mainwindow.cpp" line="2334"/>
         <location filename="../src/recurring.cpp" line="609"/>
         <location filename="../src/sendtab.cpp" line="896"/>
         <source> failed</source>
@@ -1623,9 +1614,9 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
     <message>
         <location filename="../src/chatmodel.cpp" line="638"/>
         <location filename="../src/chatmodel.cpp" line="978"/>
-        <location filename="../src/controller.cpp" line="1502"/>
-        <location filename="../src/mainwindow.cpp" line="2059"/>
-        <location filename="../src/mainwindow.cpp" line="2343"/>
+        <location filename="../src/controller.cpp" line="1496"/>
+        <location filename="../src/mainwindow.cpp" line="2053"/>
+        <location filename="../src/mainwindow.cpp" line="2337"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source>The transaction with id </source>
         <translation>De transactie met ID </translation>
@@ -1633,25 +1624,25 @@ Opmerking: Er is minimaal 1 bevestiging van het saldo nodig om het.uit te kunnen
     <message>
         <location filename="../src/chatmodel.cpp" line="638"/>
         <location filename="../src/chatmodel.cpp" line="978"/>
-        <location filename="../src/controller.cpp" line="1502"/>
-        <location filename="../src/mainwindow.cpp" line="2059"/>
-        <location filename="../src/mainwindow.cpp" line="2343"/>
+        <location filename="../src/controller.cpp" line="1496"/>
+        <location filename="../src/mainwindow.cpp" line="2053"/>
+        <location filename="../src/mainwindow.cpp" line="2337"/>
         <location filename="../src/sendtab.cpp" line="904"/>
         <source> failed. The error was</source>
         <translation> is niet gelukt. De fout was</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="602"/>
+        <location filename="../src/controller.cpp" line="595"/>
         <source>There was an error connecting to the server. Please check your internet connection. The error was</source>
         <translation>Er is een fout opgetreden bij het verbinden met de server. Check uw internetverbinding. De fout was</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1600"/>
+        <location filename="../src/controller.cpp" line="1594"/>
         <source>Update Available</source>
         <translation>Upodate beschikbaar</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1601"/>
+        <location filename="../src/controller.cpp" line="1595"/>
         <source>A new release v%1 is available! You have v%2.
 
 Would you like to visit the releases page?</source>
@@ -1660,24 +1651,24 @@ Would you like to visit the releases page?</source>
 Wilt u de releasepagina bezoeken?</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1620"/>
+        <location filename="../src/controller.cpp" line="1614"/>
         <source>No updates available</source>
         <translation>Geen updates beschikbaar</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="1621"/>
+        <location filename="../src/controller.cpp" line="1615"/>
         <source>You already have the latest release v%1</source>
         <translation>U heeft al de laatste release v%1</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2005"/>
-        <location filename="../src/controller.cpp" line="2006"/>
-        <location filename="../src/controller.cpp" line="2013"/>
+        <location filename="../src/controller.cpp" line="1999"/>
+        <location filename="../src/controller.cpp" line="2000"/>
+        <location filename="../src/controller.cpp" line="2007"/>
         <source>Please wait for SilentDragonLite to exit</source>
         <translation>Wacht totdat Silent Dragon Lite afgesloten is</translation>
     </message>
     <message>
-        <location filename="../src/controller.cpp" line="2014"/>
+        <location filename="../src/controller.cpp" line="2008"/>
         <source>Waiting for hushd to exit</source>
         <translation>Wachten op beëindiging hushd</translation>
     </message>
@@ -1713,7 +1704,7 @@ Wilt u de releasepagina bezoeken?</translation>
         <translation>Alle geplande betalingen zullen geannuleerd worden.</translation>
     </message>
     <message>
-        <location filename="../src/settings.cpp" line="353"/>
+        <location filename="../src/settings.cpp" line="351"/>
         <source>Tx submitted (right click to copy) txid:</source>
         <translation>Transactie verzonden (klink rechts om te kopiëren) transactie-ID:</translation>
     </message>
@@ -2468,59 +2459,6 @@ Wilt u de releasepagina bezoeken?</translation>
     </message>
 </context>
 <context>
-    <name>createhushConf</name>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="14"/>
-        <source>Configure hush.conf</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="146"/>
-        <source>Your hush node will be configured for you automatically</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="22"/>
-        <source>Show Advanced Configuration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="60"/>
-        <source>Allow connections to the internet to check for updates, get hush prices etc...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="67"/>
-        <source>Use custom datadir</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="76"/>
-        <source>Choose directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="105"/>
-        <source>Please note that you&apos;ll need to already have a Tor service configured on port 9050</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="112"/>
-        <source>Connect to the internet for updates and price feeds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="122"/>
-        <source>Please choose a directory to store your wallet.dat and blockchain</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/createhushconfdialog.ui" line="129"/>
-        <source>Connect over Tor</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
     <name>deposithush</name>
     <message>
         <location filename="../src/deposithush.ui" line="14"/>
@@ -2675,7 +2613,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/newrecurring.ui" line="54"/>
         <source>Schedule</source>
-        <translation>Gepland</translation>
+        <translation>Schema</translation>
     </message>
     <message>
         <location filename="../src/newrecurring.ui" line="68"/>
