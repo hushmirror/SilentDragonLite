@@ -62,7 +62,7 @@ Compiling can take some time, so be patient and wait for it to finish. It will t
 
 ##### Ubuntu 18.04 and 20.04:
 ```shell script
-sudo apt-get -y install qt5-default qt5-qmake libqt5websockets5-dev qtcreator qttools5-dev-tools
+sudo apt-get -y install build-essential qt5-default qt5-qmake libqt5websockets5-dev qtcreator qttools5-dev-tools
 git clone https://git.hush.is/hush/SilentDragonLite
 cd SilentDragonLite
 ./build.sh linguist
