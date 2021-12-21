@@ -8,3 +8,4 @@ username=$(id -un)
 sed -i "s|\/home\/.*\/SilentDragonLite\/|\/home\/$username\/SilentDragonLite\/|g" SilentDragonLite.desktop
 
 mv SilentDragonLite.desktop ~/.local/share/applications
+# might be /usr/share/applications/ that requires sudo
