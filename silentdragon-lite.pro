@@ -125,7 +125,6 @@ FORMS += \
     src/encryption.ui \
     src/hushrequest.ui \
     src/mainwindow.ui \
-    src/migration.ui \
     src/newseed.ui \
     src/newwallet.ui \
     src/recurringpayments.ui \
