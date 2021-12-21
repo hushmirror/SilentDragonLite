@@ -75,10 +75,9 @@ FirstTimeWizard::FirstTimeWizard(bool dangerous, QString server)
     QString addressbook = dir.filePath("addresslabels.dat.enc");
     QFile file(addressbook);
 
-    if (file.exists())
-    {
-    file.rename(dir.filePath("addresslabels.dat.enc-backup"));
-
+    if (file.exists()) {
+        file.rename(dir.filePath("addresslabels.dat.enc-backup"));
+        qDebug() << __func__ << ": backed up old addresslabels";
     }
 
     // Create the pages
@@ -146,7 +145,7 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
     form.txtPassword->setEnabled(false);
     form.txtConfirmPassword->setEnabled(false); 
 
-           QObject::connect(form.TOS,  &QRadioButton::clicked, [=](bool checked) {
+    QObject::connect(form.TOS,  &QRadioButton::clicked, [=](bool checked) {
         if (checked) {
 
             form.txtPassword->setEnabled(true);
@@ -156,7 +155,7 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
             parent->button(QWizard::CommitButton)->setEnabled(false);
             parent->button(QWizard::NextButton)->setEnabled(false);
         }
-    });
+     });
 
 
          auto fnPasswordEdited = [=](const QString&) {
@@ -169,23 +168,21 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
         if (!form.txtPassword->text().isEmpty() && 
                 form.txtPassword->text() == form.txtConfirmPassword->text() && passphraseBlank.size() >= 16 ){
 
-            form.lblPasswordMatch->setText("");
-            
-            
-            form.radioRestoreWallet->setEnabled(true);
-            form.radioNewWallet->setEnabled(true);
-            form.radioNewWallet->setChecked(true);
-            parent->button(QWizard::NextButton)->setEnabled(false);
-            
-
-            int length = passphrase.length();
+        form.lblPasswordMatch->setText("");
+        
+        form.radioRestoreWallet->setEnabled(true);
+        form.radioNewWallet->setEnabled(true);
+        form.radioNewWallet->setChecked(true);
+        parent->button(QWizard::NextButton)->setEnabled(false);
+        
+        int length = passphrase.length();
+        qDebug() << __func__ << ": passphrase length=" << length;
 
         char *sequence = NULL;
         sequence = new char[length+1];
         strncpy(sequence, passphrase.toUtf8(), length +1);
         
         QString passphraseHash = blake3_PW(sequence);
-        
 
         char *sequence1 = NULL;
         sequence1 = new char[length+1];
@@ -200,12 +197,13 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
 
     unsigned char key[KEY_LEN];
 
-    if (crypto_pwhash
-    (key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
+    if (crypto_pwhash(key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
      crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE,
      crypto_pwhash_ALG_DEFAULT) != 0) {
     /* out of memory */
-}
+        qDebug() << __func__ << ": crypto_pwhash failed! Possibly out of memory";
+        exit(1);
+    }
         QString passphraseHash1 = QByteArray(reinterpret_cast<const char*>(key), KEY_LEN).toHex();
         DataStore::getChatDataStore()->setPassword(passphraseHash1);         
  
@@ -226,12 +224,8 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
         }
     });
 
-  
-           
-
-            
         } else {
-            form.lblPasswordMatch->setText(tr("Passphrase don't match or You have entered too few letters (16 minimum)"));
+           form.lblPasswordMatch->setText(tr("Passphrase don't match or You have entered too few letters (16 minimum)"));
             
            parent->button(QWizard::CommitButton)->setEnabled(false);
            form.radioRestoreWallet->setEnabled(false);
@@ -243,7 +237,6 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
     QVBoxLayout *layout = new QVBoxLayout;
     layout->addWidget(pageWidget);
     setLayout(layout);
-    
 
     QObject::connect(form.txtConfirmPassword, &QLineEdit::textChanged, fnPasswordEdited);
     QObject::connect(form.txtPassword, &QLineEdit::textChanged, fnPasswordEdited);
@@ -251,13 +244,10 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
     form.radioRestoreWallet->setEnabled(false);
     form.radioNewWallet->setEnabled(false);
     setCommitPage(true);
-
-
-    
-    
 }
 
 NewSeedPage::NewSeedPage(FirstTimeWizard *parent) : QWizardPage(parent) {
+    qDebug() << __func__;
     this->parent = parent;
 
     setTitle("Your new wallet");
@@ -273,9 +263,11 @@ NewSeedPage::NewSeedPage(FirstTimeWizard *parent) : QWizardPage(parent) {
 
 void NewSeedPage::initializePage() {
     // Call the library to create a new wallet.
+    qDebug() << __func__;
 
     char* resp = litelib_initialize_new(parent->dangerous,parent->server.toStdString().c_str());
     QString reply = litelib_process_response(resp);
+    qDebug() << __func__ << ": reply=" << reply;
 
     auto parsed = json::parse(reply.toStdString().c_str(), nullptr, false);
     if (parsed.is_discarded() || parsed.is_null() || parsed.find("seed") == parsed.end()) {
@@ -290,23 +282,24 @@ void NewSeedPage::initializePage() {
         parent->button(QWizard::CancelButton)->setEnabled(false);
         disconnect(parent->button(QWizard::CancelButton ), SIGNAL( clicked() ), parent, SLOT( reject() ) );
         connect(parent->button(QWizard::CancelButton ), SIGNAL( clicked() ), parent, SLOT( cancelEvent() ) );
-
+        qDebug() << __func__ << ": page initialized with birthday=" << birthday;
     }
-
 
 }
 
-void FirstTimeWizard::cancelEvent()
-    {
-    	if( QMessageBox::question( this, ( "Quit Setup" ), ( "Setup is not complete yet. Are you sure you want to quit setup?" ), QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes ) {
-    		// allow cancel
-    		reject();
-    	}
+void FirstTimeWizard::cancelEvent() {
+    qDebug() << __func__;
+    if( QMessageBox::question( this, ( "Quit Setup" ), ( "Setup is not complete yet. Are you sure you want to quit setup?" ), QMessageBox::Yes, QMessageBox::No ) == QMessageBox::Yes ) {
+        qDebug() << __func__ << ": wizard canceled";
+    	// allow cancel
+    	reject();
     }
+}
 
 // Will be called just before closing. Make sure we can save the seed in the wallet
 // before we allow the page to be closed
 bool NewSeedPage::validatePage() {
+    qDebug() << __func__;
 
     Ui_verifyseed verifyseed;
     QDialog dialog(this);
@@ -315,7 +308,6 @@ bool NewSeedPage::validatePage() {
 
     form.birthday->setVisible(false);
     form.txtSeed->setVisible(false);
-   
 
     QString seed = parent->getSeed();
     QString birthday = parent->getBirthday();
@@ -603,8 +595,7 @@ bool NewSeedPage::validatePage() {
         return true;
     }
     }else{
-
-        qDebug()<<"Falscher Seed";
+        qDebug()<<"Wrong Seed";
         QFile file(dirwalletencfirst);
         QFile file1(dirwalletfirst);
 
@@ -638,7 +629,9 @@ RestoreSeedPage::RestoreSeedPage(FirstTimeWizard *parent) : QWizardPage(parent) 
 bool RestoreSeedPage::validatePage() {
     // 1. Validate that we do have 24 words
     QString seed = form.txtSeed->toPlainText().replace(QRegExp("[ \n\r\t]+"), " ");
-    if (seed.trimmed().split(" ").length() != 24) {
+    auto seedLength = seed.trimmed().split(" ").length();
+    qDebug() << __func__ << ": seed length=" << seedLength;
+    if (seedLength != 24) {
         QMessageBox::warning(this, tr("Failed to restore wallet"), 
             tr("SilentDragonLite needs 24 words to restore wallet"),
             QMessageBox::Ok);
@@ -650,16 +643,16 @@ bool RestoreSeedPage::validatePage() {
     bool ok;
     qint64 birthday = birthday_str.toUInt(&ok);
     if (!ok) {
+        qDebug() << __func__ << ": Failed to parse wallet birthday=" << birthday_str;
         QMessageBox::warning(this, tr("Failed to parse wallet birthday"), 
             tr("Couldn't understand wallet birthday. This should be a block height from where to rescan the wallet. You can leave it as '0' if you don't know what it should be."),
             QMessageBox::Ok);
         return false;
     }
 
-///Number
-
-QString number_str =  form.number->text();
-qint64 number = number_str.toUInt();
+    ///Number
+    QString number_str =  form.number->text();
+    qint64 number      = number_str.toUInt();
     // 3. Attempt to restore wallet with the seed phrase
     {
         char* resp = litelib_initialize_new_from_phrase(parent->dangerous, parent->server.toStdString().c_str(),
@@ -681,6 +674,7 @@ qint64 number = number_str.toUInt();
 
         auto parsed = json::parse(reply.toStdString().c_str(), nullptr, false);
         if (parsed.is_discarded() || parsed.is_null() || parsed.find("result") == parsed.end()) {
+            qDebug() << __func__ << ": Failed to save wallet, reply=" << reply;
             QMessageBox::warning(this, tr("Failed to save wallet"), 
                 tr("Couldn't save the wallet") + "\n" + reply,
                 QMessageBox::Ok);

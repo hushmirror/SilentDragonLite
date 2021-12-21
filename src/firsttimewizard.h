@@ -12,7 +12,7 @@
 class FirstTimeWizard: public QWizard
 {
 
-
+Q_OBJECT
     
 public:
     FirstTimeWizard(bool dangerous, QString server);
@@ -45,8 +45,6 @@ private:
     friend class NewOrRestorePage;
     friend class NewSeedPage;
     friend class RestoreSeedPage;
-    
-     
     
 };
 
