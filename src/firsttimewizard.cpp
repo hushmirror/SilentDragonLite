@@ -133,7 +133,7 @@ NewOrRestorePage::NewOrRestorePage(FirstTimeWizard *parent) : QWizardPage(parent
     form.setupUi(pageWidget);
 
     QGraphicsScene* scene = new QGraphicsScene();
-    QGraphicsView* view = new QGraphicsView(scene);
+    //QGraphicsView* view = new QGraphicsView(scene);
     form.Logo->setScene(scene);
     QPixmap pixmap(":/icons/res/dark-01.png");
     scene->addPixmap(pixmap);

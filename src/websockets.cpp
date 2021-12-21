@@ -705,9 +705,6 @@ void AppDataServer::processSendTx(QJsonObject sendTx, MainWindow* mainwindow, st
     auto allBalances = mainwindow->getRPC()->getModel()->getAllBalances();
     QList<QPair<QString, CAmount>> bals;
     for (auto i : allBalances.keys()) {
-        // Filter out sprout addresses
-        if (Settings::getInstance()->isSproutAddress(i))
-            continue;
         // Filter out balances that don't have the requisite amount
         if (allBalances.value(i) < amt)
             continue;
@@ -796,9 +793,6 @@ void AppDataServer::processSendManyTx(QJsonObject sendmanyTx, MainWindow* mainwi
     auto allBalances = mainwindow->getRPC()->getModel()->getAllBalances();
     QList<QPair<QString, CAmount>> bals;
     for (auto i : allBalances.keys()) {
-        // Filter out sprout addresses
-        if (Settings::getInstance()->isSproutAddress(i))
-            continue;
         // Filter out balances that don't have the requisite amount
         if (allBalances.value(i) < amt)
             continue;

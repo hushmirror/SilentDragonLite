@@ -304,6 +304,7 @@ void AddressBook::open(MainWindow* parent, QLineEdit* target)
     });
 
     auto fnSetTargetLabelAddr = [=] (QLineEdit* target, QString label, QString addr, QString myAddr, QString cid, QString avatar) {
+        qDebug() << __func__ << ": label=" << label << " cid=" << cid << " avatar=" << avatar;
         target->setText(label % "/" % addr   % myAddr);
     };
 

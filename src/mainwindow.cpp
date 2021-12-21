@@ -76,12 +76,12 @@ MainWindow::MainWindow(QWidget *parent) :
     }
 
     this->slot_change_theme(theme_name);
-
  
     ui->setupUi(this);
 
     auto dir = QDir(QStandardPaths::writableLocation(QStandardPaths::AppDataLocation));
     if (!dir.exists()){
+        qDebug() << __func__ << ": creating dir=" << dir.absolutePath();
         QDir().mkpath(dir.absolutePath());
     }else{}
 
@@ -175,7 +175,6 @@ MainWindow::MainWindow(QWidget *parent) :
     restoreSeed.setupUi(&dialog);
     Settings::saveRestore(&dialog);
 
-
     rpc->fetchSeed([=](json reply) {
         if (isJsonError(reply)) {
             return;
@@ -246,26 +245,29 @@ MainWindow::MainWindow(QWidget *parent) :
                 tr("Couldn't save the wallet") + "\n" + reply,
                 QMessageBox::Ok);
 
-        } else {}  
+        } else {
+            qDebug() << __func__ << ": saved wallet correctly";
+        }  
 
-            dialog.close();
-          // To rescan, we clear the wallet state, and then reload the connection
+        dialog.close();
+        // To rescan, we clear the wallet state, and then reload the connection
         // This will start a sync, and show the scanning status. 
        this->getRPC()->clearWallet([=] (auto) {
+            qDebug() << "Clearing wallet...";
             // Save the wallet
             this->getRPC()->saveWallet([=] (auto) {
+                qDebug() << "Saving wallet...";
                 // Then reload the connection. The ConnectionLoader deletes itself.
                auto cl = new ConnectionLoader(this, rpc);
-                cl->loadConnection();
-                         });       
-                     });
-
+               cl->loadConnection();
+            });       
+        });
     
-                 }
+      }
 
-             });
-               
-        dialog.exec();
+     });
+             
+     dialog.exec();
 });
 
     // Import Privkey
@@ -432,6 +434,7 @@ void MainWindow::closeEvent(QCloseEvent* event) {
 
 void MainWindow::closeEventpw(QCloseEvent* event) {
     // Let the RPC know to shut down any running service.
+    qDebug() << __func__ << ": event=" << event;
     rpc->shutdownhushd();
 }
 
@@ -489,12 +492,16 @@ void MainWindow::encryptWallet() {
 
         unsigned char key[KEY_LEN];
 
-         if (crypto_pwhash
-         (key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
+         if (crypto_pwhash(key, sizeof key, PASSWORD, strlen(PASSWORD), hash,
          crypto_pwhash_OPSLIMIT_SENSITIVE, crypto_pwhash_MEMLIMIT_SENSITIVE,
          crypto_pwhash_ALG_DEFAULT) != 0) {
          /* out of memory */
-}
+           QMessageBox::information(this, tr("Out of memory!"),
+                    QString("Please close some other programs to free up memory and try again"),
+                    QMessageBox::Ok
+                ); 
+                exit(1);
+        }
         QString passphraseHash1 = QByteArray(reinterpret_cast<const char*>(key), KEY_LEN).toHex();
         DataStore::getChatDataStore()->setPassword(passphraseHash1);
 
@@ -995,6 +1002,7 @@ bool MainWindow::eventFilter(QObject *object, QEvent *event) {
 // will prompt for one. If the myAddr is empty, then the default from address is used to send
 // the transaction.
 void MainWindow::payhushURI(QString uri, QString myAddr) {
+    qDebug() << __func__ << ": uri=" << uri << " myAddr=" << myAddr;
     // If the Payments UI is not ready (i.e, all balances have not loaded), defer the payment URI
     if (!isPaymentsReady()) {
         qDebug() << "Payment UI not ready, waiting for UI to pay URI";
@@ -1441,8 +1449,7 @@ void MainWindow::setupTransactionsTab() {
             int lastPost     = memo.trimmed().lastIndexOf(QRegExp("[\r\n]+"));
             QString lastWord = memo.right(memo.length() - lastPost - 1);
             
-            if (Settings::getInstance()->isSaplingAddress(lastWord) || 
-                Settings::getInstance()->isSproutAddress(lastWord)) {
+            if (Settings::getInstance()->isSaplingAddress(lastWord)) {
                 menu.addAction(tr("Reply to ") + lastWord.left(25) + "...", [=]() {
                     // First, cancel any pending stuff in the send tab by pretending to click
                     // the cancel button
@@ -2429,7 +2436,7 @@ void MainWindow::addNewZaddr(bool sapling) {
 }
 
 
-// Adds sapling or sprout z-addresses to the combo box. Technically, returns a
+// Adds sapling z-addresses to the combo box. Technically, returns a
 // lambda, which can be connected to the appropriate signal
 std::function<void(bool)> MainWindow::addZAddrsToComboList(bool sapling) {
     return [=] (bool checked) { 
@@ -2770,9 +2777,7 @@ void MainWindow::updateLabels() {
     updateLabelsAutoComplete();
 }
 
-void MainWindow::slot_change_currency(const QString& currency_name)
-
-{
+void MainWindow::slot_change_currency(const QString& currency_name) {
     
     Settings::getInstance()->set_currency_name(currency_name);
 
@@ -2788,9 +2793,7 @@ void MainWindow::slot_change_currency(const QString& currency_name)
     }
 }
 
-void MainWindow::slot_change_theme(const QString& theme_name)
-
-{
+void MainWindow::slot_change_theme(const QString& theme_name) {
     Settings::getInstance()->set_theme_name(theme_name);
     
 
@@ -2842,8 +2845,9 @@ void MainWindow::on_givemeZaddr_clicked()
                 QMessageBox::information(this, "Your new HushChat address was copied to your clipboard!",hushchataddr);
                 ui->listReceiveAddresses->insertItem(0, hushchataddr);
                 ui->listReceiveAddresses->setCurrentIndex(0);
+                qDebug() << __func__ << ": hushchat zaddr=" << hushchataddr << " created";
               
-                });
+    });
 }
 
 

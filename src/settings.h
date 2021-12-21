@@ -42,7 +42,6 @@ public:
     void    setTestnet(bool isTestnet);
             
     bool    isSaplingAddress(QString addr);
-    bool    isSproutAddress(QString addr);
             
     bool    isValidSaplingPrivateKey(QString pk);
 

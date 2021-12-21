@@ -95,13 +95,6 @@ bool Settings::isSaplingAddress(QString addr) {
            (!isTestnet() && addr.startsWith("zs1"));
 }
 
-bool Settings::isSproutAddress(QString addr) {
-    if (!isValidAddress(addr))
-        return false;
-        
-    return isZAddress(addr) && !isSaplingAddress(addr);
-}
-
 bool Settings::isZAddress(QString addr) {
     if (!isValidAddress(addr))
         return false;
