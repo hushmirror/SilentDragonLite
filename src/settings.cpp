@@ -324,7 +324,14 @@ QString Settings::getRandomServer() {
     while (tries < servers.size() ) {
         qDebug() << "Checking if lite server " << server << " is a alive, try=" << tries;
         char* resp = litelib_initialize_existing(false, server.toStdString().c_str());
-        QString response = litelib_process_response(resp);
+
+        QString response = "";
+
+        try {
+            response = litelib_process_response(resp);
+        } catch (const std::exception& e)  {
+            qDebug() << __func__ << ": litelib_process_response threw an exception, ignoring: " << e.what();
+        }
 
         // if we see a valid connection, return this server
         if (response.toUpper().trimmed() == "OK") {

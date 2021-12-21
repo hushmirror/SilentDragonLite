@@ -44,7 +44,6 @@ Controller::Controller(MainWindow* main)
     transactionsTableModel = new TxTableModel(ui->transactionsTable);
     main->ui->transactionsTable->setModel(transactionsTableModel);
 
-    
     // Set up timer to refresh Price
     priceTimer = new QTimer(main);
     QObject::connect(priceTimer, &QTimer::timeout, [=]() {

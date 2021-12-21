@@ -248,6 +248,7 @@ void ConnectionLoader::doAutoConnect()
 
 void ConnectionLoader::createOrRestore(bool dangerous, QString server)
 {
+    qDebug() << __func__ << ": server=" << server;
     // Close the startup dialog, since we'll be showing the wizard
     d->hide();
     // Create a wizard
@@ -264,13 +265,14 @@ void ConnectionLoader::doRPCSetConnection(Connection* conn)
     d->accept();
     QTimer::singleShot(1, [=]() { delete this; });
 
+    QFile plaintextWallet(dirwalletconnection);
     try {
-        QFile plaintextWallet(dirwalletconnection);
         main->logger->write("Path to Wallet.dat : " );
         qDebug() << __func__ << ": wallet path =" << plaintextWallet;
         plaintextWallet.remove();
     
     } catch (...) {
+        qDebug() << "No plaintext wallet found! file=" << plaintextWallet;
         main->logger->write("no Plaintext wallet.dat");
     }
     
@@ -284,13 +286,14 @@ void ConnectionLoader::doRPCSetConnectionShield(Connection* conn)
     main->getRPC()->shield([=] (auto) {});
     QTimer::singleShot(1, [=]() { delete this; });
 
+    QFile plaintextWallet(dirwalletconnection);
     try {
-        QFile plaintextWallet(dirwalletconnection);
         main->logger->write("Path to Wallet.dat : " );
         qDebug() << __func__ << ": wallet path =" << plaintextWallet;
         plaintextWallet.remove();
     } catch (...) {
         main->logger->write("no Plaintext wallet.dat");
+        qDebug() << "No plaintext wallet found! file=" << plaintextWallet;
     }
 }
 
