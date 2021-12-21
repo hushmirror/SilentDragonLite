@@ -76,14 +76,14 @@ void ConnectionLoader::loadProgress()
 
 void ConnectionLoader::ShowProgress()
 {
+    qDebug() << __func__;
     auto config = std::shared_ptr<ConnectionConfig>(new ConnectionConfig());
     config->dangerous = false;
     config->server = Settings::getInstance()->getSettings().server;
 
     auto connection = makeConnection(config);
     auto me   = this;
-    qDebug() << __func__ << ": server=" <<  config->server
-             << " connection=" << connection << " me=" << me;
+    qDebug() << __func__ << ": server=" <<  config->server << " connection=" << connection << " me=" << me;
 
     isSyncing = new QAtomicInteger<bool>();
     isSyncing->store(true);
@@ -147,6 +147,7 @@ void ConnectionLoader::doAutoConnect()
 
     // Check to see if there's an existing wallet
     if (litelib_wallet_exists(Settings::getDefaultChainName().toStdString().c_str())) {
+        qDebug() << __func__ << ": using existing wallet";
         main->logger->write(QObject::tr("Using existing wallet."));
         char* resp = litelib_initialize_existing(
             config->dangerous,
@@ -175,6 +176,7 @@ void ConnectionLoader::doAutoConnect()
         }
 
     } else {
+        qDebug() << __func__ << ": no existing wallet";
         main->logger->write(QObject::tr("Create/restore wallet."));
         createOrRestore(config->dangerous, config->server);
         d->show();
